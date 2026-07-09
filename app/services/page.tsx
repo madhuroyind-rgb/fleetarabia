@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Services | FleetArabia",
   description:
     "Implementation, ERP integration, training and long-term support delivered by people who understand fleet operations, not generic software consultants.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

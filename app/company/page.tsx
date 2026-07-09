@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Company | FleetArabia",
   description:
     "We build software for rental, leasing, transportation and fleet businesses that are done running on spreadsheets and want operations connected to finance.",
+  alternates: { canonical: "/company" },
 };
 
 export default function CompanyPage() {

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Solutions | FleetArabia",
   description:
     "Software for car rental, leasing, limousine, bus transportation, workshop, warehouse, HR, driver and fuel management operations — built to connect with your ERP instead of sitting next to it.",
+  alternates: { canonical: "/solutions" },
 };
 
 export default function SolutionsPage() {

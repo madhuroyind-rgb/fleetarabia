@@ -133,21 +133,13 @@ export default function Footer() {
             </h3>
 
             <div className="mt-5 space-y-4 text-sm leading-6 text-slate-300">
-              <p>Dubai, United Arab Emirates</p>
+              <p>Patna, Bihar, India</p>
               <p>
                 <a
                   href="mailto:info@fleetarabia.com"
                   className="transition hover:text-cyan-300"
                 >
                   info@fleetarabia.com
-                </a>
-              </p>
-              <p>
-                <a
-                  href="tel:+971501234587"
-                  className="transition hover:text-cyan-300"
-                >
-                  +971 50 123 4587
                 </a>
               </p>
             </div>

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Fleet Leasing Solutions | FleetArabia",
   description:
     "Professional long-term fleet leasing solutions for businesses and corporate fleets across the UAE, backed by ERP-driven fleet operations and 24/7 support.",
+  alternates: { canonical: "/fleet-leasing" },
 };
 
 export default function FleetLeasingPage() {

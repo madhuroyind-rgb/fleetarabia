@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Deployment Options | FleetArabia",
   description:
     "Choose on-premise or SaaS cloud deployment for FleetArabia based on your business operations, security requirements and IT strategy.",
+  alternates: { canonical: "/deployment" },
 };
 
 export default function DeploymentPage() {

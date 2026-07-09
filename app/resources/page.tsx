@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Resources | FleetArabia",
   description:
     "Guides and checklists for planning fleet ERP integration, rental and leasing automation, workshop digitization and fleet lifecycle reporting.",
+  alternates: { canonical: "/resources" },
 };
 
 export default function ResourcesPage() {

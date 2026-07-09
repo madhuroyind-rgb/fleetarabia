@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Integrations | FleetArabia",
   description:
     "Oracle ERP, GPS tracking, payment gateways and regional toll/traffic-fine systems — connected to your rental, leasing, workshop and billing workflows instead of run as separate tools.",
+  alternates: { canonical: "/integrations" },
 };
 
 const ecosystem = [

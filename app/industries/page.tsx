@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Industries | FleetArabia",
   description:
     "Built for the operational reality of rental, leasing, limousine, bus transportation, corporate fleet, workshop and government mobility businesses across the Middle East — not adapted from a generic template.",
+  alternates: { canonical: "/industries" },
 };
 
 export default function IndustriesPage() {

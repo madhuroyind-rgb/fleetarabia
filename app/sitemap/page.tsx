@@ -5,6 +5,7 @@ import { SITE_ROUTES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Sitemap | FleetArabia",
   description: "Browse all pages on the FleetArabia website.",
+  alternates: { canonical: "/sitemap" },
 };
 
 export default function SitemapPage() {

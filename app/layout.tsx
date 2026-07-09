@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "FleetArabia | Enterprise Mobility Solutions",
   description:
     "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop and warehouse operations to your ERP — built for fleet businesses across the Middle East.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "FleetArabia",
@@ -30,16 +33,15 @@ const organizationJsonLd = {
   description:
     "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop and warehouse operations to your ERP — built for fleet businesses across the Middle East.",
   email: "info@fleetarabia.com",
-  telephone: "+971501234587",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dubai",
-    addressCountry: "AE",
+    addressLocality: "Patna",
+    addressRegion: "Bihar",
+    addressCountry: "IN",
   },
   contactPoint: {
     "@type": "ContactPoint",
     email: "info@fleetarabia.com",
-    telephone: "+971501234587",
     contactType: "sales",
   },
 };

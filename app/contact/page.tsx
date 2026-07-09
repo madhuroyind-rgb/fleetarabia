@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact Us | FleetArabia",
   description:
     "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or Oracle ERP integration? Tell us what you're working on and we'll point you to the right place to start.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -17,7 +18,7 @@ export default function ContactPage() {
       description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to Oracle ERP — tell us what you're working on and we'll help you find the right starting point."
       primaryCta={{ label: "Email FleetArabia", href: "mailto:info@fleetarabia.com" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
-      proofPoints={["Dubai, UAE", "Enterprise Consulting", "24-Hour Response"]}
+      proofPoints={["Patna, India", "Enterprise Consulting", "24-Hour Response"]}
       visualItems={["Demo", "ERP", "GPS", "Support"]}
       sections={[
         {
@@ -68,13 +69,12 @@ export default function ContactPage() {
         },
         {
           eyebrow: "FleetArabia Office",
-          title: "Enterprise mobility support from Dubai",
-          text: "Our team is based in Dubai and works with fleet businesses across the Middle East.",
+          title: "Enterprise mobility support from India",
+          text: "Our team is based in Patna, India and works with fleet businesses across the Middle East.",
           variant: "teal",
           items: [
-            { title: "Location", text: "Dubai, United Arab Emirates" },
+            { title: "Location", text: "Patna, Bihar, India" },
             { title: "Email", text: "info@fleetarabia.com" },
-            { title: "Phone", text: "+971 50 123 4587" },
             { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, warehouse, and enterprise fleet businesses." },
           ],
         },

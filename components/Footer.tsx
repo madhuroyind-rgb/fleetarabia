@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 type FooterLink = {
   label: string;
@@ -11,16 +12,21 @@ const columns: { title: string; items: FooterLink[] }[] = [
     items: [
       { label: "Car Rental Management", href: "/solutions" },
       { label: "Rental & Leasing", href: "/solutions" },
+      { label: "Fleet Leasing", href: "/fleet-leasing" },
       { label: "Limousine Operations", href: "/solutions" },
       { label: "Bus Transportation", href: "/solutions" },
       { label: "Workshop Management", href: "/solutions" },
       { label: "Warehouse & Spare Parts", href: "/solutions" },
+      { label: "HRMS & Payroll", href: "/solutions" },
+      { label: "Driver Management", href: "/solutions" },
+      { label: "Fuel Management", href: "/solutions" },
     ],
   },
   {
     title: "Platform",
     items: [
       { label: "Platform Overview", href: "/platform" },
+      { label: "Deployment Options", href: "/deployment" },
       { label: "Billing Automation", href: "/solutions" },
       { label: "Damage Inspection", href: "/solutions" },
       { label: "Analytics & Reporting", href: "/platform" },
@@ -77,10 +83,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_2fr_0.85fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="relative h-12 w-14">
-                <div className="absolute left-0 top-1 h-6 w-10 rounded-br-2xl rounded-tl-2xl bg-gradient-to-r from-cyan-400 to-blue-600" />
-                <div className="absolute bottom-1 left-0 h-6 w-8 rounded-br-2xl rounded-tl-2xl bg-gradient-to-r from-cyan-300 to-blue-500" />
-              </div>
+              <Logo className="h-12 w-12 shrink-0" />
 
               <div>
                 <div className="text-2xl font-black leading-none tracking-tight">

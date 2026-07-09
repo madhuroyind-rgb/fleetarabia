@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Industries | FleetArabia",
+  description:
+    "Built for the operational reality of rental, leasing, limousine, bus transportation, corporate fleet, workshop and government mobility businesses across the Middle East — not adapted from a generic template.",
+};
 
 export default function IndustriesPage() {
   return (
@@ -6,7 +13,7 @@ export default function IndustriesPage() {
       eyebrow="Industries"
       title="Mobility Solutions for"
       highlight="Every Fleet Business"
-      description="FleetArabia supports rental, leasing, limousine, bus transportation, corporate fleet, workshop and government mobility operations across the Middle East."
+      description="Rental, leasing, limousine, bus transportation, corporate fleet, workshop and government mobility operations — each with different workflows, and each supported directly rather than squeezed into a generic template."
       primaryCta={{ label: "Talk to Industry Expert", href: "/contact" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Multi-Industry", "Middle East Ready", "Enterprise Scale"]}
@@ -30,7 +37,7 @@ export default function IndustriesPage() {
         {
           eyebrow: "Regional Fit",
           title: "Designed for Middle East operating models",
-          text: "FleetArabia supports multi-branch, multi-company and ERP-connected operations across the region.",
+          text: "Multi-branch, multi-company operations that need to report up to one finance system, not run as separate silos.",
           variant: "teal",
           items: [
             { title: "Multi-Branch Control", text: "Operate across cities, locations and customer counters." },

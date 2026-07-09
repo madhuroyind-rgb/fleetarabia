@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Services | FleetArabia",
+  description:
+    "Implementation, ERP integration, training and long-term support delivered by people who understand fleet operations, not generic software consultants.",
+};
 
 export default function ServicesPage() {
   return (
@@ -6,7 +13,7 @@ export default function ServicesPage() {
       eyebrow="Professional Services"
       title="Implementation, Support and"
       highlight="ERP Consulting"
-      description="FleetArabia provides implementation, business process consulting, ERP support, integration delivery, training and long-term customer success services for mobility enterprises."
+      description="From process mapping through go-live and beyond — implementation, ERP integration, training and ongoing support, delivered by people who understand fleet operations."
       primaryCta={{ label: "Request Services", href: "/contact" }}
       secondaryCta={{ label: "View Platform", href: "/platform" }}
       proofPoints={["Implementation", "ERP Support", "Customer Success"]}
@@ -15,7 +22,7 @@ export default function ServicesPage() {
         {
           eyebrow: "Service Portfolio",
           title: "Enterprise services for successful digital transformation",
-          text: "We help mobility organizations move from manual operations to controlled, integrated and scalable digital processes.",
+          text: "We help mobility businesses move off spreadsheets and disconnected tools onto one controlled process — without disrupting operations mid-transition.",
           items: [
             { title: "Solution Implementation", text: "Configure FleetArabia based on business workflows, branches, roles and operating model." },
             { title: "Business Process Consulting", text: "Map rental, leasing, workshop, warehouse, billing and ERP-connected processes." },

@@ -1,3 +1,6 @@
+import Reveal from "@/components/Reveal";
+import ConnectedVisual from "@/components/ConnectedVisual";
+
 const outcomes = [
   {
     title: "Operational Control",
@@ -59,6 +62,21 @@ const solutions = [
     title: "ERP Integration & Support Services",
     text: "Oracle ERP integration, finance system connectivity, APIs, implementation support and post-go-live assistance.",
   },
+  {
+    code: "HR",
+    title: "HRMS & Payroll Management",
+    text: "Employee records, attendance, leave management, payroll processing and workforce compliance for operations and workshop staff.",
+  },
+  {
+    code: "DM",
+    title: "Driver Management",
+    text: "Driver profiles, license and document tracking, performance monitoring, trip assignment and compliance checks.",
+  },
+  {
+    code: "FM",
+    title: "Fuel Management",
+    text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts.",
+  },
 ];
 
 const workflow = [
@@ -98,7 +116,7 @@ export default function Home() {
       <Workflow />
       <Integrations />
       <Industries />
-            <WhyFleetArabia />
+      <WhyFleetArabia />
       <CTA />
     </main>
   );
@@ -110,10 +128,10 @@ function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <div className="relative mx-auto grid min-h-[420px] max-w-7xl items-start gap-10 px-5 pb-10 pt-7 sm:px-6 md:pb-12 md:pt-9 lg:min-h-[500px] lg:grid-cols-[0.82fr_1.18fr]">
-        <div>
-          <p className="mb-5 text-xs font-black uppercase tracking-[0.28em] text-cyan-300 sm:text-sm">
-            Enterprise Mobility Platform
+      <div className="relative mx-auto grid min-h-[420px] max-w-7xl items-start gap-10 px-5 pb-10 pt-7 sm:px-6 md:pb-12 md:pt-9 xl:min-h-[500px] xl:grid-cols-[0.82fr_1.18fr]">
+        <Reveal>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-300 sm:text-sm">
+            For Rental, Leasing &amp; Fleet Operators
           </p>
 
           <h1 className="max-w-4xl text-3xl font-black leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -122,20 +140,20 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-7 text-cyan-50/90 sm:text-base md:mt-6 md:text-lg md:leading-8">
-            FleetArabia helps car rental, leasing, limousine, bus transportation, workshop and warehouse businesses digitize daily operations, automate billing, connect ERP systems and manage the complete fleet lifecycle with real-time visibility.
+            FleetArabia replaces spreadsheets and disconnected tools with one operating system for rental, leasing, limousine, bus transportation, workshop and warehouse businesses. Bookings, billing and maintenance stay in sync with your ERP — so your team spends less time reconciling and more time running the business.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="/contact"
-              className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:bg-cyan-50"
+              className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Talk to Us →
             </a>
 
             <a
               href="/solutions"
-              className="inline-flex justify-center rounded-md border border-white/25 px-7 py-3 text-sm font-black text-white transition hover:bg-white hover:text-slate-950"
+              className="inline-flex justify-center rounded-md border border-white/25 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950"
             >
               Explore Solutions →
             </a>
@@ -153,9 +171,11 @@ function Hero() {
               )
             )}
           </div>
-        </div>
+        </Reveal>
 
-        <PremiumHeroVisual />
+        <Reveal delay={0.15}>
+          <PremiumHeroVisual />
+        </Reveal>
       </div>
     </section>
   );
@@ -163,58 +183,29 @@ function Hero() {
 
 function PremiumHeroVisual() {
   const aiProducts = [
-    { code: "CR", title: "Car Rental", position: "left-0 top-10" },
-    { code: "RL", title: "Rental and Leasing", position: "left-1/2 top-0 -translate-x-1/2" },
-    { code: "LC", title: "Limo and Chauffeur", position: "right-0 top-10" },
-    { code: "BT", title: "Bus Transport", position: "left-0 top-[190px]" },
-    { code: "WM", title: "Workshop", position: "right-0 top-[190px]" },
-    { code: "WH", title: "Warehouse", position: "left-0 bottom-10" },
-    { code: "VD", title: "Damage and Claims", position: "left-[150px] bottom-0" },
-    { code: "BI", title: "Billing Automation", position: "right-[150px] bottom-0" },
-    { code: "ES", title: "ERP Support", position: "right-0 bottom-10" },
+    { code: "CR", title: "Car Rental" },
+    { code: "RL", title: "Rental & Leasing" },
+    { code: "LC", title: "Limo & Chauffeur" },
+    { code: "BT", title: "Bus Transport" },
+    { code: "WM", title: "Workshop" },
+    { code: "WH", title: "Warehouse" },
+    { code: "VD", title: "Damage & Claims" },
+    { code: "BI", title: "Billing Automation" },
+    { code: "ES", title: "ERP Support" },
+    { code: "HR", title: "HR & Payroll" },
+    { code: "DM", title: "Driver Management" },
+    { code: "FM", title: "Fuel Management" },
   ];
 
   return (
-    <div className="relative hidden min-h-[520px] lg:block">
-      <div className="absolute inset-0 rounded-full bg-cyan-400/10 blur-3xl" />
-
-      <div className="absolute left-1/2 top-6 z-30 -translate-x-1/2 rounded-full border border-cyan-300/25 bg-white/10 px-5 py-2 text-xs font-black uppercase tracking-[0.24em] text-cyan-100 shadow-xl shadow-black/10 backdrop-blur">
-        AI Powered Fleet Intelligence
-      </div>
-
-      <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/25 bg-[radial-gradient(circle_at_35%_30%,rgba(34,211,238,0.30),rgba(37,99,235,0.18_38%,rgba(2,6,23,0.42)_76%)] shadow-[0_0_90px_rgba(37,99,235,0.28)]">
-        <div className="absolute inset-8 rounded-full border border-cyan-300/20" />
-        <div className="absolute inset-16 rounded-full border border-blue-400/20" />
-        <div className="absolute inset-24 rounded-full border border-cyan-300/10" />
-      </div>
-
-      <div className="absolute left-1/2 top-1/2 h-[2px] w-[620px] -translate-x-1/2 -translate-y-1/2 rotate-12 bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
-      <div className="absolute left-1/2 top-1/2 h-[2px] w-[620px] -translate-x-1/2 -translate-y-1/2 -rotate-12 bg-gradient-to-r from-transparent via-blue-400/35 to-transparent" />
-      <div className="absolute bottom-24 left-1/2 h-40 w-[620px] -translate-x-1/2 rounded-[50%] border border-cyan-300/20" />
-      <div className="absolute bottom-32 left-1/2 h-28 w-[500px] -translate-x-1/2 rounded-[50%] border border-blue-400/25" />
-
-      <div className="absolute left-1/2 top-1/2 z-[20] flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[2rem] bg-gradient-to-r from-cyan-400 to-blue-600 shadow-2xl shadow-cyan-400/25 ring-1 ring-white/20">
-        <span className="text-5xl font-black text-white">AI</span>
-        <span className="mt-1 text-[10px] font-black uppercase tracking-[0.18em] text-cyan-50">
-          Operations Brain
-        </span>
-      </div>
-
-      {aiProducts.map((item) => (
-        <article
-          key={item.code}
-          className={"absolute z-30 w-36 rounded-2xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 " + item.position}
-        >
-          <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-300 to-blue-500 text-xs font-black text-white shadow-lg shadow-cyan-400/20">
-            {item.code}
-          </div>
-          <p className="text-xs font-black leading-4 text-cyan-50">{item.title}</p>
-        </article>
-      ))}
-
-      <div className="absolute bottom-3 left-1/2 z-30 -translate-x-1/2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[11px] font-bold text-cyan-50 backdrop-blur">
-        Predict • Automate • Integrate
-      </div>
+    <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
+      <ConnectedVisual
+        nodes={aiProducts}
+        centerLabel="AI"
+        centerSub="Operations Core"
+        topLabel="AI Powered Fleet Intelligence"
+        bottomLabel="Predict • Automate • Integrate"
+      />
     </div>
   );
 }
@@ -223,32 +214,30 @@ function ExecutiveOutcomes() {
   return (
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
             Executive Outcomes
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-            Built for enterprise mobility leadership
+            Made for the people running the business
           </h2>
           <p className="mt-5 leading-8 text-cyan-50/85">
-            FleetArabia is designed for business owners, operations leaders,
-            finance teams and technology teams who need control, automation and
-            integration across the mobility lifecycle.
+            Owners who need visibility, operations leaders who need control,
+            and finance teams who need clean numbers at close.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {outcomes.map((item, index) => (
-            <article
-              key={item.title}
-              className="group min-h-[260px] rounded-3xl border border-white/20 bg-white p-8 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#087674] text-sm font-black text-white transition group-hover:scale-110">
-                0{index + 1}
-              </div>
-              <h3 className="mt-7 text-2xl font-black tracking-tight">{item.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
-            </article>
+            <Reveal key={item.title} delay={index * 0.08}>
+              <article className="group min-h-[260px] rounded-3xl border border-white/20 bg-white p-8 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#087674] text-sm font-black text-white transition group-hover:scale-110">
+                  0{index + 1}
+                </div>
+                <h3 className="mt-7 text-2xl font-black tracking-tight">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -260,37 +249,37 @@ function Solutions() {
   return (
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
             Our Product Portfolio
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-            Complete mobility products for rental, leasing, transport and ERP-connected fleet businesses
+            Twelve modules. One connected platform.
           </h2>
           <p className="mt-5 leading-8 text-cyan-50/85">
-            Connect rental, leasing, dispatch, workshop, warehouse, finance and
-            ERP workflows into a unified enterprise platform.
+            Run every module on its own, or plug in the ones you need and let
+            them share the same data — no double entry, no reconciling
+            spreadsheets at month end.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {solutions.map((item) => (
-            <article
-              key={item.title}
-              className="group flex min-h-[230px] flex-col rounded-3xl border border-white/20 bg-white p-7 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20"
-            >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-sm font-black text-[#087674] ring-1 ring-cyan-100 transition group-hover:bg-[#087674] group-hover:text-white">
-                {item.code}
-              </div>
-              <h3 className="text-xl font-black tracking-tight">{item.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.text}</p>
-              <a
-                href="/solutions"
-                className="mt-6 inline-flex items-center text-sm font-black text-[#087674] transition group-hover:translate-x-1"
-              >
-                Learn More →
-              </a>
-            </article>
+          {solutions.map((item, index) => (
+            <Reveal key={item.title} delay={Math.min(index * 0.05, 0.3)}>
+              <article className="group flex min-h-[230px] flex-col rounded-3xl border border-white/20 bg-white p-7 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-sm font-black text-[#087674] ring-1 ring-cyan-100 transition group-hover:bg-[#087674] group-hover:text-white">
+                  {item.code}
+                </div>
+                <h3 className="text-xl font-black tracking-tight">{item.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.text}</p>
+                <a
+                  href="/solutions"
+                  className="mt-6 inline-flex items-center text-sm font-black text-[#087674] transition group-hover:translate-x-1"
+                >
+                  Learn More →
+                </a>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -302,8 +291,8 @@ function Workflow() {
   return (
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-slate-950">
       <div className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-white/15 bg-white p-6 text-slate-950 shadow-2xl shadow-black/10 md:p-8 lg:grid-cols-[0.75fr_1.25fr]">
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#087674]">
+        <Reveal>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#087674]">
             Enterprise Workflow
           </p>
           <h2 className="mt-4 text-3xl font-black tracking-tight">
@@ -319,19 +308,18 @@ function Workflow() {
           >
             Explore Platform →
           </a>
-        </div>
+        </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {workflow.map((item, index) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-white/20 bg-[#087674] p-6 text-white"
-            >
-              <div className="text-sm font-black text-cyan-100">
-                Step {index + 1}
+            <Reveal key={item} delay={index * 0.05}>
+              <div className="rounded-2xl border border-white/20 bg-[#087674] p-6 text-white">
+                <div className="text-sm font-black text-cyan-100">
+                  Step {index + 1}
+                </div>
+                <div className="mt-3 text-xl font-black">{item}</div>
               </div>
-              <div className="mt-3 text-xl font-black">{item}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -345,12 +333,12 @@ function Integrations() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+        <Reveal>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
             ERP & Integration Fabric
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-            Seamless connectivity with enterprise systems
+            Talks to the systems you already run
           </h2>
           <p className="mt-5 leading-8 text-cyan-50/85">
             Pre-built connectors and APIs help integrate mobility operations
@@ -360,20 +348,19 @@ function Integrations() {
 
           <a
             href="/integrations"
-            className="mt-8 inline-flex rounded-md bg-white px-8 py-4 text-sm font-black text-[#087674]"
+            className="mt-8 inline-flex rounded-md bg-white px-8 py-4 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Explore Integrations →
           </a>
-        </div>
+        </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {integrations.map((item) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-white/15 bg-white/10 p-8 text-center text-sm font-black text-white shadow-2xl shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/15"
-            >
-              {item}
-            </div>
+          {integrations.map((item, index) => (
+            <Reveal key={item} delay={Math.min(index * 0.06, 0.3)}>
+              <div className="rounded-3xl border border-white/15 bg-white/10 p-8 text-center text-sm font-black text-white shadow-2xl shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/15">
+                {item}
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -385,21 +372,22 @@ function Industries() {
   return (
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl text-center">
-        <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
-          Industries
-        </p>
-        <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-          Industries We Serve
-        </h2>
+        <Reveal>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+            Industries
+          </p>
+          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+            Industries We Serve
+          </h2>
+        </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-7">
-          {industries.map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-white/15 bg-white/10 p-6 text-sm font-black text-white shadow-lg shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15"
-            >
-              {item}
-            </div>
+          {industries.map((item, index) => (
+            <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
+              <div className="rounded-2xl border border-white/15 bg-white/10 p-6 text-sm font-black text-white shadow-lg shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15">
+                {item}
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -409,27 +397,29 @@ function Industries() {
 
 function WhyFleetArabia() {
   const reasons = [
-    { title: "Middle East Domain Expertise", text: "Built around regional rental, leasing, limousine, bus transportation, workshop and enterprise fleet operations." },
-    { title: "ERP-Connected Operations", text: "Connect billing, approvals, customer charges, financial posting and operational workflows with ERP and finance systems." },
-    { title: "End-to-End Fleet Lifecycle", text: "Manage booking, agreement, dispatch, billing, maintenance, warehouse, damage inspection and reporting in one connected flow." },
-    { title: "Implementation Support", text: "Support for process mapping, configuration, data migration, integration planning, training and rollout execution." },
+    { title: "Middle East Domain Expertise", text: "Built around how rental, leasing, limousine, bus transportation and workshop operations actually run in this region — not adapted from a generic template." },
+    { title: "ERP-Connected Operations", text: "Billing, approvals and customer charges post cleanly to your finance system instead of getting re-keyed by hand." },
+    { title: "End-to-End Fleet Lifecycle", text: "One flow from booking through agreement, dispatch, maintenance and reporting, instead of five disconnected tools." },
+    { title: "Implementation Support", text: "Hands-on help with process mapping, data migration, integration planning, training and rollout — not just a login and a manual." },
   ];
 
   return (
     <section className="bg-[#087674] px-5 py-10 text-white sm:px-6 md:py-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">Why FleetArabia</p>
-          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">Built for serious fleet transformation</h2>
-          <p className="mt-5 leading-8 text-cyan-50/85">FleetArabia combines mobility domain expertise, enterprise integration capability and practical implementation support to help fleet businesses modernize with confidence.</p>
-        </div>
+        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">Why FleetArabia</p>
+          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">Built by people who know fleet operations</h2>
+          <p className="mt-5 leading-8 text-cyan-50/85">Domain knowledge of how mobility businesses actually operate, the integration depth to connect with your finance systems, and hands-on support to get there.</p>
+        </Reveal>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {reasons.map((item, index) => (
-            <article key={item.title} className="group rounded-3xl border border-white/15 bg-white/10 p-7 shadow-2xl shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/15">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-sm font-black text-[#087674] transition group-hover:scale-110">0{index + 1}</div>
-              <h3 className="text-xl font-black tracking-tight text-white">{item.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-cyan-50/85">{item.text}</p>
-            </article>
+            <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
+              <article className="group h-full rounded-3xl border border-white/15 bg-white/10 p-7 shadow-2xl shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/15">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-sm font-black text-[#087674] transition group-hover:scale-110">0{index + 1}</div>
+                <h3 className="text-xl font-black tracking-tight text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-cyan-50/85">{item.text}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -445,38 +435,34 @@ function CTA() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.22),transparent_45%)]" />
 
-      <div className="relative mx-auto max-w-4xl rounded-[2rem] border border-white/15 bg-white/10 px-6 py-10 shadow-2xl shadow-black/10 backdrop-blur">
-        <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">
+      <Reveal className="relative mx-auto max-w-4xl rounded-[2rem] border border-white/15 bg-white/10 px-6 py-10 shadow-2xl shadow-black/10 backdrop-blur">
+        <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
           Start the Conversation
         </p>
         <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
           Ready to modernize your fleet operations?
         </h2>
         <p className="mt-5 text-base leading-8 text-cyan-50/85 md:text-lg">
-          Let&apos;s map your rental, leasing, transport, workshop, warehouse and ERP workflows into one connected platform.
+          Tell us how your operation runs today, and we&apos;ll show you what it looks like connected end to end.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <a
             href="/contact"
-            className="inline-flex justify-center rounded-md bg-white px-8 py-3 text-sm font-black text-[#087674] transition hover:bg-cyan-50"
+            className="inline-flex justify-center rounded-md bg-white px-8 py-3 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Book a Demo
           </a>
           <a
             href="mailto:info@fleetarabia.com"
-            className="inline-flex justify-center rounded-md border border-white/40 px-8 py-3 text-sm font-black text-white transition hover:bg-white hover:text-[#087674]"
+            className="inline-flex justify-center rounded-md border border-white/40 px-8 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
           >
             Contact Sales
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
-
-
-
-
 
 

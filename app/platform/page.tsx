@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Platform | FleetArabia",
+  description:
+    "One platform underneath rental, leasing, maintenance, warehouse and billing — so operational and financial data are always the same numbers, not two versions to reconcile.",
+};
 
 export default function PlatformPage() {
   return (
@@ -6,7 +13,7 @@ export default function PlatformPage() {
       eyebrow="FleetArabia Platform"
       title="Unified Operating Layer for"
       highlight="Mobility Businesses"
-      description="FleetArabia connects commercial operations, fleet control, maintenance, warehouse, billing and ERP ecosystems into one enterprise mobility platform."
+      description="Rental, leasing, maintenance, warehouse and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
       primaryCta={{ label: "Request Platform Demo", href: "/contact" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Cloud Ready", "ERP Integrated", "Enterprise Secure"]}
@@ -15,7 +22,7 @@ export default function PlatformPage() {
         {
           eyebrow: "Platform at a Glance",
           title: "Built for enterprise mobility operations",
-          text: "A connected platform for rental, leasing, transportation, workshop, warehouse, billing and ERP workflows.",
+          text: "Everything below runs on the same data model — nothing here is a bolt-on integration.",
           variant: "dark",
           items: [
             {
@@ -70,7 +77,7 @@ export default function PlatformPage() {
         {
           eyebrow: "Enterprise Control",
           title: "Governance, visibility and operational discipline",
-          text: "Control approvals, user access, branch workflows, financial posting and operational reporting from a single connected platform.",
+          text: "Approvals, user access, branch workflows, financial posting and operational reporting — all from a single connected platform.",
           variant: "teal",
           items: [
             { title: "Role-Based Access", text: "Control user permissions across branches, departments and business units." },

@@ -1,48 +1,50 @@
+import type { Metadata } from "next";
+import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Fleet Leasing Solutions | FleetArabia",
+  description:
+    "Professional long-term fleet leasing solutions for businesses and corporate fleets across the UAE, backed by ERP-driven fleet operations and 24/7 support.",
+};
+
 export default function FleetLeasingPage() {
   return (
-    <main className="fleet-teal-page min-h-screen bg-white text-gray-900">
-
-      <section className="bg-blue-950 px-6 py-20 text-white">
-        <div className="mx-auto max-w-6xl">
-
-          <h1 className="text-5xl font-bold">
-            Fleet Leasing Solutions
-          </h1>
-
-          <p className="mt-6 max-w-3xl text-lg text-blue-100">
-            Professional long-term leasing solutions for businesses and corporate fleets across the UAE.
-          </p>
-
-        </div>
-      </section>
-
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-
-          <div className="rounded-3xl border p-8 shadow-sm">
-            <h3 className="text-2xl font-bold">Corporate Leasing</h3>
-            <p className="mt-4 text-gray-600">
-              Flexible long-term contracts for corporate customers.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border p-8 shadow-sm">
-            <h3 className="text-2xl font-bold">Fleet Management</h3>
-            <p className="mt-4 text-gray-600">
-              ERP-driven fleet operations and maintenance support.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border p-8 shadow-sm">
-            <h3 className="text-2xl font-bold">24/7 Support</h3>
-            <p className="mt-4 text-gray-600">
-              Dedicated customer support across Dubai and Abu Dhabi.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
+    <EnterprisePage
+      eyebrow="Long-Term Leasing"
+      title="Fleet Leasing Solutions for"
+      highlight="Corporate & Government Fleets"
+      description="Professional long-term leasing solutions for businesses and corporate fleets across the UAE."
+      primaryCta={{ label: "Talk to Us", href: "/contact" }}
+      secondaryCta={{ label: "Explore Solutions", href: "/solutions" }}
+      proofPoints={["Corporate Leasing", "ERP-Driven", "24/7 Support"]}
+      visualItems={["Leasing", "Fleet", "Support", "ERP"]}
+      sections={[
+        {
+          eyebrow: "Leasing Capabilities",
+          title: "Flexible terms, dedicated support",
+          text: "What's included with every FleetArabia leasing agreement.",
+          items: [
+            { title: "Corporate Leasing", text: "Flexible long-term contracts for corporate customers." },
+            { title: "Fleet Management", text: "ERP-driven fleet operations and maintenance support." },
+            { title: "24/7 Support", text: "Dedicated customer support across Dubai and Abu Dhabi." },
+            { title: "Transparent Billing", text: "One consolidated monthly invoice across your leased fleet, not a stack of separate ones." },
+          ],
+        },
+        {
+          eyebrow: "Why Lease Through FleetArabia",
+          title: "Built to reduce downtime, not just paperwork",
+          text: "Leasing here comes with the operational backbone to run those vehicles, not just a signed contract.",
+          variant: "dark",
+          items: [
+            { title: "Contract Flexibility", text: "Choose terms that match your business cycle instead of a fixed one-size-fits-all lease period." },
+            { title: "Replacement Vehicles", text: "Minimize downtime when a leased vehicle needs servicing or is temporarily off the road." },
+            { title: "Maintenance Included", text: "Scheduled servicing and upkeep managed as part of the lease, not billed as surprise extras." },
+            { title: "ERP-Ready Reporting", text: "Lease costs, utilization and renewals feed directly into your finance system for clean reporting." },
+          ],
+        },
+      ]}
+      finalCtaTitle="Ready to lease your corporate fleet?"
+      finalCtaText="Talk to our team about terms, vehicle options and rollout timelines for your fleet."
+    />
   );
 }

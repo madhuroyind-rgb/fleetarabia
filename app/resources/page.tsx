@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Resources | FleetArabia",
+  description:
+    "Guides and checklists for planning fleet ERP integration, rental and leasing automation, workshop digitization and fleet lifecycle reporting.",
+};
 
 export default function ResourcesPage() {
   return (
@@ -6,7 +13,7 @@ export default function ResourcesPage() {
       eyebrow="Resources"
       title="Insights for"
       highlight="Mobility Transformation"
-      description="Explore FleetArabia resources covering fleet ERP, rent a car software, leasing automation, transportation, ERP integration, workshop management, warehouse control, and fleet lifecycle transformation."
+      description="Practical guides for planning your next step — whether that's ERP integration, workshop digitization, or just getting rental and leasing off spreadsheets."
       primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Guides", "Case Studies", "Documentation"]}
@@ -15,7 +22,7 @@ export default function ResourcesPage() {
         {
           eyebrow: "Resource Center",
           title: "Knowledge for enterprise mobility teams",
-          text: "Use these resources to plan digital transformation, ERP integration, automation, and operational improvement across your fleet business.",
+          text: "Start wherever your operation actually is right now — not where a generic transformation roadmap assumes you are.",
           items: [
             { title: "Fleet Digital Transformation Guide", text: "Understand how to modernize rental, leasing, transportation, workshop, and fleet operations." },
             { title: "ERP Integration Checklist", text: "Plan how fleet operations should connect with finance, Oracle ERP, payment gateways, GPS, and enterprise systems." },
@@ -30,7 +37,7 @@ export default function ResourcesPage() {
         {
           eyebrow: "Knowledge Hub",
           title: "Case studies, blogs and product documentation",
-          text: "FleetArabia resources help business leaders, IT teams, finance teams, and operations teams understand how to improve mobility operations.",
+          text: "Written for the people actually doing the work — operations leads, IT and finance teams, not just executives.",
           variant: "dark",
           items: [
             { title: "Blogs", text: "Articles on rental, leasing, fleet, transportation, workshop, warehouse, and ERP transformation." },
@@ -41,7 +48,7 @@ export default function ResourcesPage() {
         },
       ]}
       finalCtaTitle="Ready to modernize your fleet operations?"
-      finalCtaText="Explore FleetArabia solutions or speak with our team to plan your rental, leasing, workshop, transportation, warehouse, and ERP integration roadmap."
+      finalCtaText="Explore FleetArabia solutions, or talk to our team about where to start."
     />
   );
 }

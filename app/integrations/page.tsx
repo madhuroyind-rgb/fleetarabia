@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
+import ConnectedVisual from "@/components/ConnectedVisual";
+
+export const metadata: Metadata = {
+  title: "Integrations | FleetArabia",
+  description:
+    "Oracle ERP, GPS tracking, payment gateways and regional toll/traffic-fine systems — connected to your rental, leasing, workshop and billing workflows instead of run as separate tools.",
+};
+
 const ecosystem = [
   {
     title: "Oracle ERP",
@@ -81,7 +91,7 @@ const gccIntegrations = [
   },
   {
     title: "SATA & Border Transit Integrations",
-    description: "Track customs clearances, GCC border crossing permits, and international fleet transits seamlessly through connected logistics portals.",
+    description: "Track customs clearances, GCC border crossing permits, and international fleet transits through connected logistics portals — no separate manual lookups.",
     badge: "Logistics",
   },
 ];
@@ -102,9 +112,9 @@ function PageHeader() {
     <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
       <TealPattern />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-100">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
+        <Reveal>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-100">
             ERP & Integration Fabric
           </p>
 
@@ -113,22 +123,23 @@ function PageHeader() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-50/90">
-            FleetArabia integrates rental, leasing, workshop, warehouse and
-            billing workflows with Oracle ERP, finance systems, GPS tracking,
-            payment gateways and third-party platforms.
+            Your rental, leasing, workshop and billing workflows don&apos;t need
+            to live apart from your finance system. FleetArabia connects them
+            to Oracle ERP, GPS tracking, payment gateways and the regional
+            systems your operation already depends on.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="/contact"
-              className="rounded-md bg-white px-7 py-3 text-xs font-black text-[#087674] shadow-xl shadow-black/10"
+              className="rounded-md bg-white px-7 py-3 text-xs font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5"
             >
               Discuss Integration
             </a>
 
             <a
               href="/platform"
-              className="rounded-md border border-white/30 px-7 py-3 text-xs font-black text-white transition hover:bg-white hover:text-[#087674]"
+              className="rounded-md border border-white/30 px-7 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
             >
               View Platform
             </a>
@@ -144,9 +155,11 @@ function PageHeader() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <IntegrationVisual />
+        <Reveal delay={0.15}>
+          <IntegrationVisual />
+        </Reveal>
       </div>
     </section>
   );
@@ -172,33 +185,15 @@ function TealPattern() {
 
 function IntegrationVisual() {
   const nodes = [
-    ["Oracle ERP", "left-0 top-24"],
-    ["Finance", "left-44 bottom-24"],
-    ["GPS", "right-0 top-28"],
-    ["API Layer", "right-24 bottom-12"],
+    { title: "Oracle ERP" },
+    { title: "Finance" },
+    { title: "GPS" },
+    { title: "API Layer" },
   ];
 
   return (
-    <div className="relative hidden min-h-[410px] lg:block">
-      <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-100/25" />
-      <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-100/15" />
-
-      <div className="absolute left-1/2 top-1/2 h-[2px] w-[560px] -translate-x-1/2 -translate-y-1/2 rotate-12 bg-gradient-to-r from-transparent via-cyan-100/40 to-transparent" />
-      <div className="absolute left-1/2 top-1/2 h-[2px] w-[560px] -translate-x-1/2 -translate-y-1/2 -rotate-12 bg-gradient-to-r from-transparent via-cyan-100/40 to-transparent" />
-
-      <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-300 to-blue-600 shadow-2xl shadow-cyan-300/25">
-        <span className="text-4xl font-black">F</span>
-      </div>
-
-      {nodes.map(([label, position]) => (
-        <div
-          key={label}
-          className={`absolute ${position} rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl`}
-        >
-          <div className="h-8 w-24 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-500" />
-          <p className="mt-3 text-xs font-black text-cyan-50">{label}</p>
-        </div>
-      ))}
+    <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
+      <ConnectedVisual nodes={nodes} size={460} centerLabel="F" centerSub="FleetArabia" />
     </div>
   );
 }
@@ -218,16 +213,15 @@ function EcosystemSection() {
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {ecosystem.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15"
-            >
-              <h3 className="text-base font-black">{item.title}</h3>
-              <p className="mt-3 text-xs leading-6 text-cyan-50/85">
-                {item.text}
-              </p>
-            </article>
+          {ecosystem.map((item, index) => (
+            <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
+              <article className="h-full rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15">
+                <h3 className="text-base font-black">{item.title}</h3>
+                <p className="mt-3 text-xs leading-6 text-cyan-50/85">
+                  {item.text}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -250,15 +244,14 @@ function TransactionFlowSection() {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {transactionFlow.map((item, index) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
-              >
-                <div className="text-xs font-black text-blue-700">
-                  Step {index + 1}
+              <Reveal key={item} delay={Math.min(index * 0.06, 0.24)}>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <div className="text-xs font-black text-blue-700">
+                    Step {index + 1}
+                  </div>
+                  <div className="mt-3 text-sm font-black">{item}</div>
                 </div>
-                <div className="mt-3 text-sm font-black">{item}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -287,13 +280,12 @@ function CapabilitiesSection() {
             "API-based data exchange",
             "Operational reporting feeds",
             "Audit-ready transaction flow",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm"
-            >
-              {item}
-            </div>
+          ].map((item, index) => (
+            <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+                {item}
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -312,22 +304,21 @@ function GccSpotlightSection() {
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {gccIntegrations.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="flex items-center justify-between">
-                <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
-                  {item.badge}
-                </span>
-                <span className="text-xl text-blue-700">⚡</span>
-              </div>
-              <h3 className="mt-4 text-base font-black text-slate-900">{item.title}</h3>
-              <p className="mt-3 text-xs leading-5 text-slate-600">
-                {item.description}
-              </p>
-            </article>
+          {gccIntegrations.map((item, index) => (
+            <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
+              <article className="h-full rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+                    {item.badge}
+                  </span>
+                  <span className="text-xl text-blue-700">⚡</span>
+                </div>
+                <h3 className="mt-4 text-base font-black text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-xs leading-5 text-slate-600">
+                  {item.description}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -349,16 +340,15 @@ function ControlSection() {
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {controls.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40"
-            >
-              <h3 className="text-base font-black">{item.title}</h3>
-              <p className="mt-3 text-xs leading-6 text-slate-300">
-                {item.text}
-              </p>
-            </article>
+          {controls.map((item, index) => (
+            <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
+              <article className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40">
+                <h3 className="text-base font-black">{item.title}</h3>
+                <p className="mt-3 text-xs leading-6 text-slate-300">
+                  {item.text}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -371,8 +361,8 @@ function FinalCTA() {
     <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-center text-white">
       <TealPattern />
 
-      <div className="relative mx-auto max-w-4xl">
-        <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-100">
+      <Reveal className="relative mx-auto max-w-4xl">
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100">
           Integration Discussion
         </p>
 
@@ -388,18 +378,18 @@ function FinalCTA() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
-            className="rounded-md bg-white px-8 py-3 text-xs font-black text-[#087674]"
+            className="rounded-md bg-white px-8 py-3 text-xs font-black text-[#087674] transition hover:-translate-y-0.5"
           >
             Discuss Integration
           </a>
           <a
             href="/platform"
-            className="rounded-md border border-white/30 px-8 py-3 text-xs font-black text-white"
+            className="rounded-md border border-white/30 px-8 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
           >
             View Platform
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -418,9 +408,9 @@ function SectionHeader({
   center?: boolean;
 }) {
   return (
-    <div className={`${center ? "mx-auto mb-12 max-w-3xl text-center" : "max-w-3xl"}`}>
+    <Reveal className={center ? "mx-auto mb-12 max-w-3xl text-center" : "max-w-3xl"}>
       <p
-        className={`text-xs font-black uppercase tracking-[0.24em] ${
+        className={`text-xs font-bold uppercase tracking-[0.24em] ${
           light ? "text-cyan-100" : "text-blue-700"
         }`}
       >
@@ -436,6 +426,6 @@ function SectionHeader({
       >
         {text}
       </p>
-    </div>
+    </Reveal>
   );
 }

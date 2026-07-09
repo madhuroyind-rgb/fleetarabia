@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact Us | FleetArabia",
+  description:
+    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or Oracle ERP integration? Tell us what you're working on and we'll point you to the right place to start.",
+};
 
 export default function ContactPage() {
   return (
@@ -6,7 +14,7 @@ export default function ContactPage() {
       eyebrow="Contact Us"
       title="Start Your"
       highlight="Mobility Transformation"
-      description="Speak with FleetArabia for rental, leasing, transportation, workshop, warehouse, GPS, payment gateway, Oracle ERP integration, and enterprise fleet management requirements."
+      description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to Oracle ERP — tell us what you're working on and we'll help you find the right starting point."
       primaryCta={{ label: "Email FleetArabia", href: "mailto:info@fleetarabia.com" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Dubai, UAE", "Enterprise Consulting", "24-Hour Response"]}
@@ -15,7 +23,7 @@ export default function ContactPage() {
         {
           eyebrow: "Contact Options",
           title: "Let’s discuss your fleet operating model",
-          text: "Share your business requirement and our team can help recommend the right FleetArabia solution, implementation approach, and integration roadmap.",
+          text: "Tell us what's slowing your operation down, and we'll recommend the right module, implementation approach and integration path.",
           items: [
             {
               title: "Book a Demo",
@@ -31,7 +39,7 @@ export default function ContactPage() {
             },
             {
               title: "Business Enquiry",
-              text: "Contact us for partnerships, support, company information, or customized fleet digital transformation requirements.",
+              text: "Partnerships, support, or anything else that doesn't fit neatly into the categories above.",
             },
           ],
         },
@@ -61,7 +69,7 @@ export default function ContactPage() {
         {
           eyebrow: "FleetArabia Office",
           title: "Enterprise mobility support from Dubai",
-          text: "FleetArabia supports rental, leasing, transportation, and fleet businesses across the Middle East.",
+          text: "Our team is based in Dubai and works with fleet businesses across the Middle East.",
           variant: "teal",
           items: [
             { title: "Location", text: "Dubai, United Arab Emirates" },
@@ -72,7 +80,9 @@ export default function ContactPage() {
         },
       ]}
       finalCtaTitle="Ready to transform your fleet operations?"
-      finalCtaText="Book a live demo and discover how FleetArabia can automate rentals, leasing, workshop operations, billing, GPS tracking, payment processing, and ERP integrations."
-    />
+      finalCtaText="Book a live demo and see how FleetArabia connects your day-to-day operations to your ERP."
+    >
+      <ContactForm />
+    </EnterprisePage>
   );
 }

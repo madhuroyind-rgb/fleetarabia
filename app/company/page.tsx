@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Company | FleetArabia",
+  description:
+    "We build software for rental, leasing, transportation and fleet businesses that are done running on spreadsheets and want operations connected to finance.",
+};
 
 export default function CompanyPage() {
   return (
@@ -6,7 +13,7 @@ export default function CompanyPage() {
       eyebrow="Company"
       title="Enterprise Mobility Technology for"
       highlight="the Middle East"
-      description="FleetArabia is a solutions and services provider helping rental, leasing, transportation and fleet businesses digitize operations, integrate ERP systems and scale with confidence."
+      description="A technology and services partner for rental, leasing, transportation and fleet businesses moving off spreadsheets and onto one connected, ERP-integrated system."
       primaryCta={{ label: "Contact FleetArabia", href: "/contact" }}
       secondaryCta={{ label: "Explore Solutions", href: "/solutions" }}
       proofPoints={["Mobility Domain", "ERP Expertise", "Regional Focus"]}
@@ -14,8 +21,8 @@ export default function CompanyPage() {
       sections={[
         {
           eyebrow: "Who We Are",
-          title: "A technology partner for mobility transformation",
-          text: "FleetArabia combines fleet domain knowledge, enterprise software capability and ERP ecosystem experience.",
+          title: "Domain expertise first, software second",
+          text: "We started by understanding how fleet operations actually run in this region, then built the software around that — not the other way around.",
           items: [
             { title: "Mobility Domain Expertise", text: "We understand rental, leasing, limousine, bus, workshop, warehouse and fleet operations." },
             { title: "Enterprise Technology", text: "We build scalable digital platforms for complex operating environments." },
@@ -26,7 +33,7 @@ export default function CompanyPage() {
         {
           eyebrow: "What We Believe",
           title: "Operations should be connected, controlled and visible",
-          text: "Our mission is to help mobility businesses move away from fragmented tools and manual processes.",
+          text: "Fragmented tools and manual processes don't scale — connected operations do. That's the whole premise.",
           variant: "teal",
           items: [
             { title: "Automation First", text: "Reduce manual effort and standardize daily operating workflows." },

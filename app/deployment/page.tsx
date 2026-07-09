@@ -1,60 +1,52 @@
+import type { Metadata } from "next";
+import EnterprisePage from "@/components/EnterprisePage";
+
+export const metadata: Metadata = {
+  title: "Deployment Options | FleetArabia",
+  description:
+    "Choose on-premise or SaaS cloud deployment for FleetArabia based on your business operations, security requirements and IT strategy.",
+};
+
 export default function DeploymentPage() {
   return (
-    <main className="fleet-teal-page bg-white text-slate-900">
-      <section className="bg-[#061B35] px-6 py-16 text-white">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="text-sm font-semibold text-blue-200">
-            Deployment Flexibility
-          </p>
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight lg:text-4xl">
-            On-Premise & SaaS Cloud Deployment
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-blue-100">
-            Choose the deployment model that fits your business operations,
-            security requirements and IT strategy.
-          </p>
-        </div>
-      </section>
-
-      <section className="px-6 py-14">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-extrabold text-[#0F4C81]">
-              On-Premise Deployment
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Deploy FleetArabia within your own infrastructure for maximum
-              control, security, compliance and internal data governance.
-            </p>
-
-            <ul className="mt-6 space-y-3 text-sm font-semibold text-slate-700">
-              <li>✓ Private Infrastructure</li>
-              <li>✓ Enterprise Security</li>
-              <li>✓ Internal Data Control</li>
-              <li>✓ Custom Integrations</li>
-              <li>✓ Government Ready</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border bg-slate-50 p-8 shadow-sm">
-            <h2 className="text-2xl font-extrabold text-[#0F4C81]">
-              SaaS Cloud Platform
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Access FleetArabia securely from anywhere using a scalable
-              subscription-based cloud platform.
-            </p>
-
-            <ul className="mt-6 space-y-3 text-sm font-semibold text-slate-700">
-              <li>✓ Subscription Based</li>
-              <li>✓ Fast Deployment</li>
-              <li>✓ Automatic Updates</li>
-              <li>✓ Cloud Scalability</li>
-              <li>✓ Anywhere Access</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+    <EnterprisePage
+      eyebrow="Deployment Flexibility"
+      title="On-Premise & SaaS"
+      highlight="Cloud Deployment"
+      description="Choose the deployment model that fits your business operations, security requirements and IT strategy."
+      primaryCta={{ label: "Talk to Us", href: "/contact" }}
+      secondaryCta={{ label: "Explore Platform", href: "/platform" }}
+      proofPoints={["On-Premise Ready", "SaaS Cloud", "Enterprise Secure"]}
+      visualItems={["On-Premise", "Cloud", "Security", "Scale"]}
+      sections={[
+        {
+          eyebrow: "On-Premise Deployment",
+          title: "Deploy within your own infrastructure",
+          text: "Maximum control, security, compliance and internal data governance for organizations with strict infrastructure requirements.",
+          items: [
+            { title: "Private Infrastructure", text: "Deploy FleetArabia within your own infrastructure for maximum control." },
+            { title: "Enterprise Security", text: "Meet strict security, compliance and data protection requirements." },
+            { title: "Internal Data Control", text: "Keep operational and financial data fully within your organization's environment." },
+            { title: "Custom Integrations", text: "Support tailored integrations with internal and third-party systems." },
+            { title: "Government Ready", text: "Meet public-sector and regulated-industry deployment requirements." },
+          ],
+        },
+        {
+          eyebrow: "SaaS Cloud Platform",
+          title: "Access FleetArabia from anywhere",
+          text: "A scalable, subscription-based cloud platform for businesses that want to move fast without managing infrastructure.",
+          variant: "dark",
+          items: [
+            { title: "Subscription Based", text: "Access FleetArabia through a scalable, subscription-based cloud platform." },
+            { title: "Fast Deployment", text: "Get started quickly without infrastructure setup or hardware procurement." },
+            { title: "Automatic Updates", text: "Stay current with continuous platform updates and improvements." },
+            { title: "Cloud Scalability", text: "Scale usage up or down as your fleet business grows." },
+            { title: "Anywhere Access", text: "Access the platform securely from any location or device." },
+          ],
+        },
+      ]}
+      finalCtaTitle="Not sure which deployment model fits your business?"
+      finalCtaText="Talk to our team about on-premise and SaaS cloud deployment options for your fleet operations."
+    />
   );
 }

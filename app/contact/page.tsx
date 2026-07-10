@@ -76,7 +76,7 @@ export default function ContactPage() {
             { title: "India Office", text: "Patna, Bihar, India 800002" },
             { title: "UAE Office", text: "Dubai, Free Zone, UAE" },
             { title: "Email", text: "info@fleetarabia.com" },
-            { title: "India Phone", text: "+91 960002063" },
+            { title: "India Phone", text: "+91 90600 02063" },
             { title: "UAE Phone", text: "+971 52 133 3050" },
             { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, warehouse, and enterprise fleet businesses." },
           ],

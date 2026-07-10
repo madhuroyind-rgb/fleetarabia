@@ -145,10 +145,10 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+91960002063"
+                  href="tel:+919060002063"
                   className="transition hover:text-cyan-300"
                 >
-                  +91 960002063 (India)
+                  +91 90600 02063 (India)
                 </a>
               </p>
               <p>

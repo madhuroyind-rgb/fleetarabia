@@ -33,17 +33,37 @@ const organizationJsonLd = {
   description:
     "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop, warehouse and dealer operations to your ERP — built for fleet businesses across the Middle East.",
   email: "info@fleetarabia.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Patna",
-    addressRegion: "Bihar",
-    addressCountry: "IN",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "info@fleetarabia.com",
-    contactType: "sales",
-  },
+  address: [
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Patna",
+      addressRegion: "Bihar",
+      postalCode: "800002",
+      addressCountry: "IN",
+    },
+    {
+      "@type": "PostalAddress",
+      addressLocality: "Dubai",
+      addressRegion: "Free Zone",
+      addressCountry: "AE",
+    },
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      email: "info@fleetarabia.com",
+      telephone: "+91960002063",
+      contactType: "sales",
+      areaServed: "IN",
+    },
+    {
+      "@type": "ContactPoint",
+      email: "info@fleetarabia.com",
+      telephone: "+971521333050",
+      contactType: "sales",
+      areaServed: "AE",
+    },
+  ],
 };
 
 export default function RootLayout({

@@ -7,6 +7,7 @@ type CardItem = {
   title: string;
   text: string;
   tag?: string;
+  href?: string;
 };
 
 type Section = {
@@ -240,6 +241,16 @@ function PageSection({ section }: { section: Section }) {
                 >
                   {item.text}
                 </p>
+                {item.href && (
+                  <Link
+                    href={item.href}
+                    className={`mt-4 inline-flex items-center text-xs font-black transition ${
+                      isDark || isTeal ? "text-cyan-300" : "text-blue-700"
+                    }`}
+                  >
+                    Read Guide →
+                  </Link>
+                )}
               </article>
             </Reveal>
           ))}

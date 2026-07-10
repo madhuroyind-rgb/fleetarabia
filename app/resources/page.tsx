@@ -14,19 +14,19 @@ export default function ResourcesPage() {
       eyebrow="Resources"
       title="Insights for"
       highlight="Mobility Transformation"
-      description="We're building out a library of practical guides for planning your next step — ERP integration, workshop digitization, and getting rental and leasing off spreadsheets. In the meantime, talk to us directly."
+      description="Practical guides for planning your next step — ERP integration, workshop digitization, and getting rental and leasing off spreadsheets. More guides are being added regularly."
       primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
-      proofPoints={["In Development", "Guides & Docs", "Coming Soon"]}
+      proofPoints={["2 Guides Live", "More Coming", "Talk to Us"]}
       visualItems={["Insights", "Guides", "Cases", "Docs"]}
       sections={[
         {
-          eyebrow: "Resource Center — Coming Soon",
+          eyebrow: "Resource Center",
           title: "Knowledge for enterprise mobility teams",
-          text: "These guides are in progress. Until they're published, reach out directly and we'll walk you through any of these topics.",
+          text: "Two guides are live below. The rest are in progress — reach out directly and we'll walk you through any of these topics now.",
           items: [
-            { tag: "Soon", title: "Fleet Digital Transformation Guide", text: "Understand how to modernize rental, leasing, transportation, workshop, and fleet operations." },
-            { tag: "Soon", title: "ERP Integration Checklist", text: "Plan how fleet operations should connect with finance, Oracle ERP, payment gateways, GPS, and enterprise systems." },
+            { title: "Fleet Digital Transformation Guide", text: "Understand how to modernize rental, leasing, transportation, workshop, and fleet operations.", href: "/resources/fleet-digital-transformation-guide" },
+            { title: "ERP Integration Checklist", text: "Plan how fleet operations should connect with finance, Oracle ERP, payment gateways, GPS, and enterprise systems.", href: "/resources/erp-integration-checklist" },
             { tag: "Soon", title: "Rental & Leasing Automation", text: "Learn how to improve bookings, agreements, billing, renewals, replacement vehicles, and fleet control." },
             { tag: "Soon", title: "Workshop Digitization", text: "Explore job cards, maintenance tracking, spare parts, vehicle readiness, and warehouse control best practices." },
             { tag: "Soon", title: "Vehicle Damage Control", text: "Digitize vehicle inspection, damage photos, condition reporting, repair follow-up, and customer approval workflows." },

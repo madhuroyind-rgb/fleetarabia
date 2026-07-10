@@ -67,32 +67,32 @@ const controls = [
 const gccIntegrations = [
   {
     title: "Salik Toll Gate Integration",
-    description: "Automate UAE toll calculations by pulling toll gate transactions and posting them directly to active rental agreements or corporate lease billing cycles.",
+    description: "Designed to automate UAE toll calculations by pulling toll gate transactions and posting them directly to active rental agreements or corporate lease billing cycles.",
     badge: "UAE",
   },
   {
     title: "GCC Traffic Fine Automation",
-    description: "Connect with Dubai Police, Abu Dhabi Police, and SAAHER (Saudi Arabia) portals to retrieve traffic violation tickets and charge customer cards instantly.",
+    description: "Built to connect with Dubai Police, Abu Dhabi Police, and SAAHER (Saudi Arabia) portals to retrieve traffic violation tickets and charge customer cards.",
     badge: "UAE & KSA",
   },
   {
     title: "TAMM & ELM Vehicle Permits",
-    description: "Query transport authorities (TAMM in Abu Dhabi, ELM/Tamm in KSA) for instant vehicle permits, driver authorization cards, and border crossing permits.",
+    description: "Built to query transport authorities (TAMM in Abu Dhabi, ELM/Tamm in KSA) for vehicle permits, driver authorization cards, and border crossing permits.",
     badge: "KSA & UAE",
   },
   {
     title: "Mada, KNET & Benefit Payment Rails",
-    description: "Direct connectivity to local GCC debit card networks like Mada (Saudi Arabia), KNET (Kuwait), Benefit (Bahrain), and NAPS (Qatar).",
+    description: "Designed for direct connectivity to local GCC debit card networks like Mada (Saudi Arabia), KNET (Kuwait), Benefit (Bahrain), and NAPS (Qatar).",
     badge: "GCC Wide",
   },
   {
     title: "Local GPS Gateways (SecurePath/WASL)",
-    description: "Ensure complete regulatory compliance by feeding real-time location metrics to local tracking authorities (SecurePath in Dubai, Shahin in Abu Dhabi, WASL in Saudi Arabia).",
+    description: "Built to support regulatory compliance by feeding location metrics to local tracking authorities (SecurePath in Dubai, Shahin in Abu Dhabi, WASL in Saudi Arabia).",
     badge: "Regulatory",
   },
   {
     title: "SATA & Border Transit Integrations",
-    description: "Track customs clearances, GCC border crossing permits, and international fleet transits through connected logistics portals — no separate manual lookups.",
+    description: "Designed to track customs clearances, GCC border crossing permits, and international fleet transits through connected logistics portals.",
     badge: "Logistics",
   },
 ];
@@ -301,7 +301,7 @@ function GccSpotlightSection() {
         <SectionHeader
           eyebrow="GCC Localization"
           title="Engineered for Middle East Mobility Ecosystems"
-          text="Pre-built connectors to GCC government transport authorities, toll platforms, local payment networks, and compliance portals."
+          text="Integration pathways designed for GCC government transport authorities, toll platforms, local payment networks, and compliance portals."
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

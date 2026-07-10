@@ -45,8 +45,8 @@ function buildGeometry(count: number, size: number) {
 export default function ConnectedVisual({
   nodes,
   size = 560,
-  centerLabel = "AI",
-  centerSub = "Operations Core",
+  centerLabel = "F",
+  centerSub = "FleetArabia",
   topLabel,
   bottomLabel,
 }: ConnectedVisualProps) {

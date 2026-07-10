@@ -187,7 +187,7 @@ function Hero() {
 }
 
 function PremiumHeroVisual() {
-  const aiProducts = [
+  const productNodes = [
     { code: "CR", title: "Car Rental" },
     { code: "RL", title: "Rental & Leasing" },
     { code: "LC", title: "Limo & Chauffeur" },
@@ -206,11 +206,11 @@ function PremiumHeroVisual() {
   return (
     <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
       <ConnectedVisual
-        nodes={aiProducts}
-        centerLabel="AI"
-        centerSub="Operations Core"
-        topLabel="AI Powered Fleet Intelligence"
-        bottomLabel="Predict • Automate • Integrate"
+        nodes={productNodes}
+        centerLabel="F"
+        centerSub="FleetArabia"
+        topLabel="Connected Fleet Operations"
+        bottomLabel="Automate • Integrate • Control"
       />
     </div>
   );

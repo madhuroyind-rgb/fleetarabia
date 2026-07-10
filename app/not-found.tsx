@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-[#041124] px-6 py-20 text-center text-white">
+    <main className="flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-[#087674] px-6 py-20 text-center text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <div className="relative">
         <Logo className="mx-auto h-14 w-14" />
 
-        <p className="mt-8 text-xs font-black uppercase tracking-[0.28em] text-cyan-300">
+        <p className="mt-8 text-xs font-black uppercase tracking-[0.28em] text-cyan-50">
           404
         </p>
 
@@ -24,7 +24,7 @@ export default function NotFound() {
           This page doesn&apos;t exist
         </h1>
 
-        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-slate-300">
+        <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-cyan-50">
           The page you&apos;re looking for may have been moved or the link may be
           incorrect. Here are a few places to go instead.
         </p>
@@ -45,12 +45,12 @@ export default function NotFound() {
           </Link>
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-6 text-xs text-slate-400">
+        <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-6 text-xs text-cyan-50">
           {SITE_ROUTES.filter((r) => r.path !== "/").map((route) => (
             <Link
               key={route.path}
               href={route.path}
-              className="transition hover:text-cyan-300"
+              className="transition hover:text-white"
             >
               {route.label}
             </Link>

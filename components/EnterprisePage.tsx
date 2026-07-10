@@ -191,31 +191,13 @@ function PremiumVisual({
 }
 
 function PageSection({ section }: { section: Section }) {
-  const variant = section.variant ?? "teal";
-  const isDark = variant === "dark";
-  const isTeal = variant === "teal";
-
   return (
-    <section
-      className={`relative overflow-hidden px-6 py-14 ${
-        isTeal
-          ? "bg-[#087674] text-white"
-          : isDark
-            ? "bg-[#061426] text-white"
-            : "bg-slate-50 text-slate-950"
-      }`}
-    >
-      {isTeal && (
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
-      )}
+    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p
-            className={`text-xs font-bold uppercase tracking-[0.24em] ${
-              isTeal ? "text-cyan-50" : isDark ? "text-cyan-300" : "text-blue-700"
-            }`}
-          >
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             {section.eyebrow}
           </p>
 
@@ -223,11 +205,7 @@ function PageSection({ section }: { section: Section }) {
             {section.title}
           </h2>
 
-          <p
-            className={`mt-5 leading-7 ${
-              isTeal ? "text-cyan-50" : isDark ? "text-slate-300" : "text-slate-600"
-            }`}
-          >
+          <p className="mt-5 leading-7 text-cyan-50">
             {section.text}
           </p>
         </Reveal>
@@ -235,41 +213,21 @@ function PageSection({ section }: { section: Section }) {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {section.items.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article
-                className={`h-full rounded-2xl border p-5 transition hover:-translate-y-1 ${
-                  isDark || isTeal
-                    ? "border-white/10 bg-white/[0.06] hover:border-cyan-300/40 hover:bg-white/[0.09]"
-                    : "border-slate-200 bg-white shadow-sm hover:shadow-xl"
-                }`}
-              >
+              <article className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
                 {item.tag && (
-                  <div
-                    className={`mb-5 inline-flex rounded-xl px-3 py-2 text-xs font-black ${
-                      isTeal
-                        ? "bg-white/10 text-cyan-50"
-                        : isDark
-                          ? "bg-white/10 text-cyan-200"
-                          : "bg-blue-50 text-blue-700"
-                    }`}
-                  >
+                  <div className="mb-5 inline-flex rounded-xl bg-white/10 px-3 py-2 text-xs font-black text-cyan-50">
                     {item.tag}
                   </div>
                 )}
 
                 <h3 className="text-sm font-black">{item.title}</h3>
-                <p
-                  className={`mt-2 text-xs leading-5 ${
-                    isTeal ? "text-cyan-50" : isDark ? "text-slate-300" : "text-slate-600"
-                  }`}
-                >
+                <p className="mt-2 text-xs leading-5 text-cyan-50">
                   {item.text}
                 </p>
                 {item.href && (
                   <Link
                     href={item.href}
-                    className={`mt-4 inline-flex items-center text-xs font-black transition ${
-                      isTeal ? "text-cyan-50" : isDark ? "text-cyan-300" : "text-blue-700"
-                    }`}
+                    className="mt-4 inline-flex items-center text-xs font-black text-cyan-50 transition"
                   >
                     {item.linkLabel ?? "Read Guide →"}
                   </Link>

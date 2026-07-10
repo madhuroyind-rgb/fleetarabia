@@ -68,16 +68,16 @@ export default function CompanyPage() {
 
 function MissionVisionSection() {
   return (
-    <section className="bg-[#061426] px-6 py-14 text-white">
+    <section className="bg-[#087674] px-6 py-14 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             Our Mission
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-2xl">
             Simplifying mobility through technology
           </h2>
-          <p className="mt-4 leading-7 text-slate-300">
+          <p className="mt-4 leading-7 text-cyan-50">
             Our mission is to empower mobility businesses with intelligent technology that
             automates operations, enhances customer experiences and drives sustainable
             growth. We believe technology should simplify complex operations — not create
@@ -86,13 +86,13 @@ function MissionVisionSection() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             Our Vision
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-2xl">
             Creating the digital future of mobility
           </h2>
-          <p className="mt-4 leading-7 text-slate-300">
+          <p className="mt-4 leading-7 text-cyan-50">
             We envision a future where every mobility business operates on a connected,
             intelligent and data-driven platform. By combining enterprise technology with
             industry expertise, FleetArabia helps organizations transform operations, unlock
@@ -106,10 +106,10 @@ function MissionVisionSection() {
 
 function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden bg-[#061426] px-6 py-14 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             Why Organizations Choose FleetArabia
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">

@@ -10,15 +10,15 @@ type GuidePageProps = {
 export default function GuidePage({ eyebrow, title, intro, children }: GuidePageProps) {
   return (
     <main className="fleet-teal-page bg-[#087674] text-white">
-      <section className="relative overflow-hidden bg-[#041124] px-6 py-14">
+      <section className="relative overflow-hidden bg-[#087674] px-6 py-14">
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-300">
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-50">
             {eyebrow}
           </p>
           <h1 className="mt-5 text-3xl font-black tracking-tight text-white md:text-4xl">
             {title}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-cyan-50">
             {intro}
           </p>
         </div>

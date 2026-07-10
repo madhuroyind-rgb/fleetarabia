@@ -107,7 +107,7 @@ const gccIntegrations = [
 
 export default function IntegrationsPage() {
   return (
-    <main className="fleet-teal-page bg-white text-slate-950">
+    <main className="fleet-teal-page text-white">
       <PageHeader />
       <PageContent />
       <FinalCTA />
@@ -238,22 +238,23 @@ function EcosystemSection() {
 
 function PlatformIntegrationsSection() {
   return (
-    <section className="bg-white px-6 py-16 text-slate-950">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
+      <div className="relative mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Platform Integrations"
           title="Connect Once. Automate Everywhere."
           text="FleetArabia acts as the central integration hub between your business applications, fleet technologies and customer-facing systems."
+          light
         />
 
         <div className="mt-10">
-          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-blue-700">
+          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-50">
             Supported Integrations
           </h3>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {supportedIntegrations.map((item, index) => (
               <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-sm font-black text-white shadow-sm">
                   {item}
                 </div>
               </Reveal>
@@ -262,13 +263,13 @@ function PlatformIntegrationsSection() {
         </div>
 
         <div className="mt-12">
-          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-blue-700">
+          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-50">
             Why FleetArabia Integration?
           </h3>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {whyIntegration.map((item, index) => (
               <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-sm font-black text-white shadow-sm">
                   {item}
                 </div>
               </Reveal>
@@ -282,26 +283,27 @@ function PlatformIntegrationsSection() {
 
 function GccSpotlightSection() {
   return (
-    <section className="bg-slate-50 px-6 py-16 text-slate-950">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
+      <div className="relative mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="GCC Localization"
           title="Engineered for Middle East Mobility Ecosystems"
           text="Integration pathways designed for GCC government transport authorities, toll platforms, local payment networks, and compliance portals."
+          light
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {gccIntegrations.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
-              <article className="h-full rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+              <article className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-black text-cyan-50">
                     {item.badge}
                   </span>
-                  <span className="text-xl text-blue-700">⚡</span>
+                  <span className="text-xl text-cyan-50">⚡</span>
                 </div>
-                <h3 className="mt-4 text-base font-black text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-xs leading-5 text-slate-600">
+                <h3 className="mt-4 text-base font-black text-white">{item.title}</h3>
+                <p className="mt-3 text-xs leading-5 text-cyan-50">
                   {item.description}
                 </p>
               </article>

@@ -8,15 +8,15 @@ type LegalPageProps = {
 export default function LegalPage({ eyebrow, title, lastUpdated, children }: LegalPageProps) {
   return (
     <main className="fleet-teal-page bg-[#087674] text-white">
-      <section className="relative overflow-hidden bg-[#041124] px-6 py-14">
+      <section className="relative overflow-hidden bg-[#087674] px-6 py-14">
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-300">
+          <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-50">
             {eyebrow}
           </p>
           <h1 className="mt-5 text-3xl font-black tracking-tight text-white md:text-4xl">
             {title}
           </h1>
-          <p className="mt-4 text-sm text-slate-400">Last updated: {lastUpdated}</p>
+          <p className="mt-4 text-sm text-cyan-50">Last updated: {lastUpdated}</p>
         </div>
       </section>
 

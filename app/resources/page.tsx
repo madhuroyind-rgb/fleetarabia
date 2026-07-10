@@ -74,10 +74,10 @@ export default function ResourcesPage() {
 
 function ResourceCategoriesSection() {
   return (
-    <section className="bg-white px-6 py-14 text-slate-950">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
+      <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             Resource Categories
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">
@@ -88,7 +88,7 @@ function ResourceCategoriesSection() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {resourceCategories.map((item, index) => (
             <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-sm font-black text-white shadow-sm">
                 {item}
               </div>
             </Reveal>

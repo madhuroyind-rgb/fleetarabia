@@ -5,63 +5,71 @@ import ConnectedVisual from "@/components/ConnectedVisual";
 export const metadata: Metadata = {
   title: "Integrations | FleetArabia",
   description:
-    "Oracle ERP, GPS tracking, payment gateways and regional toll/traffic-fine systems — connected to your workflows, not run as separate tools.",
+    "FleetArabia connects your mobility operations with finance, banking, telematics, payment gateways, government platforms, CRM, HR and third-party applications through a secure, API-first framework.",
   alternates: { canonical: "/integrations" },
 };
 
 const ecosystem = [
   {
-    title: "Oracle ERP",
-    text: "Connect rental, leasing, workshop, warehouse and billing transactions with enterprise finance processes.",
-  },
-  {
-    title: "Finance Systems",
-    text: "Support invoicing, customer accounts, payments, receipts, adjustments and posting requirements.",
-  },
-  {
-    title: "GPS Tracking",
-    text: "Connect vehicle location, availability, movement, utilization and operational status data.",
+    title: "ERP & Financial Systems",
+    text: "Synchronize contracts, invoices, payments, receivables, taxation, journals and financial transactions with your existing accounting or ERP solution.",
   },
   {
     title: "Payment Gateways",
-    text: "Enable connected customer payment workflows for rental, leasing and corporate billing.",
+    text: "Support online payments, recurring billing, payment links, refunds, digital wallets and automated collections through leading payment providers.",
   },
   {
-    title: "API Layer",
-    text: "Use secure APIs to connect external systems, booking channels and internal applications.",
+    title: "GPS Tracking & Geo-Fencing",
+    text: "Connect GPS and telematics providers to monitor live vehicle locations, trip history, utilization, driver behavior, geo-fencing events and fleet performance.",
   },
   {
-    title: "Cloud Platforms",
-    text: "Support scalable enterprise deployment, system connectivity and modern data exchange.",
+    title: "Government Services",
+    text: "Integrate with traffic authorities, toll systems, parking platforms, identity verification, licensing authorities and other digital government services.",
+  },
+  {
+    title: "CRM & Customer Platforms",
+    text: "Connect websites, customer portals, mobile apps, call centers and CRM solutions to deliver a seamless customer experience.",
+  },
+  {
+    title: "Open API Platform",
+    text: "Use secure REST APIs and webhooks to integrate with booking engines, partner portals, HR systems, business applications and custom enterprise software.",
+  },
+  {
+    title: "Business Intelligence & Analytics",
+    text: "Stream operational and financial data into dashboards, reporting platforms, data warehouses and AI-powered analytics tools for better decision-making.",
+  },
+  {
+    title: "Cloud & Enterprise Infrastructure",
+    text: "Deploy on cloud or on-premises environments with enterprise-grade scalability, security, high availability and disaster recovery.",
   },
 ];
 
-const transactionFlow = [
-  "Reservation Created",
-  "Agreement Approved",
-  "Vehicle Assigned",
-  "Charges Calculated",
-  "Invoice Prepared",
-  "ERP Posting Completed",
+const supportedIntegrations = [
+  "ERP & Accounting Systems",
+  "Payment Gateways",
+  "GPS & Telematics Providers",
+  "Banking Systems",
+  "Government Services",
+  "CRM Platforms",
+  "HR & Payroll Systems",
+  "Business Intelligence Tools",
+  "Customer Websites & Mobile Apps",
+  "Fleet IoT Devices",
+  "Digital Signature Platforms",
+  "Document Management Systems",
 ];
 
-const controls = [
-  {
-    title: "Controlled Posting Flow",
-    text: "Improve governance over what moves from operations to finance.",
-  },
-  {
-    title: "Integration Audit Visibility",
-    text: "Support traceability for connected operational and financial transactions.",
-  },
-  {
-    title: "Branch and Company Mapping",
-    text: "Align operational entities with ERP companies, branches and cost centers.",
-  },
-  {
-    title: "Approval-Ready Transactions",
-    text: "Prepare transactions for finance review before posting.",
-  },
+const whyIntegration = [
+  "API-First Architecture",
+  "Real-Time Data Synchronization",
+  "Event-Driven Workflows",
+  "Secure Authentication & Encryption",
+  "Enterprise-Grade Security",
+  "Multi-Company & Multi-Branch Connectivity",
+  "Scalable Cloud Architecture",
+  "Low-Code Integration Framework",
+  "Monitoring & Audit Logs",
+  "High Availability & Performance",
 ];
 
 const gccIntegrations = [
@@ -97,7 +105,6 @@ const gccIntegrations = [
   },
 ];
 
-
 export default function IntegrationsPage() {
   return (
     <main className="fleet-teal-page bg-white text-slate-950">
@@ -115,39 +122,40 @@ function PageHeader() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-100">
-            ERP & Integration Fabric
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50">
+            Enterprise Integration Platform
           </p>
 
           <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight md:text-5xl">
-            Connect Mobility Operations with Enterprise Systems
+            Connect Your Mobility Business Without Limits
           </h1>
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-50">
-            Your rental, leasing, workshop and billing workflows don&apos;t need
-            to live apart from your finance system. FleetArabia connects them
-            to Oracle ERP, GPS tracking, payment gateways and the regional
-            systems your operation already depends on.
+            FleetArabia seamlessly connects your mobility operations with finance, banking,
+            telematics, payment gateways, government platforms, CRM, HR and third-party
+            applications through a secure, API-first integration framework. Eliminate manual
+            data entry, automate business processes and keep every system synchronized in
+            real time.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/contact"
+              href="/contact#demo-form"
               className="rounded-md bg-white px-7 py-3 text-xs font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5"
             >
-              Discuss Integration
+              Talk to an Integration Expert
             </a>
 
             <a
               href="/platform"
               className="rounded-md border border-white/30 px-7 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
             >
-              View Platform
+              Explore the Platform
             </a>
           </div>
 
           <div className="mt-8 grid max-w-2xl gap-4 border-t border-white/15 pt-6 sm:grid-cols-3">
-            {["Oracle ERP", "API Ready", "Finance Ready"].map((item) => (
+            {["Open API Platform", "Real-Time Integration", "Enterprise Ready"].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <span className="h-2 w-2 rounded-full bg-cyan-200" />
                 <span className="text-xs font-semibold text-cyan-50">
@@ -170,10 +178,8 @@ function PageContent() {
   return (
     <>
       <EcosystemSection />
-      <TransactionFlowSection />
-      <CapabilitiesSection />
+      <PlatformIntegrationsSection />
       <GccSpotlightSection />
-      <ControlSection />
     </>
   );
 }
@@ -186,10 +192,10 @@ function TealPattern() {
 
 function IntegrationVisual() {
   const nodes = [
-    { title: "Oracle ERP" },
-    { title: "Finance" },
+    { title: "ERP" },
+    { title: "Payments" },
     { title: "GPS" },
-    { title: "API Layer" },
+    { title: "CRM" },
   ];
 
   return (
@@ -207,13 +213,13 @@ function EcosystemSection() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Integration Ecosystem"
-          title="Connect the systems your business relies on"
-          text="Keep operations, finance, fleet tracking and management reporting connected through secure integration workflows."
+          title="Connect Every System That Powers Your Business"
+          text="FleetArabia enables secure, real-time connectivity across your entire business ecosystem."
           light
           center
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {ecosystem.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
               <article className="h-full rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15">
@@ -230,64 +236,44 @@ function EcosystemSection() {
   );
 }
 
-function TransactionFlowSection() {
+function PlatformIntegrationsSection() {
   return (
-    <section className="bg-slate-50 px-6 py-16 text-slate-950">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/70">
-        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
-            <SectionHeader
-              eyebrow="Transaction Flow"
-              title="From operations to finance posting"
-              text="Convert operational activity into clean, controlled and finance-ready transactions."
-            />
-          </div>
+    <section className="bg-white px-6 py-16 text-slate-950">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Platform Integrations"
+          title="Connect Once. Automate Everywhere."
+          text="FleetArabia acts as the central integration hub between your business applications, fleet technologies and customer-facing systems."
+        />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {transactionFlow.map((item, index) => (
-              <Reveal key={item} delay={Math.min(index * 0.06, 0.24)}>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <div className="text-xs font-black text-blue-700">
-                    Step {index + 1}
-                  </div>
-                  <div className="mt-3 text-sm font-black">{item}</div>
+        <div className="mt-10">
+          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-blue-700">
+            Supported Integrations
+          </h3>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {supportedIntegrations.map((item, index) => (
+              <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+                  {item}
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function CapabilitiesSection() {
-  return (
-    <section className="bg-white px-6 py-16 text-slate-950">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Integration Capabilities"
-          title="Built for connected enterprise operations"
-          text="FleetArabia helps reduce duplicate entry, improve financial control and keep enterprise systems aligned with daily mobility operations."
-        />
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "ERP posting readiness",
-            "Finance transaction mapping",
-            "Customer and vehicle data sync",
-            "GPS and fleet tracking integration",
-            "Payment gateway connectivity",
-            "API-based data exchange",
-            "Operational reporting feeds",
-            "Audit-ready transaction flow",
-          ].map((item, index) => (
-            <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
-                {item}
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-12">
+          <h3 className="text-xs font-black uppercase tracking-[0.22em] text-blue-700">
+            Why FleetArabia Integration?
+          </h3>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {whyIntegration.map((item, index) => (
+              <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-black shadow-sm">
+                  {item}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -327,58 +313,30 @@ function GccSpotlightSection() {
   );
 }
 
-
-function ControlSection() {
-  return (
-    <section className="bg-[#041124] px-6 py-16 text-white">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Enterprise Control"
-          title="Secure, controlled and audit-ready integration"
-          text="Manage approvals, mapping rules, transaction readiness and connected system touchpoints with enterprise discipline."
-          light
-          center
-        />
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {controls.map((item, index) => (
-            <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-6 transition hover:-translate-y-1 hover:border-cyan-300/40">
-                <h3 className="text-base font-black">{item.title}</h3>
-                <p className="mt-3 text-xs leading-6 text-slate-300">
-                  {item.text}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-center text-white">
       <TealPattern />
 
       <Reveal className="relative mx-auto max-w-4xl">
-        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100">
-          Integration Discussion
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          Digital Connectivity
         </p>
 
         <h2 className="mt-5 text-2xl font-black tracking-tight md:text-3xl">
-          Ready to connect FleetArabia with your enterprise ecosystem?
+          One Connected Platform for Your Entire Mobility Business
         </h2>
 
         <p className="mt-5 text-sm leading-7 text-cyan-50">
-          Discuss Oracle ERP, finance, GPS, payment gateway and API integration
-          requirements with our enterprise mobility team.
+          FleetArabia brings together operations, finance, vehicles, drivers, customers and
+          partners into one connected ecosystem. By integrating every critical business
+          system, you gain real-time visibility, automate workflows, improve operational
+          efficiency and accelerate digital transformation. Integrate. Automate. Scale.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            href="/contact"
+            href="/contact#demo-form"
             className="rounded-md bg-white px-8 py-3 text-xs font-black text-[#087674] transition hover:-translate-y-0.5"
           >
             Discuss Integration
@@ -412,7 +370,7 @@ function SectionHeader({
     <Reveal className={center ? "mx-auto mb-12 max-w-3xl text-center" : "max-w-3xl"}>
       <p
         className={`text-xs font-bold uppercase tracking-[0.24em] ${
-          light ? "text-cyan-100" : "text-blue-700"
+          light ? "text-cyan-50" : "text-blue-700"
         }`}
       >
         {eyebrow}

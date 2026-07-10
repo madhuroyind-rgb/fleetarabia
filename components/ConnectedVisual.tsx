@@ -197,17 +197,17 @@ export default function ConnectedVisual({
               style={{ left: g.x, top: g.y, transform: "translate(-50%, -50%)" }}
             >
               <div
-                className={`fa-node-float rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 ${compact ? "p-2" : "p-3"}`}
+                className={`fa-node-float rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 ${compact ? "p-2.5" : "p-3"}`}
                 style={{ animationDelay: `${0.7 + i * 0.1}s, ${i * 0.3}s`, width: nodeWidth }}
               >
                 <div
                   className={`flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-300 to-blue-500 font-black text-white shadow-lg shadow-cyan-400/20 ${
-                    compact ? "mb-1.5 h-7 w-7 text-[9px]" : "mb-3 h-10 w-10 text-xs"
+                    compact ? "mb-2 h-8 w-8 text-[10px]" : "mb-3 h-10 w-10 text-xs"
                   }`}
                 >
                   {node.code ?? deriveCode(node.title)}
                 </div>
-                <p className={`font-black leading-tight text-cyan-50 ${compact ? "text-[10px]" : "text-xs leading-4"}`}>
+                <p className={`font-black leading-tight text-cyan-50 ${compact ? "text-[11px] leading-[13px]" : "text-xs leading-4"}`}>
                   {node.title}
                 </p>
               </div>

@@ -62,7 +62,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href="/contact#demo-form"
             className="fleet-contact-cta hidden rounded-md bg-blue-700 px-5 py-2.5 text-xs font-black text-white shadow-lg shadow-blue-700/30 transition hover:bg-blue-600 md:inline-flex"
           >
             Book Demo →
@@ -117,7 +117,7 @@ export default function Navbar() {
           </ul>
 
           <Link
-            href="/contact"
+            href="/contact#demo-form"
             onClick={() => setMobileOpen(false)}
             className="mt-3 flex justify-center rounded-md bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-700/30 transition hover:bg-blue-600 md:hidden"
           >

@@ -31,10 +31,6 @@ main.fleet-teal-page {
   background: #087674;
   color: white;
 }
-
-main.fleet-teal-page section {
-  background: transparent;
-}
 /* FleetArabia header final polish */
 .fleet-navbar {
   min-height: 78px !important;

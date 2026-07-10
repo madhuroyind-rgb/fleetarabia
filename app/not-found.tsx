@@ -38,7 +38,7 @@ export default function NotFound() {
           </Link>
 
           <Link
-            href="/contact"
+            href="/contact#demo-form"
             className="rounded-md border border-white/25 px-6 py-2.5 text-[11px] font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950"
           >
             Contact Us →

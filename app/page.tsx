@@ -4,7 +4,7 @@ import ConnectedVisual from "@/components/ConnectedVisual";
 const outcomes = [
   {
     title: "Operational Control",
-    text: "Standardize rental, leasing, dispatch, workshop and warehouse workflows across branches.",
+    text: "Standardize rental, leasing, dispatch and workshop workflows across branches.",
   },
   {
     title: "ERP-Ready Finance",
@@ -24,48 +24,48 @@ const solutions = [
   },
   {
     code: "RL",
-    title: "Rental & Leasing Management",
+    title: "Leasing Management",
     text: "Lease contracts, corporate billing, renewals, installments, long-term agreements and lifecycle control.",
   },
   {
     code: "LC",
-    title: "Limousine & Chauffeur Operations",
+    title: "Chauffeur & Limousine",
     text: "Chauffeur allocation, dispatching, trip monitoring, bookings and premium service tracking.",
   },
   {
     code: "BT",
-    title: "Bus Transportation Management",
+    title: "Bus Transportation",
     text: "Route planning, schedules, driver allocation, vehicle assignment and transport operations control.",
   },
   {
     code: "WM",
     title: "Workshop Management",
-    text: "Job cards, service schedules, preventive maintenance, technicians, approvals and repair tracking.",
+    text: "Job cards, service schedules, preventive maintenance, technicians, approvals, repair tracking and AI-driven predictive maintenance alerts.",
   },
   {
-    code: "WH",
-    title: "Warehouse & Spare Parts Management",
-    text: "Inventory, barcode tracking, parts movement, stock visibility and spare parts warehouse control.",
+    code: "AR",
+    title: "Business Intelligence & Analytics",
+    text: "Real-time dashboards, utilization trends, revenue and fleet performance reporting across branches and business units.",
   },
   {
     code: "VD",
-    title: "Damage Inspection & Claims Tool",
+    title: "Vehicle Damage & Claims (VDR)",
     text: "Digital inspection, damage photos, condition reports, customer charges, claims and repair follow-up.",
   },
   {
     code: "BI",
-    title: "Billing & Invoice Automation",
+    title: "Billing & Revenue Management",
     text: "Automate rental billing, corporate invoices, customer charges, approvals and ERP-ready financial handover.",
   },
   {
     code: "ES",
-    title: "ERP Integration & Support Services",
+    title: "ERP Integration Platform",
     text: "Oracle ERP integration, finance system connectivity, APIs, implementation support and post-go-live assistance.",
   },
   {
-    code: "HR",
-    title: "HRMS & Payroll Management",
-    text: "Employee records, attendance, leave management, payroll processing and workforce compliance for operations and workshop staff.",
+    code: "GT",
+    title: "GPS Tracking & Geo-Fencing",
+    text: "Track vehicles in real time, define geo-fenced zones, receive movement alerts, monitor route compliance and improve fleet utilization.",
   },
   {
     code: "DM",
@@ -78,9 +78,9 @@ const solutions = [
     text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts.",
   },
   {
-    code: "DL",
-    title: "Dealer Management",
-    text: "Dealer and franchise network operations, branch performance, commission tracking and territory management.",
+    code: "CX",
+    title: "CRM & Customer Experience",
+    text: "Manage leads, customer profiles, quotations, contracts, communications, service requests, digital agreements and customer feedback throughout the entire lifecycle.",
   },
 ];
 
@@ -145,12 +145,12 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-7 text-cyan-50 sm:text-base md:mt-6 md:text-lg md:leading-8">
-            FleetArabia replaces spreadsheets and disconnected tools with one operating system for rental, leasing, limousine, bus transportation, workshop and warehouse businesses. Bookings, billing and maintenance stay in sync with your ERP — so your team spends less time reconciling and more time running the business.
+            FleetArabia replaces spreadsheets and disconnected systems with a unified enterprise platform for vehicle rental, leasing, chauffeur services, bus transportation, workshop management, vehicle damage reporting (VDR), driver management, fuel management, GPS tracking &amp; geo-fencing, finance, and real-time analytics. Automate reservations, contracts, billing, maintenance and fleet operations while gaining actionable insights through real-time dashboards, business intelligence and AI-driven predictive maintenance alerts.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
-              href="/contact"
+              href="/contact#demo-form"
               className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Talk to Us →
@@ -193,20 +193,21 @@ function PremiumHeroVisual() {
     { code: "LC", title: "Limo & Chauffeur" },
     { code: "BT", title: "Bus Transport" },
     { code: "WM", title: "Workshop" },
-    { code: "WH", title: "Warehouse" },
+    { code: "AR", title: "Analytics" },
     { code: "VD", title: "Damage & Claims" },
     { code: "BI", title: "Billing Automation" },
     { code: "ES", title: "ERP Support" },
-    { code: "HR", title: "HR & Payroll" },
+    { code: "GT", title: "GPS Tracking" },
     { code: "DM", title: "Driver Management" },
     { code: "FM", title: "Fuel Management" },
-    { code: "DL", title: "Dealer Management" },
+    { code: "CX", title: "CRM" },
   ];
 
   return (
     <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
       <ConnectedVisual
         nodes={productNodes}
+        size={560}
         centerLabel="F"
         centerSub="FleetArabia"
         topLabel="Connected Fleet Operations"
@@ -454,7 +455,7 @@ function CTA() {
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <a
-            href="/contact"
+            href="/contact#demo-form"
             className="inline-flex justify-center rounded-md bg-white px-8 py-3 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Book a Demo

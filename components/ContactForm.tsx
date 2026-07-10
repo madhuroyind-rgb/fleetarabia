@@ -3,11 +3,18 @@
 import { useState, type FormEvent } from "react";
 
 const inquiryAreas = [
+  "Book a Demo",
   "Rent A Car ERP",
   "Leasing ERP",
   "Workshop Management",
   "GPS & Payment Integration",
   "General Enquiry",
+];
+
+const trustPoints = [
+  "Personalized platform walkthrough",
+  "No obligation to buy",
+  "Response within 24 hours",
 ];
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -58,20 +65,24 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
+      <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-6 py-14 text-white">
         <div className="relative mx-auto max-w-3xl text-center">
           <div
             role="status"
             className="rounded-3xl border border-white/20 bg-white p-10 text-slate-950 shadow-2xl shadow-black/10"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#087674]">
-              Message Sent
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-2xl text-white shadow-lg shadow-cyan-500/30">
+              ✓
+            </div>
+            <p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-[#087674]">
+              Request Received
             </p>
             <h2 className="mt-4 text-xl font-black tracking-tight md:text-2xl">
-              Thanks — we&apos;ve received your enquiry
+              Thanks — your request is in
             </h2>
             <p className="mt-4 text-sm leading-6 text-slate-600">
-              Our team will get back to you shortly. If it&apos;s urgent, reach us directly at{" "}
+              Our team will reach out within 24 hours to schedule your demo. If it&apos;s
+              urgent, reach us directly at{" "}
               <a href="mailto:info@fleetarabia.com" className="font-bold text-[#087674]">
                 info@fleetarabia.com
               </a>
@@ -91,18 +102,30 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
+    <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-6 py-14 text-white">
       <div className="relative mx-auto max-w-3xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
-            Send a Message
+            Get Started
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">
-            Tell us about your fleet operation
+            Book your free demo
           </h2>
-          <p className="mt-5 leading-7 text-slate-300">
-            Fill in the form below and our team will respond to your enquiry.
+          <p className="mt-5 leading-7 text-cyan-50">
+            See how FleetArabia fits your operations. Fill in the form below and our team
+            will respond within 24 hours.
           </p>
+        </div>
+
+        <div className="mx-auto mb-8 grid max-w-xl gap-4 sm:grid-cols-3">
+          {trustPoints.map((item) => (
+            <div key={item} className="flex items-center gap-2.5">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-[10px] text-cyan-300">
+                ✓
+              </span>
+              <span className="text-xs font-semibold text-cyan-50">{item}</span>
+            </div>
+          ))}
         </div>
 
         <form
@@ -204,9 +227,9 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="mt-7 inline-flex w-full justify-center rounded-md bg-[#087674] px-8 py-3 text-sm font-black text-white transition hover:bg-[#065c5a] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            className="mt-7 inline-flex w-full justify-center rounded-md bg-gradient-to-r from-cyan-400 to-blue-600 px-8 py-3 text-sm font-black text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 sm:w-auto"
           >
-            {status === "submitting" ? "Sending…" : "Send Enquiry →"}
+            {status === "submitting" ? "Sending…" : "Request My Demo →"}
           </button>
 
           <p className="mt-4 text-xs leading-5 text-slate-500">

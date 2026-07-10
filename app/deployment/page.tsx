@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Deployment Options | FleetArabia",
   description:
-    "Choose on-premise or SaaS cloud deployment for FleetArabia based on your business operations, security requirements and IT strategy.",
+    "Deploy FleetArabia as fully managed SaaS cloud or within your own on-premises infrastructure — the same enterprise mobility platform either way.",
   alternates: { canonical: "/deployment" },
 };
 
@@ -12,42 +12,65 @@ export default function DeploymentPage() {
   return (
     <EnterprisePage
       eyebrow="Deployment Flexibility"
-      title="On-Premise & SaaS"
-      highlight="Cloud Deployment"
-      description="Choose the deployment model that fits your business operations, security requirements and IT strategy."
-      primaryCta={{ label: "Talk to Us", href: "/contact" }}
-      secondaryCta={{ label: "Explore Platform", href: "/platform" }}
-      proofPoints={["On-Premise Ready", "SaaS Cloud", "Enterprise Secure"]}
-      visualItems={["On-Premise", "Cloud", "Security", "Scale"]}
+      title="Deploy FleetArabia"
+      highlight="Your Way"
+      description="Choose the deployment model that best aligns with your business, security and IT strategy. Whether you prefer the flexibility of the cloud or complete control over your infrastructure, FleetArabia provides enterprise-grade deployment options designed to scale with your organization."
+      primaryCta={{ label: "Talk to Our Experts", href: "/contact#demo-form" }}
+      secondaryCta={{ label: "Explore the Platform", href: "/platform" }}
+      proofPoints={["SaaS Cloud", "On-Premises", "Enterprise Security"]}
+      visualItems={["SaaS", "On-Premises", "Security", "Scale"]}
       sections={[
         {
-          eyebrow: "On-Premise Deployment",
-          title: "Deploy within your own infrastructure",
-          text: "Maximum control, security, compliance and internal data governance for organizations with strict infrastructure requirements.",
+          eyebrow: "SaaS Cloud",
+          title: "Fast, secure and always up to date",
+          text: "Access FleetArabia through our fully managed cloud platform with no infrastructure to maintain. Deploy quickly, scale effortlessly and always stay on the latest version.",
           items: [
-            { title: "Private Infrastructure", text: "Deploy FleetArabia within your own infrastructure for maximum control." },
-            { title: "Enterprise Security", text: "Meet strict security, compliance and data protection requirements." },
-            { title: "Internal Data Control", text: "Keep operational and financial data fully within your organization's environment." },
-            { title: "Custom Integrations", text: "Support tailored integrations with internal and third-party systems." },
-            { title: "Government Ready", text: "Meet public-sector and regulated-industry deployment requirements." },
+            { title: "Rapid Deployment", text: "Rapid deployment with no infrastructure to maintain." },
+            { title: "Subscription Licensing", text: "Subscription-based licensing." },
+            { title: "Automatic Updates", text: "Automatic updates to the latest version." },
+            { title: "Enterprise Security", text: "Enterprise security built in." },
+            { title: "Anywhere Access", text: "Access from anywhere." },
+            { title: "High Availability", text: "High availability infrastructure." },
+            { title: "Backup & Recovery", text: "Automatic backup and recovery." },
+            { title: "Unlimited Scalability", text: "Unlimited scalability as you grow." },
           ],
         },
         {
-          eyebrow: "SaaS Cloud Platform",
-          title: "Access FleetArabia from anywhere",
-          text: "A scalable, subscription-based cloud platform for businesses that want to move fast without managing infrastructure.",
+          eyebrow: "On-Premises",
+          title: "Complete control over your infrastructure",
+          text: "Deploy FleetArabia within your own data center or private cloud for maximum control, security and compliance while integrating with your existing IT ecosystem.",
           variant: "dark",
           items: [
-            { title: "Subscription Based", text: "Access FleetArabia through a scalable, subscription-based cloud platform." },
-            { title: "Fast Deployment", text: "Get started quickly without infrastructure setup or hardware procurement." },
-            { title: "Automatic Updates", text: "Stay current with continuous platform updates and improvements." },
-            { title: "Cloud Scalability", text: "Scale usage up or down as your fleet business grows." },
-            { title: "Anywhere Access", text: "Access the platform securely from any location or device." },
+            { title: "Full Data Ownership", text: "Full ownership of your data." },
+            { title: "Private Infrastructure", text: "Deployed within your private infrastructure." },
+            { title: "Advanced Security Controls", text: "Advanced security controls." },
+            { title: "Custom Integrations", text: "Support for custom integrations." },
+            { title: "Regulatory Compliance", text: "Built for regulatory compliance." },
+            { title: "Enterprise Performance", text: "Enterprise-grade performance." },
+            { title: "Disaster Recovery", text: "Disaster recovery support." },
+            { title: "Multi-Site Deployment", text: "Deployment across multiple sites." },
+          ],
+        },
+        {
+          eyebrow: "Same Platform, Either Way",
+          title: "One platform. Two deployment choices.",
+          text: "Whether deployed as SaaS or on-premises, FleetArabia delivers the same enterprise capabilities.",
+          items: [
+            { title: "Vehicle Rental & Leasing", text: "Vehicle rental and leasing operations." },
+            { title: "Fleet Operations", text: "Day-to-day fleet operations." },
+            { title: "Workshop Management", text: "Preventive maintenance and workshop operations." },
+            { title: "Driver & Fuel Management", text: "Driver and fuel management." },
+            { title: "GPS Tracking & Geo-Fencing", text: "Real-time GPS tracking and geo-fencing." },
+            { title: "Finance & Billing", text: "Finance and billing automation." },
+            { title: "Business Intelligence & Analytics", text: "Business intelligence and analytics dashboards." },
+            { title: "API-First Integrations", text: "API-first integrations with your systems." },
+            { title: "Multi-Company & Multi-Branch Support", text: "Support for multi-company and multi-branch operations." },
+            { title: "Enterprise Security", text: "Enterprise-grade security controls." },
           ],
         },
       ]}
-      finalCtaTitle="Not sure which deployment model fits your business?"
-      finalCtaText="Talk to our team about on-premise and SaaS cloud deployment options for your fleet operations."
+      finalCtaTitle="Digital transformation starts here"
+      finalCtaText="Deploy FleetArabia in the way that best fits your organization — cloud for agility or on-premises for complete control — while enjoying the same powerful enterprise mobility platform."
     />
   );
 }

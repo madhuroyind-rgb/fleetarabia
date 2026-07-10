@@ -32,7 +32,7 @@ export default function GuidePage({ eyebrow, title, intro, children }: GuidePage
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact#demo-form"
               className="rounded-md bg-white px-7 py-3 text-xs font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
               Talk to Us →

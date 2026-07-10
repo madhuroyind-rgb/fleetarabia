@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Solutions | FleetArabia",
   description:
-    "Software for car rental, leasing, limousine, bus transportation, workshop, warehouse and dealer operations — built to connect with your ERP.",
+    "FleetArabia delivers an integrated suite of mobility applications — rental, leasing, workshop, billing, GPS tracking, analytics, CRM and ERP integration — on one connected platform.",
   alternates: { canonical: "/solutions" },
 };
 
@@ -12,44 +12,48 @@ export default function SolutionsPage() {
   return (
     <EnterprisePage
       eyebrow="Solution Portfolio"
-      title="Enterprise Software for"
-      highlight="Mobility Operations"
-      description="Thirteen modules covering car rental, leasing, limousine, bus transportation, workshop, warehouse, HR, drivers, fuel and dealer operations — each one built to connect with your ERP instead of sitting next to it."
-      primaryCta={{ label: "Discuss Solutions", href: "/contact" }}
+      title="Enterprise Solutions for"
+      highlight="Every Mobility Business"
+      description="From vehicle rentals to enterprise fleet management, FleetArabia delivers an integrated suite of applications designed to automate operations, improve customer experiences and maximize fleet profitability. Whether you run a single branch or a multi-country enterprise, our solutions work together on one platform — eliminating silos and giving you complete visibility across your business."
+      primaryCta={{ label: "Schedule a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Platform", href: "/platform" }}
-      proofPoints={["Rental & Leasing", "Workshop & Warehouse", "ERP Integration"]}
-      visualItems={["Rental", "Leasing", "Workshop", "Billing"]}
+      proofPoints={["Unified Platform", "AI-Powered Analytics", "Multi-Country Ready"]}
+      visualItems={["Rental", "Leasing", "Analytics", "ERP"]}
       sections={[
         {
           eyebrow: "Core Solutions",
-          title: "Run your complete mobility business from one ecosystem",
-          text: "Run any module standalone, or connect several — each one is built to work with the rest, not just alongside them.",
+          title: "Everything you need to run a modern mobility business",
+          text: "Choose individual applications or deploy the complete FleetArabia platform. Every solution is fully integrated, sharing the same data, workflows and analytics to create one intelligent mobility ecosystem.",
           items: [
-            { tag: "CR", title: "Car Rental Management", text: "Reservations, agreements, fleet availability, counter operations, billing and returns." },
-            { tag: "RL", title: "Rental & Leasing", text: "Lease contracts, corporate billing, renewals, installments and vehicle lifecycle control." },
-            { tag: "LC", title: "Limo & Chauffeur", text: "Chauffeur allocation, dispatching, trip monitoring, bookings and service tracking." },
-            { tag: "BT", title: "Bus Transportation", text: "Route planning, schedules, driver allocation, vehicle assignment and operations control." },
-            { tag: "WM", title: "Workshop Management", text: "Job cards, service schedules, preventive maintenance, technicians and spare parts." },
-            { tag: "WH", title: "Warehouse Management", text: "Inventory, barcode tracking, parts movement, stock visibility and warehouse control." },
-            { tag: "VD", title: "Vehicle Damage Tool", text: "Digital inspection, damage photos, condition reports, claims and repair follow-up." },
-            { tag: "BI", title: "Billing & Invoice Automation", text: "Rental billing, corporate invoices, customer charges, approvals and ERP-ready financial handover." },
-            { tag: "EI", title: "ERP Integration Tools", text: "Oracle ERP, finance systems, GPS tracking, payment gateway and third-party APIs." },
-            { tag: "HR", title: "HRMS & Payroll", text: "Employee records, attendance tracking, leave management, payroll processing and workforce compliance." },
-            { tag: "DM", title: "Driver Management", text: "Driver profiles, license and document tracking, performance scoring, trip assignment and compliance monitoring." },
-            { tag: "FM", title: "Fuel Management", text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts." },
-            { tag: "DL", title: "Dealer Management", text: "Dealer and franchise network operations, branch performance, commission tracking and territory management." },
+            { tag: "🚗", title: "Car Rental Management", text: "Manage reservations, quotations, agreements, vehicle allocation, pricing, invoicing, extensions, returns, replacements, toll and traffic fine charges, and customer billing." },
+            { tag: "🚙", title: "Leasing Management", text: "Streamline personal and corporate leasing with contract lifecycle management, installment billing, renewals, asset tracking, maintenance scheduling and end-of-lease processing." },
+            { tag: "🚖", title: "Chauffeur & Limousine", text: "Manage chauffeur assignments, trip scheduling, dispatch, bookings, customer requests, vehicle allocation, GPS tracking and service quality." },
+            { tag: "🚌", title: "Bus Transportation", text: "Plan routes, assign drivers and vehicles, manage employee or school transportation, optimize schedules and monitor fleet performance in real time." },
+            { tag: "🔧", title: "Workshop Management", text: "Digitize maintenance operations with preventive servicing, repair orders, inspections, spare parts, technician assignments, warranty management and service history." },
+            { tag: "📋", title: "Vehicle Damage & Claims (VDR)", text: "Record vehicle inspections, capture photos, assess damages, estimate repair costs, manage insurance claims and maintain a complete damage history." },
+            { tag: "💳", title: "Billing & Revenue Management", text: "Automate invoicing, recurring billing, collections, tax calculations, payments, credit notes, customer statements and ERP financial integration." },
+            { tag: "⛽", title: "Fuel Management", text: "Monitor fuel consumption, fuel card transactions, mileage, efficiency trends and operating costs to improve fleet profitability." },
+            { tag: "👨‍✈️", title: "Driver Management", text: "Manage driver profiles, licenses, certifications, violations, training, attendance, assignments and compliance from one central system." },
+            { tag: "📍", title: "GPS Tracking & Geo-Fencing", text: "Track vehicles in real time, define geo-fenced zones, receive movement alerts, monitor route compliance and improve fleet utilization." },
+            { tag: "📊", title: "Business Intelligence & Analytics", text: "Transform operational data into actionable insights with real-time dashboards, executive KPIs, fleet utilization reports, revenue analysis and AI-powered performance insights." },
+            { tag: "🤝", title: "CRM & Customer Experience", text: "Manage leads, customer profiles, quotations, contracts, communications, service requests, digital agreements and customer feedback throughout the entire lifecycle." },
+            { tag: "🔗", title: "ERP Integration Platform", text: "Connect with accounting systems, payment gateways, telematics, GPS providers, HR, banking, government and regulatory systems, and third-party applications through secure APIs." },
           ],
         },
         {
-          eyebrow: "Business Value",
-          title: "Built for enterprise outcomes",
-          text: "FleetArabia helps organizations reduce manual work, improve control and connect operations to finance.",
+          eyebrow: "Why Choose FleetArabia",
+          title: "Built for enterprise mobility operations",
+          text: "One platform, eight reasons operations, finance and IT teams trust it to run the business.",
           variant: "dark",
           items: [
-            { title: "Operational Automation", text: "Digitize reservations, agreements, dispatch, workshop and warehouse processes." },
-            { title: "Billing Accuracy", text: "Control customer charges, invoices, adjustments and corporate billing." },
-            { title: "Fleet Visibility", text: "Track vehicle availability, utilization, status and lifecycle movement." },
-            { title: "ERP Readiness", text: "Prepare operational transactions for finance and ERP posting." },
+            { title: "Unified Platform", text: "Unified platform for all mobility operations." },
+            { title: "Enterprise Security", text: "Enterprise-grade security and compliance." },
+            { title: "AI-Powered Analytics", text: "AI-powered analytics and reporting." },
+            { title: "Open Integration", text: "Open API and seamless integrations." },
+            { title: "Mobile Applications", text: "Mobile applications for field operations." },
+            { title: "Multi-Country Ready", text: "Multi-company, multi-branch, multi-country support." },
+            { title: "Real-Time Insights", text: "Real-time dashboards and executive insights." },
+            { title: "Cloud-Native Platform", text: "Cloud-native architecture with enterprise scalability." },
           ],
         },
       ]}

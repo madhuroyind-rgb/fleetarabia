@@ -54,7 +54,7 @@ export default function FleetDigitalTransformationGuidePage() {
         <h2 className="text-base font-black text-slate-900">Start with one module, not everything at once</h2>
         <p className="mt-2">
           The businesses that struggle most with digital transformation try to fix
-          everything simultaneously — rental, workshop, warehouse, HR and finance in one
+          everything simultaneously — rental, workshop, HR and finance in one
           go. Pick the area causing the most pain today (often billing, or workshop job
           tracking), get it working well, and expand from there. A working single module
           beats a half-implemented full platform.

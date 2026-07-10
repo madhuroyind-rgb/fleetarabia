@@ -28,7 +28,7 @@ export default function ContactPage() {
           items: [
             {
               title: "Book a Demo",
-              text: "Review FleetArabia platform capabilities for rental, leasing, transportation, workshop, warehouse, and enterprise fleet operations.",
+              text: "Review FleetArabia platform capabilities for rental, leasing, transportation, workshop, analytics, and enterprise fleet operations.",
             },
             {
               title: "Discuss ERP Integration",
@@ -78,7 +78,7 @@ export default function ContactPage() {
             { title: "Email", text: "info@fleetarabia.com" },
             { title: "India Phone", text: "+91 90600 02063" },
             { title: "UAE Phone", text: "+971 52 133 3050" },
-            { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, warehouse, and enterprise fleet businesses." },
+            { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, analytics, and enterprise fleet businesses." },
           ],
         },
       ]}

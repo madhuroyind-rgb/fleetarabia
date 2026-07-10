@@ -11,13 +11,13 @@ const columns: { title: string; items: FooterLink[] }[] = [
     title: "Solutions",
     items: [
       { label: "Car Rental Management", href: "/solutions" },
-      { label: "Rental & Leasing", href: "/solutions" },
+      { label: "Leasing Management", href: "/solutions" },
       { label: "Fleet Leasing", href: "/fleet-leasing" },
-      { label: "Limousine Operations", href: "/solutions" },
+      { label: "Chauffeur & Limousine", href: "/solutions" },
       { label: "Bus Transportation", href: "/solutions" },
       { label: "Workshop Management", href: "/solutions" },
-      { label: "Warehouse & Spare Parts", href: "/solutions" },
-      { label: "HRMS & Payroll", href: "/solutions" },
+      { label: "Business Intelligence & Analytics", href: "/solutions" },
+      { label: "GPS Tracking & Geo-Fencing", href: "/solutions" },
       { label: "Driver Management", href: "/solutions" },
       { label: "Fuel Management", href: "/solutions" },
     ],
@@ -29,7 +29,7 @@ const columns: { title: string; items: FooterLink[] }[] = [
       { label: "Deployment Options", href: "/deployment" },
       { label: "Billing Automation", href: "/solutions" },
       { label: "Damage Inspection", href: "/solutions" },
-      { label: "Analytics & Reporting", href: "/platform" },
+      { label: "Reporting & Dashboards", href: "/platform" },
       { label: "ERP Integrations", href: "/integrations" },
       { label: "Implementation Support", href: "/services" },
     ],
@@ -41,7 +41,7 @@ const columns: { title: string; items: FooterLink[] }[] = [
       { label: "Industries", href: "/industries" },
       { label: "Services", href: "/services" },
       { label: "Resources", href: "/resources" },
-      { label: "Contact", href: "/contact" },
+      { label: "Contact", href: "/contact#demo-form" },
     ],
   },
 ];
@@ -103,7 +103,7 @@ export default function Footer() {
 
             <div className="mt-7 grid max-w-sm grid-cols-2 gap-3">
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <div className="text-lg font-black text-white">9+</div>
+                <div className="text-lg font-black text-white">13</div>
                 <div className="mt-1 text-xs leading-5 text-slate-400">
                   Fleet solution modules
                 </div>
@@ -162,7 +162,7 @@ export default function Footer() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact#demo-form"
               className="mt-7 inline-flex w-full justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 text-sm font-black text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.02]"
             >
               Book a Demo

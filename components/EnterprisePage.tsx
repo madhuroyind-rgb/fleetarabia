@@ -8,6 +8,7 @@ type CardItem = {
   text: string;
   tag?: string;
   href?: string;
+  linkLabel?: string;
 };
 
 type Section = {
@@ -33,6 +34,8 @@ type EnterprisePageProps = {
   };
   proofPoints?: string[];
   visualItems?: string[];
+  visualTopLabel?: string;
+  visualBottomLabel?: string;
   sections: Section[];
   finalCtaTitle?: string;
   finalCtaText?: string;
@@ -44,10 +47,12 @@ export default function EnterprisePage({
   title,
   highlight,
   description,
-  primaryCta = { label: "Book Demo", href: "/contact" },
+  primaryCta = { label: "Book Demo", href: "/contact#demo-form" },
   secondaryCta = { label: "Explore Solutions", href: "/solutions" },
   proofPoints = ["Enterprise Ready", "ERP Integrated", "Middle East Expertise"],
   visualItems = ["Operations", "Fleet", "Finance", "ERP"],
+  visualTopLabel,
+  visualBottomLabel,
   sections,
   finalCtaTitle = "Ready to modernize your mobility operations?",
   finalCtaText = "Let's build your digital rental, leasing, transportation and ERP-connected operation together.",
@@ -64,6 +69,8 @@ export default function EnterprisePage({
         secondaryCta={secondaryCta}
         proofPoints={proofPoints}
         visualItems={visualItems}
+        visualTopLabel={visualTopLabel}
+        visualBottomLabel={visualBottomLabel}
       />
 
       {sections.map((section) => (
@@ -86,6 +93,8 @@ function Hero({
   secondaryCta,
   proofPoints,
   visualItems,
+  visualTopLabel,
+  visualBottomLabel,
 }: {
   eyebrow: string;
   title: string;
@@ -95,15 +104,17 @@ function Hero({
   secondaryCta: { label: string; href: string };
   proofPoints: string[];
   visualItems: string[];
+  visualTopLabel?: string;
+  visualBottomLabel?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#041124]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
+    <section className="relative overflow-hidden bg-[#087674]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
       <div className="relative mx-auto grid min-h-[500px] max-w-7xl items-center gap-10 px-6 py-10 xl:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-300">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50">
             {eyebrow}
           </p>
 
@@ -114,7 +125,7 @@ function Hero({
             </span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-6 text-slate-300">
+          <p className="mt-5 max-w-2xl text-sm leading-6 text-cyan-50">
             {description}
           </p>
 
@@ -140,7 +151,7 @@ function Hero({
                 <span className="flex h-7 w-7 items-center justify-center rounded-full border border-cyan-300/50 text-xs text-cyan-300">
                   ✓
                 </span>
-                <span className="text-xs font-semibold text-slate-300">
+                <span className="text-xs font-semibold text-cyan-50">
                   {item}
                 </span>
               </div>
@@ -149,14 +160,22 @@ function Hero({
         </Reveal>
 
         <Reveal delay={0.15}>
-          <PremiumVisual items={visualItems} />
+          <PremiumVisual items={visualItems} topLabel={visualTopLabel} bottomLabel={visualBottomLabel} />
         </Reveal>
       </div>
     </section>
   );
 }
 
-function PremiumVisual({ items }: { items: string[] }) {
+function PremiumVisual({
+  items,
+  topLabel,
+  bottomLabel,
+}: {
+  items: string[];
+  topLabel?: string;
+  bottomLabel?: string;
+}) {
   return (
     <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
       <ConnectedVisual
@@ -164,6 +183,8 @@ function PremiumVisual({ items }: { items: string[] }) {
         size={460}
         centerLabel="F"
         centerSub="FleetArabia"
+        topLabel={topLabel}
+        bottomLabel={bottomLabel}
       />
     </div>
   );
@@ -204,7 +225,7 @@ function PageSection({ section }: { section: Section }) {
 
           <p
             className={`mt-5 leading-7 ${
-              isDark || isTeal ? "text-slate-300" : "text-slate-600"
+              isTeal ? "text-cyan-50" : isDark ? "text-slate-300" : "text-slate-600"
             }`}
           >
             {section.text}
@@ -224,9 +245,11 @@ function PageSection({ section }: { section: Section }) {
                 {item.tag && (
                   <div
                     className={`mb-5 inline-flex rounded-xl px-3 py-2 text-xs font-black ${
-                      isDark || isTeal
-                        ? "bg-white/10 text-cyan-200"
-                        : "bg-blue-50 text-blue-700"
+                      isTeal
+                        ? "bg-white/10 text-cyan-50"
+                        : isDark
+                          ? "bg-white/10 text-cyan-200"
+                          : "bg-blue-50 text-blue-700"
                     }`}
                   >
                     {item.tag}
@@ -236,7 +259,7 @@ function PageSection({ section }: { section: Section }) {
                 <h3 className="text-sm font-black">{item.title}</h3>
                 <p
                   className={`mt-2 text-xs leading-5 ${
-                    isDark || isTeal ? "text-slate-300" : "text-slate-600"
+                    isTeal ? "text-cyan-50" : isDark ? "text-slate-300" : "text-slate-600"
                   }`}
                 >
                   {item.text}
@@ -248,7 +271,7 @@ function PageSection({ section }: { section: Section }) {
                       isTeal ? "text-cyan-50" : isDark ? "text-cyan-300" : "text-blue-700"
                     }`}
                   >
-                    Read Guide →
+                    {item.linkLabel ?? "Read Guide →"}
                   </Link>
                 )}
               </article>
@@ -274,11 +297,11 @@ function FinalCTA({ title, text }: { title: string; text: string }) {
           {title}
         </h2>
 
-        <p className="mt-5 text-sm leading-6 text-slate-300">{text}</p>
+        <p className="mt-5 text-sm leading-6 text-cyan-50">{text}</p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
-            href="/contact"
+            href="/contact#demo-form"
             className="rounded-md bg-blue-700 px-8 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-blue-600"
           >
             Book Demo →

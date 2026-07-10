@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Platform | FleetArabia",
   description:
-    "One platform underneath rental, leasing, maintenance, warehouse and billing — so operational and financial data are always the same numbers.",
+    "One platform underneath rental, leasing, maintenance and billing — so operational and financial data are always the same numbers.",
   alternates: { canonical: "/platform" },
 };
 
@@ -14,8 +14,8 @@ export default function PlatformPage() {
       eyebrow="FleetArabia Platform"
       title="Unified Operating Layer for"
       highlight="Mobility Businesses"
-      description="Rental, leasing, maintenance, warehouse and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
-      primaryCta={{ label: "Request Platform Demo", href: "/contact" }}
+      description="Rental, leasing, maintenance and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
+      primaryCta={{ label: "Request Platform Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Cloud Ready", "ERP Integrated", "Enterprise Secure"]}
       visualItems={["Rental", "Fleet", "Workshop", "ERP"]}
@@ -27,24 +27,46 @@ export default function PlatformPage() {
           variant: "dark",
           items: [
             {
-              tag: "01",
-              title: "Unified Mobility Core",
-              text: "One operating layer connecting rental, leasing, limousine, bus transportation, workshop and warehouse workflows.",
+              tag: "🚀",
+              title: "Unified Operations",
+              text: "Manage rental, leasing, transportation, workshops, drivers and finance from one integrated platform.",
             },
             {
-              tag: "02",
-              title: "ERP-Connected Operations",
-              text: "Designed to integrate operational transactions with Oracle ERP, finance, payments, GPS and external systems.",
+              tag: "⚡",
+              title: "Intelligent Automation",
+              text: "Automate reservations, contracts, invoicing, renewals, approvals, maintenance scheduling and business workflows.",
             },
             {
-              tag: "03",
-              title: "Enterprise Controls",
-              text: "Role-based workflows, approvals, branch visibility, audit controls and standardized business processes.",
+              tag: "🔗",
+              title: "Open Integration Platform",
+              text: "Connect with ERP, accounting, payment gateways, GPS providers, telematics, government and regulatory systems, CRM, HR and third-party applications through secure APIs.",
             },
             {
-              tag: "04",
-              title: "Scalable Cloud Platform",
-              text: "Built for multi-branch, multi-company and high-volume mobility businesses across the Middle East.",
+              tag: "📊",
+              title: "Real-Time Analytics",
+              text: "Monitor KPIs, fleet utilization, revenue, profitability, maintenance costs and operational performance through interactive dashboards and AI-powered insights.",
+            },
+            {
+              tag: "📱",
+              title: "Mobile Workforce",
+              text: "Native mobile applications for drivers, workshop technicians, field staff, delivery teams and managers.",
+            },
+            {
+              tag: "📍",
+              title: "GPS Tracking & Geo-Fencing",
+              text: "Track vehicle locations in real time, create geo-fenced operational zones, monitor route compliance and receive instant alerts.",
+            },
+            {
+              tag: "🔒",
+              title: "Enterprise Security",
+              text: "Role-based access control, audit trails, multi-factor authentication, encryption and compliance with enterprise security standards.",
+            },
+            {
+              tag: "☁️",
+              title: "Cloud & On-Premise Deployment",
+              text: "Deploy on your preferred cloud infrastructure or on-premise environment with enterprise scalability and high availability.",
+              href: "/deployment",
+              linkLabel: "See Deployment Options →",
             },
           ],
         },
@@ -61,7 +83,7 @@ export default function PlatformPage() {
             {
               tag: "Layer 02",
               title: "Operations Layer",
-              text: "Reservations, agreements, fleet control, workshop, warehouse and billing workflows.",
+              text: "Reservations, agreements, fleet control, workshop and billing workflows.",
             },
             {
               tag: "Layer 03",

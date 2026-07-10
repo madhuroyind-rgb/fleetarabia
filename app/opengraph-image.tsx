@@ -53,7 +53,7 @@ export default function Image() {
         </div>
 
         <div style={{ display: "flex", fontSize: 26, color: "#a5f3fc", marginTop: 28 }}>
-          Rental · Leasing · Workshop · Warehouse · ERP Integration
+          Rental · Leasing · Workshop · Analytics · ERP Integration
         </div>
       </div>
     ),

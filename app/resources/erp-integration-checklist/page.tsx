@@ -30,7 +30,7 @@ export default function ErpIntegrationChecklistPage() {
       <GuidePage
       eyebrow="Resource Guide"
       title="ERP Integration Checklist"
-      intro="A practical starting point for planning how rental, leasing, workshop and warehouse operations should connect to your ERP and other enterprise systems."
+      intro="A practical starting point for planning how rental, leasing and workshop operations should connect to your ERP and other enterprise systems."
     >
       <p>
         Most fleet and mobility businesses run operations in one system and finance in

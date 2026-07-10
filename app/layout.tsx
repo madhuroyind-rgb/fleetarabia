@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatLauncher from "@/components/ChatLauncher";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "FleetArabia | Enterprise Mobility Solutions",
   description:
-    "FleetArabia is an enterprise mobility platform connecting rental, leasing, transportation, workshop, warehouse and dealer operations to your ERP.",
+    "FleetArabia is an enterprise mobility platform connecting rental, leasing, transportation, workshop, analytics and CRM operations to your ERP.",
   alternates: {
     canonical: "/",
   },
@@ -31,7 +32,7 @@ const organizationJsonLd = {
   name: "FleetArabia",
   url: SITE_URL,
   description:
-    "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop, warehouse and dealer operations to your ERP — built for fleet businesses across the Middle East.",
+    "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop, analytics and CRM operations to your ERP — built for fleet businesses across the Middle East.",
   email: "info@fleetarabia.com",
   address: [
     {
@@ -92,6 +93,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <ChatLauncher />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>

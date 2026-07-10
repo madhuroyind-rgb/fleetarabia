@@ -77,6 +77,11 @@ const solutions = [
     title: "Fuel Management",
     text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts.",
   },
+  {
+    code: "DL",
+    title: "Dealer Management",
+    text: "Dealer and franchise network operations, branch performance, commission tracking and territory management.",
+  },
 ];
 
 const workflow = [
@@ -195,6 +200,7 @@ function PremiumHeroVisual() {
     { code: "HR", title: "HR & Payroll" },
     { code: "DM", title: "Driver Management" },
     { code: "FM", title: "Fuel Management" },
+    { code: "DL", title: "Dealer Management" },
   ];
 
   return (
@@ -254,7 +260,7 @@ function Solutions() {
             Our Product Portfolio
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-            Twelve modules. One connected platform.
+            Thirteen modules. One connected platform.
           </h2>
           <p className="mt-5 leading-8 text-cyan-50/85">
             Run every module on its own, or plug in the ones you need and let

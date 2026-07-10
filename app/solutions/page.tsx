@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Solutions | FleetArabia",
   description:
-    "Software for car rental, leasing, limousine, bus transportation, workshop and warehouse operations — built to connect with your ERP.",
+    "Software for car rental, leasing, limousine, bus transportation, workshop, warehouse and dealer operations — built to connect with your ERP.",
   alternates: { canonical: "/solutions" },
 };
 
@@ -14,7 +14,7 @@ export default function SolutionsPage() {
       eyebrow="Solution Portfolio"
       title="Enterprise Software for"
       highlight="Mobility Operations"
-      description="Twelve modules covering car rental, leasing, limousine, bus transportation, workshop, warehouse, HR, drivers and fuel — each one built to connect with your ERP instead of sitting next to it."
+      description="Thirteen modules covering car rental, leasing, limousine, bus transportation, workshop, warehouse, HR, drivers, fuel and dealer operations — each one built to connect with your ERP instead of sitting next to it."
       primaryCta={{ label: "Discuss Solutions", href: "/contact" }}
       secondaryCta={{ label: "Explore Platform", href: "/platform" }}
       proofPoints={["Rental & Leasing", "Workshop & Warehouse", "ERP Integration"]}
@@ -37,6 +37,7 @@ export default function SolutionsPage() {
             { tag: "HR", title: "HRMS & Payroll", text: "Employee records, attendance tracking, leave management, payroll processing and workforce compliance." },
             { tag: "DM", title: "Driver Management", text: "Driver profiles, license and document tracking, performance scoring, trip assignment and compliance monitoring." },
             { tag: "FM", title: "Fuel Management", text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts." },
+            { tag: "DL", title: "Dealer Management", text: "Dealer and franchise network operations, branch performance, commission tracking and territory management." },
           ],
         },
         {

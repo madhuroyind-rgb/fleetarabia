@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Services | FleetArabia",
   description:
-    "Implementation, ERP integration, training and long-term support delivered by people who understand fleet operations, not generic software consultants.",
+    "Implementation, ERP integration, website and app development, training and long-term support delivered by people who understand fleet operations.",
   alternates: { canonical: "/services" },
 };
 
@@ -29,6 +29,7 @@ export default function ServicesPage() {
             { title: "Business Process Consulting", text: "Map rental, leasing, workshop, warehouse, billing and ERP-connected processes." },
             { title: "ERP Support Services", text: "Support Oracle ERP-related process alignment, integration coordination and issue resolution." },
             { title: "Integration Delivery", text: "Design and support integrations with ERP, finance, GPS, payment and API-based systems." },
+            { title: "Website & App Development", text: "Custom website and mobile app development for booking portals, customer self-service and branded field apps." },
             { title: "Data Migration", text: "Assist with master data, vehicles, customers, contracts and operational data migration." },
             { title: "User Training", text: "Train operations, finance, workshop, warehouse and management teams." },
             { title: "Go-Live Support", text: "Support launch, stabilization and adoption during implementation rollout." },

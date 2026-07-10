@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Platform | FleetArabia",
   description:
-    "One platform underneath rental, leasing, maintenance, warehouse and billing — so operational and financial data are always the same numbers, not two versions to reconcile.",
+    "One platform underneath rental, leasing, maintenance, warehouse and billing — so operational and financial data are always the same numbers.",
   alternates: { canonical: "/platform" },
 };
 

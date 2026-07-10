@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Solutions | FleetArabia",
   description:
-    "Software for car rental, leasing, limousine, bus transportation, workshop, warehouse, HR, driver and fuel management operations — built to connect with your ERP instead of sitting next to it.",
+    "Software for car rental, leasing, limousine, bus transportation, workshop and warehouse operations — built to connect with your ERP.",
   alternates: { canonical: "/solutions" },
 };
 

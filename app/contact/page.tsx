@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | FleetArabia",
   description:
-    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or Oracle ERP integration? Tell us what you're working on and we'll point you to the right place to start.",
+    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or Oracle ERP integration? Tell us what you're working on.",
   alternates: { canonical: "/contact" },
 };
 

@@ -4,7 +4,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 export const metadata: Metadata = {
   title: "Industries | FleetArabia",
   description:
-    "Built for the operational reality of rental, leasing, limousine, bus transportation, corporate fleet, workshop and government mobility businesses across the Middle East — not adapted from a generic template.",
+    "Built for the operational reality of rental, leasing, limousine, bus transportation, workshop and fleet businesses across the Middle East.",
   alternates: { canonical: "/industries" },
 };
 

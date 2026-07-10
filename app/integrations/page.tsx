@@ -123,7 +123,7 @@ function PageHeader() {
             Connect Mobility Operations with Enterprise Systems
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-50/90">
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-50">
             Your rental, leasing, workshop and billing workflows don&apos;t need
             to live apart from your finance system. FleetArabia connects them
             to Oracle ERP, GPS tracking, payment gateways and the regional
@@ -218,7 +218,7 @@ function EcosystemSection() {
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
               <article className="h-full rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15">
                 <h3 className="text-base font-black">{item.title}</h3>
-                <p className="mt-3 text-xs leading-6 text-cyan-50/85">
+                <p className="mt-3 text-xs leading-6 text-cyan-50">
                   {item.text}
                 </p>
               </article>
@@ -371,7 +371,7 @@ function FinalCTA() {
           Ready to connect FleetArabia with your enterprise ecosystem?
         </h2>
 
-        <p className="mt-5 text-sm leading-7 text-cyan-50/85">
+        <p className="mt-5 text-sm leading-7 text-cyan-50">
           Discuss Oracle ERP, finance, GPS, payment gateway and API integration
           requirements with our enterprise mobility team.
         </p>
@@ -422,7 +422,7 @@ function SectionHeader({
       </h2>
       <p
         className={`mt-4 text-sm leading-7 ${
-          light ? "text-cyan-50/85" : "text-slate-600"
+          light ? "text-cyan-50" : "text-slate-600"
         }`}
       >
         {text}

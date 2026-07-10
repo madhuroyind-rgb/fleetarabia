@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import GuidePage from "@/components/GuidePage";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "ERP Integration Checklist | FleetArabia",
@@ -8,9 +9,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources/erp-integration-checklist" },
 };
 
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "ERP Integration Checklist",
+  description:
+    "A practical checklist for planning how fleet operations should connect to Oracle ERP, finance, GPS, and payment systems.",
+  author: { "@type": "Organization", name: "FleetArabia" },
+  publisher: { "@type": "Organization", name: "FleetArabia" },
+  mainEntityOfPage: `${SITE_URL}/resources/erp-integration-checklist`,
+};
+
 export default function ErpIntegrationChecklistPage() {
   return (
-    <GuidePage
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <GuidePage
       eyebrow="Resource Guide"
       title="ERP Integration Checklist"
       intro="A practical starting point for planning how rental, leasing, workshop and warehouse operations should connect to your ERP and other enterprise systems."
@@ -79,6 +96,7 @@ export default function ErpIntegrationChecklistPage() {
           <li>Treating go-live as the finish line instead of month one of monitoring.</li>
         </ul>
       </div>
-    </GuidePage>
+      </GuidePage>
+    </>
   );
 }

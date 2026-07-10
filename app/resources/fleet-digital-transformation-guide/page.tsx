@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import GuidePage from "@/components/GuidePage";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Fleet Digital Transformation Guide | FleetArabia",
@@ -8,9 +9,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources/fleet-digital-transformation-guide" },
 };
 
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Fleet Digital Transformation Guide",
+  description:
+    "A practical guide to modernizing rental, leasing, transportation and workshop operations — where to start and how to roll it out.",
+  author: { "@type": "Organization", name: "FleetArabia" },
+  publisher: { "@type": "Organization", name: "FleetArabia" },
+  mainEntityOfPage: `${SITE_URL}/resources/fleet-digital-transformation-guide`,
+};
+
 export default function FleetDigitalTransformationGuidePage() {
   return (
-    <GuidePage
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <GuidePage
       eyebrow="Resource Guide"
       title="Fleet Digital Transformation Guide"
       intro="A practical starting point for moving rental, leasing, transportation, workshop and fleet operations off spreadsheets and onto one connected system."
@@ -75,6 +92,7 @@ export default function FleetDigitalTransformationGuidePage() {
           modern the interface looks.
         </p>
       </div>
-    </GuidePage>
+      </GuidePage>
+    </>
   );
 }

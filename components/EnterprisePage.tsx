@@ -192,7 +192,7 @@ function PageSection({ section }: { section: Section }) {
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
           <p
             className={`text-xs font-bold uppercase tracking-[0.24em] ${
-              isDark || isTeal ? "text-cyan-300" : "text-blue-700"
+              isTeal ? "text-cyan-50" : isDark ? "text-cyan-300" : "text-blue-700"
             }`}
           >
             {section.eyebrow}
@@ -245,7 +245,7 @@ function PageSection({ section }: { section: Section }) {
                   <Link
                     href={item.href}
                     className={`mt-4 inline-flex items-center text-xs font-black transition ${
-                      isDark || isTeal ? "text-cyan-300" : "text-blue-700"
+                      isTeal ? "text-cyan-50" : isDark ? "text-cyan-300" : "text-blue-700"
                     }`}
                   >
                     Read Guide →
@@ -266,7 +266,7 @@ function FinalCTA({ title, text }: { title: string; text: string }) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <Reveal className="relative mx-auto max-w-4xl">
-        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
           Digital Mobility Transformation
         </p>
 

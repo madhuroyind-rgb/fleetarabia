@@ -47,6 +47,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={`transition hover:text-cyan-300 ${
                   active
                     ? "border-b-2 border-cyan-400 pb-2 text-white"
@@ -103,6 +104,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
+                    aria-current={active ? "page" : undefined}
                     className={`block rounded-md px-3 py-2.5 text-sm font-bold transition hover:bg-white/10 hover:text-cyan-300 ${
                       active ? "text-white" : "text-slate-200"
                     }`}

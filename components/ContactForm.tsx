@@ -60,7 +60,10 @@ export default function ContactForm() {
     return (
       <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
         <div className="relative mx-auto max-w-3xl text-center">
-          <div className="rounded-3xl border border-white/20 bg-white p-10 text-slate-950 shadow-2xl shadow-black/10">
+          <div
+            role="status"
+            className="rounded-3xl border border-white/20 bg-white p-10 text-slate-950 shadow-2xl shadow-black/10"
+          >
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#087674]">
               Message Sent
             </p>
@@ -91,7 +94,7 @@ export default function ContactForm() {
     <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
       <div className="relative mx-auto max-w-3xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-300">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             Send a Message
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">

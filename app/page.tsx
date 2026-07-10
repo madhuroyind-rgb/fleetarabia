@@ -135,7 +135,7 @@ function Hero() {
 
       <div className="relative mx-auto grid min-h-[420px] max-w-7xl items-start gap-10 px-5 pb-10 pt-7 sm:px-6 md:pb-12 md:pt-9 xl:min-h-[500px] xl:grid-cols-[0.82fr_1.18fr]">
         <Reveal>
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-300 sm:text-sm">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
             For Rental, Leasing &amp; Fleet Operators
           </p>
 
@@ -144,7 +144,7 @@ function Hero() {
             <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Across the Middle East</span>
           </h1>
 
-          <p className="mt-5 max-w-3xl text-sm leading-7 text-cyan-50/90 sm:text-base md:mt-6 md:text-lg md:leading-8">
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-cyan-50 sm:text-base md:mt-6 md:text-lg md:leading-8">
             FleetArabia replaces spreadsheets and disconnected tools with one operating system for rental, leasing, limousine, bus transportation, workshop and warehouse businesses. Bookings, billing and maintenance stay in sync with your ERP — so your team spends less time reconciling and more time running the business.
           </p>
 
@@ -171,7 +171,7 @@ function Hero() {
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
                     ✓
                   </span>
-                  <span className="text-sm text-cyan-50/85">{item}</span>
+                  <span className="text-sm text-cyan-50">{item}</span>
                 </div>
               )
             )}
@@ -221,13 +221,13 @@ function ExecutiveOutcomes() {
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Executive Outcomes
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Made for the people running the business
           </h2>
-          <p className="mt-5 leading-8 text-cyan-50/85">
+          <p className="mt-5 leading-8 text-cyan-50">
             Owners who need visibility, operations leaders who need control,
             and finance teams who need clean numbers at close.
           </p>
@@ -256,13 +256,13 @@ function Solutions() {
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Our Product Portfolio
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Thirteen modules. One connected platform.
           </h2>
-          <p className="mt-5 leading-8 text-cyan-50/85">
+          <p className="mt-5 leading-8 text-cyan-50">
             Run every module on its own, or plug in the ones you need and let
             them share the same data — no double entry, no reconciling
             spreadsheets at month end.
@@ -340,13 +340,13 @@ function Integrations() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             ERP & Integration Fabric
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Talks to the systems you already run
           </h2>
-          <p className="mt-5 leading-8 text-cyan-50/85">
+          <p className="mt-5 leading-8 text-cyan-50">
             Pre-built connectors and APIs help integrate mobility operations
             with Oracle ERP, finance systems, GPS tracking, payment gateways and
             cloud platforms.
@@ -379,7 +379,7 @@ function Industries() {
     <section className="bg-[#087674] px-5 py-10 sm:px-6 md:py-12 text-white">
       <div className="mx-auto max-w-7xl text-center">
         <Reveal>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Industries
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
@@ -413,9 +413,9 @@ function WhyFleetArabia() {
     <section className="bg-[#087674] px-5 py-10 text-white sm:px-6 md:py-12">
       <div className="mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">Why FleetArabia</p>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">Why FleetArabia</p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">Built by people who know fleet operations</h2>
-          <p className="mt-5 leading-8 text-cyan-50/85">Domain knowledge of how mobility businesses actually operate, the integration depth to connect with your finance systems, and hands-on support to get there.</p>
+          <p className="mt-5 leading-8 text-cyan-50">Domain knowledge of how mobility businesses actually operate, the integration depth to connect with your finance systems, and hands-on support to get there.</p>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {reasons.map((item, index) => (
@@ -423,7 +423,7 @@ function WhyFleetArabia() {
               <article className="group h-full rounded-3xl border border-white/15 bg-white/10 p-7 shadow-2xl shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-white/15">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-sm font-black text-[#087674] transition group-hover:scale-110">0{index + 1}</div>
                 <h3 className="text-xl font-black tracking-tight text-white">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-cyan-50/85">{item.text}</p>
+                <p className="mt-4 text-sm leading-7 text-cyan-50">{item.text}</p>
               </article>
             </Reveal>
           ))}
@@ -442,13 +442,13 @@ function CTA() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.22),transparent_45%)]" />
 
       <Reveal className="relative mx-auto max-w-4xl rounded-[2rem] border border-white/15 bg-white/10 px-6 py-10 shadow-2xl shadow-black/10 backdrop-blur">
-        <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-200">
+        <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
           Start the Conversation
         </p>
         <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
           Ready to modernize your fleet operations?
         </h2>
-        <p className="mt-5 text-base leading-8 text-cyan-50/85 md:text-lg">
+        <p className="mt-5 text-base leading-8 text-cyan-50 md:text-lg">
           Tell us how your operation runs today, and we&apos;ll show you what it looks like connected end to end.
         </p>
 

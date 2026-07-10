@@ -12,7 +12,7 @@ export default function SitemapPage() {
   return (
     <main className="fleet-teal-page bg-[#087674] px-6 py-16 text-white">
       <div className="mx-auto max-w-3xl">
-        <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300">
+        <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-50">
           Sitemap
         </p>
         <h1 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">

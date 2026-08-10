@@ -203,3 +203,13 @@ main.fleet-teal-page {
   0% { r: 5; opacity: 0.9; }
   100% { r: 28; opacity: 0; }
 }
+
+/* Backstop: Reveal server-renders at opacity:0 and relies on framer-motion to
+   fade it in. If that never runs (reduced motion, hydration failure, no JS),
+   the page would render blank. Never let content be JS-gated. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

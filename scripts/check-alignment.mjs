@@ -31,13 +31,25 @@ const MEASURE = `(() => {
   }).filter(Boolean);
 })()`;
 
+// Warm-up: the first navigation in a freshly started browser is unreliable, so spend it here.
+await send("Page.navigate", { url: BASE + "/" });
+await sleep(5000);
+
 let bad = 0;
 for (const width of WIDTHS) {
   await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
   const summary = [];
   for (const p of PAGES) {
-    await send("Page.navigate", { url: BASE + p }); await sleep(BASE.startsWith("https") ? 3000 : 1300);
-    const m = await evaluate(MEASURE);
+    await send("Page.navigate", { url: BASE + p });
+    // wait until the page has actually rendered its containers (a cold first load can be slow)
+    let m = [];
+    // "complete" means the stylesheet has loaded too; measuring earlier reads unstyled HTML
+    for (let tries = 0; tries < 60; tries++) {
+      await sleep(500);
+      if ((await evaluate("document.readyState + location.pathname")) === "complete" + p) break;
+    }
+    await sleep(300);
+    m = (await evaluate(MEASURE)) || [];
     const lefts = [...new Set(m.map((x) => x.left))], rights = [...new Set(m.map((x) => x.right))];
     if (lefts.length !== 1 || rights.length !== 1) { bad++; summary.push(`${p} left=${lefts.join("/")} right=${rights.join("/")} (${m.length} containers)`); }
     else summary.push(null);

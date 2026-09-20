@@ -2,6 +2,9 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://www.fleetarabia.com";
 
+// Official profiles. Used by the footer and by the Organization structured data.
+export const LINKEDIN_URL = "https://www.linkedin.com/in/fleetarabia-technologies-929199428/";
+
 export const SITE_ROUTES = [
   { path: "/", label: "Home" },
   { path: "/platform", label: "Platform" },

@@ -61,7 +61,7 @@ export default function TermsPage() {
       <div>
         <h2 className="text-base font-black text-slate-900">Governing Law</h2>
         <p className="mt-2">
-          These terms are governed by the laws of India.
+          These terms are governed by the laws of the United Arab Emirates.
         </p>
       </div>
 

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatLauncher from "@/components/ChatLauncher";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
-import { SITE_URL } from "@/lib/site";
+import { LINKEDIN_URL, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -37,6 +37,7 @@ const organizationJsonLd = {
   description:
     "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop, analytics and CRM operations to your ERP — built for fleet businesses across the Middle East.",
   email: "info@fleetarabia.com",
+  sameAs: [LINKEDIN_URL],
   address: [
     {
       "@type": "PostalAddress",

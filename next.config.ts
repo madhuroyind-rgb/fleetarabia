@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const securityHeaders = [
-  { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+  // No includeSubDomains: the apex domain serves this app too, so it would force HTTPS
+  // on every other fleetarabia.com subdomain (erp., portal., book., mail…) for a year.
+  { key: "Strict-Transport-Security", value: "max-age=31536000" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

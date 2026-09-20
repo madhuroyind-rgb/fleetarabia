@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ConnectedVisual from "@/components/ConnectedVisual";
 
@@ -40,7 +41,7 @@ const ecosystem = [
   },
   {
     title: "Cloud & Enterprise Infrastructure",
-    text: "Deploy on cloud or on-premises environments with enterprise-grade scalability, security, high availability and disaster recovery.",
+    text: "Deploy in cloud or on-premises environments, to fit your infrastructure and security requirements.",
   },
 ];
 
@@ -69,7 +70,6 @@ const whyIntegration = [
   "Scalable Cloud Architecture",
   "Low-Code Integration Framework",
   "Monitoring & Audit Logs",
-  "High Availability & Performance",
 ];
 
 const gccIntegrations = [
@@ -80,7 +80,7 @@ const gccIntegrations = [
   },
   {
     title: "GCC Traffic Fine Automation",
-    description: "Built to connect with Dubai Police, Abu Dhabi Police, and SAAHER (Saudi Arabia) portals to retrieve traffic violation tickets and charge customer cards.",
+    description: "Built to connect with Dubai Police, Abu Dhabi Police, and Saher (Saudi Arabia) portals to retrieve traffic violation tickets and charge customer cards.",
     badge: "UAE & KSA",
   },
   {
@@ -126,11 +126,11 @@ function PageHeader() {
             Enterprise Integration Platform
           </p>
 
-          <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight md:text-5xl">
+          <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]">
             Connect Your Mobility Business Without Limits
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-cyan-50">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50">
             FleetArabia seamlessly connects your mobility operations with finance, banking,
             telematics, payment gateways, government platforms, CRM, HR and third-party
             applications through a secure, API-first integration framework. Eliminate manual
@@ -138,20 +138,14 @@ function PageHeader() {
             real time.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="/contact#demo-form"
-              className="rounded-md bg-white px-7 py-3 text-xs font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5"
-            >
-              Talk to an Integration Expert
-            </a>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <Link href="/contact#demo-form" className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50">
+              Talk to an Integration Expert →
+            </Link>
 
-            <a
-              href="/platform"
-              className="rounded-md border border-white/30 px-7 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
-            >
-              Explore the Platform
-            </a>
+            <Link href="/platform" className="inline-flex justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]">
+              Explore the Platform →
+            </Link>
           </div>
 
           <div className="mt-8 grid max-w-2xl gap-4 border-t border-white/15 pt-6 sm:grid-cols-3">
@@ -223,8 +217,8 @@ function EcosystemSection() {
           {ecosystem.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
               <article className="h-full rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15">
-                <h3 className="text-base font-black">{item.title}</h3>
-                <p className="mt-3 text-xs leading-6 text-cyan-50">
+                <h3 className="text-lg font-black leading-snug">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.text}
                 </p>
               </article>
@@ -296,14 +290,11 @@ function GccSpotlightSection() {
           {gccIntegrations.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
               <article className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-black text-cyan-50">
-                    {item.badge}
-                  </span>
-                  <span className="text-xl text-cyan-50">⚡</span>
-                </div>
-                <h3 className="mt-4 text-base font-black text-white">{item.title}</h3>
-                <p className="mt-3 text-xs leading-5 text-cyan-50">
+                <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-black text-cyan-50">
+                  {item.badge}
+                </span>
+                <h3 className="mt-4 text-lg font-black leading-snug text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.description}
                 </p>
               </article>
@@ -325,30 +316,24 @@ function FinalCTA() {
           Digital Connectivity
         </p>
 
-        <h2 className="mt-5 text-2xl font-black tracking-tight md:text-3xl">
+        <h2 className="mt-5 text-2xl font-black tracking-tight md:text-4xl">
           One Connected Platform for Your Entire Mobility Business
         </h2>
 
-        <p className="mt-5 text-sm leading-7 text-cyan-50">
+        <p className="mt-5 text-base leading-8 text-cyan-50">
           FleetArabia brings together operations, finance, vehicles, drivers, customers and
           partners into one connected ecosystem. By integrating every critical business
           system, you gain real-time visibility, automate workflows, improve operational
           efficiency and accelerate digital transformation. Integrate. Automate. Scale.
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <a
-            href="/contact#demo-form"
-            className="rounded-md bg-white px-8 py-3 text-xs font-black text-[#087674] transition hover:-translate-y-0.5"
-          >
-            Discuss Integration
-          </a>
-          <a
-            href="/platform"
-            className="rounded-md border border-white/30 px-8 py-3 text-xs font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
-          >
-            View Platform
-          </a>
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <Link href="/contact#demo-form" className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50">
+            Book a Demo →
+          </Link>
+          <Link href="/platform" className="inline-flex justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]">
+            View Platform →
+          </Link>
         </div>
       </Reveal>
     </section>
@@ -377,11 +362,11 @@ function SectionHeader({
       >
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-2xl font-black tracking-tight md:text-3xl">
+      <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
         {title}
       </h2>
       <p
-        className={`mt-4 text-sm leading-7 ${
+        className={`mt-5 leading-8 ${
           light ? "text-cyan-50" : "text-slate-600"
         }`}
       >

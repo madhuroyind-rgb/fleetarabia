@@ -3,7 +3,45 @@ import { Resend } from "resend";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Matches the maxLength values on the form; anything longer is not a real submission.
+const MAX_LENGTH = { name: 120, company: 160, email: 200, phone: 40, area: 80, message: 4000 };
+
+// Best-effort, per-instance throttle so the form cannot be used to flood the inbox
+// or burn the email quota. Not a substitute for a shared store if this ever scales out.
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const recentRequests = new Map<string, number[]>();
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  const hits = (recentRequests.get(ip) ?? []).filter((time) => now - time < RATE_WINDOW_MS);
+  hits.push(now);
+  recentRequests.set(ip, hits);
+
+  if (recentRequests.size > 5000) {
+    for (const [key, times] of recentRequests) {
+      if (times.every((time) => now - time >= RATE_WINDOW_MS)) recentRequests.delete(key);
+    }
+  }
+
+  return hits.length > RATE_LIMIT;
+}
+
 export async function POST(request: Request) {
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "";
+
+  // If the host does not forward a client IP, every visitor would share one bucket
+  // and real leads could be refused — so only throttle when the IP is known.
+  if (ip && isRateLimited(ip)) {
+    return NextResponse.json(
+      { ok: false, error: "Too many requests. Please try again in a few minutes or email us directly." },
+      { status: 429 }
+    );
+  }
+
   let body: Record<string, unknown>;
 
   try {
@@ -32,6 +70,20 @@ export async function POST(request: Request) {
     );
   }
 
+  if (
+    name.length > MAX_LENGTH.name ||
+    company.length > MAX_LENGTH.company ||
+    email.length > MAX_LENGTH.email ||
+    phone.length > MAX_LENGTH.phone ||
+    area.length > MAX_LENGTH.area ||
+    message.length > MAX_LENGTH.message
+  ) {
+    return NextResponse.json(
+      { ok: false, error: "One of the fields is too long. Please shorten it and try again." },
+      { status: 400 }
+    );
+  }
+
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json({ ok: false, error: "Enter a valid email address." }, { status: 400 });
   }
@@ -54,7 +106,7 @@ export async function POST(request: Request) {
     from: `FleetArabia Website <${fromEmail}>`,
     to: [toEmail],
     replyTo: email,
-    subject: `Website Enquiry: ${area || "General"} — ${name}`,
+    subject: `Website Inquiry: ${area || "General"} — ${name}`,
     text: [
       `Name: ${name}`,
       `Company: ${company}`,

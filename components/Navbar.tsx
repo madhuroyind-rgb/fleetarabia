@@ -1,26 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/Logo";
 
-const nav = [
-  { label: "Home", href: "/" },
-  { label: "Platform", href: "/platform" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Fleet Leasing", href: "/fleet-leasing" },
-  { label: "Industries", href: "/industries" },
+type NavChild = { label: string; href: string };
+type NavItem = { label: string; href: string; children?: NavChild[] };
+
+const nav: NavItem[] = [
+  {
+    label: "Platform",
+    href: "/platform",
+    children: [
+      { label: "Platform Overview", href: "/platform" },
+      { label: "Deployment Options", href: "/deployment" },
+    ],
+  },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    children: [
+      { label: "All Solutions", href: "/solutions" },
+      { label: "Fleet Leasing", href: "/fleet-leasing" },
+      { label: "Industries", href: "/industries" },
+    ],
+  },
   { label: "Integrations", href: "/integrations" },
-  { label: "Deployment", href: "/deployment" },
   { label: "Services", href: "/services" },
   { label: "Company", href: "/company" },
   { label: "Resources", href: "/resources" },
 ];
 
+function isActive(pathname: string, item: NavItem) {
+  const hrefs = item.children ? item.children.map((child) => child.href) : [item.href];
+  return hrefs.some((href) => pathname === href || pathname.startsWith(`${href}/`));
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        setOpenMenu(null);
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <header className="fleet-navbar sticky top-0 z-50 border-b border-white/10 bg-[#041124]/95 text-white backdrop-blur-xl">
@@ -38,24 +70,69 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav className="fleet-nav-links hidden items-center gap-6 text-xs font-semibold 2xl:flex">
+        <nav className="hidden items-center gap-5 whitespace-nowrap text-sm font-extrabold lg:flex xl:gap-7 xl:text-[15px]">
           {nav.map((item) => {
-            const active =
-              item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+            const active = isActive(pathname, item);
+            const linkClass = `inline-flex items-center gap-1.5 border-b-2 py-2 transition hover:text-cyan-300 ${
+              active ? "border-cyan-400 text-white" : "border-transparent text-slate-200"
+            }`;
+
+            if (!item.children) {
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={linkClass}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            const expanded = openMenu === item.label;
 
             return (
-              <Link
+              <div
                 key={item.label}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={`transition hover:text-cyan-300 ${
-                  active
-                    ? "border-b-2 border-cyan-400 pb-2 text-white"
-                    : "text-slate-200"
-                }`}
+                className="relative"
+                onMouseEnter={() => setOpenMenu(item.label)}
+                onMouseLeave={() => setOpenMenu(null)}
               >
-                {item.label}
-              </Link>
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded={expanded}
+                  onClick={() => setOpenMenu(expanded ? null : item.label)}
+                  className={linkClass}
+                >
+                  {item.label}
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+
+                {expanded && (
+                  <div className="absolute left-0 top-full pt-2">
+                    <ul className="w-56 rounded-xl border border-white/10 bg-[#041124] p-2 shadow-2xl shadow-black/40">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setOpenMenu(null)}
+                            aria-current={pathname === child.href ? "page" : undefined}
+                            className={`block rounded-lg px-3 py-2.5 text-sm font-bold transition hover:bg-white/10 hover:text-cyan-300 ${
+                              pathname === child.href ? "text-white" : "text-slate-200"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             );
           })}
         </nav>
@@ -63,9 +140,9 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact#demo-form"
-            className="fleet-contact-cta hidden rounded-md bg-blue-700 px-5 py-2.5 text-xs font-black text-white shadow-lg shadow-blue-700/30 transition hover:bg-blue-600 md:inline-flex"
+            className="fleet-contact-cta hidden rounded-md bg-white px-5 py-2.5 text-xs font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:inline-flex"
           >
-            Book Demo →
+            Book a Demo →
           </Link>
 
           <button
@@ -74,7 +151,7 @@ export default function Navbar() {
             aria-expanded={mobileOpen}
             aria-controls="fleet-mobile-menu"
             onClick={() => setMobileOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-white transition hover:bg-white/10 2xl:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-white transition hover:bg-white/10 lg:hidden"
           >
             {mobileOpen ? (
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -92,25 +169,32 @@ export default function Navbar() {
       {mobileOpen && (
         <nav
           id="fleet-mobile-menu"
-          className="border-t border-white/10 bg-[#041124] px-6 py-4 2xl:hidden"
+          className="max-h-[calc(100dvh-70px)] overflow-y-auto border-t border-white/10 bg-[#041124] px-6 py-4 lg:hidden"
         >
           <ul className="flex flex-col gap-1">
             {nav.map((item) => {
-              const active =
-                item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              const links = item.children ?? [{ label: item.label, href: item.href }];
 
               return (
                 <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    aria-current={active ? "page" : undefined}
-                    className={`block rounded-md px-3 py-2.5 text-sm font-bold transition hover:bg-white/10 hover:text-cyan-300 ${
-                      active ? "text-white" : "text-slate-200"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  {item.children && (
+                    <div className="px-3 pb-1 pt-3 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+                      {item.label}
+                    </div>
+                  )}
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      aria-current={pathname === link.href ? "page" : undefined}
+                      className={`block rounded-md px-3 py-2.5 text-sm font-bold transition hover:bg-white/10 hover:text-cyan-300 ${
+                        pathname === link.href ? "text-white" : "text-slate-200"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                 </li>
               );
             })}
@@ -119,9 +203,9 @@ export default function Navbar() {
           <Link
             href="/contact#demo-form"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 flex justify-center rounded-md bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-lg shadow-blue-700/30 transition hover:bg-blue-600 md:hidden"
+            className="mt-3 flex justify-center rounded-md bg-white px-5 py-3 text-sm font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:hidden"
           >
-            Book Demo →
+            Book a Demo →
           </Link>
         </nav>
       )}

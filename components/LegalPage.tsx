@@ -22,12 +22,6 @@ export default function LegalPage({ eyebrow, title, lastUpdated, children }: Leg
 
       <section className="bg-[#087674] px-6 py-14">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-8 rounded-2xl border border-amber-300/40 bg-amber-300/10 p-5 text-sm leading-6 text-amber-100">
-            <strong className="font-black">Draft placeholder.</strong> This page has not yet
-            been reviewed by legal counsel. Do not rely on this content until it has been
-            finalized and approved.
-          </div>
-
           <div className="rounded-3xl border border-white/20 bg-white p-8 text-slate-800 shadow-2xl shadow-black/10 sm:p-10">
             <div className="space-y-6 text-sm leading-7">{children}</div>
           </div>

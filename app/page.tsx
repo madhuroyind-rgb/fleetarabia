@@ -1,5 +1,8 @@
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ConnectedVisual from "@/components/ConnectedVisual";
+import { slugify } from "@/lib/slug";
+import { MODULE_CODES } from "@/lib/modules";
 
 const outcomes = [
   {
@@ -18,67 +21,80 @@ const outcomes = [
 
 const solutions = [
   {
-    code: "CR",
+    code: MODULE_CODES["Car Rental Management"],
+    short: "Car Rental",
     title: "Car Rental Management",
     text: "Reservations, agreements, fleet availability, counter operations, billing and returns.",
   },
   {
-    code: "RL",
+    code: MODULE_CODES["Leasing Management"],
+    short: "Leasing",
     title: "Leasing Management",
     text: "Lease contracts, corporate billing, renewals, installments, long-term agreements and lifecycle control.",
   },
   {
-    code: "LC",
+    code: MODULE_CODES["Chauffeur & Limousine"],
+    short: "Limo & Chauffeur",
     title: "Chauffeur & Limousine",
     text: "Chauffeur allocation, dispatching, trip monitoring, bookings and premium service tracking.",
   },
   {
-    code: "BT",
+    code: MODULE_CODES["Bus Transportation"],
+    short: "Bus Transport",
     title: "Bus Transportation",
     text: "Route planning, schedules, driver allocation, vehicle assignment and transport operations control.",
   },
   {
-    code: "WM",
+    code: MODULE_CODES["Workshop Management"],
+    short: "Workshop",
     title: "Workshop Management",
     text: "Job cards, service schedules, preventive maintenance, technicians, approvals, repair tracking and AI-driven predictive maintenance alerts.",
   },
   {
-    code: "AR",
+    code: MODULE_CODES["Business Intelligence & Analytics"],
+    short: "Analytics",
     title: "Business Intelligence & Analytics",
     text: "Real-time dashboards, utilization trends, revenue and fleet performance reporting across branches and business units.",
   },
   {
-    code: "VD",
+    code: MODULE_CODES["Vehicle Damage & Claims (VDR)"],
+    short: "Damage & Claims",
     title: "Vehicle Damage & Claims (VDR)",
     text: "Digital inspection, damage photos, condition reports, customer charges, claims and repair follow-up.",
   },
   {
-    code: "BI",
+    code: MODULE_CODES["Billing & Revenue Management"],
+    short: "Billing & Revenue",
     title: "Billing & Revenue Management",
     text: "Automate rental billing, corporate invoices, customer charges, approvals and ERP-ready financial handover.",
   },
   {
-    code: "ES",
+    code: MODULE_CODES["ERP Integration Platform"],
+    short: "ERP Integration",
     title: "ERP Integration Platform",
     text: "Oracle ERP integration, finance system connectivity, APIs, implementation support and post-go-live assistance.",
   },
   {
-    code: "GT",
+    code: MODULE_CODES["GPS Tracking & Geo-Fencing"],
+    short: "GPS Tracking",
     title: "GPS Tracking & Geo-Fencing",
     text: "Track vehicles in real time, define geo-fenced zones, receive movement alerts, monitor route compliance and improve fleet utilization.",
   },
   {
-    code: "DM",
+    code: MODULE_CODES["Driver Management"],
+    short: "Driver Management",
     title: "Driver Management",
     text: "Driver profiles, license and document tracking, performance monitoring, trip assignment and compliance checks.",
   },
   {
-    code: "FM",
+    code: MODULE_CODES["Fuel Management"],
+    short: "Fuel Management",
     title: "Fuel Management",
     text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts.",
   },
   {
-    code: "CX",
+    code: MODULE_CODES["CRM & Customer Experience"],
+    short: "CRM",
     title: "CRM & Customer Experience",
     text: "Manage leads, customer profiles, quotations, contracts, communications, service requests, digital agreements and customer feedback throughout the entire lifecycle.",
   },
@@ -87,7 +103,7 @@ const solutions = [
 const workflow = [
   "Booking",
   "Agreement",
-  "Car Rental",
+  "Vehicle Handover",
   "Billing",
   "ERP Posting",
   "Reporting",
@@ -97,8 +113,8 @@ const integrations = [
   "Oracle ERP",
   "Finance Systems",
   "GPS Tracking",
-  "Payment Gateway",
-  "ERP Integration",
+  "Payment Gateways",
+  "Open APIs",
   "Cloud Platform",
 ];
 
@@ -141,34 +157,34 @@ function Hero() {
 
           <h1 className="max-w-4xl text-3xl font-black leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl">
             Enterprise Mobility Platform for Fleet Operations{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Across the Middle East</span>
+            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">Across the Middle East</span>
           </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-7 text-cyan-50 sm:text-base md:mt-6 md:text-lg md:leading-8">
-            FleetArabia replaces spreadsheets and disconnected systems with a unified enterprise platform for vehicle rental, leasing, chauffeur services, bus transportation, workshop management, vehicle damage reporting (VDR), driver management, fuel management, GPS tracking &amp; geo-fencing, finance, and real-time analytics. Automate reservations, contracts, billing, maintenance and fleet operations while gaining actionable insights through real-time dashboards, business intelligence and AI-driven predictive maintenance alerts.
+            FleetArabia replaces spreadsheets and disconnected systems with one platform for rental, leasing, chauffeur, bus, workshop and fleet operations — connected to your finance system, with real-time dashboards for the people running the business.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-            <a
+            <Link
               href="/contact#demo-form"
               className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
-              Talk to Us →
-            </a>
+              Book a Demo →
+            </Link>
 
-            <a
+            <Link
               href="/solutions"
-              className="inline-flex justify-center rounded-md border border-white/25 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950"
+              className="inline-flex justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
             >
               Explore Solutions →
-            </a>
+            </Link>
           </div>
 
           <div className="mt-8 grid max-w-2xl gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">
             {['Rental & Leasing Operations', 'ERP & Billing Integration', 'Fleet Lifecycle Visibility'].map(
               (item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
+                  <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
                     ✓
                   </span>
                   <span className="text-sm text-cyan-50">{item}</span>
@@ -187,21 +203,7 @@ function Hero() {
 }
 
 function PremiumHeroVisual() {
-  const productNodes = [
-    { code: "CR", title: "Car Rental" },
-    { code: "RL", title: "Rental & Leasing" },
-    { code: "LC", title: "Limo & Chauffeur" },
-    { code: "BT", title: "Bus Transport" },
-    { code: "WM", title: "Workshop" },
-    { code: "AR", title: "Analytics" },
-    { code: "VD", title: "Damage & Claims" },
-    { code: "BI", title: "Billing Automation" },
-    { code: "ES", title: "ERP Support" },
-    { code: "GT", title: "GPS Tracking" },
-    { code: "DM", title: "Driver Management" },
-    { code: "FM", title: "Fuel Management" },
-    { code: "CX", title: "CRM" },
-  ];
+  const productNodes = solutions.map((item) => ({ code: item.code, title: item.short }));
 
   return (
     <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
@@ -270,21 +272,27 @@ function Solutions() {
           </p>
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {/* Flex rather than grid so the 13th card is centred, not orphaned left. */}
+        <div className="flex flex-wrap justify-center gap-5">
           {solutions.map((item, index) => (
-            <Reveal key={item.title} delay={Math.min(index * 0.05, 0.3)}>
-              <article className="group flex min-h-[230px] flex-col rounded-3xl border border-white/20 bg-white p-7 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20">
+            <Reveal
+              key={item.title}
+              delay={Math.min(index * 0.05, 0.3)}
+              className="w-full md:w-[calc(50%-10px)] xl:w-[calc(25%-15px)]"
+            >
+              <article className="group flex h-full min-h-[230px] flex-col rounded-3xl border border-white/20 bg-white p-7 text-slate-950 shadow-2xl shadow-black/10 transition duration-300 hover:-translate-y-2 hover:shadow-black/20">
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-sm font-black text-[#087674] ring-1 ring-cyan-100 transition group-hover:bg-[#087674] group-hover:text-white">
                   {item.code}
                 </div>
                 <h3 className="text-xl font-black tracking-tight">{item.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.text}</p>
-                <a
-                  href="/solutions"
+                <Link
+                  href={`/solutions#${slugify(item.title)}`}
+                  aria-label={`Learn more about ${item.title}`}
                   className="mt-6 inline-flex items-center text-sm font-black text-[#087674] transition group-hover:translate-x-1"
                 >
                   Learn More →
-                </a>
+                </Link>
               </article>
             </Reveal>
           ))}
@@ -309,12 +317,12 @@ function Workflow() {
             Build a connected digital process across front office, operations,
             finance and management reporting.
           </p>
-          <a
+          <Link
             href="/platform"
             className="mt-7 inline-flex rounded-md border border-[#087674] px-7 py-3 text-sm font-black text-[#087674] transition hover:bg-[#087674] hover:text-white"
           >
             Explore Platform →
-          </a>
+          </Link>
         </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -353,12 +361,12 @@ function Integrations() {
             cloud platforms.
           </p>
 
-          <a
+          <Link
             href="/integrations"
-            className="mt-8 inline-flex rounded-md bg-white px-8 py-4 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            className="mt-8 inline-flex rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Explore Integrations →
-          </a>
+          </Link>
         </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -454,12 +462,12 @@ function CTA() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <a
+          <Link
             href="/contact#demo-form"
-            className="inline-flex justify-center rounded-md bg-white px-8 py-3 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            className="inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
-            Book a Demo
-          </a>
+            Book a Demo →
+          </Link>
           <a
             href="mailto:info@fleetarabia.com"
             className="inline-flex justify-center rounded-md border border-white/40 px-8 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"

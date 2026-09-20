@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 
 const inquiryAreas = [
   "Book a Demo",
@@ -8,7 +9,7 @@ const inquiryAreas = [
   "Leasing ERP",
   "Workshop Management",
   "GPS & Payment Integration",
-  "General Enquiry",
+  "General Inquiry",
 ];
 
 const trustPoints = [
@@ -71,7 +72,7 @@ export default function ContactForm() {
             role="status"
             className="rounded-3xl border border-white/20 bg-white p-10 text-slate-950 shadow-2xl shadow-black/10"
           >
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-2xl text-white shadow-lg shadow-cyan-500/30">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#087674] text-2xl text-white shadow-lg shadow-black/10">
               ✓
             </div>
             <p className="mt-6 text-xs font-bold uppercase tracking-[0.24em] text-[#087674]">
@@ -105,10 +106,10 @@ export default function ContactForm() {
     <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-6 py-14 text-white">
       <div className="relative mx-auto max-w-3xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Get Started
           </p>
-          <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">
+          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Book your free demo
           </h2>
           <p className="mt-5 leading-7 text-cyan-50">
@@ -150,6 +151,8 @@ export default function ContactForm() {
               <input
                 required
                 type="text"
+                maxLength={120}
+                autoComplete="name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 className="mt-2 w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm font-normal text-slate-950 outline-none transition focus:border-[#087674] focus:ring-2 focus:ring-[#087674]/20"
@@ -161,6 +164,8 @@ export default function ContactForm() {
               <input
                 required
                 type="text"
+                maxLength={160}
+                autoComplete="organization"
                 value={company}
                 onChange={(event) => setCompany(event.target.value)}
                 className="mt-2 w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm font-normal text-slate-950 outline-none transition focus:border-[#087674] focus:ring-2 focus:ring-[#087674]/20"
@@ -172,6 +177,8 @@ export default function ContactForm() {
               <input
                 required
                 type="email"
+                maxLength={200}
+                autoComplete="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 className="mt-2 w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm font-normal text-slate-950 outline-none transition focus:border-[#087674] focus:ring-2 focus:ring-[#087674]/20"
@@ -182,6 +189,8 @@ export default function ContactForm() {
               Phone
               <input
                 type="tel"
+                maxLength={40}
+                autoComplete="tel"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
                 className="mt-2 w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm font-normal text-slate-950 outline-none transition focus:border-[#087674] focus:ring-2 focus:ring-[#087674]/20"
@@ -209,6 +218,7 @@ export default function ContactForm() {
             <textarea
               required
               rows={5}
+              maxLength={4000}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               className="mt-2 w-full rounded-md border border-slate-300 px-4 py-2.5 text-sm font-normal text-slate-950 outline-none transition focus:border-[#087674] focus:ring-2 focus:ring-[#087674]/20"
@@ -227,12 +237,21 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="mt-7 inline-flex w-full justify-center rounded-md bg-gradient-to-r from-cyan-400 to-blue-600 px-8 py-3 text-sm font-black text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 sm:w-auto"
+            className="mt-7 inline-flex w-full justify-center rounded-md bg-[#087674] px-8 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#065e5c] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
           >
-            {status === "submitting" ? "Sending…" : "Request My Demo →"}
+            {status === "submitting" ? "Sending…" : "Book a Demo →"}
           </button>
 
           <p className="mt-4 text-xs leading-5 text-slate-500">
+            By submitting this form you agree that we may use these details to respond to
+            your request, as described in our{" "}
+            <Link href="/privacy" className="font-bold text-[#087674]">
+              Privacy Policy
+            </Link>
+            .
+          </p>
+
+          <p className="mt-2 text-xs leading-5 text-slate-500">
             Prefer to email us directly? Reach us at{" "}
             <a href="mailto:info@fleetarabia.com" className="font-bold text-[#087674]">
               info@fleetarabia.com

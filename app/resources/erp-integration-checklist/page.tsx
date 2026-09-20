@@ -15,7 +15,10 @@ const articleJsonLd = {
   headline: "ERP Integration Checklist",
   description:
     "A practical checklist for planning how fleet operations should connect to Oracle ERP, finance, GPS, and payment systems.",
-  author: { "@type": "Organization", name: "FleetArabia" },
+  datePublished: "2026-07-09",
+  dateModified: "2026-07-09",
+  image: `${SITE_URL}/opengraph-image`,
+  author: { "@type": "Organization", name: "FleetArabia", url: SITE_URL },
   publisher: { "@type": "Organization", name: "FleetArabia" },
   mainEntityOfPage: `${SITE_URL}/resources/erp-integration-checklist`,
 };

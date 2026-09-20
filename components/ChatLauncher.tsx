@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const whatsappMessage = encodeURIComponent(
@@ -49,6 +49,15 @@ const quickLinks = [
 
 export default function ChatLauncher() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
@@ -103,7 +112,7 @@ export default function ChatLauncher() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close chat options" : "Open chat options"}
+        aria-label={open ? "Close contact options" : "Open contact options"}
         aria-expanded={open}
         className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-white shadow-2xl shadow-cyan-500/30 transition hover:scale-105"
       >

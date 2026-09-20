@@ -71,7 +71,7 @@ function MissionVisionSection() {
     <section className="bg-[#087674] px-6 py-14 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Our Mission
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-2xl">
@@ -86,7 +86,7 @@ function MissionVisionSection() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Our Vision
           </p>
           <h2 className="mt-4 text-xl font-black tracking-tight md:text-2xl">
@@ -109,10 +109,10 @@ function WhyChooseSection() {
     <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Why Organizations Choose FleetArabia
           </p>
-          <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">
+          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Built specifically for the mobility industry
           </h2>
         </Reveal>

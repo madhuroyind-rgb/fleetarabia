@@ -16,9 +16,10 @@ export default function ContactPage() {
       title="Start Your"
       highlight="Mobility Transformation"
       description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to Oracle ERP — tell us what you're working on and we'll help you find the right starting point."
-      primaryCta={{ label: "Email FleetArabia", href: "mailto:info@fleetarabia.com" }}
-      secondaryCta={{ label: "View Solutions", href: "/solutions" }}
-      proofPoints={["Patna, India", "Enterprise Consulting", "24-Hour Response"]}
+      primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
+      secondaryCta={{ label: "Email Us", href: "mailto:info@fleetarabia.com" }}
+      proofPoints={["Offices in UAE & India", "Enterprise Consulting", "24-Hour Response"]}
+      childrenFirst
       visualItems={["Demo", "ERP", "GPS", "Support"]}
       sections={[
         {
@@ -29,25 +30,34 @@ export default function ContactPage() {
             {
               title: "Book a Demo",
               text: "Review FleetArabia platform capabilities for rental, leasing, transportation, workshop, analytics, and enterprise fleet operations.",
+              href: "/contact#demo-form",
+              linkLabel: "Go to the form →",
             },
             {
               title: "Discuss ERP Integration",
               text: "Talk through Oracle ERP, finance, GPS, payment gateway, Salik, traffic fine, billing, and API integration requirements.",
+              href: "/integrations",
+              linkLabel: "See Integrations →",
             },
             {
               title: "Request Implementation Support",
               text: "Plan rollout, data migration, configuration, testing, user training, go-live, and post-production support.",
+              href: "/services",
+              linkLabel: "See Services →",
             },
             {
-              title: "Business Enquiry",
+              title: "Business Inquiry",
               text: "Partnerships, support, or anything else that doesn't fit neatly into the categories above.",
+              href: "mailto:info@fleetarabia.com",
+              linkLabel: "Email Us →",
             },
           ],
         },
         {
           eyebrow: "Inquiry Areas",
           title: "FleetArabia solutions for mobility businesses",
-          text: "Select the area you want to discuss so we can connect you with the right solution team.",
+          text: "Pick the matching inquiry area in the form above so your request reaches the right solution team.",
+          variant: "dark",
           items: [
             {
               title: "Rent A Car ERP",
@@ -69,15 +79,15 @@ export default function ContactPage() {
         },
         {
           eyebrow: "FleetArabia Offices",
-          title: "Enterprise mobility support from India & UAE",
-          text: "We're headquartered in Patna, India, with a UAE presence in Dubai, serving fleet businesses across the Middle East.",
+          title: "Enterprise mobility support from the UAE & India",
+          text: "We work with fleet businesses across the Middle East from our offices in Dubai, UAE and Patna, India.",
           variant: "teal",
           items: [
-            { title: "India Office", text: "Patna, Bihar, India 800002" },
             { title: "UAE Office", text: "Dubai, Free Zone, UAE" },
+            { title: "India Office", text: "Patna, Bihar, India 800002" },
             { title: "Email", text: "info@fleetarabia.com" },
-            { title: "India Phone", text: "+91 90600 02063" },
             { title: "UAE Phone", text: "+971 52 133 3050" },
+            { title: "India Phone", text: "+91 90600 02063" },
             { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, analytics, and enterprise fleet businesses." },
           ],
         },

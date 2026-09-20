@@ -32,14 +32,14 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/"
-            className="rounded-md bg-blue-700 px-6 py-2.5 text-[11px] font-black text-white shadow-xl shadow-blue-700/30 transition hover:-translate-y-0.5 hover:bg-blue-600"
+            className="rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50"
           >
             Back to Home →
           </Link>
 
           <Link
             href="/contact#demo-form"
-            className="rounded-md border border-white/25 px-6 py-2.5 text-[11px] font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950"
+            className="rounded-md border border-white/30 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]"
           >
             Contact Us →
           </Link>

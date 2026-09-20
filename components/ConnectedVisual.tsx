@@ -14,14 +14,6 @@ type ConnectedVisualProps = {
 
 const LABEL_ZONE = 44;
 
-function deriveCode(title: string) {
-  const words = title.split(/\s+/).filter(Boolean);
-  if (words.length >= 2) {
-    return (words[0][0] + words[1][0]).toUpperCase();
-  }
-  return title.slice(0, 2).toUpperCase();
-}
-
 function buildGeometry(count: number, size: number) {
   const center = size / 2;
   const radius = size * 0.375;
@@ -200,14 +192,20 @@ export default function ConnectedVisual({
                 className={`fa-node-float rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 ${compact ? "p-2.5" : "p-3"}`}
                 style={{ animationDelay: `${0.7 + i * 0.1}s, ${i * 0.3}s`, width: nodeWidth }}
               >
-                <div
-                  className={`flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-300 to-blue-500 font-black text-white shadow-lg shadow-cyan-400/20 ${
-                    compact ? "mb-2 h-8 w-8 text-[10px]" : "mb-3 h-10 w-10 text-xs"
+                {node.code && (
+                  <div
+                    className={`flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-300 to-blue-500 font-black text-white shadow-lg shadow-cyan-400/20 ${
+                      compact ? "mb-2 h-8 w-8 text-[10px]" : "mb-3 h-10 w-10 text-xs"
+                    }`}
+                  >
+                    {node.code}
+                  </div>
+                )}
+                <p
+                  className={`font-black leading-tight text-cyan-50 ${
+                    compact ? "text-[11px] leading-[13px]" : node.code ? "text-xs leading-4" : "py-2 text-center text-sm"
                   }`}
                 >
-                  {node.code ?? deriveCode(node.title)}
-                </div>
-                <p className={`font-black leading-tight text-cyan-50 ${compact ? "text-[11px] leading-[13px]" : "text-xs leading-4"}`}>
                   {node.title}
                 </p>
               </div>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatLauncher from "@/components/ChatLauncher";
+import AnalyticsConsent from "@/components/AnalyticsConsent";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -31,6 +31,8 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "FleetArabia",
   url: SITE_URL,
+  logo: `${SITE_URL}/icon.svg`,
+  image: `${SITE_URL}/opengraph-image`,
   description:
     "FleetArabia is an enterprise mobility platform connecting rental, leasing, limousine, bus transportation, workshop, analytics and CRM operations to your ERP — built for fleet businesses across the Middle East.",
   email: "info@fleetarabia.com",
@@ -94,7 +96,7 @@ export default function RootLayout({
         </div>
         <Footer />
         <ChatLauncher />
-        {gaId && <GoogleAnalytics gaId={gaId} />}
+        {gaId && <AnalyticsConsent gaId={gaId} />}
       </body>
     </html>
   );

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Privacy Policy" lastUpdated="9 July 2026">
+    <LegalPage eyebrow="Legal" title="Privacy Policy" lastUpdated="20 September 2026">
       <p>
         This Privacy Policy explains how FleetArabia (&quot;we&quot;, &quot;us&quot;) collects,
         uses, shares and protects information in connection with this website
@@ -23,9 +23,9 @@ export default function PrivacyPage() {
         <h2 className="text-base font-black text-slate-900">Information We Collect</h2>
         <p className="mt-2">
           When you submit our contact form, we collect your name, company name, email
-          address, phone number (if provided), the area you&apos;re enquiring about, and the
-          message you send us. We also automatically collect standard usage data when you
-          browse the site — pages viewed, approximate location (city/country level), device
+          address, phone number (if provided), the area you&apos;re inquiring about, and the
+          message you send us. If you accept analytics cookies, we also collect standard
+          usage data when you browse the site — pages viewed, approximate location (city/country level), device
           and browser type, and the site that referred you — via Google Analytics 4.
         </p>
       </div>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
       <div>
         <h2 className="text-base font-black text-slate-900">How We Use Information</h2>
         <p className="mt-2">
-          Contact form submissions are used solely to respond to your enquiry. Usage data
+          Contact form submissions are used solely to respond to your inquiry. Usage data
           from analytics is used in aggregate to understand how visitors use the site and to
           improve its content and performance. We do not use your information for automated
           decision-making, and we do not send marketing emails to anyone who has not
@@ -44,9 +44,11 @@ export default function PrivacyPage() {
       <div>
         <h2 className="text-base font-black text-slate-900">Cookies &amp; Analytics</h2>
         <p className="mt-2">
-          This site uses Google Analytics 4, which sets cookies to collect anonymized,
-          aggregated usage statistics. You can opt out of Google Analytics tracking using
-          your browser&apos;s cookie settings or Google&apos;s official browser opt-out tools.
+          This site uses Google Analytics 4 to collect anonymized, aggregated usage
+          statistics. Analytics cookies are only set if you choose &quot;Accept&quot; on the
+          cookie notice; if you decline, no analytics cookies are set. You can change your
+          choice at any time using the &quot;Cookie Settings&quot; link in the footer of
+          any page.
         </p>
       </div>
 
@@ -64,7 +66,7 @@ export default function PrivacyPage() {
         <h2 className="text-base font-black text-slate-900">Data Retention</h2>
         <p className="mt-2">
           We retain contact form submissions for as long as reasonably necessary to respond
-          to and follow up on your enquiry. Analytics data is retained according to Google
+          to and follow up on your inquiry. Analytics data is retained according to Google
           Analytics&apos; standard retention settings.
         </p>
       </div>

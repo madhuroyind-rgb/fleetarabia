@@ -13,6 +13,8 @@ export const SITE_ROUTES = [
   { path: "/services", label: "Services" },
   { path: "/company", label: "Company" },
   { path: "/resources", label: "Resources" },
+  { path: "/resources/fleet-digital-transformation-guide", label: "Fleet Digital Transformation Guide" },
+  { path: "/resources/erp-integration-checklist", label: "ERP Integration Checklist" },
   { path: "/contact", label: "Contact" },
   { path: "/sitemap", label: "Sitemap" },
   { path: "/privacy", label: "Privacy Policy" },

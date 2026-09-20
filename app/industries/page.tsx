@@ -22,17 +22,18 @@ export default function IndustriesPage() {
       sections={[
         {
           eyebrow: "Industries We Serve",
+          numbered: true,
           title: "Purpose-built solutions for every mobility business",
           text: "FleetArabia combines industry expertise with enterprise technology to help organizations optimize operations, improve fleet utilization and deliver exceptional customer experiences.",
           items: [
-            { tag: "🚗", title: "Vehicle Rental Companies", text: "Manage reservations, quotations, agreements, fleet allocation, pricing, billing, vehicle returns, replacements, toll and traffic fine charges, and customer service from one integrated platform." },
-            { tag: "🚙", title: "Leasing Companies", text: "Digitize the complete lease lifecycle with contract management, corporate billing, renewals, vehicle replacement, maintenance planning and financial integration." },
-            { tag: "🚖", title: "Chauffeur & Limousine Services", text: "Optimize chauffeur scheduling, dispatch operations, bookings, trip management, customer service, GPS tracking and executive transportation." },
-            { tag: "🚌", title: "Bus & Staff Transportation", text: "Plan routes, assign vehicles and drivers, monitor operations, manage school and employee transport, and improve fleet utilization with real-time visibility." },
-            { tag: "🚘", title: "Corporate Fleet Management", text: "Control company-owned fleets through vehicle allocation, driver management, maintenance scheduling, fuel monitoring, GPS tracking and cost center reporting." },
-            { tag: "🔧", title: "Workshop & Service Centers", text: "Manage inspections, preventive maintenance, repair orders, spare parts, technician productivity, warranties and complete vehicle service history." },
-            { tag: "🏛", title: "Government & Public Sector Mobility", text: "Support secure, auditable and compliant fleet operations for municipalities, ministries, utilities, airports, healthcare and other public-sector organizations." },
-            { tag: "🌍", title: "Enterprise Mobility Groups", text: "Operate multiple companies, brands, branches and business units on a single platform with centralized finance, standardized processes and enterprise reporting." },
+            { title: "Vehicle Rental Companies", text: "Manage reservations, quotations, agreements, fleet allocation, pricing, billing, vehicle returns, replacements, toll and traffic fine charges, and customer service from one integrated platform." },
+            { title: "Leasing Companies", text: "Digitize the complete lease lifecycle with contract management, corporate billing, renewals, vehicle replacement, maintenance planning and financial integration." },
+            { title: "Chauffeur & Limousine Services", text: "Optimize chauffeur scheduling, dispatch operations, bookings, trip management, customer service, GPS tracking and executive transportation." },
+            { title: "Bus & Staff Transportation", text: "Plan routes, assign vehicles and drivers, monitor operations, manage school and employee transport, and improve fleet utilization with real-time visibility." },
+            { title: "Corporate Fleet Management", text: "Control company-owned fleets through vehicle allocation, driver management, maintenance scheduling, fuel monitoring, GPS tracking and cost center reporting." },
+            { title: "Workshop & Service Centers", text: "Manage inspections, preventive maintenance, repair orders, spare parts, technician productivity, warranties and complete vehicle service history." },
+            { title: "Government & Public Sector Mobility", text: "Support secure, auditable and compliant fleet operations for municipalities, ministries, utilities, airports, healthcare and other public-sector organizations." },
+            { title: "Enterprise Mobility Groups", text: "Operate multiple companies, brands, branches and business units on a single platform with centralized finance, standardized processes and enterprise reporting." },
           ],
         },
         {

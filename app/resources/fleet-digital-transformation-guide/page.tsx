@@ -15,7 +15,10 @@ const articleJsonLd = {
   headline: "Fleet Digital Transformation Guide",
   description:
     "A practical guide to modernizing rental, leasing, transportation and workshop operations — where to start and how to roll it out.",
-  author: { "@type": "Organization", name: "FleetArabia" },
+  datePublished: "2026-07-09",
+  dateModified: "2026-07-09",
+  image: `${SITE_URL}/opengraph-image`,
+  author: { "@type": "Organization", name: "FleetArabia", url: SITE_URL },
   publisher: { "@type": "Organization", name: "FleetArabia" },
   mainEntityOfPage: `${SITE_URL}/resources/fleet-digital-transformation-guide`,
 };

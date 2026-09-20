@@ -37,19 +37,20 @@ export default function ServicesPage() {
       sections={[
         {
           eyebrow: "Service Portfolio",
+          numbered: true,
           title: "End-to-end professional services",
           text: "From ERP implementation to custom software development — the full services stack for a successful digital transformation.",
           items: [
-            { tag: "🚀", title: "ERP Implementation", text: "Deploy FleetArabia with industry best practices, tailored configurations, data migration, user training and go-live support." },
-            { tag: "📊", title: "Business Process Consulting", text: "Analyze and optimize rental, leasing, transportation, workshop, finance and fleet operations to improve efficiency and reduce operational costs." },
-            { tag: "🔗", title: "System Integration", text: "Integrate with finance systems, payment gateways, GPS & telematics, HR, CRM, government services and third-party applications using secure APIs." },
-            { tag: "🌐", title: "Website Development", text: "Design and develop modern corporate websites, online booking portals, customer self-service platforms and digital experiences that integrate seamlessly with FleetArabia." },
-            { tag: "🤝", title: "B2B & Customer Portals", text: "Build secure portals for corporate customers, travel agencies, partners and dealers to manage bookings, contracts, invoices, approvals, reports and account information." },
-            { tag: "📱", title: "Mobile Application Development", text: "Develop native and cross-platform mobile applications for customers, drivers, field staff, workshop technicians, delivery teams and management with real-time synchronization." },
-            { tag: "📂", title: "Data Migration", text: "Migrate customers, vehicles, contracts, financial data, operational history and master records securely with minimal business disruption." },
-            { tag: "🎓", title: "Training & Change Management", text: "Deliver role-based training, user adoption programs, documentation and change management to ensure a successful implementation." },
-            { tag: "🚀", title: "Go-Live & Hypercare", text: "Provide dedicated go-live assistance, production monitoring, issue resolution and post-implementation stabilization." },
-            { tag: "🤝", title: "Managed Support & Customer Success", text: "Receive continuous technical support, system optimization, platform enhancements, upgrades and strategic guidance to maximize business value." },
+            { title: "ERP Implementation", text: "Deploy FleetArabia with industry best practices, tailored configurations, data migration, user training and go-live support." },
+            { title: "Business Process Consulting", text: "Analyze and optimize rental, leasing, transportation, workshop, finance and fleet operations to improve efficiency and reduce operational costs." },
+            { title: "System Integration", text: "Integrate with finance systems, payment gateways, GPS & telematics, HR, CRM, government services and third-party applications using secure APIs." },
+            { title: "Website Development", text: "Design and develop modern corporate websites, online booking portals, customer self-service platforms and digital experiences that integrate seamlessly with FleetArabia." },
+            { title: "B2B & Customer Portals", text: "Build secure portals for corporate customers, travel agencies, partners and dealers to manage bookings, contracts, invoices, approvals, reports and account information." },
+            { title: "Mobile Application Development", text: "Develop native and cross-platform mobile applications for customers, drivers, field staff, workshop technicians, delivery teams and management with real-time synchronization." },
+            { title: "Data Migration", text: "Migrate customers, vehicles, contracts, financial data, operational history and master records securely with minimal business disruption." },
+            { title: "Training & Change Management", text: "Deliver role-based training, user adoption programs, documentation and change management to ensure a successful implementation." },
+            { title: "Go-Live & Hypercare", text: "Provide dedicated go-live assistance, production monitoring, issue resolution and post-implementation stabilization." },
+            { title: "Managed Support & Customer Success", text: "Receive continuous technical support, system optimization, platform enhancements, upgrades and strategic guidance to maximize business value." },
           ],
         },
         {
@@ -78,10 +79,10 @@ function AdditionalServicesSection() {
 
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Additional Digital Services
           </p>
-          <h2 className="mt-4 text-xl font-black tracking-tight md:text-3xl">
+          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Extend FleetArabia with the digital services you need
           </h2>
         </Reveal>

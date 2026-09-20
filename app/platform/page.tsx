@@ -15,56 +15,49 @@ export default function PlatformPage() {
       title="Unified Operating Layer for"
       highlight="Mobility Businesses"
       description="Rental, leasing, maintenance and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
-      primaryCta={{ label: "Request Platform Demo", href: "/contact#demo-form" }}
+      primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Cloud Ready", "ERP Integrated", "Enterprise Secure"]}
       visualItems={["Rental", "Fleet", "Workshop", "ERP"]}
       sections={[
         {
           eyebrow: "Platform at a Glance",
+          numbered: true,
           title: "Built for enterprise mobility operations",
           text: "Everything below runs on the same data model — nothing here is a bolt-on integration.",
           variant: "dark",
           items: [
             {
-              tag: "🚀",
               title: "Unified Operations",
               text: "Manage rental, leasing, transportation, workshops, drivers and finance from one integrated platform.",
             },
             {
-              tag: "⚡",
               title: "Intelligent Automation",
               text: "Automate reservations, contracts, invoicing, renewals, approvals, maintenance scheduling and business workflows.",
             },
             {
-              tag: "🔗",
               title: "Open Integration Platform",
               text: "Connect with ERP, accounting, payment gateways, GPS providers, telematics, government and regulatory systems, CRM, HR and third-party applications through secure APIs.",
             },
             {
-              tag: "📊",
               title: "Real-Time Analytics",
               text: "Monitor KPIs, fleet utilization, revenue, profitability, maintenance costs and operational performance through interactive dashboards and AI-powered insights.",
             },
             {
-              tag: "📱",
               title: "Mobile Workforce",
               text: "Native mobile applications for drivers, workshop technicians, field staff, delivery teams and managers.",
             },
             {
-              tag: "📍",
               title: "GPS Tracking & Geo-Fencing",
               text: "Track vehicle locations in real time, create geo-fenced operational zones, monitor route compliance and receive instant alerts.",
             },
             {
-              tag: "🔒",
               title: "Enterprise Security",
               text: "Role-based access control, audit trails, multi-factor authentication, encryption and compliance with enterprise security standards.",
             },
             {
-              tag: "☁️",
               title: "Cloud & On-Premise Deployment",
-              text: "Deploy on your preferred cloud infrastructure or on-premise environment with enterprise scalability and high availability.",
+              text: "Deploy on your preferred cloud infrastructure or in your own on-premise environment.",
               href: "/deployment",
               linkLabel: "See Deployment Options →",
             },

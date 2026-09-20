@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { CookieSettingsButton } from "@/components/AnalyticsConsent";
 
 type FooterLink = {
   label: string;
@@ -10,16 +11,16 @@ const columns: { title: string; items: FooterLink[] }[] = [
   {
     title: "Solutions",
     items: [
-      { label: "Car Rental Management", href: "/solutions" },
-      { label: "Leasing Management", href: "/solutions" },
+      { label: "Car Rental Management", href: "/solutions#car-rental-management" },
+      { label: "Leasing Management", href: "/solutions#leasing-management" },
       { label: "Fleet Leasing", href: "/fleet-leasing" },
-      { label: "Chauffeur & Limousine", href: "/solutions" },
-      { label: "Bus Transportation", href: "/solutions" },
-      { label: "Workshop Management", href: "/solutions" },
-      { label: "Business Intelligence & Analytics", href: "/solutions" },
-      { label: "GPS Tracking & Geo-Fencing", href: "/solutions" },
-      { label: "Driver Management", href: "/solutions" },
-      { label: "Fuel Management", href: "/solutions" },
+      { label: "Chauffeur & Limousine", href: "/solutions#chauffeur-limousine" },
+      { label: "Bus Transportation", href: "/solutions#bus-transportation" },
+      { label: "Workshop Management", href: "/solutions#workshop-management" },
+      { label: "Business Intelligence & Analytics", href: "/solutions#business-intelligence-analytics" },
+      { label: "GPS Tracking & Geo-Fencing", href: "/solutions#gps-tracking-geo-fencing" },
+      { label: "Driver Management", href: "/solutions#driver-management" },
+      { label: "Fuel Management", href: "/solutions#fuel-management" },
     ],
   },
   {
@@ -27,8 +28,8 @@ const columns: { title: string; items: FooterLink[] }[] = [
     items: [
       { label: "Platform Overview", href: "/platform" },
       { label: "Deployment Options", href: "/deployment" },
-      { label: "Billing Automation", href: "/solutions" },
-      { label: "Damage Inspection", href: "/solutions" },
+      { label: "Billing & Revenue Management", href: "/solutions#billing-revenue-management" },
+      { label: "Vehicle Damage & Claims (VDR)", href: "/solutions#vehicle-damage-claims-vdr" },
       { label: "Reporting & Dashboards", href: "/platform" },
       { label: "ERP Integrations", href: "/integrations" },
       { label: "Implementation Support", href: "/services" },
@@ -133,8 +134,8 @@ export default function Footer() {
             </h3>
 
             <div className="mt-5 space-y-4 text-sm leading-6 text-slate-300">
-              <p>Patna, Bihar, India 800002</p>
               <p>Dubai, Free Zone, UAE</p>
+              <p>Patna, Bihar, India 800002</p>
               <p>
                 <a
                   href="mailto:info@fleetarabia.com"
@@ -163,9 +164,9 @@ export default function Footer() {
 
             <Link
               href="/contact#demo-form"
-              className="mt-7 inline-flex w-full justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 text-sm font-black text-white shadow-lg shadow-cyan-500/20 transition hover:scale-[1.02]"
+              className="mt-7 inline-flex w-full justify-center rounded-md bg-white px-6 py-3 text-sm font-black text-[#087674] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
-              Book a Demo
+              Book a Demo →
             </Link>
           </div>
         </div>
@@ -183,6 +184,7 @@ export default function Footer() {
             <Link href="/sitemap" className="transition hover:text-cyan-300">
               Sitemap
             </Link>
+            <CookieSettingsButton className="transition hover:text-cyan-300" />
           </div>
         </div>
       </div>

@@ -10,10 +10,11 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Terms of Use" lastUpdated="9 July 2026">
+    <LegalPage eyebrow="Legal" title="Terms of Use" lastUpdated="20 September 2026">
       <p>
         These Terms of Use govern access to and use of the FleetArabia website
-        (fleetarabia.com). By using this website, you agree to these terms. These terms
+        (fleetarabia.com), operated by FleetArabia Technology LLC (&quot;FleetArabia&quot;,
+        &quot;we&quot;, &quot;us&quot;). By using this website, you agree to these terms. These terms
         apply only to this website — use of the FleetArabia product by customers is
         governed separately by their commercial agreement with us.
       </p>

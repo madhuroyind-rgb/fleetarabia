@@ -12,7 +12,8 @@ export default function PrivacyPage() {
   return (
     <LegalPage eyebrow="Legal" title="Privacy Policy" lastUpdated="20 September 2026">
       <p>
-        This Privacy Policy explains how FleetArabia (&quot;we&quot;, &quot;us&quot;) collects,
+        This Privacy Policy explains how FleetArabia Technology LLC (&quot;FleetArabia&quot;,
+        &quot;we&quot;, &quot;us&quot;) collects,
         uses, shares and protects information in connection with this website
         (fleetarabia.com). It does not cover data handled inside the FleetArabia product
         itself once a customer is onboarded — that is governed by the customer&apos;s

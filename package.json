@@ -10,7 +10,8 @@
     "check:links": "node scripts/check-links.mjs",
     "check:content": "node scripts/check-content.mjs",
     "check:browser": "node scripts/check-browser.mjs",
-    "check": "npm run check:links && npm run check:content"
+    "check": "npm run check:links && npm run check:content",
+    "check:alignment": "node scripts/check-alignment.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.3.5",

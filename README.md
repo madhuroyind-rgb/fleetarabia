@@ -75,6 +75,10 @@ npm run check:content -- https://www.fleetarabia.com
   ```
 
   It blocks Google Analytics requests, so it never records test traffic.
+- `check:alignment` (also needs Chrome running as above) measures, on every page at five
+  screen widths, that the header, hero, every section and the footer share one content
+  edge. Full-width sections must use `max-w-[77rem]` with side padding on the section, or
+  `max-w-7xl` with the padding inside the container; mixing the two shifts content by 24px.
 
 ## Content rules
 

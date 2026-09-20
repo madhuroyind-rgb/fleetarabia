@@ -267,7 +267,7 @@ function PremiumHeroVisual() {
 function BuiltFor() {
   return (
     <section aria-label="Industries" className="border-y border-white/10 bg-[#065f5e] px-5 py-7 sm:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 lg:flex-row lg:gap-8">
+      <div className="mx-auto flex max-w-[77rem] flex-col items-center gap-5 lg:flex-row lg:gap-8">
         <p className="shrink-0 text-xs font-bold uppercase tracking-[0.24em] text-cyan-100">Built for</p>
 
         <ul className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
@@ -301,7 +301,7 @@ function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: strin
 function ExecutiveOutcomes() {
   return (
     <section className={`bg-[#087674] text-white ${SECTION}`}>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Executive Outcomes"
           title="Made for the people running the business"
@@ -334,7 +334,7 @@ function ExecutiveOutcomes() {
 function Solutions() {
   return (
     <section className={`relative overflow-hidden bg-[#065f5e] text-white ${SECTION}`}>
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Our Product Portfolio"
           title="Thirteen modules. One connected platform."
@@ -375,7 +375,7 @@ function Solutions() {
 function Workflow() {
   return (
     <section className={`bg-[#087674] text-slate-950 ${SECTION}`}>
-      <div className="mx-auto max-w-7xl rounded-3xl border border-white/40 bg-white p-7 shadow-2xl shadow-black/10 md:p-12">
+      <div className="mx-auto max-w-[77rem] rounded-3xl border border-white/40 bg-white p-7 shadow-2xl shadow-black/10 md:p-12">
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#087674]">
@@ -430,7 +430,7 @@ function Integrations() {
     <section className={`relative overflow-hidden bg-[#087674] text-white ${SECTION}`}>
       <div className={TEAL_PATTERN} />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className={EYEBROW}>ERP &amp; Integration Fabric</p>
           <h2 className={H2}>Talks to the systems you already run</h2>
@@ -473,7 +473,7 @@ function WhyFleetArabia() {
 
   return (
     <section className={`bg-[#065f5e] text-white ${SECTION}`}>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Why FleetArabia"
           title="Built by people who know fleet operations"

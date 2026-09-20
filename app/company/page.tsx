@@ -68,8 +68,8 @@ export default function CompanyPage() {
 
 function MissionVisionSection() {
   return (
-    <section className="bg-[#087674] px-6 py-14 text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
+    <section className="bg-[#087674] px-5 sm:px-6 py-14 text-white">
+      <div className="mx-auto grid max-w-[77rem] gap-10 lg:grid-cols-2">
         <Reveal>
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Our Mission
@@ -106,8 +106,8 @@ function MissionVisionSection() {
 
 function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
+      <div className="relative mx-auto max-w-[77rem]">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Why FleetArabia

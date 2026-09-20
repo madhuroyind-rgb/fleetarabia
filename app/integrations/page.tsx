@@ -117,10 +117,10 @@ export default function IntegrationsPage() {
 
 function PageHeader() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
       <TealPattern />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
+      <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50">
             Enterprise Integration Platform
@@ -201,10 +201,10 @@ function IntegrationVisual() {
 
 function EcosystemSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
       <TealPattern />
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Integration Ecosystem"
           title="Connect Every System That Powers Your Business"
@@ -232,8 +232,8 @@ function EcosystemSection() {
 
 function PlatformIntegrationsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+      <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Platform Integrations"
           title="Connect Once. Automate Everywhere."
@@ -277,8 +277,8 @@ function PlatformIntegrationsSection() {
 
 function GccSpotlightSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-white">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+      <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="GCC Localization"
           title="Engineered for Middle East Mobility Ecosystems"
@@ -308,7 +308,7 @@ function GccSpotlightSection() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-16 text-center text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-center text-white">
       <TealPattern />
 
       <Reveal className="relative mx-auto max-w-4xl">

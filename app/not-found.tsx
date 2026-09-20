@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-[#087674] px-6 py-20 text-center text-white">
+    <main className="flex min-h-[70vh] flex-col items-center justify-center overflow-hidden bg-[#087674] px-5 sm:px-6 py-20 text-center text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <div className="relative">

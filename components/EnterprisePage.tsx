@@ -233,7 +233,7 @@ function PageSection({ section }: { section: Section }) {
     >
       {variant !== "dark" && <div className={TEAL_PATTERN} />}
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[77rem]">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             {section.eyebrow}

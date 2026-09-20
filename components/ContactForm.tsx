@@ -66,7 +66,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-6 py-14 text-white">
+      <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
         <div className="relative mx-auto max-w-3xl text-center">
           <div
             role="status"
@@ -103,7 +103,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-6 py-14 text-white">
+    <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
       <div className="relative mx-auto max-w-3xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">

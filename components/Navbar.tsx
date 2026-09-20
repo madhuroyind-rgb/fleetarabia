@@ -57,7 +57,7 @@ export default function Navbar() {
 
   return (
     <header className="fleet-navbar sticky top-0 z-50 border-b border-white/10 bg-[#041124]/95 text-white backdrop-blur-xl">
-      <div className="fleet-navbar-inner mx-auto flex h-[64px] max-w-7xl items-center justify-between px-6">
+      <div className="fleet-navbar-inner mx-auto flex h-[64px] max-w-7xl items-center justify-between px-5 sm:px-6">
         <Link href="/" className="flex items-center gap-3">
           <Logo className="h-10 w-10 shrink-0" />
 
@@ -171,7 +171,7 @@ export default function Navbar() {
       {mobileOpen && (
         <nav
           id="fleet-mobile-menu"
-          className="max-h-[calc(100dvh-70px)] overflow-y-auto border-t border-white/10 bg-[#041124] px-6 py-4 lg:hidden"
+          className="max-h-[calc(100dvh-70px)] overflow-y-auto border-t border-white/10 bg-[#041124] px-5 sm:px-6 py-4 lg:hidden"
         >
           <ul className="flex flex-col gap-1">
             {nav.map((item) => {

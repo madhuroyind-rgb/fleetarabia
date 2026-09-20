@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function SitemapPage() {
   return (
-    <main className="fleet-teal-page bg-[#087674] px-6 py-16 text-white">
+    <main className="fleet-teal-page bg-[#087674] px-5 sm:px-6 py-16 text-white">
       <div className="mx-auto max-w-3xl">
         <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-50">
           Sitemap

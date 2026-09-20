@@ -10,7 +10,7 @@ type GuidePageProps = {
 export default function GuidePage({ eyebrow, title, intro, children }: GuidePageProps) {
   return (
     <main className="fleet-teal-page bg-[#087674] text-white">
-      <section className="relative overflow-hidden bg-[#087674] px-6 py-14">
+      <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-14">
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="text-xs font-black uppercase tracking-[0.28em] text-cyan-50">
             {eyebrow}
@@ -24,7 +24,7 @@ export default function GuidePage({ eyebrow, title, intro, children }: GuidePage
         </div>
       </section>
 
-      <section className="bg-[#087674] px-6 py-14">
+      <section className="bg-[#087674] px-5 sm:px-6 py-14">
         <div className="mx-auto max-w-4xl">
           <div className="rounded-3xl border border-white/20 bg-white p-8 text-slate-800 shadow-2xl shadow-black/10 sm:p-10">
             <div className="space-y-6 text-base leading-7">{children}</div>

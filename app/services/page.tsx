@@ -74,10 +74,10 @@ export default function ServicesPage() {
 
 function AdditionalServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-6 py-14 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[77rem]">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             Additional Digital Services

@@ -22,12 +22,12 @@ export default function ResourcesPage() {
       sections={[
         {
           eyebrow: "Featured Resources",
-          title: "Learn from industry experts",
+          title: "Practical guides from the FleetArabia team",
           text: "Two guides are live below. The rest are in progress — reach out directly and we'll walk you through any of these topics now.",
           items: [
             { tag: "Guide", title: "Fleet Digital Transformation Guide", text: "Learn how to modernize rental, leasing, transportation, workshops and fleet operations using connected digital technologies.", href: "/resources/fleet-digital-transformation-guide", linkLabel: "Read Guide →" },
             { tag: "Checklist", title: "ERP Integration Checklist", text: "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS and payment systems.", href: "/resources/erp-integration-checklist", linkLabel: "Read Checklist →" },
-            { tag: "Soon", title: "Rental & Leasing Best Practices", text: "Improve reservations, contracts, billing, fleet utilization, renewals and customer experience with proven operational strategies." },
+            { tag: "Soon", title: "Rental & Leasing Best Practices", text: "Improve reservations, contracts, billing, fleet utilization, renewals and customer experience with practical operational strategies." },
             { tag: "Soon", title: "Fleet Maintenance & Workshop Guide", text: "Discover how preventive maintenance, digital inspections, job cards and service planning improve fleet availability and reduce operating costs." },
             { tag: "Soon", title: "Vehicle Damage Management (VDR)", text: "Digitize inspections, capture vehicle condition reports, manage repair workflows, estimate costs and improve customer transparency." },
             { tag: "Soon", title: "Business Intelligence & Analytics", text: "Transform operational data into actionable insights with dashboards, KPIs, profitability analysis and executive reporting." },
@@ -40,7 +40,7 @@ export default function ResourcesPage() {
           variant: "dark",
           items: [
             { tag: "Soon", title: "Blogs & Industry Insights", text: "Articles covering mobility trends, fleet innovation, digital transformation, operational excellence, AI and emerging technologies." },
-            { tag: "Soon", title: "Case Studies", text: "See how organizations improve efficiency, reduce costs and transform operations using FleetArabia." },
+            { tag: "Soon", title: "Case Studies", text: "Customer stories will be published here as our first deployments go live." },
             { tag: "Soon", title: "Product Updates", text: "Stay informed about new modules, platform enhancements, integrations and upcoming releases." },
             { tag: "Soon", title: "Product Documentation", text: "Comprehensive user guides, administrator manuals, API documentation, implementation resources and configuration references." },
             { tag: "Soon", title: "Webinars & Product Demonstrations", text: "Watch live demonstrations, expert sessions, implementation walkthroughs and product training videos." },

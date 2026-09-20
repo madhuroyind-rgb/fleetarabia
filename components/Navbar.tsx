@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import Logo from "@/components/Logo";
 
 type NavChild = { label: string; href: string };
@@ -140,9 +141,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact#demo-form"
-            className="fleet-contact-cta hidden rounded-md bg-white px-5 py-2.5 text-xs font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:inline-flex"
+            className="fleet-contact-cta group hidden items-center gap-2 rounded-md bg-white px-5 py-2.5 text-xs font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:inline-flex"
           >
-            Book a Demo →
+            Book a Demo
+            <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </Link>
 
           <button
@@ -203,9 +205,10 @@ export default function Navbar() {
           <Link
             href="/contact#demo-form"
             onClick={() => setMobileOpen(false)}
-            className="mt-3 flex justify-center rounded-md bg-white px-5 py-3 text-sm font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:hidden"
+            className="mt-3 flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-black text-[#087674] shadow-lg shadow-black/20 transition hover:bg-cyan-50 md:hidden"
           >
-            Book a Demo →
+            Book a Demo
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </nav>
       )}

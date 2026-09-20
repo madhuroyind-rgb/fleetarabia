@@ -30,7 +30,7 @@ export default function CompanyPage() {
       description="FleetArabia is a technology company dedicated to transforming mobility businesses through intelligent enterprise software. We help organizations simplify operations, connect business processes and accelerate digital transformation with one unified platform built specifically for the mobility industry. From vehicle rental and leasing to transportation, workshops, fleet management and customer engagement, FleetArabia empowers businesses to operate smarter, faster and with complete visibility."
       primaryCta={{ label: "Contact FleetArabia", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Our Solutions", href: "/solutions" }}
-      proofPoints={["Industry Expertise", "Enterprise Technology", "Trusted Digital Transformation Partner"]}
+      proofPoints={["Industry Expertise", "Enterprise Technology", "Digital Transformation Partner"]}
       visualItems={["Domain", "Technology", "ERP", "Support"]}
       sections={[
         {
@@ -41,7 +41,7 @@ export default function CompanyPage() {
             { title: "Industry Expertise", text: "Purpose-built for vehicle rental, leasing, transportation, workshops, corporate fleets and mobility service providers." },
             { title: "Enterprise Technology", text: "Modern, cloud-ready applications built with scalable architecture, enterprise security and API-first connectivity." },
             { title: "Digital Innovation", text: "Leveraging automation, analytics, mobile technology, AI and real-time integrations to modernize fleet operations." },
-            { title: "Customer Success", text: "Working alongside our customers from implementation through continuous optimization to deliver measurable business outcomes." },
+            { title: "Customer Success", text: "Our commitment is to work alongside every customer, from implementation through continuous optimization." },
           ],
         },
         {
@@ -49,8 +49,8 @@ export default function CompanyPage() {
           title: "Our core principles",
           text: "The principles that guide every FleetArabia implementation.",
           items: [
-            { title: "Customer First", text: "Every solution is designed around the operational needs of our customers, helping them achieve greater efficiency, productivity and profitability." },
-            { title: "Innovation", text: "We continuously invest in modern technologies, intelligent automation, AI, analytics and digital experiences to keep our customers ahead of the market." },
+            { title: "Customer First", text: "Every solution is designed around the operational needs of fleet businesses: efficiency, productivity and profitability." },
+            { title: "Innovation", text: "We continuously invest in modern technologies, intelligent automation, AI, analytics and digital experiences to keep fleet businesses ahead of the market." },
             { title: "Integration", text: "We connect people, vehicles, finance, operations and third-party systems into one intelligent business ecosystem." },
             { title: "Trust & Security", text: "Enterprise-grade security, governance, auditability and compliance are built into every solution we deliver." },
             { title: "Partnership", text: "We build long-term relationships by providing implementation expertise, ongoing support, continuous innovation and strategic guidance." },
@@ -58,7 +58,7 @@ export default function CompanyPage() {
         },
       ]}
       finalCtaTitle="Transform mobility with confidence"
-      finalCtaText="Whether you're modernizing legacy systems, launching new digital services or scaling enterprise operations, FleetArabia is your trusted technology partner for the journey ahead. Let's build the future of mobility together."
+      finalCtaText="Whether you're modernizing legacy systems, launching new digital services or scaling enterprise operations, FleetArabia is your technology partner for the journey ahead. Let's build the future of mobility together."
     >
       <MissionVisionSection />
       <WhyChooseSection />
@@ -110,7 +110,7 @@ function WhyChooseSection() {
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
-            Why Organizations Choose FleetArabia
+            Why FleetArabia
           </p>
           <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
             Built specifically for the mobility industry

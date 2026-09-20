@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { ChartColumn, Cloud, Layers, Link2, Lock, MapPin, Smartphone, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Platform | FleetArabia",
@@ -22,40 +23,47 @@ export default function PlatformPage() {
       sections={[
         {
           eyebrow: "Platform at a Glance",
-          numbered: true,
           title: "Built for enterprise mobility operations",
           text: "Everything below runs on the same data model — nothing here is a bolt-on integration.",
           variant: "dark",
           items: [
             {
+              icon: Layers,
               title: "Unified Operations",
               text: "Manage rental, leasing, transportation, workshops, drivers and finance from one integrated platform.",
             },
             {
+              icon: Zap,
               title: "Intelligent Automation",
               text: "Automate reservations, contracts, invoicing, renewals, approvals, maintenance scheduling and business workflows.",
             },
             {
+              icon: Link2,
               title: "Open Integration Platform",
               text: "Connect with ERP, accounting, payment gateways, GPS providers, telematics, government and regulatory systems, CRM, HR and third-party applications through secure APIs.",
             },
             {
+              icon: ChartColumn,
               title: "Real-Time Analytics",
               text: "Monitor KPIs, fleet utilization, revenue, profitability, maintenance costs and operational performance through interactive dashboards and AI-powered insights.",
             },
             {
+              icon: Smartphone,
               title: "Mobile Workforce",
               text: "Native mobile applications for drivers, workshop technicians, field staff, delivery teams and managers.",
             },
             {
+              icon: MapPin,
               title: "GPS Tracking & Geo-Fencing",
               text: "Track vehicle locations in real time, create geo-fenced operational zones, monitor route compliance and receive instant alerts.",
             },
             {
+              icon: Lock,
               title: "Enterprise Security",
               text: "Role-based access control, audit trails, multi-factor authentication, encryption and compliance with enterprise security standards.",
             },
             {
+              icon: Cloud,
               title: "Cloud & On-Premise Deployment",
               text: "Deploy on your preferred cloud infrastructure or in your own on-premise environment.",
               href: "/deployment",

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { ArrowRight, Check, type LucideIcon } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ConnectedVisual from "@/components/ConnectedVisual";
 import { slugify } from "@/lib/slug";
@@ -8,6 +9,7 @@ type CardItem = {
   title: string;
   text?: string;
   tag?: string;
+  icon?: LucideIcon;
   href?: string;
   linkLabel?: string;
 };
@@ -57,10 +59,12 @@ const TEAL_PATTERN =
   "absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]";
 
 const PRIMARY_BUTTON =
-  "inline-flex justify-center rounded-md bg-white px-7 py-3 text-sm font-black text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50";
+  "group inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50";
 
 const SECONDARY_BUTTON =
-  "inline-flex justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]";
+  "group inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#087674]";
+
+const BUTTON_ARROW = "h-4 w-4 transition group-hover:translate-x-0.5";
 
 export default function EnterprisePage({
   eyebrow,
@@ -135,7 +139,7 @@ function Hero({
       <div className={TEAL_PATTERN} />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-6 md:py-14 xl:min-h-[500px] xl:grid-cols-[0.88fr_1.12fr]">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-6 md:py-20 xl:min-h-[540px] xl:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
             {eyebrow}
@@ -154,22 +158,21 @@ function Hero({
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Link href={primaryCta.href} className={PRIMARY_BUTTON}>
-              {primaryCta.label} →
+              {primaryCta.label}
+              <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
             </Link>
 
             <Link href={secondaryCta.href} className={SECONDARY_BUTTON}>
-              {secondaryCta.label} →
+              {secondaryCta.label}
+              <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
             </Link>
           </div>
 
           <div className="mt-8 grid max-w-2xl gap-4 border-t border-white/10 pt-6 sm:grid-cols-3">
             {proofPoints.map((item) => (
               <div key={item} className="flex items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300"
-                >
-                  ✓
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
+                  <Check aria-hidden="true" className="h-4 w-4" strokeWidth={2.5} />
                 </span>
                 <span className="text-sm text-cyan-50">{item}</span>
               </div>
@@ -219,19 +222,19 @@ function PageSection({ section }: { section: Section }) {
   const onWhite = variant === "light";
 
   const cardClass = onWhite
-    ? "border-white/20 bg-white text-slate-950 shadow-2xl shadow-black/10 hover:shadow-black/20"
+    ? "border-white/40 bg-white text-slate-950 shadow-xl shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/15"
     : "border-white/15 bg-white/10 text-white shadow-xl shadow-black/10 backdrop-blur hover:border-cyan-300/40 hover:bg-white/15";
 
   return (
     <section
-      className={`relative overflow-hidden px-5 py-14 text-white sm:px-6 md:py-16 ${
+      className={`relative overflow-hidden px-5 py-16 text-white sm:px-6 md:py-24 ${
         variant === "dark" ? "bg-[#065f5e]" : "bg-[#087674]"
       }`}
     >
       {variant !== "dark" && <div className={TEAL_PATTERN} />}
 
       <div className="relative mx-auto max-w-7xl">
-        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             {section.eyebrow}
           </p>
@@ -249,8 +252,8 @@ function PageSection({ section }: { section: Section }) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {section.items.map((item, index) => (
               <Reveal key={item.title} delay={Math.min(index * 0.05, 0.3)}>
-                <div className="flex h-full items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-5 text-sm font-black text-white">
-                  <span aria-hidden="true" className="text-cyan-300">✓</span>
+                <div className="flex h-full items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-5 py-4 text-sm font-bold text-white">
+                  <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-cyan-300" strokeWidth={2.5} />
                   {item.title}
                 </div>
               </Reveal>
@@ -270,9 +273,19 @@ function PageSection({ section }: { section: Section }) {
             >
               <article
                 id={section.anchors ? slugify(item.title) : undefined}
-                className={`flex h-full scroll-mt-28 flex-col rounded-3xl border p-6 transition duration-300 hover:-translate-y-1 ${cardClass}`}
+                className={`flex h-full scroll-mt-28 flex-col rounded-2xl border p-7 transition duration-300 hover:-translate-y-1 ${cardClass}`}
               >
-                {tag &&
+                {item.icon ? (
+                  <div
+                    aria-hidden="true"
+                    className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${
+                      onWhite ? "bg-[#087674]/10 text-[#087674] ring-1 ring-[#087674]/10" : "bg-white/15 text-white ring-1 ring-white/20"
+                    }`}
+                  >
+                    <item.icon className="h-6 w-6" strokeWidth={1.9} />
+                  </div>
+                ) : null}
+                {!item.icon && tag &&
                   (isTileTag(tag) ? (
                     <div
                       aria-hidden="true"
@@ -292,7 +305,7 @@ function PageSection({ section }: { section: Section }) {
                     </div>
                   ))}
 
-                <h3 className="text-lg font-black leading-snug tracking-tight">{item.title}</h3>
+                <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
                 {item.text && (
                   <p className={`mt-3 flex-1 text-sm leading-6 ${onWhite ? "text-slate-600" : "text-cyan-50"}`}>
                     {item.text}
@@ -301,7 +314,7 @@ function PageSection({ section }: { section: Section }) {
                 {item.href && (
                   <Link
                     href={item.href}
-                    className={`mt-5 inline-flex items-center text-sm font-black transition hover:translate-x-1 ${
+                    className={`mt-5 inline-flex items-center text-sm font-bold transition hover:translate-x-1 ${
                       onWhite ? "text-[#087674]" : "text-cyan-50"
                     }`}
                   >
@@ -321,7 +334,7 @@ function PageSection({ section }: { section: Section }) {
 
 function FinalCTA({ title, text }: { title: string; text: string }) {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 py-14 text-center text-white sm:px-6 md:py-16">
+    <section className="relative overflow-hidden bg-[#087674] px-5 py-16 text-center text-white sm:px-6 md:py-24">
       <div className={TEAL_PATTERN} />
 
       <Reveal className="relative mx-auto max-w-4xl">
@@ -337,11 +350,13 @@ function FinalCTA({ title, text }: { title: string; text: string }) {
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link href="/contact#demo-form" className={PRIMARY_BUTTON}>
-            Book a Demo →
+            Book a Demo
+            <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
           </Link>
 
           <Link href="/solutions" className={SECONDARY_BUTTON}>
-            View Solutions →
+            View Solutions
+            <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
           </Link>
         </div>
       </Reveal>

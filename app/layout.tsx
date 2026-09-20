@@ -30,6 +30,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "FleetArabia",
+  legalName: "FleetArabia Technology LLC",
   url: SITE_URL,
   logo: `${SITE_URL}/icon.svg`,
   image: `${SITE_URL}/opengraph-image`,

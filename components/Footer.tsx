@@ -102,20 +102,6 @@ export default function Footer() {
               Middle East.
             </p>
 
-            <div className="mt-7 grid max-w-sm grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <div className="text-lg font-black text-white">13</div>
-                <div className="mt-1 text-xs leading-5 text-slate-400">
-                  Fleet solution modules
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                <div className="text-lg font-black text-white">ERP</div>
-                <div className="mt-1 text-xs leading-5 text-slate-400">
-                  Finance-ready integration
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-3">
@@ -172,7 +158,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 FleetArabia. All rights reserved.</p>
+          <p>© 2026 FleetArabia Technology LLC. All rights reserved.</p>
 
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy" className="transition hover:text-cyan-300">

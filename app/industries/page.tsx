@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { Briefcase, Building2, Bus, Car, CarTaxiFront, KeyRound, Landmark, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Industries | FleetArabia",
@@ -22,22 +23,21 @@ export default function IndustriesPage() {
       sections={[
         {
           eyebrow: "Industries We Serve",
-          numbered: true,
           title: "Purpose-built solutions for every mobility business",
           text: "FleetArabia combines industry expertise with enterprise technology to help organizations optimize operations, improve fleet utilization and deliver exceptional customer experiences.",
           items: [
-            { title: "Vehicle Rental Companies", text: "Manage reservations, quotations, agreements, fleet allocation, pricing, billing, vehicle returns, replacements, toll and traffic fine charges, and customer service from one integrated platform." },
-            { title: "Leasing Companies", text: "Digitize the complete lease lifecycle with contract management, corporate billing, renewals, vehicle replacement, maintenance planning and financial integration." },
-            { title: "Chauffeur & Limousine Services", text: "Optimize chauffeur scheduling, dispatch operations, bookings, trip management, customer service, GPS tracking and executive transportation." },
-            { title: "Bus & Staff Transportation", text: "Plan routes, assign vehicles and drivers, monitor operations, manage school and employee transport, and improve fleet utilization with real-time visibility." },
-            { title: "Corporate Fleet Management", text: "Control company-owned fleets through vehicle allocation, driver management, maintenance scheduling, fuel monitoring, GPS tracking and cost center reporting." },
-            { title: "Workshop & Service Centers", text: "Manage inspections, preventive maintenance, repair orders, spare parts, technician productivity, warranties and complete vehicle service history." },
-            { title: "Government & Public Sector Mobility", text: "Support secure, auditable and compliant fleet operations for municipalities, ministries, utilities, airports, healthcare and other public-sector organizations." },
-            { title: "Enterprise Mobility Groups", text: "Operate multiple companies, brands, branches and business units on a single platform with centralized finance, standardized processes and enterprise reporting." },
+            { icon: Car, title: "Vehicle Rental Companies", text: "Manage reservations, quotations, agreements, fleet allocation, pricing, billing, vehicle returns, replacements, toll and traffic fine charges, and customer service from one integrated platform." },
+            { icon: KeyRound, title: "Leasing Companies", text: "Digitize the complete lease lifecycle with contract management, corporate billing, renewals, vehicle replacement, maintenance planning and financial integration." },
+            { icon: CarTaxiFront, title: "Chauffeur & Limousine Services", text: "Optimize chauffeur scheduling, dispatch operations, bookings, trip management, customer service, GPS tracking and executive transportation." },
+            { icon: Bus, title: "Bus & Staff Transportation", text: "Plan routes, assign vehicles and drivers, monitor operations, manage school and employee transport, and improve fleet utilization with real-time visibility." },
+            { icon: Briefcase, title: "Corporate Fleet Management", text: "Control company-owned fleets through vehicle allocation, driver management, maintenance scheduling, fuel monitoring, GPS tracking and cost center reporting." },
+            { icon: Wrench, title: "Workshop & Service Centers", text: "Manage inspections, preventive maintenance, repair orders, spare parts, technician productivity, warranties and complete vehicle service history." },
+            { icon: Landmark, title: "Government & Public Sector Mobility", text: "Support secure, auditable and compliant fleet operations for municipalities, ministries, utilities, airports, healthcare and other public-sector organizations." },
+            { icon: Building2, title: "Enterprise Mobility Groups", text: "Operate multiple companies, brands, branches and business units on a single platform with centralized finance, standardized processes and enterprise reporting." },
           ],
         },
         {
-          eyebrow: "Why Organizations Choose FleetArabia",
+          eyebrow: "Why FleetArabia",
           title: "Built for enterprise mobility across the Middle East",
           text: "FleetArabia is designed to support the operational and regulatory requirements of mobility businesses throughout the GCC and Middle East, providing the flexibility to scale as your organization grows.",
           variant: "dark",

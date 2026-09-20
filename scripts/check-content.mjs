@@ -35,6 +35,13 @@ const impliedHits = [];
 for (const p of PAGES) for (const re of implied) if (re.test(textOf(html[p]))) impliedHits.push(`${p}: ${re}`);
 log("no wording that implies existing customers", impliedHits.length === 0, impliedHits.join("; "));
 
+// capabilities the owner has said are NOT available today (2026-09-20): naming Oracle as an
+// existing integration, and Arabic / multilingual operation
+const notYet = [/oracle/i, /multilingual/i];
+const notYetHits = [];
+for (const p of PAGES) for (const re of notYet) if (re.test(textOf(html[p]))) notYetHits.push(`${p}: ${re}`);
+log("no claims the owner has said are not available yet (Oracle, multilingual)", notYetHits.length === 0, notYetHits.join("; "));
+
 // 4. Organization JSON-LD
 const blocks = [...html["/"].matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => JSON.parse(m[1]));
 const org = blocks.find((b) => b["@type"] === "Organization");

@@ -47,7 +47,7 @@ export default function IndustriesPage() {
             { title: "Real-Time Fleet Visibility", text: "Track vehicles, drivers, contracts, maintenance, fuel, GPS and operational performance through live dashboards." },
             { title: "Business Intelligence & Analytics", text: "Transform operational data into executive insights with interactive dashboards, KPI monitoring, profitability analysis and AI-powered reporting." },
             { title: "Enterprise Security & Compliance", text: "Protect your business with role-based access, audit trails, digital approvals and enterprise-grade security controls." },
-            { title: "Regional Expertise", text: "Purpose-built for the Middle East with support for VAT, multilingual operations, local business practices and regional compliance requirements." },
+            { title: "Regional Expertise", text: "Purpose-built for the Middle East with support for VAT, local business practices and regional compliance requirements." },
           ],
         },
       ]}

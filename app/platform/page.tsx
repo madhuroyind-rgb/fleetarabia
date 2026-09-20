@@ -89,7 +89,7 @@ export default function PlatformPage() {
             {
               tag: "Layer 03",
               title: "Enterprise Layer",
-              text: "Oracle ERP, finance posting, GPS tracking, payments, APIs and analytics.",
+              text: "ERP and finance posting, GPS tracking, payments, APIs and analytics.",
             },
             {
               tag: "Layer 04",

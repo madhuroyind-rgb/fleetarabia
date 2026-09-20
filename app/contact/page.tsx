@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | FleetArabia",
   description:
-    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or Oracle ERP integration? Tell us what you're working on.",
+    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or ERP integration? Tell us what you're working on.",
   alternates: { canonical: "/contact" },
 };
 
@@ -15,7 +15,7 @@ export default function ContactPage() {
       eyebrow="Contact Us"
       title="Start Your"
       highlight="Mobility Transformation"
-      description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to Oracle ERP — tell us what you're working on and we'll help you find the right starting point."
+      description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to your ERP — tell us what you're working on and we'll help you find the right starting point."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Email Us", href: "mailto:info@fleetarabia.com" }}
       proofPoints={["Offices in UAE & India", "Enterprise Consulting", "24-Hour Response"]}
@@ -35,7 +35,7 @@ export default function ContactPage() {
             },
             {
               title: "Discuss ERP Integration",
-              text: "Talk through Oracle ERP, finance, GPS, payment gateway, Salik, traffic fine, billing, and API integration requirements.",
+              text: "Talk through ERP, finance, GPS, payment gateway, Salik, traffic fine, billing, and API integration requirements.",
               href: "/integrations",
               linkLabel: "See Integrations →",
             },
@@ -73,7 +73,7 @@ export default function ContactPage() {
             },
             {
               title: "GPS & Payment Integration",
-              text: "GPS tracking, payment gateway, Oracle ERP, finance, and third-party system integrations.",
+              text: "GPS tracking, payment gateway, ERP, finance, and third-party system integrations.",
             },
           ],
         },

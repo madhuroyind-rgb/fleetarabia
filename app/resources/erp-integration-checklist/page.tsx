@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "ERP Integration Checklist | FleetArabia",
   description:
-    "A practical checklist for planning how fleet operations should connect to Oracle ERP, finance, GPS, and payment systems.",
+    "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS, and payment systems.",
   alternates: { canonical: "/resources/erp-integration-checklist" },
 };
 
@@ -14,7 +14,7 @@ const articleJsonLd = {
   "@type": "Article",
   headline: "ERP Integration Checklist",
   description:
-    "A practical checklist for planning how fleet operations should connect to Oracle ERP, finance, GPS, and payment systems.",
+    "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS, and payment systems.",
   datePublished: "2026-07-09",
   dateModified: "2026-07-09",
   image: `${SITE_URL}/opengraph-image`,

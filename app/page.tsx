@@ -98,7 +98,7 @@ const solutions = [
     icon: MODULE_ICONS["ERP Integration Platform"],
     short: "ERP Integration",
     title: "ERP Integration Platform",
-    text: "Oracle ERP integration, finance system connectivity, APIs, implementation support and post-go-live assistance.",
+    text: "ERP and finance system connectivity, APIs, implementation support and post-go-live assistance.",
   },
   {
     icon: MODULE_ICONS["GPS Tracking & Geo-Fencing"],
@@ -136,7 +136,7 @@ const workflow = [
 ];
 
 const integrations = [
-  { label: "Oracle ERP", icon: Database },
+  { label: "ERP Systems", icon: Database },
   { label: "Finance Systems", icon: Landmark },
   { label: "GPS Tracking", icon: MapPin },
   { label: "Payment Gateways", icon: CreditCard },
@@ -436,7 +436,7 @@ function Integrations() {
           <h2 className={H2}>Talks to the systems you already run</h2>
           <p className={LEAD}>
             Pre-built connectors and APIs help integrate mobility operations
-            with Oracle ERP, finance systems, GPS tracking, payment gateways and
+            with ERP and finance systems, GPS tracking, payment gateways and
             cloud platforms.
           </p>
 

@@ -10,8 +10,8 @@ const whatsappMessage = encodeURIComponent(
 const quickLinks = [
   {
     label: "Chat on WhatsApp",
-    sub: "+971 52 133 3050",
-    href: `https://wa.me/971521333050?text=${whatsappMessage}`,
+    sub: "+971 58 586 8864",
+    href: `https://wa.me/971585868864?text=${whatsappMessage}`,
     external: true,
     icon: (
       <svg viewBox="0 0 32 32" className="h-5 w-5" fill="currentColor">

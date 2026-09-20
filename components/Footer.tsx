@@ -154,10 +154,10 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+971521333050"
+                  href="tel:+971585868864"
                   className="transition hover:text-cyan-300"
                 >
-                  +971 52 133 3050 (UAE)
+                  +971 58 586 8864 (UAE)
                 </a>
               </p>
             </div>

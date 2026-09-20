@@ -62,7 +62,7 @@ const organizationJsonLd = {
     {
       "@type": "ContactPoint",
       email: "info@fleetarabia.com",
-      telephone: "+971521333050",
+      telephone: "+971585868864",
       contactType: "sales",
       areaServed: "AE",
     },

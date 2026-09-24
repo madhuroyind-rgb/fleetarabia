@@ -53,14 +53,17 @@ export default function AnalyticsConsent({ gaId }: { gaId: string }) {
   if (consent !== "unset") return null;
 
   // A slim bar, kept clear of the chat button (right) and low enough that it
-  // does not sit on top of the hero buttons on a laptop-height screen.
+  // does not sit on top of the hero buttons on a laptop-height screen. On
+  // phones it is pinned edge to edge at the bottom; globals.css lifts the chat
+  // button above it (data-consent-bar / data-chat-launcher) while it shows.
   return (
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed inset-x-4 bottom-24 z-40 rounded-2xl border border-slate-200 bg-white p-4 text-slate-800 shadow-2xl shadow-black/20 sm:bottom-5 sm:left-5 sm:right-24 md:flex md:items-center md:gap-5 md:px-5 md:py-3 lg:left-1/2 lg:right-auto lg:w-[880px] lg:-translate-x-1/2"
+      data-consent-bar=""
+      className="fixed inset-x-0 bottom-0 z-40 rounded-t-2xl border-t border-slate-200 bg-white px-4 pb-3 pt-3 text-slate-800 shadow-2xl shadow-black/20 sm:bottom-5 sm:left-5 sm:right-24 sm:rounded-2xl sm:border sm:p-4 md:flex md:items-center md:gap-5 md:px-5 md:py-3 lg:left-1/2 lg:right-auto lg:w-[880px] lg:-translate-x-1/2"
     >
-      <p className="text-sm leading-6 text-slate-600 md:flex-1">
+      <p className="text-[13px] leading-5 text-slate-600 sm:text-sm sm:leading-6 md:flex-1">
         <span className="font-black text-slate-950">Analytics cookies. </span>
         We&apos;d like to use Google Analytics to understand how this site is used.
         Cookies are only set if you accept. See our{" "}
@@ -69,7 +72,7 @@ export default function AnalyticsConsent({ gaId }: { gaId: string }) {
         </Link>
         .
       </p>
-      <div className="mt-3 flex gap-3 md:mt-0 md:shrink-0">
+      <div className="mt-2.5 flex gap-3 sm:mt-3 md:mt-0 md:shrink-0">
         <button
           type="button"
           onClick={() => writeConsent("granted")}

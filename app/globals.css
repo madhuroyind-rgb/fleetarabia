@@ -205,3 +205,11 @@ main.fleet-teal-page {
     transition: none !important;
   }
 }
+
+/* Phones: the cookie bar (components/AnalyticsConsent.tsx) sits edge to edge
+   at the bottom, so lift the chat button above it while the bar is showing. */
+@media (max-width: 639.98px) {
+  body:has([data-consent-bar]) [data-chat-launcher] {
+    bottom: 9rem; /* bar is ~133px tall on phones; leaves ~11px of air */
+  }
+}

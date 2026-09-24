@@ -60,7 +60,7 @@ export default function ChatLauncher() {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div data-chat-launcher="" className="fixed bottom-5 right-5 z-50">
       {open && (
         <div className="mb-3 w-72 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-black/20">
           <div className="bg-gradient-to-r from-cyan-400 to-blue-600 px-4 py-4">

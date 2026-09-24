@@ -290,7 +290,7 @@ function BuiltFor() {
 
 function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
-    <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
+    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-12 md:mb-14">
       <p className={EYEBROW}>{eyebrow}</p>
       <h2 className={H2}>{title}</h2>
       {text && <p className={LEAD}>{text}</p>}
@@ -308,10 +308,10 @@ function ExecutiveOutcomes() {
           text="Owners who need visibility, operations leaders who need control, and finance teams who need clean numbers at close."
         />
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-4 md:gap-6 lg:grid-cols-3">
           {outcomes.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08}>
-              <article className={`group h-full p-8 ${WHITE_CARD}`}>
+              <article className={`group h-full p-6 md:p-8 ${WHITE_CARD}`}>
                 <div className="flex items-center justify-between">
                   <div className={ICON_TILE_ON_WHITE}>
                     <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
@@ -320,7 +320,7 @@ function ExecutiveOutcomes() {
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="mt-7 text-2xl font-bold tracking-tight">{item.title}</h3>
+                <h3 className="mt-5 text-xl font-bold tracking-tight md:mt-7 md:text-2xl">{item.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
               </article>
             </Reveal>
@@ -342,27 +342,32 @@ function Solutions() {
         />
 
         {/* Flex rather than grid so the 13th card is centred, not orphaned left. */}
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-5">
           {solutions.map((item, index) => (
             <Reveal
               key={item.title}
               delay={Math.min(index * 0.05, 0.3)}
               className="w-full md:w-[calc(50%-10px)] xl:w-[calc(25%-15px)]"
             >
-              <article className={`group flex h-full min-h-[240px] flex-col p-7 ${WHITE_CARD}`}>
-                <div className={`mb-6 ${ICON_TILE_ON_WHITE}`}>
+              {/* Phones: icon beside the text and a two-line summary (the full
+                  description stays in the page and on /solutions). md and up:
+                  the original tall card. */}
+              <article className={`group flex h-full gap-4 p-5 md:min-h-[240px] md:flex-col md:gap-0 md:p-7 ${WHITE_CARD}`}>
+                <div className={`shrink-0 md:mb-6 ${ICON_TILE_ON_WHITE}`}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
-                <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.text}</p>
-                <Link
-                  href={`/solutions#${slugify(item.title)}`}
-                  aria-label={`Learn more about ${item.title}`}
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#087674]"
-                >
-                  Learn More
-                  <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
-                </Link>
+                <div className="flex min-w-0 flex-1 flex-col">
+                  <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
+                  <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-slate-600 md:mt-3 md:line-clamp-none">{item.text}</p>
+                  <Link
+                    href={`/solutions#${slugify(item.title)}`}
+                    aria-label={`Learn more about ${item.title}`}
+                    className="mt-3 inline-flex items-center gap-1.5 py-1 text-sm font-bold text-[#087674] md:mt-6"
+                  >
+                    Learn More
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </article>
             </Reveal>
           ))}
@@ -399,7 +404,7 @@ function Workflow() {
           </Link>
         </Reveal>
 
-        <ol className="relative mt-12 grid gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+        <ol className="relative mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:mt-12 lg:grid-cols-6">
           {/* The line that joins the step markers on wide screens. */}
           <span
             aria-hidden="true"
@@ -446,10 +451,10 @@ function Integrations() {
           </Link>
         </Reveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {integrations.map((item, index) => (
             <Reveal key={item.label} delay={Math.min(index * 0.06, 0.3)}>
-              <div className={`flex h-full flex-col items-center gap-4 p-7 text-center ${GLASS_CARD}`}>
+              <div className={`flex h-full flex-col items-center gap-3 p-5 text-center sm:gap-4 sm:p-7 ${GLASS_CARD}`}>
                 <div className={ICON_TILE_ON_GLASS}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
@@ -480,11 +485,11 @@ function WhyFleetArabia() {
           text="Domain knowledge of how mobility businesses actually operate, the integration depth to connect with your finance systems, and hands-on support to get there."
         />
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {reasons.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article className={`h-full p-7 ${GLASS_CARD}`}>
-                <div className={`mb-6 ${ICON_TILE_ON_GLASS}`}>
+              <article className={`h-full p-6 md:p-7 ${GLASS_CARD}`}>
+                <div className={`mb-4 md:mb-6 ${ICON_TILE_ON_GLASS}`}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
                 <h3 className="text-lg font-bold leading-snug tracking-tight text-white">{item.title}</h3>

@@ -3,7 +3,8 @@ import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Terms of Use | FleetArabia",
-  description: "The terms and conditions governing use of the FleetArabia website.",
+  description:
+    "Terms governing use of the FleetArabia website: acceptable use, intellectual property, disclaimers, limitation of liability and governing UAE law.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/terms" },
 };

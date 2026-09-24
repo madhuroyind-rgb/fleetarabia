@@ -3,9 +3,14 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import { SITE_ROUTES } from "@/lib/site";
 
+// Metadata merges shallowly, so without its own `alternates` and `description`
+// this page would inherit the root layout's canonical "/" and home description
+// and tell search engines it is the home page.
 export const metadata: Metadata = {
   title: "Page Not Found | FleetArabia",
+  description: "The page you're looking for may have been moved or the link may be incorrect.",
   robots: { index: false, follow: true },
+  alternates: { canonical: null },
 };
 
 export default function NotFound() {

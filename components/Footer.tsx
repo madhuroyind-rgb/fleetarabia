@@ -58,9 +58,9 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
+      <h2 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
         {title}
-      </h3>
+      </h2>
       <ul className="mt-5 space-y-3">
         {items.map((item) => (
           <li key={item.label}>
@@ -129,9 +129,9 @@ export default function Footer() {
           </div>
 
           <div className="rounded-[1.75rem] border border-cyan-300/20 bg-cyan-300/[0.06] p-6">
-            <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
+            <h2 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
               Contact
-            </h3>
+            </h2>
 
             <div className="mt-5 space-y-4 text-sm leading-6 text-slate-300">
               <p>Dubai, Free Zone, UAE</p>

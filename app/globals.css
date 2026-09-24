@@ -186,12 +186,22 @@ main.fleet-teal-page {
   100% { r: 28; opacity: 0; }
 }
 
-/* Backstop: Reveal server-renders at opacity:0 and relies on framer-motion to
-   fade it in. If that never runs (reduced motion, hydration failure, no JS),
-   the page would render blank. Never let content be JS-gated. */
-@media (prefers-reduced-motion: reduce) {
+/* Reveal (components/Reveal.tsx): content is visible by default in the server
+   HTML. Only once JS has run, and only for sections still below the fold, is
+   an element set to data-reveal="pending"; it fades in when it scrolls into
+   view. Without JS nothing here ever applies, so nothing is ever hidden. */
+[data-reveal] {
+  transition: opacity 0.5s ease-out var(--reveal-delay, 0s),
+    transform 0.5s ease-out var(--reveal-delay, 0s);
+}
+[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+@media (prefers-reduced-motion: reduce), print {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 }

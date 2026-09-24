@@ -1,8 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
+// Scroll-in fade as progressive enhancement only. The server always renders
+// the content visible; after hydration, sections that are still below the
+// fold are marked "pending" (hidden by CSS) and revealed as they scroll in.
+// No JS, a failed hydration, reduced motion or no IntersectionObserver all
+// leave the content exactly as the server rendered it: visible.
 export default function Reveal({
   children,
   delay = 0,
@@ -12,27 +16,41 @@ export default function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const shouldReduceMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
 
-  // Always render the motion element, even when motion is reduced. The server
-  // cannot know the client's motion preference, so it always emits the
-  // animated branch with an inline opacity:0. Swapping to a plain div on the
-  // client leaves that inline style orphaned and the content invisible for
-  // good — so keep framer-motion in control and just skip the animation.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Already on screen: never hide what the visitor can see.
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) return;
+
+    el.dataset.reveal = "pending";
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          el.dataset.reveal = "shown";
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -80px 0px" },
+    );
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      el.dataset.reveal = "";
+    };
+  }, []);
+
   return (
-    <motion.div
-      data-reveal
-      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={
-        shouldReduceMotion
-          ? { duration: 0 }
-          : { duration: 0.5, delay, ease: "easeOut" }
-      }
+    <div
+      ref={ref}
+      data-reveal=""
       className={className}
+      style={delay ? ({ "--reveal-delay": `${delay}s` } as CSSProperties) : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

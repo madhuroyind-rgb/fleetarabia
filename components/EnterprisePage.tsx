@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, type LucideIcon } from "lucide-react";
 import Reveal from "@/components/Reveal";
-import ConnectedVisual from "@/components/ConnectedVisual";
+import HeroVisual, { type HeroVisualSpec } from "@/components/HeroVisual";
 import { slugify } from "@/lib/slug";
 
 type CardItem = {
@@ -44,9 +44,8 @@ type EnterprisePageProps = {
     href: string;
   };
   proofPoints?: string[];
-  visualItems?: string[];
-  visualTopLabel?: string;
-  visualBottomLabel?: string;
+  // The hero's right-hand visual, specific to the page (see HeroVisual.tsx).
+  visual: HeroVisualSpec;
   sections: Section[];
   finalCtaTitle?: string;
   finalCtaText?: string;
@@ -74,9 +73,7 @@ export default function EnterprisePage({
   primaryCta = { label: "Book a Demo", href: "/contact#demo-form" },
   secondaryCta = { label: "Explore Solutions", href: "/solutions" },
   proofPoints = ["Enterprise Ready", "ERP Integrated", "Middle East Expertise"],
-  visualItems = ["Operations", "Fleet", "Finance", "ERP"],
-  visualTopLabel,
-  visualBottomLabel,
+  visual,
   sections,
   finalCtaTitle = "Ready to modernize your mobility operations?",
   finalCtaText = "Let's build your digital rental, leasing, transportation and ERP-connected operation together.",
@@ -93,9 +90,7 @@ export default function EnterprisePage({
         primaryCta={primaryCta}
         secondaryCta={secondaryCta}
         proofPoints={proofPoints}
-        visualItems={visualItems}
-        visualTopLabel={visualTopLabel}
-        visualBottomLabel={visualBottomLabel}
+        visual={visual}
       />
 
       {childrenFirst && children}
@@ -119,9 +114,7 @@ function Hero({
   primaryCta,
   secondaryCta,
   proofPoints,
-  visualItems,
-  visualTopLabel,
-  visualBottomLabel,
+  visual,
 }: {
   eyebrow: string;
   title: string;
@@ -130,9 +123,7 @@ function Hero({
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   proofPoints: string[];
-  visualItems: string[];
-  visualTopLabel?: string;
-  visualBottomLabel?: string;
+  visual: HeroVisualSpec;
 }) {
   return (
     <section className="relative overflow-hidden bg-[#087674]">
@@ -181,33 +172,10 @@ function Hero({
         </Reveal>
 
         <Reveal delay={0.15}>
-          <PremiumVisual items={visualItems} topLabel={visualTopLabel} bottomLabel={visualBottomLabel} />
+          <HeroVisual spec={visual} />
         </Reveal>
       </div>
     </section>
-  );
-}
-
-function PremiumVisual({
-  items,
-  topLabel,
-  bottomLabel,
-}: {
-  items: string[];
-  topLabel?: string;
-  bottomLabel?: string;
-}) {
-  return (
-    <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
-      <ConnectedVisual
-        nodes={items.slice(0, 4).map((title) => ({ title }))}
-        size={460}
-        centerLabel="F"
-        centerSub="FleetArabia"
-        topLabel={topLabel}
-        bottomLabel={bottomLabel}
-      />
-    </div>
   );
 }
 

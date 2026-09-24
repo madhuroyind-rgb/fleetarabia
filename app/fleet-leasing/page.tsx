@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { ChartColumn, FileSignature, ReceiptText, RefreshCw, Repeat, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fleet Leasing Software | FleetArabia",
@@ -18,9 +19,19 @@ export default function FleetLeasingPage() {
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Leasing", href: "/solutions" }}
       proofPoints={["Lease Lifecycle Management", "ERP & Finance Integration", "Multi-Company & Multi-Branch Support"]}
-      visualItems={["Leasing", "Fleet Ops", "Billing", "Finance"]}
-      visualTopLabel="Enterprise Leasing Platform"
-      visualBottomLabel="Leasing • Fleet Ops • Billing • Finance • Analytics"
+      visual={{
+        kind: "flow",
+        caption: "The lease lifecycle",
+        steps: [
+          { label: "Quotation & Contract", icon: FileSignature },
+          { label: "Recurring Billing", icon: ReceiptText },
+          { label: "Maintenance", icon: Wrench },
+          { label: "Vehicle Replacement", icon: Repeat },
+          { label: "Renewal", icon: RefreshCw },
+          { label: "Financial Reporting", icon: ChartColumn },
+        ],
+        footer: "All connected through one platform",
+      }}
       sections={[
         {
           eyebrow: "Enterprise Leasing Capabilities",

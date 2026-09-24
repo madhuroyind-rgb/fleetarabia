@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { Building2, Car, Layers, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -31,7 +32,16 @@ export default function CompanyPage() {
       primaryCta={{ label: "Contact FleetArabia", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Our Solutions", href: "/solutions" }}
       proofPoints={["Industry Expertise", "Enterprise Technology", "Digital Transformation Partner"]}
-      visualItems={["Domain", "Technology", "ERP", "Support"]}
+      visual={{
+        kind: "facts",
+        caption: "FleetArabia at a glance",
+        facts: [
+          { label: "Company", detail: "FleetArabia Technology LLC", icon: Building2 },
+          { label: "Offices", detail: "Dubai, UAE · Patna, India", icon: MapPin },
+          { label: "Focus", detail: "Rental, leasing, transport, workshops and fleets", icon: Car },
+          { label: "Approach", detail: "One platform, connected to your ERP", icon: Layers },
+        ],
+      }}
       sections={[
         {
           eyebrow: "Who We Are",

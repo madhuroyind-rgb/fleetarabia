@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { Clock, Presentation, Send } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -20,7 +21,15 @@ export default function ContactPage() {
       secondaryCta={{ label: "Email Us", href: "mailto:info@fleetarabia.com" }}
       proofPoints={["Offices in UAE & India", "Enterprise Consulting", "24-Hour Response"]}
       childrenFirst
-      visualItems={["Demo", "ERP", "GPS", "Support"]}
+      visual={{
+        kind: "flow",
+        caption: "What happens next",
+        steps: [
+          { label: "Tell us about your operation", detail: "Use the form below or email info@fleetarabia.com", icon: Send },
+          { label: "We reply within 24 hours", detail: "From our team in Dubai or Patna", icon: Clock },
+          { label: "Personalized walkthrough", detail: "Of the modules that fit your operation — no obligation to buy", icon: Presentation },
+        ],
+      }}
       sections={[
         {
           eyebrow: "Contact Options",

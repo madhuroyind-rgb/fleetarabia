@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
+import { Cloud, Server } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Deployment Options | FleetArabia",
@@ -18,7 +19,15 @@ export default function DeploymentPage() {
       primaryCta={{ label: "Talk to Our Experts", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore the Platform", href: "/platform" }}
       proofPoints={["SaaS Cloud", "On-Premises", "Enterprise Security"]}
-      visualItems={["SaaS", "On-Premises", "Security", "Scale"]}
+      visual={{
+        kind: "split",
+        caption: "Two deployment choices",
+        options: [
+          { title: "SaaS Cloud", icon: Cloud, points: ["No hardware to buy", "Subscription licensing", "Updates handled for you"] },
+          { title: "On-Premises", icon: Server, points: ["Full data ownership", "Your security controls", "Your backup policies"] },
+        ],
+        footer: "Same platform, either way",
+      }}
       sections={[
         {
           eyebrow: "SaaS Cloud",

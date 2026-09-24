@@ -18,7 +18,15 @@ export default function ResourcesPage() {
       primaryCta={{ label: "Talk to an Expert", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Solutions", href: "/solutions" }}
       proofPoints={["Implementation Guides", "Industry Insights", "No Sign-Up Required"]}
-      visualItems={["Insights", "Guides", "Cases", "Docs"]}
+      visual={{
+        kind: "docs",
+        caption: "Available now",
+        docs: [
+          { tag: "Guide", title: "Fleet Digital Transformation Guide", href: "/resources/fleet-digital-transformation-guide" },
+          { tag: "Checklist", title: "ERP Integration Checklist", href: "/resources/erp-integration-checklist" },
+        ],
+        pending: "More guides are in progress — ask us about any topic in the meantime.",
+      }}
       sections={[
         {
           eyebrow: "Featured Resources",

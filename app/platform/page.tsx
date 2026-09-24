@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
-import { ChartColumn, Cloud, Layers, Link2, Lock, MapPin, Smartphone, Zap } from "lucide-react";
+import { ChartColumn, Cloud, Layers, Link2, Lock, MapPin, MonitorSmartphone, Plug, ShieldCheck, Smartphone, Workflow, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Platform | FleetArabia",
@@ -19,7 +19,17 @@ export default function PlatformPage() {
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
       proofPoints={["Cloud Ready", "ERP Integrated", "Enterprise Secure"]}
-      visualItems={["Rental", "Fleet", "Workshop", "ERP"]}
+      visual={{
+        kind: "stack",
+        caption: "Platform architecture",
+        layers: [
+          { tag: "Layer 01", label: "Experience Layer", detail: "Web portal, mobile access and customer touchpoints", icon: MonitorSmartphone },
+          { tag: "Layer 02", label: "Operations Layer", detail: "Reservations, agreements, fleet, workshop and billing", icon: Workflow },
+          { tag: "Layer 03", label: "Enterprise Layer", detail: "ERP and finance posting, GPS, payments and APIs", icon: Plug },
+          { tag: "Layer 04", label: "Governance Layer", detail: "Roles, approvals and audit controls", icon: ShieldCheck },
+        ],
+        footer: "Everything runs on the same data model",
+      }}
       sections={[
         {
           eyebrow: "Platform at a Glance",

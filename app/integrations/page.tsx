@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import ConnectedVisual from "@/components/ConnectedVisual";
+import HeroVisual from "@/components/HeroVisual";
+import { CreditCard, Landmark, ReceiptText, Satellite, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Integrations | FleetArabia",
@@ -185,17 +186,22 @@ function TealPattern() {
 }
 
 function IntegrationVisual() {
-  const nodes = [
-    { title: "ERP" },
-    { title: "Payments" },
-    { title: "GPS" },
-    { title: "CRM" },
-  ];
-
   return (
-    <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
-      <ConnectedVisual nodes={nodes} size={460} centerLabel="F" centerSub="FleetArabia" />
-    </div>
+    <HeroVisual
+      spec={{
+        kind: "bridge",
+        caption: "Your systems, connected",
+        left: { title: "FleetArabia", items: ["Rental & Leasing", "Fleet & Workshop", "Billing", "Drivers & GPS"] },
+        center: "Secure APIs",
+        right: [
+          { label: "ERP & Finance", icon: ReceiptText },
+          { label: "Payment Gateways", icon: CreditCard },
+          { label: "GPS & Telematics", icon: Satellite },
+          { label: "Government Services", icon: Landmark },
+          { label: "CRM & Customer Platforms", icon: Users },
+        ],
+      }}
+    />
   );
 }
 

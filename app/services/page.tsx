@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import EnterprisePage from "@/components/EnterprisePage";
-import { CalendarCheck, Database, Globe, GraduationCap, LifeBuoy, Link2, MonitorSmartphone, Rocket, Smartphone, Target } from "lucide-react";
+import { CalendarCheck, Compass, Database, Globe, GraduationCap, LifeBuoy, Link2, MonitorSmartphone, PenTool, Rocket, Smartphone, Target, TrendingUp } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -34,7 +34,16 @@ export default function ServicesPage() {
       primaryCta={{ label: "Request Services", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Platform", href: "/platform" }}
       proofPoints={["Implementation", "ERP Support", "Customer Success"]}
-      visualItems={["Consulting", "Delivery", "Support", "Training"]}
+      visual={{
+        kind: "flow",
+        caption: "Delivery approach",
+        steps: [
+          { label: "Discover", detail: "Your operating model and system landscape", icon: Compass },
+          { label: "Design", detail: "Workflows, roles, data and integrations", icon: PenTool },
+          { label: "Deliver", detail: "Configure, migrate, train and go live", icon: Rocket },
+          { label: "Improve", detail: "Optimize processes and expand modules", icon: TrendingUp },
+        ],
+      }}
       sections={[
         {
           eyebrow: "Service Portfolio",

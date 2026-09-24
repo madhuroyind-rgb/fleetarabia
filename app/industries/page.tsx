@@ -19,7 +19,20 @@ export default function IndustriesPage() {
       primaryCta={{ label: "Talk to an Industry Expert", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Industry Solutions", href: "/solutions" }}
       proofPoints={["Multi-Industry Platform", "Middle East Ready", "Enterprise Scalability"]}
-      visualItems={["Rental", "Leasing", "Transport", "Fleet"]}
+      visual={{
+        kind: "tiles",
+        caption: "Industries we serve",
+        items: [
+          { label: "Vehicle Rental", icon: Car },
+          { label: "Leasing", icon: KeyRound },
+          { label: "Chauffeur & Limousine", icon: CarTaxiFront },
+          { label: "Bus & Staff Transport", icon: Bus },
+          { label: "Corporate Fleets", icon: Briefcase },
+          { label: "Workshops & Service", icon: Wrench },
+          { label: "Government & Public Sector", icon: Landmark },
+          { label: "Mobility Groups", icon: Building2 },
+        ],
+      }}
       sections={[
         {
           eyebrow: "Industries We Serve",

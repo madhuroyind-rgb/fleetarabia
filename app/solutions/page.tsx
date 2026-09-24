@@ -19,7 +19,40 @@ export default function SolutionsPage() {
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Platform", href: "/platform" }}
       proofPoints={["Unified Platform", "AI-Powered Analytics", "Multi-Country Ready"]}
-      visualItems={["Rental", "Leasing", "Analytics", "ERP"]}
+      visual={{
+        kind: "groups",
+        caption: "Thirteen modules, one platform",
+        groups: [
+          {
+            title: "Operations",
+            items: [
+              { label: "Car Rental", icon: MODULE_ICONS["Car Rental Management"] },
+              { label: "Leasing", icon: MODULE_ICONS["Leasing Management"] },
+              { label: "Chauffeur & Limo", icon: MODULE_ICONS["Chauffeur & Limousine"] },
+              { label: "Bus Transport", icon: MODULE_ICONS["Bus Transportation"] },
+            ],
+          },
+          {
+            title: "Fleet",
+            items: [
+              { label: "Workshop", icon: MODULE_ICONS["Workshop Management"] },
+              { label: "Damage & Claims", icon: MODULE_ICONS["Vehicle Damage & Claims (VDR)"] },
+              { label: "Fuel", icon: MODULE_ICONS["Fuel Management"] },
+              { label: "Drivers", icon: MODULE_ICONS["Driver Management"] },
+              { label: "GPS Tracking", icon: MODULE_ICONS["GPS Tracking & Geo-Fencing"] },
+            ],
+          },
+          {
+            title: "Business",
+            items: [
+              { label: "Billing", icon: MODULE_ICONS["Billing & Revenue Management"] },
+              { label: "Analytics", icon: MODULE_ICONS["Business Intelligence & Analytics"] },
+              { label: "CRM", icon: MODULE_ICONS["CRM & Customer Experience"] },
+              { label: "ERP Integration", icon: MODULE_ICONS["ERP Integration Platform"] },
+            ],
+          },
+        ],
+      }}
       sections={[
         {
           eyebrow: "Core Solutions",

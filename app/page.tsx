@@ -417,7 +417,7 @@ function Workflow() {
                 <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-[#087674] text-sm font-bold tabular-nums text-white shadow-lg shadow-[#087674]/30 ring-4 ring-white">
                   {index + 1}
                 </span>
-                <span className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
+                <span className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
                   Step {index + 1}
                 </span>
                 <span className="mt-1.5 text-base font-bold leading-snug text-slate-950">{item}</span>
@@ -511,7 +511,7 @@ function CTA() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.22),transparent_45%)]" />
 
-      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-white/10 px-6 py-12 shadow-2xl shadow-black/10 backdrop-blur md:px-12 md:py-16">
+      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-[#043f3e]/30 px-6 py-12 shadow-2xl shadow-black/10 backdrop-blur md:px-12 md:py-16">
         <p className={EYEBROW}>Start the Conversation</p>
         <h2 className={H2}>Ready to modernize your fleet operations?</h2>
         <p className={LEAD}>

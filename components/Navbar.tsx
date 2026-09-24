@@ -180,7 +180,7 @@ export default function Navbar() {
               return (
                 <li key={item.label}>
                   {item.children && (
-                    <div className="px-3 pb-1 pt-3 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+                    <div className="px-3 pb-1 pt-3 text-xs font-black uppercase tracking-[0.2em] text-slate-400">
                       {item.label}
                     </div>
                   )}

@@ -65,7 +65,7 @@ export default function ConnectedVisual({
       style={{ width: size, height: size + topPad + bottomPad }}
     >
       {topLabel && (
-        <div className="absolute left-1/2 top-1 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-cyan-300/25 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.24em] text-cyan-100 shadow-xl shadow-black/10 backdrop-blur">
+        <div className="absolute left-1/2 top-1 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-cyan-300/25 bg-[#043f3e]/40 px-5 py-2 text-xs font-bold uppercase tracking-[0.24em] text-cyan-100 shadow-xl shadow-black/10 backdrop-blur">
           {topLabel}
         </div>
       )}
@@ -191,7 +191,7 @@ export default function ConnectedVisual({
               style={{ left: g.x, top: g.y, transform: "translate(-50%, -50%)" }}
             >
               <div
-                className={`fa-node-float rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 ${compact ? "p-2.5" : "p-3"}`}
+                className={`fa-node-float rounded-2xl border border-white/15 bg-[#043f3e]/40 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-[#043f3e]/50 ${compact ? "p-2.5" : "p-3"}`}
                 style={{ animationDelay: `${0.7 + i * 0.1}s, ${i * 0.3}s`, width: nodeWidth }}
               >
                 {node.icon && (
@@ -205,7 +205,7 @@ export default function ConnectedVisual({
                 )}
                 <p
                   className={`font-black leading-tight text-cyan-50 ${
-                    compact ? "text-[11px] leading-[13px]" : node.icon ? "text-xs leading-4" : "py-2 text-center text-sm"
+                    compact ? "text-xs leading-4" : node.icon ? "text-xs leading-4" : "py-2 text-center text-sm"
                   }`}
                 >
                   {node.title}
@@ -217,7 +217,7 @@ export default function ConnectedVisual({
       </div>
 
       {bottomLabel && (
-        <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[11px] font-bold text-cyan-50 backdrop-blur">
+        <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-[#043f3e]/40 px-5 py-2 text-xs font-bold text-cyan-50 backdrop-blur">
           {bottomLabel}
         </div>
       )}

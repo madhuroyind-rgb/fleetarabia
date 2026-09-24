@@ -121,7 +121,7 @@ export default function ContactForm() {
         <div className="mx-auto mb-8 grid max-w-xl gap-4 sm:grid-cols-3">
           {trustPoints.map((item) => (
             <div key={item} className="flex items-center gap-2.5">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-[10px] text-cyan-300">
+              <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-xs text-cyan-300">
                 ✓
               </span>
               <span className="text-xs font-semibold text-cyan-50">{item}</span>

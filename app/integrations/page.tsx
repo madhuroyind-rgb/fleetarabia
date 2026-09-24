@@ -222,7 +222,7 @@ function EcosystemSection() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {ecosystem.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article className="h-full rounded-2xl border border-white/15 bg-white/10 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15">
+              <article className="h-full rounded-2xl border border-white/15 bg-[#043f3e]/30 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-[#043f3e]/40">
                 <h3 className="text-lg font-black leading-snug">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.text}
@@ -296,7 +296,7 @@ function GccSpotlightSection() {
           {gccIntegrations.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
               <article className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
-                <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-black text-cyan-50">
+                <span className="inline-flex rounded-full bg-[#043f3e]/40 px-3 py-1 text-xs font-black text-white">
                   {item.badge}
                 </span>
                 <h3 className="mt-4 text-lg font-black leading-snug text-white">{item.title}</h3>

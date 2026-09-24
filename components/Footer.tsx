@@ -92,7 +92,7 @@ export default function Footer() {
                 <div className="text-2xl font-black leading-none tracking-tight">
                   Fleet<span className="text-cyan-400">Arabia</span>
                 </div>
-                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                <div className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
                   Enterprise Mobility
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>© 2026 FleetArabia Technology LLC. All rights reserved.</p>
 
           <div className="flex flex-wrap gap-5">

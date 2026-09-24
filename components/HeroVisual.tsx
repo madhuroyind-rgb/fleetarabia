@@ -21,7 +21,7 @@ export type HeroVisualSpec =
   | { kind: "facts"; caption: string; facts: Row[] };
 
 const CARD =
-  "w-full max-w-[520px] rounded-3xl border border-white/15 bg-white/10 p-7 shadow-2xl shadow-black/15 backdrop-blur";
+  "w-full max-w-[520px] rounded-3xl border border-white/15 bg-[#043f3e]/30 p-7 shadow-2xl shadow-black/15 backdrop-blur";
 const CAPTION = "text-xs font-bold uppercase tracking-[0.22em] text-cyan-100";
 const ICON_BOX = "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/15 text-white ring-1 ring-white/20";
 
@@ -72,7 +72,7 @@ function Body({ spec }: { spec: HeroVisualSpec }) {
               <li
                 key={layer.label}
                 className="flex items-center gap-4 rounded-2xl border border-white/15 px-5 py-4 shadow-lg shadow-black/10"
-                style={{ marginLeft: `${i * 14}px`, background: `rgba(255,255,255,${0.16 - i * 0.03})` }}
+                style={{ marginLeft: `${i * 14}px`, background: `rgba(255,255,255,${0.1 - i * 0.02})` }}
               >
                 {layer.icon && (
                   <span className={ICON_BOX}>
@@ -80,7 +80,7 @@ function Body({ spec }: { spec: HeroVisualSpec }) {
                   </span>
                 )}
                 <div className="min-w-0">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-200">{layer.tag}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-100">{layer.tag}</p>
                   <p className="text-[15px] font-bold leading-6 text-white">{layer.label}</p>
                   {layer.detail && <p className="text-sm leading-5 text-cyan-50">{layer.detail}</p>}
                 </div>
@@ -220,7 +220,7 @@ function Body({ spec }: { spec: HeroVisualSpec }) {
                 </span>
               )}
               <div className="min-w-0">
-                <dt className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-200">{fact.label}</dt>
+                <dt className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-100">{fact.label}</dt>
                 <dd className="mt-1 text-[15px] font-semibold leading-6 text-white">{fact.detail}</dd>
               </div>
             </div>

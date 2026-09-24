@@ -24,7 +24,7 @@ export default function SitemapPage() {
             <li key={route.path}>
               <Link
                 href={route.path}
-                className="block rounded-xl border border-white/15 bg-white/10 px-5 py-4 text-sm font-black transition hover:border-cyan-300/40 hover:bg-white/15"
+                className="block rounded-xl border border-white/15 bg-[#043f3e]/30 px-5 py-4 text-sm font-black transition hover:border-cyan-300/40 hover:bg-[#043f3e]/40"
               >
                 {route.label}
               </Link>

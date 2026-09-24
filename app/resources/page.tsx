@@ -32,7 +32,7 @@ export default function ResourcesPage() {
           eyebrow: "Featured Resources",
           title: "Practical guides from the FleetArabia team",
           columns: 2,
-          text: "Two guides are live below. The rest are in progress — reach out directly and we'll walk you through any of these topics now.",
+          text: "Two guides are live below.",
           items: [
             { tag: "Guide", title: "Fleet Digital Transformation Guide", text: "Learn how to modernize rental, leasing, transportation, workshops and fleet operations using connected digital technologies.", href: "/resources/fleet-digital-transformation-guide", linkLabel: "Read Guide →" },
             { tag: "Checklist", title: "ERP Integration Checklist", text: "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS and payment systems.", href: "/resources/erp-integration-checklist", linkLabel: "Read Checklist →" },

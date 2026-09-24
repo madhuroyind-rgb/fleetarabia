@@ -26,8 +26,8 @@ export default function CompanyPage() {
   return (
     <EnterprisePage
       eyebrow="Company"
-      title="Driving the Future of"
-      highlight="Enterprise Mobility"
+      title="A fleet technology company"
+      highlight="based in Dubai and Patna"
       description="FleetArabia is a technology company dedicated to transforming mobility businesses through intelligent enterprise software. We help organizations simplify operations, connect business processes and accelerate digital transformation with one unified platform built specifically for the mobility industry. From vehicle rental and leasing to transportation, workshops, fleet management and customer engagement, FleetArabia empowers businesses to operate smarter, faster and with complete visibility."
       primaryCta={{ label: "Contact FleetArabia", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Our Solutions", href: "/solutions" }}
@@ -67,7 +67,7 @@ export default function CompanyPage() {
           ],
         },
       ]}
-      finalCtaTitle="Transform mobility with confidence"
+      finalCtaTitle="Talk to the team"
       finalCtaText="Whether you're modernizing legacy systems, launching new digital services or scaling enterprise operations, FleetArabia is your technology partner for the journey ahead. Let's build the future of mobility together."
     >
       <MissionVisionSection />

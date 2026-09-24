@@ -28,6 +28,8 @@ type Section = {
   compact?: boolean;
   // Number the cards 01, 02… (the homepage's tile style) when they carry no tag of their own.
   numbered?: boolean;
+  // Two cards per row in a narrower column, for sections with only a couple of cards.
+  columns?: 2 | 4;
 };
 
 type EnterprisePageProps = {
@@ -229,7 +231,7 @@ function PageSection({ section }: { section: Section }) {
           </div>
         ) : (
         /* Flex rather than grid so a short last row is centred, not orphaned left. */
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className={`flex flex-wrap justify-center gap-5 ${section.columns === 2 ? "mx-auto max-w-4xl" : ""}`}>
           {section.items.map((item, index) => {
             const tag = item.tag ?? (section.numbered ? String(index + 1).padStart(2, "0") : undefined);
 
@@ -237,7 +239,7 @@ function PageSection({ section }: { section: Section }) {
             <Reveal
               key={item.title}
               delay={Math.min(index * 0.06, 0.24)}
-              className="w-full md:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]"
+              className={`w-full md:w-[calc(50%-10px)] ${section.columns === 2 ? "" : "lg:w-[calc(25%-15px)]"}`}
             >
               <article
                 id={section.anchors ? slugify(item.title) : undefined}

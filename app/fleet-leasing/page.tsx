@@ -13,8 +13,8 @@ export default function FleetLeasingPage() {
   return (
     <EnterprisePage
       eyebrow="Enterprise Leasing Platform"
-      title="Enterprise Software for"
-      highlight="Corporate & Government Fleet Leasing"
+      title="Fleet leasing software,"
+      highlight="from quotation to financial reporting"
       description="Digitize your entire leasing operation with FleetArabia's enterprise leasing platform. Manage the complete lease lifecycle — from quotations and contracts to billing, maintenance, renewals, vehicle replacement and financial reporting — all connected through one intelligent ERP. Whether you manage hundreds or thousands of leased vehicles, FleetArabia provides the automation, visibility and control needed to scale your business with confidence."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Leasing", href: "/solutions" }}
@@ -71,7 +71,7 @@ export default function FleetLeasingPage() {
           ],
         },
       ]}
-      finalCtaTitle="Transform your leasing business with one intelligent platform"
+      finalCtaTitle="See the lease lifecycle end to end"
       finalCtaText="Replace spreadsheets and disconnected systems with an enterprise leasing platform that automates contracts, operations, maintenance, billing and reporting. From customer onboarding to vehicle retirement, FleetArabia delivers complete visibility, intelligent automation and seamless ERP integration — helping leasing companies reduce operational costs, improve fleet utilization and deliver exceptional customer experiences."
     />
   );

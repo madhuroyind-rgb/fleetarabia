@@ -128,7 +128,7 @@ function PageHeader() {
           </p>
 
           <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-            Connect Your Mobility Business Without Limits
+            Connect to your ERP, payments, GPS and government systems
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50">

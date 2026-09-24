@@ -13,8 +13,8 @@ export default function DeploymentPage() {
   return (
     <EnterprisePage
       eyebrow="Deployment Flexibility"
-      title="Deploy FleetArabia"
-      highlight="Your Way"
+      title="Run it in our cloud or"
+      highlight="on your own servers"
       description="Choose the deployment model that best aligns with your business, security and IT strategy. Whether you prefer the flexibility of the cloud or complete control over your infrastructure, FleetArabia provides enterprise-grade deployment options designed to scale with your organization."
       primaryCta={{ label: "Talk to Our Experts", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore the Platform", href: "/platform" }}
@@ -78,7 +78,7 @@ export default function DeploymentPage() {
           ],
         },
       ]}
-      finalCtaTitle="Digital transformation starts here"
+      finalCtaTitle="Not sure which deployment fits? Ask us."
       finalCtaText="Deploy FleetArabia in the way that best fits your organization — cloud for agility or on-premises for complete control — while enjoying the same powerful enterprise mobility platform."
     />
   );

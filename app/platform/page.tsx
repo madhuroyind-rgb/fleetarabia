@@ -13,8 +13,8 @@ export default function PlatformPage() {
   return (
     <EnterprisePage
       eyebrow="FleetArabia Platform"
-      title="Unified Operating Layer for"
-      highlight="Mobility Businesses"
+      title="Rental, leasing, maintenance and billing on"
+      highlight="one data model"
       description="Rental, leasing, maintenance and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
@@ -30,6 +30,7 @@ export default function PlatformPage() {
         ],
         footer: "Everything runs on the same data model",
       }}
+      finalCtaTitle="See how the platform fits your operation"
       sections={[
         {
           eyebrow: "Platform at a Glance",

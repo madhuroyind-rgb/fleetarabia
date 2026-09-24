@@ -205,8 +205,8 @@ function Hero() {
           </p>
 
           <h1 className="max-w-4xl text-3xl font-black leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
-            Enterprise Mobility Platform for Fleet Operations{" "}
-            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">Across the Middle East</span>
+            One platform for rental, leasing and fleet operations{" "}
+            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">across the Middle East</span>
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50 md:text-lg md:leading-8">

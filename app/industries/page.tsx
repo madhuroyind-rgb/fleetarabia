@@ -13,8 +13,8 @@ export default function IndustriesPage() {
   return (
     <EnterprisePage
       eyebrow="Industries"
-      title="Enterprise Mobility Solutions for"
-      highlight="Every Fleet Business"
+      title="Eight kinds of fleet business,"
+      highlight="one platform"
       description="Whether you operate vehicle rentals, long-term leasing, limousine services, bus transportation, corporate fleets, workshops or government mobility programs, FleetArabia delivers industry-specific solutions on one unified enterprise platform. Designed for organizations of every size — from growing regional businesses to large enterprise fleets — our platform automates operations, streamlines workflows and connects every department through a single source of truth."
       primaryCta={{ label: "Talk to an Industry Expert", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Industry Solutions", href: "/solutions" }}
@@ -64,7 +64,7 @@ export default function IndustriesPage() {
           ],
         },
       ]}
-      finalCtaTitle="Power every mobility business with one intelligent platform"
+      finalCtaTitle="Tell us which kind of fleet you run"
       finalCtaText="FleetArabia brings together people, vehicles, operations, finance and customer service into one connected ecosystem. Replace disconnected systems with intelligent automation, real-time analytics and seamless ERP integration to improve efficiency, reduce costs and accelerate business growth. Transform your mobility operations with FleetArabia."
     />
   );

@@ -6,37 +6,45 @@ import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import Logo from "@/components/Logo";
 
-type NavChild = { label: string; href: string };
+// `group` starts a small heading inside a menu (desktop dropdown and mobile menu).
+type NavChild = { label: string; href: string; group?: string };
 type NavItem = { label: string; href: string; children?: NavChild[] };
 
 const nav: NavItem[] = [
   {
-    label: "Platform",
+    label: "Cloud ERP",
     href: "/platform",
     children: [
-      { label: "Platform Overview", href: "/platform" },
-      { label: "Deployment Options", href: "/deployment" },
+      { label: "Cloud ERP Overview", href: "/platform" },
+      { label: "Integrations", href: "/integrations" },
+      { label: "Deployment", href: "/deployment" },
     ],
   },
   {
     label: "Solutions",
     href: "/solutions",
     children: [
-      { label: "Car Rental", href: "/solutions/car-rental-software" },
+      { label: "Car Rental", href: "/solutions/car-rental-software", group: "Rental & Leasing" },
       { label: "Fleet Leasing", href: "/solutions/fleet-leasing" },
-      { label: "Fleet Management", href: "/solutions/fleet-management" },
+      { label: "Chauffeur & Transport", href: "/solutions/chauffeur-transport" },
+      { label: "Fleet Management", href: "/solutions/fleet-management", group: "Operations" },
       { label: "Vehicle Inspection", href: "/solutions/vehicle-inspection" },
       { label: "Workshop Management", href: "/solutions/workshop-management" },
-      { label: "Billing & Finance", href: "/solutions/billing-finance" },
-      { label: "Chauffeur & Transport", href: "/solutions/chauffeur-transport" },
-      { label: "All Modules", href: "/solutions" },
+      { label: "Billing & Finance", href: "/solutions/billing-finance", group: "Finance" },
+      { label: "All Modules", href: "/solutions", group: "More" },
       { label: "Industries", href: "/industries" },
     ],
   },
-  { label: "Integrations", href: "/integrations" },
-  { label: "Services", href: "/services" },
-  { label: "Company", href: "/company" },
   { label: "Resources", href: "/resources" },
+  {
+    label: "Company",
+    href: "/company",
+    children: [
+      { label: "About FleetArabia", href: "/company" },
+      { label: "Services", href: "/services" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
 function isActive(pathname: string, item: NavItem) {
@@ -121,9 +129,14 @@ export default function Navbar() {
 
                 {expanded && (
                   <div className="absolute left-0 top-full pt-2">
-                    <ul className="w-56 rounded-xl border border-white/10 bg-[#041124] p-2 shadow-2xl shadow-black/40">
+                    <ul className="w-60 rounded-xl border border-white/10 bg-[#041124] p-2 shadow-2xl shadow-black/40">
                       {item.children.map((child) => (
                         <li key={child.href}>
+                          {child.group && (
+                            <div className="px-3 pb-1 pt-2 text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">
+                              {child.group}
+                            </div>
+                          )}
                           <Link
                             href={child.href}
                             onClick={() => setOpenMenu(null)}
@@ -191,8 +204,13 @@ export default function Navbar() {
                     </div>
                   )}
                   {links.map((link) => (
+                    <div key={link.href}>
+                      {"group" in link && link.group && (
+                        <div className="px-3 pb-0.5 pt-2 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                          {link.group}
+                        </div>
+                      )}
                     <Link
-                      key={link.href}
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       aria-current={pathname === link.href ? "page" : undefined}
@@ -202,6 +220,7 @@ export default function Navbar() {
                     >
                       {link.label}
                     </Link>
+                    </div>
                   ))}
                 </li>
               );

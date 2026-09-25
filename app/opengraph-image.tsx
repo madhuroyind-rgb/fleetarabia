@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "FleetArabia — Enterprise Mobility Platform for the Middle East";
+export const alt = "FleetArabia — Cloud ERP for Rental, Leasing & Fleet in the UAE";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,11 +49,11 @@ export default function Image() {
             lineHeight: 1.25,
           }}
         >
-          Enterprise Mobility Platform for the Middle East
+          Cloud ERP for Rental, Leasing & Fleet in the UAE
         </div>
 
         <div style={{ display: "flex", fontSize: 26, color: "#a5f3fc", marginTop: 28 }}>
-          Rental · Leasing · Workshop · Analytics · ERP Integration
+          Rental · Leasing · Transport · Workshop · Finance
         </div>
       </div>
     ),

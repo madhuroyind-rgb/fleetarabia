@@ -64,10 +64,10 @@ log("no redundancy / high-availability / disaster-recovery / automatic-backup cl
 
 // 6. product-truth guardrails (docs/seo/content-truth-corrections.md §3). Every claim on the site
 // must be supported by docs/seo/product-fact-validation.md. Scanned: visible text, the description
-// and social title/description tags, and JSON-LD. Not scanned: og:image:alt / twitter:image:alt,
-// because the social image is deliberately unchanged for now (correction R-07, deferred).
+// and social title/description/image-alt tags, and JSON-LD. The social image's own source text is
+// checked separately below, because it is drawn into a PNG the HTML scan cannot read.
 const decode = (t) => t.replace(/&amp;/g, "&").replace(/&#x27;|&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&nbsp;/g, " ");
-const metaText = (h) => [...h.matchAll(/<meta (?:name|property)="(?:description|og:title|og:description|twitter:title|twitter:description)" content="([^"]*)"/g)].map((m) => m[1]).join(" ");
+const metaText = (h) => [...h.matchAll(/<meta (?:name|property)="(?:description|og:title|og:description|og:image:alt|twitter:title|twitter:description|twitter:image:alt)" content="([^"]*)"/g)].map((m) => m[1]).join(" ");
 const jsonLdText = (h) => [...h.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => m[1]).join(" ");
 const scanOf = (p) => decode(`${textOf(html[p])} ${metaText(html[p])} ${jsonLdText(html[p])}`).replace(/\s+/g, " ");
 
@@ -91,7 +91,9 @@ const GUARDRAILS = {
   "transport": [/limousine/i, /\blimo\b/i, /staff transport/i, /employee transport/i, /executive transport/i, /airport transfer/i,
     /optimi[sz]e (routes|schedules)/i],
   "ERP framing": [/connect(s|ed|ing)? (to|with) your (ERP|finance system|existing)/i, /your existing (ERP|accounting)/i,
-    /ERP-(ready|connected)/i, /seamless ERP integration/i, /pre-built connectors?/i, /low-code/i, /event-driven/i, /real-time (data )?sync/i],
+    /ERP-(ready|connected)/i, /seamless ERP integration/i, /pre-built connectors?/i, /low-code/i, /event-driven/i, /real-time (data )?sync/i,
+    /integration (layer|hub)/i, /(sits|layer) (on top of|between) (your|other)/i, /connects? (FleetArabia |us )?(to|with) (another|other|your existing|third-party) ERP/i,
+    /\bERP integration\b(?! checklist)/i],
   "readiness / social proof": [/in use (at|by)/i, /trusted by/i, /our customers/i, /\bproven\b/i, /deployed at/i,
     /used by (leading|many|top|\d)/i, /\d+\+? (customers|clients|companies|vehicles managed)/i, /reduce(s)? (operational )?costs by/i],
   "on-premises (not approved)": [/on-?premise/i, /your own servers/i, /own data cent(er|re)/i, /private cloud/i],
@@ -113,6 +115,7 @@ const GUARDRAILS = {
   "unvalidated modules": [/vehicle purchase/i, /\bdisposal\b/i, /car sales/i, /\bpayroll\b/i],
   "transport (not verified)": [/passenger app/i, /parent app/i, /live trip/i, /flight tracking/i, /trip tracking/i, /student tracking/i],
   "leasing (not claimed)": [/IFRS/i, /residual value/i, /credit scor/i],
+  "security certifications (none held)": [/\bISO[ -]?\d{4,5}/i, /\bSOC ?[12]\b/i, /\bPCI\b/, /certif(ied|ication)/i, /\bHIPAA\b/, /GDPR[- ]compliant/i],
 };
 const EXEMPT = {
   "ERP framing": (p) => p.startsWith("/resources"),
@@ -132,6 +135,20 @@ for (const [group, patterns] of Object.entries(GUARDRAILS)) {
   }
   log(`guardrail — no unsupported ${group} claims`, found.length === 0, found.join(" | "));
 }
+// the social image is a PNG, so check the words drawn into it at the source
+{
+  const { readFileSync } = await import("node:fs");
+  const src = readFileSync(new URL("../app/opengraph-image.tsx", import.meta.url), "utf8");
+  const drawn = [...src.matchAll(/^\s*([A-Z][^<>{}=;"`]{8,})$/gm)].map((m) => m[1].trim()).join(" | ");
+  const altText = (src.match(/export const alt = "([^"]*)"/) || [])[1] || "";
+  const imageText = `${altText} | ${drawn}`;
+  const imageHits = [];
+  for (const group of ["AI", "geography", "ERP framing", "GPS / telematics", "payments", "transport"]) {
+    for (const re of GUARDRAILS[group]) if (re.test(imageText)) imageHits.push(`${group}: ${re}`);
+  }
+  log("social image text follows the guardrails", imageHits.length === 0 && /cloud ERP/i.test(altText) && /UAE/.test(altText), imageText);
+}
+
 // positioning the owner approved (2026-09-25)
 log('home page states the approved positioning ("cloud ERP")', /cloud ERP/i.test(scanOf("/")));
 log('Organization JSON-LD description names the UAE', /UAE/.test(org?.description ?? ""), org?.description ?? "");

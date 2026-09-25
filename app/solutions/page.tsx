@@ -5,7 +5,7 @@ import EnterprisePage from "@/components/EnterprisePage";
 import { MODULE_ICONS } from "@/lib/modules";
 
 export const metadata: Metadata = {
-  title: "Solutions | FleetArabia",
+  title: "Fleet, Rental & Leasing Software Modules | FleetArabia",
   description:
     "Rental, leasing, transport, workshop, billing and finance modules on one cloud ERP. Start with one module or run them together on the same data.",
   alternates: { canonical: "/solutions" },

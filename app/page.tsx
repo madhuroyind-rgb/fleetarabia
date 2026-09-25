@@ -27,8 +27,9 @@ import ConnectedVisual from "@/components/ConnectedVisual";
 import { slugify } from "@/lib/slug";
 import { MODULE_ICONS } from "@/lib/modules";
 
-// Only openGraph here: title, description and canonical come from the root layout.
+// Title from docs/seo/final-page-implementation-spec.md §7; description and canonical come from the root layout.
 export const metadata: Metadata = {
+  title: "Car Rental, Leasing & Fleet Management Software | FleetArabia",
   openGraph: pageOpenGraph("/"),
 };
 

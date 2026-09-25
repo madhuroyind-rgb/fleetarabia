@@ -48,7 +48,7 @@ export default function ContactPage() {
               linkLabel: "Go to the form →",
             },
             {
-              title: "Discuss ERP Integration",
+              title: "Discuss Integrations & Imports",
               text: "Talk through finance, Salik, traffic fine, parking, fuel-card, GPS tracking server, billing and API requirements.",
               href: "/integrations",
               linkLabel: "See Integrations →",

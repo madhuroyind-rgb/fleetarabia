@@ -14,17 +14,25 @@ export const metadata: Metadata = {
   openGraph: pageOpenGraph("/integrations"),
 };
 
-const ecosystem: { id?: string; title: string; text: string }[] = [
+type Linked = { href?: string; linkLabel?: string };
+
+const ecosystem: ({ id?: string; title: string; text: string } & Linked)[] = [
   {
     title: "Finance Built In",
+    href: "/solutions/billing-finance",
+    linkLabel: "Billing & Finance →",
     text: "Contracts, invoices, receipts and VAT are recorded in the same system as your operations.",
   },
   {
     title: "Tolls, Fines & Parking",
+    href: "/solutions/car-rental-software",
+    linkLabel: "Car Rental Software →",
     text: "Import Salik, traffic-fine and parking files and match every charge to the right vehicle, contract and customer.",
   },
   {
     title: "Fuel-Card Statements",
+    href: "/solutions/fleet-management#fuel",
+    linkLabel: "Fuel in Fleet Management →",
     text: "Import ENOC and ADNOC fuel-card statements, with a check that stops the same file being imported twice.",
   },
   {
@@ -70,28 +78,36 @@ const whyIntegration = [
   "Audit Logs",
 ];
 
-const uaeImports = [
+const uaeImports: ({ id: string; title: string; description: string; badge: string } & Linked)[] = [
   {
     id: "salik",
     title: "Salik Toll Import",
+    href: "/solutions/car-rental-software",
+    linkLabel: "Car Rental Software →",
     description: "Import Salik toll files. Each crossing is matched to the contract that had the vehicle at that moment, and invoiced.",
     badge: "UAE",
   },
   {
     id: "fines",
     title: "Traffic Fine Import",
+    href: "/solutions/car-rental-software",
+    linkLabel: "Car Rental Software →",
     description: "Import fines from a file or a data feed, find who had the vehicle at the time, then allocate, verify, dispute and notify by email.",
     badge: "UAE",
   },
   {
     id: "parking",
     title: "Parking Charge Import",
+    href: "/solutions/car-rental-software",
+    linkLabel: "Car Rental Software →",
     description: "Import parking charge files and match each charge to the vehicle and the contract it was on.",
     badge: "UAE",
   },
   {
     id: "fuel",
     title: "Fuel-Card Statement Import",
+    href: "/solutions/fleet-management#fuel",
+    linkLabel: "Fuel in Fleet Management →",
     description: "Import ENOC and ADNOC fuel-card statements and review fuel spend by vehicle, card and station.",
     badge: "ENOC & ADNOC",
   },
@@ -219,6 +235,11 @@ function EcosystemSection() {
                 <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.text}
                 </p>
+                {item.href && (
+                  <Link href={item.href} className="mt-4 inline-flex text-sm font-bold text-white transition hover:translate-x-1">
+                    {item.linkLabel}
+                  </Link>
+                )}
               </article>
             </Reveal>
           ))}
@@ -295,6 +316,11 @@ function UaeImportsSection() {
                 <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.description}
                 </p>
+                {item.href && (
+                  <Link href={item.href} className="mt-4 inline-flex text-sm font-bold text-white transition hover:translate-x-1">
+                    {item.linkLabel}
+                  </Link>
+                )}
               </article>
             </Reveal>
           ))}

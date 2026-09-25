@@ -158,13 +158,13 @@ const integrations = [
 ];
 
 const industries = [
-  { label: "Car Rental", icon: Car },
-  { label: "Leasing", icon: KeyRound },
-  { label: "Chauffeur", icon: CarTaxiFront },
-  { label: "Bus Transport", icon: Bus },
-  { label: "Corporate Fleets", icon: Briefcase },
-  { label: "Workshops", icon: Wrench },
-  { label: "Government Mobility", icon: Landmark },
+  { label: "Car Rental", icon: Car, href: "/solutions/car-rental-software" },
+  { label: "Leasing", icon: KeyRound, href: "/solutions/fleet-leasing" },
+  { label: "Chauffeur", icon: CarTaxiFront, href: "/solutions/chauffeur-transport" },
+  { label: "Bus Transport", icon: Bus, href: "/solutions/chauffeur-transport" },
+  { label: "Corporate Fleets", icon: Briefcase, href: "/solutions/fleet-management" },
+  { label: "Workshops", icon: Wrench, href: "/solutions/workshop-management" },
+  { label: "Government Mobility", icon: Landmark, href: "/solutions/fleet-management" },
 ];
 
 const TEAL_PATTERN =
@@ -287,7 +287,7 @@ function BuiltFor() {
           {industries.map((item) => (
             <li key={item.label}>
               <Link
-                href="/industries"
+                href={item.href}
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan-300/50 hover:bg-white/15"
               >
                 <item.icon aria-hidden="true" className="h-4 w-4 text-cyan-200" strokeWidth={2} />

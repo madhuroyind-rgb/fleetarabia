@@ -3,11 +3,9 @@
 // Google Analytics requests are blocked, so running this never records test traffic.
 // Checks: consent/GA behaviour, horizontal overflow at phone width on every page,
 // mobile menu open/Escape, desktop nav visibility at 1024px, solution deep links.
+import { PAGES } from "./site-pages.mjs";
 const BASE = (process.argv[2] || process.env.SITE_URL || "http://localhost:3002").replace(/\/$/, "");
 const PORT = Number(process.env.CHROME_DEBUG_PORT || 9333);
-const PAGES = ["/", "/platform", "/solutions", "/fleet-leasing", "/industries", "/integrations", "/deployment",
-  "/services", "/company", "/resources", "/resources/erp-integration-checklist",
-  "/resources/fleet-digital-transformation-guide", "/contact", "/sitemap", "/privacy", "/terms"];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

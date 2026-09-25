@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
-import { ORGANIZATION_ID, breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
+import { ORGANIZATION_ID, SOFTWARE_ID, breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import { MODULE_ICONS } from "@/lib/modules";
 import { SITE_URL } from "@/lib/site";
 import EnterprisePage from "@/components/EnterprisePage";
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": SOFTWARE_ID,
   name: "FleetArabia",
   applicationCategory: "BusinessApplication",
   description:

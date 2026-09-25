@@ -6,6 +6,10 @@ import { alt, contentType, size } from "@/app/opengraph-image";
 // node the root layout publishes, instead of repeating it.
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 
+// The one SoftwareApplication node, published on /platform. Solution pages describe a part
+// of that product, so their WebPage names it as `about` instead of repeating it.
+export const SOFTWARE_ID = `${SITE_URL}/platform#software`;
+
 // Metadata merges shallowly: a page that sets `openGraph` replaces the layout's
 // object, so each page passes the whole thing. og:title and og:description are
 // still filled in by Next from the page's own title and description, but the
@@ -17,6 +21,18 @@ export function pageOpenGraph(path: string): Metadata["openGraph"] {
     siteName: "FleetArabia",
     url: path,
     images: [{ url: "/opengraph-image", type: contentType, ...size, alt }],
+  };
+}
+
+export function webPageJsonLd(path: string, name: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: `${SITE_URL}${path}`,
+    name,
+    description,
+    inLanguage: "en",
+    about: { "@id": SOFTWARE_ID },
   };
 }
 

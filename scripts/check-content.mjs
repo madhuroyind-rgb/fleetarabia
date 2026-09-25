@@ -1,9 +1,7 @@
 // Checks the rendered HTML of the LOCAL build: icon consistency, Organization JSON-LD,
 // and that unsupported infrastructure wording is gone from every page.
+import { PAGES, SOLUTION_PAGES } from "./site-pages.mjs";
 const BASE = (process.argv[2] || process.env.SITE_URL || "http://localhost:3002").replace(/\/$/, "");
-const PAGES = ["/", "/platform", "/solutions", "/fleet-leasing", "/industries", "/integrations", "/deployment",
-  "/services", "/company", "/resources", "/resources/erp-integration-checklist",
-  "/resources/fleet-digital-transformation-guide", "/contact", "/sitemap", "/privacy", "/terms"];
 
 let failed = 0;
 const log = (name, pass, detail = "") => { if (!pass) failed++; console.log(`${pass ? "PASS" : "FAIL"}  ${name}${detail ? "  — " + detail : ""}`); };
@@ -102,10 +100,25 @@ const GUARDRAILS = {
     /\biOS\b/, /App Store/i],
   // generic words: allowed only in the guides, Resources and the legal pages
   "generic (outside guides)": [/\btelematics\b/i, /\bGPS\b(?! tracking server| server)/i],
+  // docs/seo/vehicle-inspection-fact-validation.md (O-4, O-5 approved with qualification)
+  "vehicle inspection (qualified)": [
+    /(photos?|photographs?|images?|diagram)( are| is)?( embedded| included| shown)? (in|inside) the PDF/i,
+    /before[- ]and[- ]after (photo|picture|image)/i, /(photo|picture|image)[- ]by[- ](photo|picture|image)/i,
+    /tamper/i, /\bsealed\b/i, /evidential/i, /\boffline\b/i,
+    /customers? (receives?|gets?|is sent|are sent) the (PDF|report)/i],
+  // workshop: G4 (external customers) above; O-6 group companies and O-8 approval link still open
+  "workshop (not confirmed)": [/group compan/i, /approv\w* (by|via|through) (a )?link/i, /customers? approv\w* (the |an )?estimate/i,
+    /warrant(y|ies)/i, /\brecalls?\b/i, /\bOBD\b/, /diagnostic/i],
+  // O-7: in the ERP code but not validated for marketing; HR backend incomplete (PFV-F)
+  "unvalidated modules": [/vehicle purchase/i, /\bdisposal\b/i, /car sales/i, /\bpayroll\b/i],
+  "transport (not verified)": [/passenger app/i, /parent app/i, /live trip/i, /flight tracking/i, /trip tracking/i, /student tracking/i],
+  "leasing (not claimed)": [/IFRS/i, /residual value/i, /credit scor/i],
 };
 const EXEMPT = {
   "ERP framing": (p) => p.startsWith("/resources"),
   "generic (outside guides)": (p) => p.startsWith("/resources") || p === "/privacy" || p === "/terms",
+  // the Terms disclaimer ("without warranties of any kind") is legal wording, not a workshop claim
+  "workshop (not confirmed)": (p) => p === "/privacy" || p === "/terms",
 };
 for (const [group, patterns] of Object.entries(GUARDRAILS)) {
   const found = [];
@@ -122,6 +135,47 @@ for (const [group, patterns] of Object.entries(GUARDRAILS)) {
 // positioning the owner approved (2026-09-25)
 log('home page states the approved positioning ("cloud ERP")', /cloud ERP/i.test(scanOf("/")));
 log('Organization JSON-LD description names the UAE', /UAE/.test(org?.description ?? ""), org?.description ?? "");
+
+// 7. solution pages (docs/seo/final-page-implementation-spec.md): unique metadata, self canonical,
+// indexable, and the shared JSON-LD; plus the moved Fleet Leasing URL.
+const SITE = "https://www.fleetarabia.com";
+const headOf = (p) => html[p].split("</head>")[0];
+const attr = (p, re) => decode((headOf(p).match(re) || [])[1] ?? "");
+const h1Of = (p) => decode((html[p].match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1]?.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() ?? "");
+const meta = Object.fromEntries(PAGES.map((p) => [p, {
+  title: attr(p, /<title>([\s\S]*?)<\/title>/),
+  description: attr(p, /<meta name="description" content="([^"]*)"/),
+  canonical: attr(p, /<link rel="canonical" href="([^"]*)"/),
+  robots: attr(p, /<meta name="robots" content="([^"]*)"/),
+  h1: h1Of(p),
+}]));
+for (const field of ["title", "description", "h1", "canonical"]) {
+  const byValue = {};
+  for (const p of PAGES) (byValue[meta[p][field]] ??= []).push(p);
+  const dups = Object.entries(byValue).filter(([v, ps]) => ps.length > 1 || !v).map(([v, ps]) => `${JSON.stringify(v.slice(0, 50))}: ${ps.join(" ")}`);
+  log(`every page has a unique, non-empty ${field}`, dups.length === 0, dups.join(" | "));
+}
+const software = allBlocks.map((b) => JSON.parse(b)).find((b) => b["@type"] === "SoftwareApplication");
+log("/platform SoftwareApplication carries its @id", software?.["@id"] === `${SITE}/platform#software`, software?.["@id"] ?? "missing");
+for (const p of SOLUTION_PAGES) {
+  const m = meta[p];
+  const blocksHere = [...html[p].matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((x) => JSON.parse(x[1]));
+  const webPage = blocksHere.find((b) => b["@type"] === "WebPage");
+  const crumbs = blocksHere.find((b) => b["@type"] === "BreadcrumbList");
+  const problems = [];
+  if (m.canonical !== SITE + p) problems.push(`canonical ${m.canonical}`);
+  if (/noindex/.test(m.robots)) problems.push(`robots ${m.robots}`);
+  if (!webPage || webPage.url !== SITE + p || webPage.about?.["@id"] !== `${SITE}/platform#software`) problems.push("WebPage JSON-LD");
+  if (!crumbs || crumbs.itemListElement.map((i) => i.name).join(" > ") !== `Home > Solutions > ${crumbs.itemListElement.at(-1)?.name}` || crumbs.itemListElement.length !== 3) problems.push("BreadcrumbList");
+  if (m.title.length < 40 || m.title.length > 65) problems.push(`title length ${m.title.length}`);
+  if (m.description.length < 140 || m.description.length > 160) problems.push(`description length ${m.description.length}`);
+  if (blocksHere.some((b) => ["Product", "Offer", "AggregateRating", "Review", "FAQPage", "HowTo"].includes(b["@type"]))) problems.push("disallowed JSON-LD type");
+  log(`${p}: self canonical, indexable, WebPage + BreadcrumbList, title/description length`, problems.length === 0, problems.join("; "));
+}
+const moved = await fetch(BASE + "/fleet-leasing", { redirect: "manual" });
+const location = moved.headers.get("location") || "";
+log("/fleet-leasing answers exactly 301 to /solutions/fleet-leasing", moved.status === 301 && /\/solutions\/fleet-leasing$/.test(location),
+  `${moved.status} → ${location}`);
 
 console.log(failed ? `\n${failed} check(s) FAILED` : "\nall content checks passed");
 process.exit(failed ? 1 : 0);

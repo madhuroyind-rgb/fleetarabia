@@ -13,15 +13,14 @@ const columns: { title: string; items: FooterLink[] }[] = [
   {
     title: "Solutions",
     items: [
-      { label: "Car Rental Management", href: "/solutions#car-rental-management" },
-      { label: "Leasing Management", href: "/solutions#leasing-management" },
-      { label: "Fleet Leasing", href: "/fleet-leasing" },
-      { label: "Chauffeur & Transport", href: "/solutions#chauffeur-transport" },
-      { label: "Bus Transportation", href: "/solutions#bus-transportation" },
-      { label: "Workshop Management", href: "/solutions#workshop-management" },
-      { label: "Business Intelligence & Analytics", href: "/solutions#business-intelligence-analytics" },
-      { label: "Driver Management", href: "/solutions#driver-management" },
-      { label: "Fuel Management", href: "/solutions#fuel-management" },
+      { label: "Car Rental Software", href: "/solutions/car-rental-software" },
+      { label: "Fleet Leasing", href: "/solutions/fleet-leasing" },
+      { label: "Fleet Management", href: "/solutions/fleet-management" },
+      { label: "Vehicle Inspection", href: "/solutions/vehicle-inspection" },
+      { label: "Workshop Management", href: "/solutions/workshop-management" },
+      { label: "Billing & Finance", href: "/solutions/billing-finance" },
+      { label: "Chauffeur & Transport", href: "/solutions/chauffeur-transport" },
+      { label: "All Modules", href: "/solutions" },
     ],
   },
   {
@@ -29,8 +28,7 @@ const columns: { title: string; items: FooterLink[] }[] = [
     items: [
       { label: "Platform Overview", href: "/platform" },
       { label: "Deployment Options", href: "/deployment" },
-      { label: "Billing & Revenue Management", href: "/solutions#billing-revenue-management" },
-      { label: "Vehicle Damage & Claims (VDR)", href: "/solutions#vehicle-damage-claims-vdr" },
+      { label: "Business Intelligence & Analytics", href: "/solutions#business-intelligence-analytics" },
       { label: "Reporting & Dashboards", href: "/platform" },
       { label: "Integrations", href: "/integrations" },
       { label: "Implementation Support", href: "/services" },

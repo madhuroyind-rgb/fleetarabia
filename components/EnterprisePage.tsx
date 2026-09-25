@@ -15,6 +15,8 @@ type CardItem = {
 };
 
 type Section = {
+  // Anchor for the whole section, e.g. "drivers" for /solutions/fleet-management#drivers.
+  id?: string;
   eyebrow: string;
   title: string;
   text: string;
@@ -197,7 +199,8 @@ function PageSection({ section }: { section: Section }) {
 
   return (
     <section
-      className={`relative overflow-hidden px-5 py-16 text-white sm:px-6 md:py-24 ${
+      id={section.id}
+      className={`relative scroll-mt-24 overflow-hidden px-5 py-16 text-white sm:px-6 md:py-24 ${
         variant === "dark" ? "bg-[#065f5e]" : "bg-[#087674]"
       }`}
     >

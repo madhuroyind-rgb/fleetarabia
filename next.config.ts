@@ -26,6 +26,8 @@ const nextConfig: NextConfig = {
         destination: "https://www.fleetarabia.com/:path*",
         permanent: true,
       },
+      // Fleet Leasing moved under /solutions with the other solution pages (2026-09-25).
+      { source: "/fleet-leasing", destination: "/solutions/fleet-leasing", statusCode: 301 },
     ];
   },
 };

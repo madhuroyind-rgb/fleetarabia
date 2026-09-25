@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: pageOpenGraph("/integrations"),
 };
 
-const ecosystem = [
+const ecosystem: { id?: string; title: string; text: string }[] = [
   {
     title: "Finance Built In",
     text: "Contracts, invoices, receipts and VAT are recorded in the same system as your operations.",
@@ -28,6 +28,7 @@ const ecosystem = [
     text: "Import ENOC and ADNOC fuel-card statements, with a check that stops the same file being imported twice.",
   },
   {
+    id: "gps",
     title: "GPS Tracking Server",
     text: "FleetArabia connects to a Traccar GPS tracking server, configured during implementation.",
   },
@@ -71,21 +72,25 @@ const whyIntegration = [
 
 const uaeImports = [
   {
+    id: "salik",
     title: "Salik Toll Import",
     description: "Import Salik toll files. Each crossing is matched to the contract that had the vehicle at that moment, and invoiced.",
     badge: "UAE",
   },
   {
+    id: "fines",
     title: "Traffic Fine Import",
     description: "Import fines from a file or a data feed, find who had the vehicle at the time, then allocate, verify, dispute and notify by email.",
     badge: "UAE",
   },
   {
+    id: "parking",
     title: "Parking Charge Import",
     description: "Import parking charge files and match each charge to the vehicle and the contract it was on.",
     badge: "UAE",
   },
   {
+    id: "fuel",
     title: "Fuel-Card Statement Import",
     description: "Import ENOC and ADNOC fuel-card statements and review fuel spend by vehicle, card and station.",
     badge: "ENOC & ADNOC",
@@ -209,7 +214,7 @@ function EcosystemSection() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {ecosystem.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article className="h-full rounded-2xl border border-white/15 bg-[#043f3e]/30 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-[#043f3e]/40">
+              <article id={item.id} className="h-full scroll-mt-28 rounded-2xl border border-white/15 bg-[#043f3e]/30 p-6 shadow-xl shadow-black/10 backdrop-blur transition hover:-translate-y-1 hover:bg-[#043f3e]/40">
                 <h3 className="text-lg font-black leading-snug">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-cyan-50">
                   {item.text}
@@ -282,7 +287,7 @@ function UaeImportsSection() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {uaeImports.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
-              <article className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
+              <article id={item.id} className="h-full scroll-mt-28 rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
                 <span className="inline-flex rounded-full bg-[#043f3e]/40 px-3 py-1 text-xs font-black text-white">
                   {item.badge}
                 </span>

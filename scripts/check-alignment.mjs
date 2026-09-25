@@ -1,11 +1,9 @@
 // Needs Chrome started with --remote-debugging-port=9333 (see README).
 // For every page and several widths: the content edge (box edge + its own padding) of the
 // header, every full-width container and the footer must be identical.
+import { PAGES } from "./site-pages.mjs";
 const BASE = (process.argv[2] || "http://localhost:3002").replace(/\/$/, "");
 const PORT = Number(process.env.CHROME_DEBUG_PORT || 9333);
-const PAGES = ["/", "/platform", "/solutions", "/fleet-leasing", "/industries", "/integrations", "/deployment",
-  "/services", "/company", "/resources", "/resources/erp-integration-checklist",
-  "/resources/fleet-digital-transformation-guide", "/contact", "/sitemap", "/privacy", "/terms"];
 const WIDTHS = [1920, 1440, 1366, 1024, 390];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -56,7 +54,7 @@ for (const width of WIDTHS) {
     if (p === "/") console.log(`${width}px  homepage: ${m.length} containers, content edge left=${lefts.join("/")} right=${rights.join("/")}`);
   }
   const problems = summary.filter(Boolean);
-  console.log(`${width}px  ${problems.length === 0 ? "PASS  all 16 pages share one content edge" : "FAIL  " + problems.join(" | ")}`);
+  console.log(`${width}px  ${problems.length === 0 ? "PASS  all " + PAGES.length + " pages share one content edge" : "FAIL  " + problems.join(" | ")}`);
 }
 ws.close();
 console.log(bad ? `\n${bad} page/width combinations misaligned` : "\nevery page aligned at every width");

@@ -125,6 +125,20 @@ const solutions = [
   },
 ];
 
+// Modules with their own solution page; the rest keep their card on /solutions.
+const SOLUTION_PAGES: Record<string, string> = {
+  "Car Rental Management": "/solutions/car-rental-software",
+  "Leasing Management": "/solutions/fleet-leasing",
+  "Chauffeur & Transport": "/solutions/chauffeur-transport",
+  "Bus Transportation": "/solutions/chauffeur-transport",
+  "Workshop Management": "/solutions/workshop-management",
+  "Vehicle Damage & Claims (VDR)": "/solutions/vehicle-inspection",
+  "Billing & Revenue Management": "/solutions/billing-finance",
+  "Finance & Integrations": "/solutions/billing-finance",
+  "Driver Management": "/solutions/fleet-management#drivers",
+  "Fuel Management": "/solutions/fleet-management#fuel",
+};
+
 const workflow = [
   "Booking",
   "Agreement",
@@ -359,7 +373,7 @@ function Solutions() {
                   <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
                   <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-slate-600 md:mt-3 md:line-clamp-none">{item.text}</p>
                   <Link
-                    href={`/solutions#${slugify(item.title)}`}
+                    href={SOLUTION_PAGES[item.title] ?? `/solutions#${slugify(item.title)}`}
                     aria-label={`Learn more about ${item.title}`}
                     className="mt-3 inline-flex items-center gap-1.5 py-1 text-sm font-bold text-[#087674] md:mt-6"
                   >

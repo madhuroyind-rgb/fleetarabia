@@ -8,7 +8,7 @@ const inquiryAreas = [
   "Rent A Car ERP",
   "Leasing ERP",
   "Workshop Management",
-  "GPS & Payment Integration",
+  "Data Imports & Integration",
   "General Inquiry",
 ];
 

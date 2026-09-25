@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us | FleetArabia",
   description:
-    "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or ERP integration? Tell us what you're working on.",
+    "Questions about rental, leasing, transport, workshop or billing? Tell us what you're working on and we'll help you find the right starting point.",
   alternates: { canonical: "/contact" },
   openGraph: pageOpenGraph("/contact"),
 };
@@ -21,7 +21,7 @@ export default function ContactPage() {
       eyebrow="Contact Us"
       title="Tell us how your fleet operation"
       highlight="runs today"
-      description="Whether it's rental and leasing operations, workshop management, GPS and payment integration, or connecting to your ERP — tell us what you're working on and we'll help you find the right starting point."
+      description="Whether it's rental, leasing, transport, workshop or billing, tell us what you're working on and we'll help you find the right starting point."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Email Us", href: "mailto:info@fleetarabia.com" }}
       proofPoints={["Offices in UAE & India", "Enterprise Consulting", "24-Hour Response"]}
@@ -49,7 +49,7 @@ export default function ContactPage() {
             },
             {
               title: "Discuss ERP Integration",
-              text: "Talk through ERP, finance, GPS, payment gateway, Salik, traffic fine, billing, and API integration requirements.",
+              text: "Talk through finance, Salik, traffic fine, parking, fuel-card, GPS tracking server, billing and API requirements.",
               href: "/integrations",
               linkLabel: "See Integrations →",
             },
@@ -75,7 +75,7 @@ export default function ContactPage() {
           items: [
             {
               title: "Rent A Car ERP",
-              text: "Rental agreement, booking, invoicing, customer, vehicle, and payment process automation.",
+              text: "Rental agreements, bookings, invoicing, customers, vehicles and payment recording.",
             },
             {
               title: "Leasing ERP",
@@ -86,15 +86,15 @@ export default function ContactPage() {
               text: "Job cards, service tracking, spare parts, maintenance cost control, and vehicle readiness monitoring.",
             },
             {
-              title: "GPS & Payment Integration",
-              text: "GPS tracking, payment gateway, ERP, finance, and third-party system integrations.",
+              title: "Data Imports & Integration",
+              text: "Salik, traffic fines, parking, fuel-card statements, GPS tracking server connection and APIs.",
             },
           ],
         },
         {
           eyebrow: "FleetArabia Offices",
           title: "Enterprise mobility support from the UAE & India",
-          text: "We work with fleet businesses across the Middle East from our offices in Dubai, UAE and Patna, India.",
+          text: "FleetArabia has offices in Dubai, UAE and Patna, India.",
           variant: "teal",
           items: [
             { title: "UAE Office", text: "Dubai, Free Zone, UAE" },
@@ -102,12 +102,12 @@ export default function ContactPage() {
             { title: "Email", text: "info@fleetarabia.com" },
             { title: "UAE Phone", text: "+971 58 586 8864" },
             { title: "India Phone", text: "+91 90600 02063" },
-            { title: "Coverage", text: "Middle East rental, leasing, transportation, workshop, analytics, and enterprise fleet businesses." },
+            { title: "Coverage", text: "UAE rental, leasing, transport, workshop and company fleets." },
           ],
         },
       ]}
       finalCtaTitle="Prefer to talk first? Book a demo."
-      finalCtaText="Book a live demo and see how FleetArabia connects your day-to-day operations to your ERP."
+      finalCtaText="Book a live demo and see your day-to-day operations and finance in one system."
     >
       <ContactForm />
     </EnterprisePage>

@@ -9,8 +9,6 @@ import {
   CarTaxiFront,
   Check,
   Cloud,
-  CreditCard,
-  Database,
   Eye,
   Globe,
   Handshake,
@@ -42,8 +40,8 @@ const outcomes = [
   },
   {
     icon: ReceiptText,
-    title: "ERP-Ready Finance",
-    text: "Connect billing, approvals, customer charges and financial posting with enterprise systems.",
+    title: "Finance Built In",
+    text: "Billing, approvals, customer charges and VAT live in the same system as operations.",
   },
   {
     icon: Eye,
@@ -66,10 +64,10 @@ const solutions = [
     text: "Lease contracts, corporate billing, renewals, installments, long-term agreements and lifecycle control.",
   },
   {
-    icon: MODULE_ICONS["Chauffeur & Limousine"],
-    short: "Limo & Chauffeur",
-    title: "Chauffeur & Limousine",
-    text: "Chauffeur allocation, dispatching, trip monitoring, bookings and premium service tracking.",
+    icon: MODULE_ICONS["Chauffeur & Transport"],
+    short: "Chauffeur",
+    title: "Chauffeur & Transport",
+    text: "Transport inquiries, quotations, bookings, dispatch board and trips, billed per trip, hour, day or kilometer.",
   },
   {
     icon: MODULE_ICONS["Bus Transportation"],
@@ -81,7 +79,7 @@ const solutions = [
     icon: MODULE_ICONS["Workshop Management"],
     short: "Workshop",
     title: "Workshop Management",
-    text: "Job cards, service schedules, preventive maintenance, technicians, approvals, repair tracking and AI-driven predictive maintenance alerts.",
+    text: "Service bookings, estimates and approvals, job cards, technicians, quality checks and vehicle release.",
   },
   {
     icon: MODULE_ICONS["Business Intelligence & Analytics"],
@@ -99,19 +97,13 @@ const solutions = [
     icon: MODULE_ICONS["Billing & Revenue Management"],
     short: "Billing & Revenue",
     title: "Billing & Revenue Management",
-    text: "Automate rental billing, corporate invoices, customer charges, approvals and ERP-ready financial handover.",
+    text: "Rental and corporate invoices, customer charges, approvals and UAE VAT, generated in bulk.",
   },
   {
-    icon: MODULE_ICONS["ERP Integration Platform"],
-    short: "ERP Integration",
-    title: "ERP Integration Platform",
-    text: "ERP and finance system connectivity, APIs, implementation support and post-go-live assistance.",
-  },
-  {
-    icon: MODULE_ICONS["GPS Tracking & Geo-Fencing"],
-    short: "GPS Tracking",
-    title: "GPS Tracking & Geo-Fencing",
-    text: "Track vehicles in real time, define geo-fenced zones, receive movement alerts, monitor route compliance and improve fleet utilization.",
+    icon: MODULE_ICONS["Finance & Integrations"],
+    short: "Finance",
+    title: "Finance & Integrations",
+    text: "Ledger, journals, trial balance and UAE VAT, plus imports for Salik, fines, parking and fuel-card statements.",
   },
   {
     icon: MODULE_ICONS["Driver Management"],
@@ -123,7 +115,7 @@ const solutions = [
     icon: MODULE_ICONS["Fuel Management"],
     short: "Fuel Management",
     title: "Fuel Management",
-    text: "Fuel consumption tracking, fuel card integration, cost-per-vehicle reporting and consumption anomaly alerts.",
+    text: "Import ENOC and ADNOC fuel-card statements and review fuel spend by vehicle, card and station.",
   },
   {
     icon: MODULE_ICONS["CRM & Customer Experience"],
@@ -138,23 +130,23 @@ const workflow = [
   "Agreement",
   "Vehicle Handover",
   "Billing",
-  "ERP Posting",
+  "Finance & VAT",
   "Reporting",
 ];
 
 const integrations = [
-  { label: "ERP Systems", icon: Database },
-  { label: "Finance Systems", icon: Landmark },
-  { label: "GPS Tracking", icon: MapPin },
-  { label: "Payment Gateways", icon: CreditCard },
-  { label: "Open APIs", icon: Network },
-  { label: "Cloud Platform", icon: Cloud },
+  { label: "Salik Toll Files", icon: ReceiptText },
+  { label: "Traffic Fines", icon: Landmark },
+  { label: "Fuel-Card Statements", icon: MODULE_ICONS["Fuel Management"] },
+  { label: "GPS Tracking Server", icon: MapPin },
+  { label: "REST APIs", icon: Network },
+  { label: "Cloud-Hosted", icon: Cloud },
 ];
 
 const industries = [
   { label: "Car Rental", icon: Car },
   { label: "Leasing", icon: KeyRound },
-  { label: "Limousine", icon: CarTaxiFront },
+  { label: "Chauffeur", icon: CarTaxiFront },
   { label: "Bus Transport", icon: Bus },
   { label: "Corporate Fleets", icon: Briefcase },
   { label: "Workshops", icon: Wrench },
@@ -212,12 +204,12 @@ function Hero() {
           </p>
 
           <h1 className="max-w-4xl text-3xl font-black leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
-            One platform for rental, leasing and fleet operations{" "}
-            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">across the Middle East</span>
+            One cloud ERP for rental, leasing and fleet operations{" "}
+            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">in the UAE</span>
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50 md:text-lg md:leading-8">
-            FleetArabia replaces spreadsheets and disconnected systems with one platform for rental, leasing, chauffeur, bus, workshop and fleet operations — connected to your finance system, with real-time dashboards for the people running the business.
+            FleetArabia replaces spreadsheets and disconnected systems with one cloud ERP for rental, leasing, transport and workshop operations, with finance built in and live dashboards for the people running the business.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
@@ -233,7 +225,7 @@ function Hero() {
           </div>
 
           <div className="mt-9 grid max-w-2xl gap-4 border-t border-white/10 pt-7 sm:grid-cols-3">
-            {['Rental & Leasing Operations', 'ERP & Billing Integration', 'Fleet Lifecycle Visibility'].map(
+            {['Rental & Leasing Operations', 'Finance Built In', 'Fleet Lifecycle Visibility'].map(
               (item) => (
                 <div key={item} className="flex items-center gap-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
@@ -344,7 +336,7 @@ function Solutions() {
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Our Product Portfolio"
-          title="Thirteen modules. One connected platform."
+          title="Twelve modules. One connected platform."
           text="Run every module on its own, or plug in the ones you need and let them share the same data — no double entry, no reconciling spreadsheets at month end."
         />
 
@@ -394,7 +386,7 @@ function Workflow() {
               Enterprise Workflow
             </p>
             <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
-              From booking to ERP posting
+              From booking to finance
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
               Build a connected digital process across front office, operations,
@@ -444,12 +436,12 @@ function Integrations() {
 
       <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
-          <p className={EYEBROW}>ERP &amp; Integration Fabric</p>
-          <h2 className={H2}>Talks to the systems you already run</h2>
+          <p className={EYEBROW}>Data Imports &amp; Integrations</p>
+          <h2 className={H2}>Outside data, matched to the right record</h2>
           <p className={LEAD}>
-            Pre-built connectors and APIs help integrate mobility operations
-            with ERP and finance systems, GPS tracking, payment gateways and
-            cloud platforms.
+            Import Salik tolls, traffic fines, parking charges and fuel-card
+            statements and match each one to the right vehicle and contract.
+            A Traccar GPS tracking server can also be connected.
           </p>
 
           <Link href="/integrations" className={`mt-9 ${PRIMARY_BUTTON}`}>
@@ -477,8 +469,8 @@ function Integrations() {
 
 function WhyFleetArabia() {
   const reasons = [
-    { icon: Globe, title: "Middle East Domain Expertise", text: "Built around how rental, leasing, limousine, bus transportation and workshop operations actually run in this region — not adapted from a generic template." },
-    { icon: Plug, title: "ERP-Connected Operations", text: "Billing, approvals and customer charges post cleanly to your finance system instead of getting re-keyed by hand." },
+    { icon: Globe, title: "UAE Operations Built In", text: "Salik tolls, UAE traffic fines, UAE VAT and AED billing are part of the product, not add-ons." },
+    { icon: Plug, title: "Operations and Finance Together", text: "Invoices, charges and VAT are raised from the contract itself, so nothing is re-keyed into a separate finance system." },
     { icon: WorkflowIcon, title: "End-to-End Fleet Lifecycle", text: "One flow from booking through agreement, dispatch, maintenance and reporting, instead of five disconnected tools." },
     { icon: Handshake, title: "Implementation Support", text: "Hands-on help with process mapping, data migration, integration planning, training and rollout — not just a login and a manual." },
   ];
@@ -489,7 +481,7 @@ function WhyFleetArabia() {
         <SectionHeader
           eyebrow="Why FleetArabia"
           title="Built by people who know fleet operations"
-          text="Domain knowledge of how mobility businesses actually operate, the integration depth to connect with your finance systems, and hands-on support to get there."
+          text="Domain knowledge of how mobility businesses actually operate, finance in the same system, and hands-on support to get there."
         />
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4">

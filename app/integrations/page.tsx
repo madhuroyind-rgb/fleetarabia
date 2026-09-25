@@ -4,108 +4,91 @@ import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroVisual from "@/components/HeroVisual";
-import { CreditCard, Landmark, ReceiptText, Satellite, Users } from "lucide-react";
+import { Fuel, Landmark, ReceiptText, Satellite, SquareParking } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Integrations | FleetArabia",
   description:
-    "Connect mobility operations to finance, banking, telematics, payment gateways, government platforms, CRM and HR through a secure, API-first framework.",
+    "Bring Salik tolls, traffic fines, parking charges and fuel-card statements into FleetArabia and match them to the right vehicle and contract.",
   alternates: { canonical: "/integrations" },
   openGraph: pageOpenGraph("/integrations"),
 };
 
 const ecosystem = [
   {
-    title: "ERP & Financial Systems",
-    text: "Synchronize contracts, invoices, payments, receivables, taxation, journals and financial transactions with your existing accounting or ERP solution.",
+    title: "Finance Built In",
+    text: "Contracts, invoices, receipts and VAT are recorded in the same system as your operations.",
   },
   {
-    title: "Payment Gateways",
-    text: "Support online payments, recurring billing, payment links, refunds, digital wallets and automated collections through leading payment providers.",
+    title: "Tolls, Fines & Parking",
+    text: "Import Salik, traffic-fine and parking files and match every charge to the right vehicle, contract and customer.",
   },
   {
-    title: "GPS Tracking & Geo-Fencing",
-    text: "Connect GPS and telematics providers to monitor live vehicle locations, trip history, utilization, driver behavior, geo-fencing events and fleet performance.",
+    title: "Fuel-Card Statements",
+    text: "Import ENOC and ADNOC fuel-card statements, with a check that stops the same file being imported twice.",
   },
   {
-    title: "Government Services",
-    text: "Integrate with traffic authorities, toll systems, parking platforms, identity verification, licensing authorities and other digital government services.",
+    title: "GPS Tracking Server",
+    text: "FleetArabia connects to a Traccar GPS tracking server, configured during implementation.",
   },
   {
-    title: "CRM & Customer Platforms",
-    text: "Connect websites, customer portals, mobile apps, call centers and CRM solutions to deliver a seamless customer experience.",
+    title: "Customer Portal & CRM",
+    text: "Business customers see invoices, statements and contracts and raise requests in the customer portal; leads and tickets are handled in FleetArabia's CRM.",
   },
   {
-    title: "Open API Platform",
-    text: "Use secure REST APIs and webhooks to integrate with booking engines, partner portals, HR systems, business applications and custom enterprise software.",
+    title: "APIs",
+    text: "The system runs on REST APIs. Integrations such as a traffic-fine data feed are set up during implementation.",
   },
   {
-    title: "Business Intelligence & Analytics",
-    text: "Stream operational and financial data into dashboards, reporting platforms, data warehouses and AI-powered analytics tools for better decision-making.",
+    title: "Dashboards & Reports",
+    text: "Dashboards, reports and bulk downloads of operational and financial data.",
   },
   {
-    title: "Cloud & Enterprise Infrastructure",
-    text: "Deploy in cloud or on-premises environments, to fit your infrastructure and security requirements.",
+    title: "Cloud-Hosted",
+    text: "FleetArabia is hosted in the cloud and used through a web browser.",
   },
 ];
 
 const supportedIntegrations = [
-  "ERP & Accounting Systems",
-  "Payment Gateways",
-  "GPS & Telematics Providers",
-  "Banking Systems",
-  "Government Services",
-  "CRM Platforms",
-  "HR & Payroll Systems",
-  "Business Intelligence Tools",
-  "Customer Websites & Mobile Apps",
-  "Fleet IoT Devices",
-  "Digital Signature Platforms",
-  "Document Management Systems",
+  "Salik Toll Files",
+  "Traffic-Fine Files & Data Feed",
+  "Parking Charge Files",
+  "ENOC & ADNOC Fuel Statements",
+  "GPS Tracking Server (Traccar)",
+  "Customer Portal",
+  "Email Notifications",
+  "REST APIs",
 ];
 
 const whyIntegration = [
   "API-First Architecture",
-  "Real-Time Data Synchronization",
-  "Event-Driven Workflows",
   "Secure Authentication & Encryption",
-  "Enterprise-Grade Security",
-  "Multi-Company & Multi-Branch Connectivity",
-  "Scalable Cloud Architecture",
-  "Low-Code Integration Framework",
-  "Monitoring & Audit Logs",
+  "Role-Based Access",
+  "Multi-Company & Multi-Branch",
+  "Exception Queues for Unmatched Charges",
+  "Audit Logs",
 ];
 
-const gccIntegrations = [
+const uaeImports = [
   {
-    title: "Salik Toll Gate Integration",
-    description: "Designed to automate UAE toll calculations by pulling toll gate transactions and posting them directly to active rental agreements or corporate lease billing cycles.",
+    title: "Salik Toll Import",
+    description: "Import Salik toll files. Each crossing is matched to the contract that had the vehicle at that moment, and invoiced.",
     badge: "UAE",
   },
   {
-    title: "GCC Traffic Fine Automation",
-    description: "Built to connect with Dubai Police, Abu Dhabi Police, and Saher (Saudi Arabia) portals to retrieve traffic violation tickets and charge customer cards.",
-    badge: "UAE & KSA",
+    title: "Traffic Fine Import",
+    description: "Import fines from a file or a data feed, find who had the vehicle at the time, then allocate, verify, dispute and notify by email.",
+    badge: "UAE",
   },
   {
-    title: "TAMM & ELM Vehicle Permits",
-    description: "Built to query transport authorities (TAMM in Abu Dhabi, ELM/Tamm in KSA) for vehicle permits, driver authorization cards, and border crossing permits.",
-    badge: "KSA & UAE",
+    title: "Parking Charge Import",
+    description: "Import parking charge files and match each charge to the vehicle and the contract it was on.",
+    badge: "UAE",
   },
   {
-    title: "Mada, KNET & Benefit Payment Rails",
-    description: "Designed for direct connectivity to local GCC debit card networks like Mada (Saudi Arabia), KNET (Kuwait), Benefit (Bahrain), and NAPS (Qatar).",
-    badge: "GCC Wide",
-  },
-  {
-    title: "Local GPS Gateways (SecurePath/WASL)",
-    description: "Built to support regulatory compliance by feeding location metrics to local tracking authorities (SecurePath in Dubai, Shahin in Abu Dhabi, WASL in Saudi Arabia).",
-    badge: "Regulatory",
-  },
-  {
-    title: "SATA & Border Transit Integrations",
-    description: "Designed to track customs clearances, GCC border crossing permits, and international fleet transits through connected logistics portals.",
-    badge: "Logistics",
+    title: "Fuel-Card Statement Import",
+    description: "Import ENOC and ADNOC fuel-card statements and review fuel spend by vehicle, card and station.",
+    badge: "ENOC & ADNOC",
   },
 ];
 
@@ -130,19 +113,17 @@ function PageHeader() {
       <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50">
-            Enterprise Integration Platform
+            Integrations &amp; Data Imports
           </p>
 
           <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-            Connect to your ERP, payments, GPS and government systems
+            Bring Salik, fines, parking and fuel data into your fleet ERP
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50">
-            FleetArabia seamlessly connects your mobility operations with finance, banking,
-            telematics, payment gateways, government platforms, CRM, HR and third-party
-            applications through a secure, API-first integration framework. Eliminate manual
-            data entry, automate business processes and keep every system synchronized in
-            real time.
+            Import Salik tolls, traffic fines, parking charges and fuel-card statements and
+            match each one to the right vehicle and contract. FleetArabia can also connect to
+            a Traccar GPS tracking server, and runs on REST APIs.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
@@ -156,7 +137,7 @@ function PageHeader() {
           </div>
 
           <div className="mt-8 grid max-w-2xl gap-4 border-t border-white/15 pt-6 sm:grid-cols-3">
-            {["Open API Platform", "Real-Time Integration", "Enterprise Ready"].map((item) => (
+            {["REST APIs", "File & Data Imports", "Enterprise Ready"].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <span className="h-2 w-2 rounded-full bg-cyan-200" />
                 <span className="text-xs font-semibold text-cyan-50">
@@ -180,7 +161,7 @@ function PageContent() {
     <>
       <EcosystemSection />
       <PlatformIntegrationsSection />
-      <GccSpotlightSection />
+      <UaeImportsSection />
     </>
   );
 }
@@ -196,15 +177,15 @@ function IntegrationVisual() {
     <HeroVisual
       spec={{
         kind: "bridge",
-        caption: "Your systems, connected",
-        left: { title: "FleetArabia", items: ["Rental & Leasing", "Fleet & Workshop", "Billing", "Drivers & GPS"] },
-        center: "Secure APIs",
+        caption: "Outside data, matched to the right record",
+        left: { title: "FleetArabia", items: ["Rental & Leasing", "Fleet & Workshop", "Billing", "Drivers"] },
+        center: "Imports & APIs",
         right: [
-          { label: "ERP & Finance", icon: ReceiptText },
-          { label: "Payment Gateways", icon: CreditCard },
-          { label: "GPS & Telematics", icon: Satellite },
-          { label: "Government Services", icon: Landmark },
-          { label: "CRM & Customer Platforms", icon: Users },
+          { label: "Salik Tolls", icon: ReceiptText },
+          { label: "Traffic Fines", icon: Landmark },
+          { label: "Parking Charges", icon: SquareParking },
+          { label: "Fuel-Card Statements", icon: Fuel },
+          { label: "GPS Tracking Server", icon: Satellite },
         ],
       }}
     />
@@ -218,9 +199,9 @@ function EcosystemSection() {
 
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
-          eyebrow="Integration Ecosystem"
-          title="Connect Every System That Powers Your Business"
-          text="FleetArabia enables secure, real-time connectivity across your entire business ecosystem."
+          eyebrow="What Connects"
+          title="Outside data, in the same system"
+          text="Toll, fine, parking and fuel data are imported and matched to the right vehicle and contract."
           light
           center
         />
@@ -248,14 +229,14 @@ function PlatformIntegrationsSection() {
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Platform Integrations"
-          title="Connect Once. Automate Everywhere."
-          text="FleetArabia acts as the central integration hub between your business applications, fleet technologies and customer-facing systems."
+          title="Imports that land on the right record"
+          text="Tolls, fines, parking and fuel data are matched to the vehicle, contract and customer they belong to; anything that cannot be matched waits in an exception queue."
           light
         />
 
         <div className="mt-10">
           <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-50">
-            Supported Integrations
+            Supported Imports &amp; Connections
           </h3>
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {supportedIntegrations.map((item, index) => (
@@ -272,7 +253,7 @@ function PlatformIntegrationsSection() {
           <h3 className="text-xs font-black uppercase tracking-[0.22em] text-cyan-50">
             Why FleetArabia Integration?
           </h3>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whyIntegration.map((item, index) => (
               <Reveal key={item} delay={Math.min(index * 0.05, 0.3)}>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-sm font-black text-white shadow-sm">
@@ -287,19 +268,19 @@ function PlatformIntegrationsSection() {
   );
 }
 
-function GccSpotlightSection() {
+function UaeImportsSection() {
   return (
     <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
-          eyebrow="GCC Localization"
-          title="Engineered for Middle East Mobility Ecosystems"
-          text="Integration pathways designed for GCC government transport authorities, toll platforms, local payment networks, and compliance portals."
+          eyebrow="Built for the UAE"
+          title="UAE operations built in"
+          text="Salik tolls, UAE traffic fines, parking charges, UAE VAT and AED billing are part of the product."
           light
         />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {gccIntegrations.map((item, index) => (
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {uaeImports.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.3)}>
               <article className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.09]">
                 <span className="inline-flex rounded-full bg-[#043f3e]/40 px-3 py-1 text-xs font-black text-white">
@@ -329,14 +310,12 @@ function FinalCTA() {
         </p>
 
         <h2 className="mt-5 text-2xl font-black tracking-tight md:text-4xl">
-          One Connected Platform for Your Entire Mobility Business
+          One system for your fleet and its data
         </h2>
 
         <p className="mt-5 text-base leading-8 text-cyan-50">
-          FleetArabia brings together operations, finance, vehicles, drivers, customers and
-          partners into one connected ecosystem. By integrating every critical business
-          system, you gain real-time visibility, automate workflows, improve operational
-          efficiency and accelerate digital transformation. Integrate. Automate. Scale.
+          FleetArabia brings operations, finance, vehicles, drivers and customers into one
+          cloud ERP, with outside data imported and matched instead of re-keyed.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

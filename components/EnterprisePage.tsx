@@ -74,11 +74,11 @@ export default function EnterprisePage({
   description,
   primaryCta = { label: "Book a Demo", href: "/contact#demo-form" },
   secondaryCta = { label: "Explore Solutions", href: "/solutions" },
-  proofPoints = ["Enterprise Ready", "ERP Integrated", "Middle East Expertise"],
+  proofPoints = ["Enterprise Ready", "Finance Built In", "Built for the UAE"],
   visual,
   sections,
   finalCtaTitle = "Ready to modernize your mobility operations?",
-  finalCtaText = "Let's build your digital rental, leasing, transportation and ERP-connected operation together.",
+  finalCtaText = "Tell us how your rental, leasing, transport or workshop operation runs today, and we'll show you how it looks in one system.",
   childrenFirst = false,
   children,
 }: EnterprisePageProps) {

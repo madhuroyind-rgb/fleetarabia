@@ -6,7 +6,7 @@ import { Check, type LucideIcon } from "lucide-react";
 // modules) instead of repeating the shared "F" hub. Every label here must come
 // from copy already on the page it decorates — no new claims, no numbers, no
 // mock product screens. Pure markup, no client JS, so it renders without JS.
-// The home page keeps ConnectedVisual (all 13 modules around the platform).
+// The home page keeps ConnectedVisual (every module around the platform).
 
 type Row = { label: string; detail?: string; icon?: LucideIcon };
 

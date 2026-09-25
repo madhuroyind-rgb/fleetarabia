@@ -20,10 +20,10 @@ export default function FleetLeasingPage() {
       eyebrow="Enterprise Leasing Platform"
       title="Fleet leasing software,"
       highlight="from quotation to financial reporting"
-      description="Digitize your entire leasing operation with FleetArabia's enterprise leasing platform. Manage the complete lease lifecycle — from quotations and contracts to billing, maintenance, renewals, vehicle replacement and financial reporting — all connected through one intelligent ERP. Whether you manage hundreds or thousands of leased vehicles, FleetArabia provides the automation, visibility and control needed to scale your business with confidence."
+      description="Digitize your entire leasing operation with FleetArabia's enterprise leasing platform. Manage the complete lease lifecycle — from quotations and contracts to billing, maintenance, renewals, vehicle replacement and financial reporting — all in one cloud ERP."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Leasing", href: "/solutions" }}
-      proofPoints={["Lease Lifecycle Management", "ERP & Finance Integration", "Multi-Company & Multi-Branch Support"]}
+      proofPoints={["Lease Lifecycle Management", "Finance Built In", "Multi-Company & Multi-Branch Support"]}
       visual={{
         kind: "flow",
         caption: "The lease lifecycle",
@@ -44,13 +44,13 @@ export default function FleetLeasingPage() {
           text: "Every capability a leasing operation needs, connected on one platform.",
           items: [
             { title: "Contract Lifecycle Management", text: "Create quotations, generate lease agreements, manage approvals, amendments, extensions, renewals and contract closures from a centralized workspace." },
-            { title: "Fleet Lifecycle Management", text: "Monitor vehicle allocation, delivery, returns, replacement vehicles, maintenance history, warranty tracking and asset utilization throughout the lease period." },
-            { title: "Automated Billing & Revenue Management", text: "Generate recurring invoices, installment schedules, consolidated customer billing, taxes, deposits, credit notes and revenue recognition automatically." },
+            { title: "Fleet Lifecycle Management", text: "Monitor vehicle allocation, delivery, returns, replacement vehicles, maintenance history and asset utilization throughout the lease period." },
+            { title: "Automated Billing & Revenue Management", text: "Generate recurring lease invoices, consolidated customer billing, VAT, deposits and credit notes." },
             { title: "Corporate Customer Management", text: "Manage corporate accounts, multiple branches, cost centers, driver assignments, billing contacts, payment terms and service-level agreements." },
-            { title: "Maintenance & Service Management", text: "Schedule preventive maintenance, repairs, inspections, recalls, tire replacement, warranties and workshop activities without disrupting lease operations." },
+            { title: "Maintenance & Service Management", text: "Book leased vehicles into the workshop for servicing and repairs, with replacement vehicles keeping the contract running." },
             { title: "Vehicle Replacement Management", text: "Allocate temporary or replacement vehicles while maintaining contract continuity, billing accuracy and complete audit history." },
-            { title: "Driver & Asset Assignment", text: "Track drivers, assigned vehicles, licenses, violations, fuel cards, accessories and operational responsibilities throughout the lease." },
-            { title: "Financial & ERP Integration", text: "Automatically synchronize contracts, invoices, payments, depreciation, taxes, journals and receivables with your ERP and accounting systems." },
+            { title: "Driver & Asset Assignment", text: "Track drivers, assigned vehicles, licenses, accessories and responsibilities throughout the lease." },
+            { title: "Finance in the Same System", text: "Lease contracts, invoices, VAT and receivables are recorded in the same system as the contracts themselves." },
             { title: "Business Intelligence & Analytics", text: "Monitor fleet utilization, contract profitability, lease expirations, maintenance costs, revenue trends, KPIs and executive dashboards in real time." },
           ],
         },
@@ -65,19 +65,18 @@ export default function FleetLeasingPage() {
             { title: "Automated Billing & Collections" },
             { title: "Corporate Fleet Management" },
             { title: "Multi-Company & Multi-Branch" },
-            { title: "Real-Time Fleet Visibility" },
-            { title: "Preventive Maintenance Scheduling" },
+            { title: "Fleet Status Dashboards" },
+            { title: "Workshop Bookings" },
             { title: "Driver & Vehicle Assignment" },
-            { title: "ERP & Financial Integration" },
-            { title: "GPS Tracking & Geo-Fencing" },
-            { title: "AI-Powered Dashboards & Analytics" },
+            { title: "Finance Built In" },
+            { title: "Dashboards & Reporting" },
             { title: "Security & Audit Trail" },
-            { title: "Mobile Apps for Field Operations" },
+            { title: "Android App for Field Staff" },
           ],
         },
       ]}
       finalCtaTitle="See the lease lifecycle end to end"
-      finalCtaText="Replace spreadsheets and disconnected systems with an enterprise leasing platform that automates contracts, operations, maintenance, billing and reporting. From customer onboarding to vehicle retirement, FleetArabia delivers complete visibility, intelligent automation and seamless ERP integration — helping leasing companies reduce operational costs, improve fleet utilization and deliver exceptional customer experiences."
+      finalCtaText="Replace spreadsheets with one system for lease quotations, agreements, billing, maintenance and finance, from customer acceptance to lease end."
     />
     </>
   );

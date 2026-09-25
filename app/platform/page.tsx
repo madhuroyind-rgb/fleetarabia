@@ -4,7 +4,7 @@ import { ORGANIZATION_ID, breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import { MODULE_ICONS } from "@/lib/modules";
 import { SITE_URL } from "@/lib/site";
 import EnterprisePage from "@/components/EnterprisePage";
-import { ChartColumn, Cloud, Layers, Link2, Lock, MapPin, MonitorSmartphone, Plug, ShieldCheck, Smartphone, Workflow, Zap } from "lucide-react";
+import { ChartColumn, Cloud, Layers, Link2, Lock, MonitorSmartphone, Plug, ShieldCheck, Smartphone, Workflow, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Platform | FleetArabia",
@@ -40,14 +40,14 @@ export default function PlatformPage() {
       description="Rental, leasing, maintenance and billing running on one data model — so a change in one place doesn't need to be re-entered in three others."
       primaryCta={{ label: "Book a Demo", href: "/contact#demo-form" }}
       secondaryCta={{ label: "View Solutions", href: "/solutions" }}
-      proofPoints={["Cloud Ready", "ERP Integrated", "Enterprise Secure"]}
+      proofPoints={["Cloud Ready", "Finance Built In", "Enterprise Secure"]}
       visual={{
         kind: "stack",
         caption: "Platform architecture",
         layers: [
           { tag: "Layer 01", label: "Experience Layer", detail: "Web portal, mobile access and customer touchpoints", icon: MonitorSmartphone },
           { tag: "Layer 02", label: "Operations Layer", detail: "Reservations, agreements, fleet, workshop and billing", icon: Workflow },
-          { tag: "Layer 03", label: "Enterprise Layer", detail: "ERP and finance posting, GPS, payments and APIs", icon: Plug },
+          { tag: "Layer 03", label: "Enterprise Layer", detail: "Finance ledger, VAT, data imports and APIs", icon: Plug },
           { tag: "Layer 04", label: "Governance Layer", detail: "Roles, approvals and audit controls", icon: ShieldCheck },
         ],
         footer: "Everything runs on the same data model",
@@ -67,38 +67,33 @@ export default function PlatformPage() {
             },
             {
               icon: Zap,
-              title: "Intelligent Automation",
+              title: "Workflow Automation",
               text: "Automate reservations, contracts, invoicing, renewals, approvals, maintenance scheduling and business workflows.",
             },
             {
               icon: Link2,
-              title: "Open Integration Platform",
-              text: "Connect with ERP, accounting, payment gateways, GPS providers, telematics, government and regulatory systems, CRM, HR and third-party applications through secure APIs.",
+              title: "Data Imports & APIs",
+              text: "Import Salik, traffic-fine, parking and fuel-card data, connect a Traccar GPS tracking server, and reach the system through REST APIs.",
             },
             {
               icon: ChartColumn,
               title: "Real-Time Analytics",
-              text: "Monitor KPIs, fleet utilization, revenue, profitability, maintenance costs and operational performance through interactive dashboards and AI-powered insights.",
+              text: "Monitor KPIs, fleet utilization, revenue, profitability, maintenance costs and operational performance through dashboards and reports.",
             },
             {
               icon: Smartphone,
               title: "Mobile Workforce",
-              text: "Native mobile applications for drivers, workshop technicians, field staff, delivery teams and managers.",
-            },
-            {
-              icon: MapPin,
-              title: "GPS Tracking & Geo-Fencing",
-              text: "Track vehicle locations in real time, create geo-fenced operational zones, monitor route compliance and receive instant alerts.",
+              text: "An Android app for drivers, workshop technicians and operations staff: vehicle inspections, trips, workshop jobs and approvals.",
             },
             {
               icon: Lock,
               title: "Enterprise Security",
-              text: "Role-based access control, audit trails, multi-factor authentication, encryption and compliance with enterprise security standards.",
+              text: "Role-based access, audit trails, multi-factor sign-in and encrypted connections.",
             },
             {
               icon: Cloud,
-              title: "Cloud & On-Premise Deployment",
-              text: "Deploy on your preferred cloud infrastructure or in your own on-premise environment.",
+              title: "Cloud-Hosted",
+              text: "Hosted by FleetArabia and used through a web browser, so there are no servers to buy or maintain.",
               href: "/deployment",
               linkLabel: "See Deployment Options →",
             },
@@ -122,7 +117,7 @@ export default function PlatformPage() {
             {
               tag: "Layer 03",
               title: "Enterprise Layer",
-              text: "ERP and finance posting, GPS tracking, payments, APIs and analytics.",
+              text: "Finance ledger and VAT, Salik, fine, parking and fuel imports, GPS server connection, APIs and reporting.",
             },
             {
               tag: "Layer 04",

@@ -16,11 +16,10 @@ const columns: { title: string; items: FooterLink[] }[] = [
       { label: "Car Rental Management", href: "/solutions#car-rental-management" },
       { label: "Leasing Management", href: "/solutions#leasing-management" },
       { label: "Fleet Leasing", href: "/fleet-leasing" },
-      { label: "Chauffeur & Limousine", href: "/solutions#chauffeur-limousine" },
+      { label: "Chauffeur & Transport", href: "/solutions#chauffeur-transport" },
       { label: "Bus Transportation", href: "/solutions#bus-transportation" },
       { label: "Workshop Management", href: "/solutions#workshop-management" },
       { label: "Business Intelligence & Analytics", href: "/solutions#business-intelligence-analytics" },
-      { label: "GPS Tracking & Geo-Fencing", href: "/solutions#gps-tracking-geo-fencing" },
       { label: "Driver Management", href: "/solutions#driver-management" },
       { label: "Fuel Management", href: "/solutions#fuel-management" },
     ],
@@ -33,7 +32,7 @@ const columns: { title: string; items: FooterLink[] }[] = [
       { label: "Billing & Revenue Management", href: "/solutions#billing-revenue-management" },
       { label: "Vehicle Damage & Claims (VDR)", href: "/solutions#vehicle-damage-claims-vdr" },
       { label: "Reporting & Dashboards", href: "/platform" },
-      { label: "ERP Integrations", href: "/integrations" },
+      { label: "Integrations", href: "/integrations" },
       { label: "Implementation Support", href: "/services" },
     ],
   },
@@ -99,9 +98,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
-              FleetArabia helps rental, leasing, transportation, workshop and
-              ERP-connected fleet businesses digitize operations across the
-              Middle East.
+              FleetArabia is a cloud ERP for rental, leasing, transport and
+              workshop businesses in the UAE.
             </p>
 
             <a

@@ -8,16 +8,16 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Company | FleetArabia",
   description:
-    "FleetArabia is a technology company building intelligent enterprise software for vehicle rental, leasing, transportation, workshop and fleet businesses.",
+    "FleetArabia is a technology company building a cloud ERP for vehicle rental, leasing, transport and workshop businesses in the UAE.",
   alternates: { canonical: "/company" },
   openGraph: pageOpenGraph("/company"),
 };
 
 const whyChooseUs = [
   "Complete Enterprise Mobility Platform",
-  "Cloud & On-Premises Deployment",
-  "Open API & Integration Platform",
-  "AI-Powered Analytics & Dashboards",
+  "Cloud-Hosted",
+  "Data Imports & APIs",
+  "Dashboards & Reporting",
   "Enterprise-Grade Security",
   "Multi-Company & Multi-Branch Support",
   "Website, Mobile App & B2B Portal Development",
@@ -33,7 +33,7 @@ export default function CompanyPage() {
       eyebrow="Company"
       title="A fleet technology company"
       highlight="based in Dubai and Patna"
-      description="FleetArabia is a technology company dedicated to transforming mobility businesses through intelligent enterprise software. We help organizations simplify operations, connect business processes and accelerate digital transformation with one unified platform built specifically for the mobility industry. From vehicle rental and leasing to transportation, workshops, fleet management and customer engagement, FleetArabia empowers businesses to operate smarter, faster and with complete visibility."
+      description="FleetArabia is a technology company dedicated to transforming mobility businesses with a cloud ERP built for rental, leasing, transport and workshop operations. We help organizations simplify operations, connect business processes and accelerate digital transformation with one unified platform built specifically for the mobility industry. From vehicle rental and leasing to transportation, workshops, fleet management and customer engagement, FleetArabia empowers businesses to operate smarter, faster and with complete visibility."
       primaryCta={{ label: "Contact FleetArabia", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore Our Solutions", href: "/solutions" }}
       proofPoints={["Industry Expertise", "Enterprise Technology", "Digital Transformation Partner"]}
@@ -44,18 +44,18 @@ export default function CompanyPage() {
           { label: "Company", detail: "FleetArabia Technology LLC", icon: Building2 },
           { label: "Offices", detail: "Dubai, UAE · Patna, India", icon: MapPin },
           { label: "Focus", detail: "Rental, leasing, transport, workshops and fleets", icon: Car },
-          { label: "Approach", detail: "One platform, connected to your ERP", icon: Layers },
+          { label: "Approach", detail: "One ERP for operations and finance", icon: Layers },
         ],
       }}
       sections={[
         {
           eyebrow: "Who We Are",
           title: "Building the future of connected mobility",
-          text: "FleetArabia combines deep industry knowledge with modern enterprise technology to deliver solutions that solve real-world operational challenges. Our platform is designed to help organizations automate workflows, improve efficiency and make better business decisions through real-time data and intelligent automation.",
+          text: "FleetArabia combines deep industry knowledge with modern enterprise technology to deliver solutions that solve real-world operational challenges. Our platform is designed to help organizations automate workflows, improve efficiency and make better business decisions through live data and workflow automation.",
           items: [
             { title: "Industry Expertise", text: "Purpose-built for vehicle rental, leasing, transportation, workshops, corporate fleets and mobility service providers." },
-            { title: "Enterprise Technology", text: "Modern, cloud-ready applications built with scalable architecture, enterprise security and API-first connectivity." },
-            { title: "Digital Innovation", text: "Leveraging automation, analytics, mobile technology, AI and real-time integrations to modernize fleet operations." },
+            { title: "Enterprise Technology", text: "Modern, cloud-hosted software with role-based security and REST APIs." },
+            { title: "Digital Innovation", text: "Workflow automation, reporting, a mobile app for field staff and document scanning at customer onboarding." },
             { title: "Customer Success", text: "Our commitment is to work alongside every customer, from implementation through continuous optimization." },
           ],
         },
@@ -65,8 +65,8 @@ export default function CompanyPage() {
           text: "The principles that guide every FleetArabia implementation.",
           items: [
             { title: "Customer First", text: "Every solution is designed around the operational needs of fleet businesses: efficiency, productivity and profitability." },
-            { title: "Innovation", text: "We continuously invest in modern technologies, intelligent automation, AI, analytics and digital experiences to keep fleet businesses ahead of the market." },
-            { title: "Integration", text: "We connect people, vehicles, finance, operations and third-party systems into one intelligent business ecosystem." },
+            { title: "Innovation", text: "We keep improving the product around how fleet businesses actually work: fewer manual steps, clearer records and better reporting." },
+            { title: "Integration", text: "We connect people, vehicles, finance, operations and third-party systems into one system." },
             { title: "Trust & Security", text: "Enterprise-grade security, governance, auditability and compliance are built into every solution we deliver." },
             { title: "Partnership", text: "We build long-term relationships by providing implementation expertise, ongoing support, continuous innovation and strategic guidance." },
           ],
@@ -94,7 +94,7 @@ function MissionVisionSection() {
             Simplifying mobility through technology
           </h2>
           <p className="mt-4 leading-7 text-cyan-50">
-            Our mission is to empower mobility businesses with intelligent technology that
+            Our mission is to empower mobility businesses with practical technology that
             automates operations, enhances customer experiences and drives sustainable
             growth. We believe technology should simplify complex operations — not create
             them.
@@ -110,7 +110,7 @@ function MissionVisionSection() {
           </h2>
           <p className="mt-4 leading-7 text-cyan-50">
             We envision a future where every mobility business operates on a connected,
-            intelligent and data-driven platform. By combining enterprise technology with
+            data-driven platform. By combining enterprise technology with
             industry expertise, FleetArabia helps organizations transform operations, unlock
             new opportunities and deliver exceptional customer experiences.
           </p>

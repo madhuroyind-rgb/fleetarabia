@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
-import { Cloud, Server } from "lucide-react";
+import { Cloud, Globe, ReceiptText, RefreshCw } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Deployment Options | FleetArabia",
   description:
-    "Deploy FleetArabia as fully managed SaaS cloud or within your own on-premises infrastructure — the same enterprise mobility platform either way.",
+    "FleetArabia is hosted in the cloud and used through a web browser: no servers to buy, subscription licensing and updates handled for you.",
   alternates: { canonical: "/deployment" },
   openGraph: pageOpenGraph("/deployment"),
 };
@@ -17,21 +17,22 @@ export default function DeploymentPage() {
     <>
       <JsonLd data={breadcrumbJsonLd("/deployment")} />
     <EnterprisePage
-      eyebrow="Deployment Flexibility"
-      title="Run it in our cloud or"
-      highlight="on your own servers"
-      description="Choose the deployment model that best aligns with your business, security and IT strategy. Whether you prefer the flexibility of the cloud or complete control over your infrastructure, FleetArabia provides enterprise-grade deployment options designed to scale with your organization."
+      eyebrow="Deployment"
+      title="Hosted in the cloud,"
+      highlight="used in your browser"
+      description="FleetArabia runs as a hosted service. Your branches, workshops and offices use it through a web browser, and FleetArabia looks after the servers and updates."
       primaryCta={{ label: "Talk to Our Experts", href: "/contact#demo-form" }}
       secondaryCta={{ label: "Explore the Platform", href: "/platform" }}
-      proofPoints={["SaaS Cloud", "On-Premises", "Enterprise Security"]}
+      proofPoints={["SaaS Cloud", "Browser Access", "Enterprise Security"]}
       visual={{
-        kind: "split",
-        caption: "Two deployment choices",
-        options: [
-          { title: "SaaS Cloud", icon: Cloud, points: ["No hardware to buy", "Subscription licensing", "Updates handled for you"] },
-          { title: "On-Premises", icon: Server, points: ["Full data ownership", "Your security controls", "Your backup policies"] },
+        kind: "facts",
+        caption: "How it is delivered",
+        facts: [
+          { label: "Hosting", detail: "Managed by FleetArabia", icon: Cloud },
+          { label: "Access", detail: "Web browser", icon: Globe },
+          { label: "Licensing", detail: "Subscription", icon: ReceiptText },
+          { label: "Updates", detail: "Applied by FleetArabia", icon: RefreshCw },
         ],
-        footer: "Same platform, either way",
       }}
       sections={[
         {
@@ -48,43 +49,27 @@ export default function DeploymentPage() {
           ],
         },
         {
-          eyebrow: "On-Premises",
-          title: "Complete control over your infrastructure",
-          text: "Deploy FleetArabia within your own data center or private cloud for maximum control, security and compliance while integrating with your existing IT ecosystem.",
-          variant: "dark",
-          items: [
-            { title: "Full Data Ownership", text: "Your data stays on servers you own and control, under your own retention and access policies." },
-            { title: "Private Infrastructure", text: "Runs inside your data center or private cloud, behind your own network perimeter." },
-            { title: "Your Security Controls", text: "The system sits behind your organization's own firewalls and monitoring tools." },
-            { title: "Custom Integrations", text: "Connect directly to internal systems that are not reachable from the public internet." },
-            { title: "Data Location", text: "Data stays in your own environment, which can help where data must remain in-country or on-site." },
-            { title: "Hardware Sized by You", text: "You choose the hardware to match your own transaction volumes and peak periods." },
-            { title: "Your Backup Policies", text: "Backups and recovery follow your own IT policies and tools, because the system runs on your infrastructure." },
-            { title: "Multi-Branch Use", text: "One installation can be shared across several branches." },
-          ],
-        },
-        {
-          eyebrow: "Same Platform, Either Way",
-          title: "One platform. Two deployment choices.",
-          text: "Whether deployed as SaaS or on-premises, FleetArabia delivers the same enterprise capabilities.",
+          eyebrow: "Included",
+          title: "Every module, hosted for you",
+          text: "The hosted service includes the modules described across this site.",
           variant: "teal",
           compact: true,
           items: [
             { title: "Vehicle Rental & Leasing" },
             { title: "Fleet Operations" },
             { title: "Workshop Management" },
-            { title: "Driver & Fuel Management" },
-            { title: "GPS Tracking & Geo-Fencing" },
+            { title: "Driver Management" },
+            { title: "Fuel-Card Statement Imports" },
             { title: "Finance & Billing" },
-            { title: "Business Intelligence & Analytics" },
-            { title: "API-First Integrations" },
+            { title: "Dashboards & Reporting" },
+            { title: "Data Imports & APIs" },
             { title: "Multi-Company & Multi-Branch Support" },
             { title: "Enterprise Security Controls" },
           ],
         },
       ]}
-      finalCtaTitle="Not sure which deployment fits? Ask us."
-      finalCtaText="Deploy FleetArabia in the way that best fits your organization — cloud for agility or on-premises for complete control — while enjoying the same powerful enterprise mobility platform."
+      finalCtaTitle="Questions about hosting? Ask us."
+      finalCtaText="Tell us how many branches and users you have, and we'll walk you through how the hosted service works."
     />
     </>
   );

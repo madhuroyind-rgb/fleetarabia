@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageOpenGraph } from "@/lib/seo";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | FleetArabia",
   description:
-    "What FleetArabia collects through this website's contact form and optional Google Analytics cookies, how it is used and shared, and how to access or delete it.",
+    "What this website collects through its contact form and optional Google Analytics cookies, how it is used and shared, and how to access or delete it.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/privacy" },
+  openGraph: pageOpenGraph("/privacy"),
 };
 
 export default function PrivacyPage() {

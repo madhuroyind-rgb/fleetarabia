@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { Building2, Car, Layers, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
@@ -8,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "FleetArabia is a technology company building intelligent enterprise software for vehicle rental, leasing, transportation, workshop and fleet businesses.",
   alternates: { canonical: "/company" },
+  openGraph: pageOpenGraph("/company"),
 };
 
 const whyChooseUs = [
@@ -24,6 +27,8 @@ const whyChooseUs = [
 
 export default function CompanyPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/company")} />
     <EnterprisePage
       eyebrow="Company"
       title="A fleet technology company"
@@ -73,6 +78,7 @@ export default function CompanyPage() {
       <MissionVisionSection />
       <WhyChooseSection />
     </EnterprisePage>
+    </>
   );
 }
 

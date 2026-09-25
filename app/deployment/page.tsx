@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { Cloud, Server } from "lucide-react";
 
@@ -7,10 +9,13 @@ export const metadata: Metadata = {
   description:
     "Deploy FleetArabia as fully managed SaaS cloud or within your own on-premises infrastructure — the same enterprise mobility platform either way.",
   alternates: { canonical: "/deployment" },
+  openGraph: pageOpenGraph("/deployment"),
 };
 
 export default function DeploymentPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/deployment")} />
     <EnterprisePage
       eyebrow="Deployment Flexibility"
       title="Run it in our cloud or"
@@ -81,5 +86,6 @@ export default function DeploymentPage() {
       finalCtaTitle="Not sure which deployment fits? Ask us."
       finalCtaText="Deploy FleetArabia in the way that best fits your organization — cloud for agility or on-premises for complete control — while enjoying the same powerful enterprise mobility platform."
     />
+    </>
   );
 }

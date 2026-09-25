@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { ORGANIZATION_ID, breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
+import { MODULE_ICONS } from "@/lib/modules";
+import { SITE_URL } from "@/lib/site";
 import EnterprisePage from "@/components/EnterprisePage";
 import { ChartColumn, Cloud, Layers, Link2, Lock, MapPin, MonitorSmartphone, Plug, ShieldCheck, Smartphone, Workflow, Zap } from "lucide-react";
 
@@ -7,10 +11,28 @@ export const metadata: Metadata = {
   description:
     "One platform underneath rental, leasing, maintenance and billing — so operational and financial data are always the same numbers.",
   alternates: { canonical: "/platform" },
+  openGraph: pageOpenGraph("/platform"),
+};
+
+// Only what the site itself states. No offers, ratings or operating systems:
+// there is no published price, no reviews, and the site names no platforms.
+const softwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "FleetArabia",
+  applicationCategory: "BusinessApplication",
+  description:
+    "One platform underneath rental, leasing, maintenance and billing — so operational and financial data are always the same numbers.",
+  url: `${SITE_URL}/platform`,
+  featureList: Object.keys(MODULE_ICONS),
+  publisher: { "@id": ORGANIZATION_ID },
 };
 
 export default function PlatformPage() {
   return (
+    <>
+      <JsonLd data={softwareJsonLd} />
+      <JsonLd data={breadcrumbJsonLd("/platform")} />
     <EnterprisePage
       eyebrow="FleetArabia Platform"
       title="Rental, leasing, maintenance and billing on"
@@ -123,5 +145,6 @@ export default function PlatformPage() {
         },
       ]}
     />
+    </>
   );
 }

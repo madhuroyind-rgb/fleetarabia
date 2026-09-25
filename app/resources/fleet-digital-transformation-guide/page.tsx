@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import GuidePage from "@/components/GuidePage";
 import { SITE_URL } from "@/lib/site";
 
@@ -7,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "A practical guide to modernizing rental, leasing, transportation and workshop operations — where to start and how to roll it out.",
   alternates: { canonical: "/resources/fleet-digital-transformation-guide" },
+  openGraph: pageOpenGraph("/resources/fleet-digital-transformation-guide"),
 };
 
 const articleJsonLd = {
@@ -30,6 +33,7 @@ export default function FleetDigitalTransformationGuidePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <JsonLd data={breadcrumbJsonLd("/resources/fleet-digital-transformation-guide")} />
       <GuidePage
       eyebrow="Resource Guide"
       title="Fleet Digital Transformation Guide"

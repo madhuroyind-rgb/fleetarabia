@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageOpenGraph } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -26,6 +28,11 @@ import Reveal from "@/components/Reveal";
 import ConnectedVisual from "@/components/ConnectedVisual";
 import { slugify } from "@/lib/slug";
 import { MODULE_ICONS } from "@/lib/modules";
+
+// Only openGraph here: title, description and canonical come from the root layout.
+export const metadata: Metadata = {
+  openGraph: pageOpenGraph("/"),
+};
 
 const outcomes = [
   {

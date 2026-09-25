@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { Briefcase, Building2, Bus, Car, CarTaxiFront, KeyRound, Landmark, Wrench } from "lucide-react";
 
@@ -7,10 +9,13 @@ export const metadata: Metadata = {
   description:
     "Industry-specific mobility solutions for rental, leasing, limousine, bus transportation, corporate fleets, workshops and government mobility programs.",
   alternates: { canonical: "/industries" },
+  openGraph: pageOpenGraph("/industries"),
 };
 
 export default function IndustriesPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/industries")} />
     <EnterprisePage
       eyebrow="Industries"
       title="Eight kinds of fleet business,"
@@ -67,5 +72,6 @@ export default function IndustriesPage() {
       finalCtaTitle="Tell us which kind of fleet you run"
       finalCtaText="FleetArabia brings together people, vehicles, operations, finance and customer service into one connected ecosystem. Replace disconnected systems with intelligent automation, real-time analytics and seamless ERP integration to improve efficiency, reduce costs and accelerate business growth. Transform your mobility operations with FleetArabia."
     />
+    </>
   );
 }

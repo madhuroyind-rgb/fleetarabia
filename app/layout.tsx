@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ChatLauncher from "@/components/ChatLauncher";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import { LINKEDIN_URL, SITE_URL } from "@/lib/site";
+import { ORGANIZATION_ID } from "@/lib/seo";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": ORGANIZATION_ID,
   name: "FleetArabia",
   legalName: "FleetArabia Technology LLC",
   url: SITE_URL,
@@ -71,6 +73,16 @@ const organizationJsonLd = {
   ],
 };
 
+// No SearchAction: the site has no search.
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "FleetArabia",
+  url: SITE_URL,
+  inLanguage: "en",
+  publisher: { "@id": ORGANIZATION_ID },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -85,6 +97,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <a
           href="#main-content"

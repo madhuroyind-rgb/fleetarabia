@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { MODULE_ICONS } from "@/lib/modules";
 
 export const metadata: Metadata = {
   title: "Solutions | FleetArabia",
   description:
-    "FleetArabia delivers an integrated suite of mobility applications — rental, leasing, workshop, billing, GPS tracking, analytics, CRM and ERP integration — on one connected platform.",
+    "An integrated suite of mobility applications — rental, leasing, workshop, billing, GPS tracking, analytics, CRM and ERP integration — on one platform.",
   alternates: { canonical: "/solutions" },
+  openGraph: pageOpenGraph("/solutions"),
 };
 
 export default function SolutionsPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/solutions")} />
     <EnterprisePage
       eyebrow="Solution Portfolio"
       title="Thirteen modules."
@@ -95,5 +100,6 @@ export default function SolutionsPage() {
         },
       ]}
     />
+    </>
   );
 }

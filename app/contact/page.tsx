@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { Clock, Presentation, Send } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
@@ -8,10 +10,13 @@ export const metadata: Metadata = {
   description:
     "Questions about rental, leasing, workshop management, GPS tracking, payment gateways or ERP integration? Tell us what you're working on.",
   alternates: { canonical: "/contact" },
+  openGraph: pageOpenGraph("/contact"),
 };
 
 export default function ContactPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/contact")} />
     <EnterprisePage
       eyebrow="Contact Us"
       title="Tell us how your fleet operation"
@@ -106,5 +111,6 @@ export default function ContactPage() {
     >
       <ContactForm />
     </EnterprisePage>
+    </>
   );
 }

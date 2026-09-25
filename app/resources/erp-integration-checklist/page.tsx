@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import GuidePage from "@/components/GuidePage";
 import { SITE_URL } from "@/lib/site";
 
@@ -7,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS, and payment systems.",
   alternates: { canonical: "/resources/erp-integration-checklist" },
+  openGraph: pageOpenGraph("/resources/erp-integration-checklist"),
 };
 
 const articleJsonLd = {
@@ -30,6 +33,7 @@ export default function ErpIntegrationChecklistPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <JsonLd data={breadcrumbJsonLd("/resources/erp-integration-checklist")} />
       <GuidePage
       eyebrow="Resource Guide"
       title="ERP Integration Checklist"

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroVisual from "@/components/HeroVisual";
@@ -7,8 +9,9 @@ import { CreditCard, Landmark, ReceiptText, Satellite, Users } from "lucide-reac
 export const metadata: Metadata = {
   title: "Integrations | FleetArabia",
   description:
-    "FleetArabia connects your mobility operations with finance, banking, telematics, payment gateways, government platforms, CRM, HR and third-party applications through a secure, API-first framework.",
+    "Connect mobility operations to finance, banking, telematics, payment gateways, government platforms, CRM and HR through a secure, API-first framework.",
   alternates: { canonical: "/integrations" },
+  openGraph: pageOpenGraph("/integrations"),
 };
 
 const ecosystem = [
@@ -108,11 +111,14 @@ const gccIntegrations = [
 
 export default function IntegrationsPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/integrations")} />
     <main className="fleet-teal-page text-white">
       <PageHeader />
       <PageContent />
       <FinalCTA />
     </main>
+    </>
   );
 }
 

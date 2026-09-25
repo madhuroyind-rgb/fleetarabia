@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 
 export const metadata: Metadata = {
@@ -6,10 +8,13 @@ export const metadata: Metadata = {
   description:
     "Implementation guides and industry insights for rental, leasing, transportation and fleet organizations — two guides live now, more in progress.",
   alternates: { canonical: "/resources" },
+  openGraph: pageOpenGraph("/resources"),
 };
 
 export default function ResourcesPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/resources")} />
     <EnterprisePage
       eyebrow="Resources"
       title="Practical guides for"
@@ -42,5 +47,6 @@ export default function ResourcesPage() {
       finalCtaTitle="Didn't find what you need?"
       finalCtaText="Have a question these guides don't answer yet? Tell us what you're working on and we'll walk you through it."
     />
+    </>
   );
 }

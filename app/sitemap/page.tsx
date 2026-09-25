@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import Link from "next/link";
 import { SITE_ROUTES } from "@/lib/site";
 
@@ -6,10 +8,13 @@ export const metadata: Metadata = {
   title: "Sitemap | FleetArabia",
   description: "Browse all pages on the FleetArabia website.",
   alternates: { canonical: "/sitemap" },
+  openGraph: pageOpenGraph("/sitemap"),
 };
 
 export default function SitemapPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/sitemap")} />
     <main className="fleet-teal-page bg-[#087674] px-5 sm:px-6 py-16 text-white">
       <div className="mx-auto max-w-3xl">
         <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-50">
@@ -33,5 +38,6 @@ export default function SitemapPage() {
         </ul>
       </div>
     </main>
+    </>
   );
 }

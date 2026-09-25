@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageOpenGraph } from "@/lib/seo";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
     "Terms governing use of the FleetArabia website: acceptable use, intellectual property, disclaimers, limitation of liability and governing UAE law.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/terms" },
+  openGraph: pageOpenGraph("/terms"),
 };
 
 export default function TermsPage() {

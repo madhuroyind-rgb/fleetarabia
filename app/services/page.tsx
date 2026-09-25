@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { CalendarCheck, Compass, Database, Globe, GraduationCap, LifeBuoy, Link2, MonitorSmartphone, PenTool, Rocket, Smartphone, Target, TrendingUp } from "lucide-react";
 import Reveal from "@/components/Reveal";
@@ -8,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "End-to-end professional services — ERP implementation, integration, website and app development, training and managed support for mobility businesses.",
   alternates: { canonical: "/services" },
+  openGraph: pageOpenGraph("/services"),
 };
 
 const additionalServices = [
@@ -26,6 +29,8 @@ const additionalServices = [
 
 export default function ServicesPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/services")} />
     <EnterprisePage
       eyebrow="Professional Services"
       title="Help to implement, integrate"
@@ -79,6 +84,7 @@ export default function ServicesPage() {
     >
       <AdditionalServicesSection />
     </EnterprisePage>
+    </>
   );
 }
 

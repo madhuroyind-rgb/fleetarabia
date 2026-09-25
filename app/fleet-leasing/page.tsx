@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageOpenGraph } from "@/lib/seo";
 import EnterprisePage from "@/components/EnterprisePage";
 import { ChartColumn, FileSignature, ReceiptText, RefreshCw, Repeat, Wrench } from "lucide-react";
 
@@ -7,10 +9,13 @@ export const metadata: Metadata = {
   description:
     "Enterprise software for corporate and government fleet leasing — contracts, billing, maintenance, renewals and financial reporting on one connected ERP.",
   alternates: { canonical: "/fleet-leasing" },
+  openGraph: pageOpenGraph("/fleet-leasing"),
 };
 
 export default function FleetLeasingPage() {
   return (
+    <>
+      <JsonLd data={breadcrumbJsonLd("/fleet-leasing")} />
     <EnterprisePage
       eyebrow="Enterprise Leasing Platform"
       title="Fleet leasing software,"
@@ -74,5 +79,6 @@ export default function FleetLeasingPage() {
       finalCtaTitle="See the lease lifecycle end to end"
       finalCtaText="Replace spreadsheets and disconnected systems with an enterprise leasing platform that automates contracts, operations, maintenance, billing and reporting. From customer onboarding to vehicle retirement, FleetArabia delivers complete visibility, intelligent automation and seamless ERP integration — helping leasing companies reduce operational costs, improve fleet utilization and deliver exceptional customer experiences."
     />
+    </>
   );
 }

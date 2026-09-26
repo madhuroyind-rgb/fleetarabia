@@ -140,6 +140,32 @@ const SOLUTION_PAGES: Record<string, string> = {
   "Fuel Management": "/solutions/fleet-management#fuel",
 };
 
+// Link text names the destination ("Explore Fleet Leasing"), so every card link is descriptive
+// on its own; a generic "Learn More" fails the Lighthouse link-text audit.
+const DESTINATION_NAMES: Record<string, string> = {
+  "/solutions/car-rental-software": "Car Rental Software",
+  "/solutions/fleet-leasing": "Fleet Leasing",
+  "/solutions/chauffeur-transport": "Chauffeur & Transport",
+  "/solutions/workshop-management": "Workshop Management",
+  "/solutions/vehicle-inspection": "Vehicle Inspection",
+  "/solutions/billing-finance": "Billing & Finance",
+  "/solutions/fleet-management": "Fleet Management",
+  "/solutions": "All Solutions",
+};
+
+// Cards that land on a section or card rather than a whole page are named after that section.
+const SECTION_NAMES: Record<string, string> = {
+  "Business Intelligence & Analytics": "Business Intelligence & Analytics",
+  "CRM & Customer Experience": "CRM",
+  "Driver Management": "Driver Management",
+  "Fuel Management": "Fuel Management",
+};
+
+function moduleLink(title: string) {
+  const href = SOLUTION_PAGES[title] ?? `/solutions#${slugify(title)}`;
+  return { href, label: `Explore ${SECTION_NAMES[title] ?? DESTINATION_NAMES[href.split("#")[0]]}` };
+}
+
 const workflow = [
   "Booking",
   "Agreement",
@@ -374,11 +400,10 @@ function Solutions() {
                   <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
                   <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-slate-600 md:mt-3 md:line-clamp-none">{item.text}</p>
                   <Link
-                    href={SOLUTION_PAGES[item.title] ?? `/solutions#${slugify(item.title)}`}
-                    aria-label={`Learn more about ${item.title}`}
+                    href={moduleLink(item.title).href}
                     className="mt-3 inline-flex items-center gap-1.5 py-1 text-sm font-bold text-[#087674] md:mt-6"
                   >
-                    Learn More
+                    {moduleLink(item.title).label}
                     <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
                   </Link>
                 </div>

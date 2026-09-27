@@ -239,7 +239,13 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-9 sm:px-6 md:pb-14 md:pt-11 xl:min-h-[540px] xl:grid-cols-2">
-        <Reveal>
+        {/* xl: top-aligned so the pill sits level with the diagram's top label (top-1). */}
+        <Reveal className="xl:self-start xl:pt-1">
+          <p className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-2xl border border-cyan-300/25 bg-[#043f3e]/40 px-4 py-2 text-xs font-semibold text-cyan-50 shadow-xl shadow-black/10 backdrop-blur sm:rounded-full sm:text-[13px]">
+            <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(103,232,249,0.9)]" />
+            <span>Cloud ERP for UAE rental &amp; leasing</span>
+          </p>
+
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
             For Rental, Leasing &amp; Fleet Operators
           </p>

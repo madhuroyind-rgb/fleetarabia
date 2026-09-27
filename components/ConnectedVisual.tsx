@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 
 type ConnectedNode = {
@@ -12,6 +13,8 @@ type ConnectedVisualProps = {
   centerSub?: string;
   topLabel?: string;
   bottomLabel?: string;
+  // Turns the bottom label into a link (e.g. to the page listing every module).
+  bottomHref?: string;
 };
 
 const LABEL_ZONE = 44;
@@ -43,16 +46,17 @@ export default function ConnectedVisual({
   centerSub = "FleetArabia",
   topLabel,
   bottomLabel,
+  bottomHref,
 }: ConnectedVisualProps) {
   const center = size / 2;
   const geometry = buildGeometry(nodes.length, size);
   const ringSizes = [size, size * 0.77, size * 0.68, size * 0.54];
 
-  // Chip width is tuned for up to 9 nodes at the default size; beyond that,
-  // shrink chips so they don't overlap around the circle.
+  // Chips take 85% of the gap between neighbours on the circle (never wider than
+  // 144px), so adjacent chips always keep clear space between them.
   const radius = size * 0.375;
   const chordLength = 2 * radius * Math.sin(Math.PI / nodes.length);
-  const nodeWidth = nodes.length <= 9 ? 144 : Math.max(84, Math.round(chordLength * 0.85));
+  const nodeWidth = Math.min(144, Math.max(84, Math.round(chordLength * 0.85)));
   const compact = nodeWidth < 120;
   const scanRadius = size * 0.5 - 1;
   const scanCircumference = 2 * Math.PI * scanRadius;
@@ -129,6 +133,9 @@ export default function ConnectedVisual({
               <stop offset="100%" stopColor="#3b82f6" />
             </linearGradient>
           </defs>
+
+          {/* Faint full track under the scanning arc, so a still frame reads as a ring */}
+          <circle cx={center} cy={center} r={scanRadius} fill="none" stroke="#67e8f9" strokeOpacity={0.14} strokeWidth={1} />
 
           {/* Radar-style scanning arc */}
           <circle
@@ -216,10 +223,18 @@ export default function ConnectedVisual({
         })}
       </div>
 
-      {bottomLabel && (
+      {bottomLabel && !bottomHref && (
         <div className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-[#043f3e]/40 px-5 py-2 text-xs font-bold text-cyan-50 backdrop-blur">
           {bottomLabel}
         </div>
+      )}
+      {bottomLabel && bottomHref && (
+        <Link
+          href={bottomHref}
+          className="absolute bottom-1 left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-[#043f3e]/40 px-5 py-2 text-xs font-bold text-cyan-50 backdrop-blur transition hover:border-cyan-300/50 hover:bg-[#043f3e]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+        >
+          {bottomLabel}
+        </Link>
       )}
     </div>
   );

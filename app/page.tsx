@@ -238,7 +238,7 @@ function Hero() {
       <div className={TEAL_PATTERN} />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-9 sm:px-6 md:pb-14 md:pt-11 xl:min-h-[540px] xl:grid-cols-[0.82fr_1.18fr]">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-9 sm:px-6 md:pb-14 md:pt-11 xl:min-h-[540px] xl:grid-cols-2">
         <Reveal>
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
             For Rental, Leasing &amp; Fleet Operators
@@ -246,7 +246,7 @@ function Hero() {
 
           <h1 className="max-w-4xl text-3xl font-black leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
             One cloud ERP for rental, leasing and fleet operations{" "}
-            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">in the UAE</span>
+            <span className="whitespace-nowrap bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">in the UAE</span>
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50 md:text-lg md:leading-8">
@@ -287,8 +287,14 @@ function Hero() {
   );
 }
 
+// Twelve chips do not fit legibly on one ring in the hero column (they overlap and
+// clip their labels), so the hero shows the core eight and links to the full list.
+const HERO_MODULES = ["Car Rental", "Leasing", "Chauffeur", "Bus Transport", "Workshop", "Analytics", "Billing & Revenue", "Finance"];
+
 function PremiumHeroVisual() {
-  const productNodes = solutions.map((item) => ({ icon: item.icon, title: item.short }));
+  const productNodes = solutions
+    .filter((item) => HERO_MODULES.includes(item.short))
+    .map((item) => ({ icon: item.icon, title: item.short }));
 
   return (
     <div className="hidden min-w-0 justify-center overflow-hidden xl:flex">
@@ -298,7 +304,8 @@ function PremiumHeroVisual() {
         centerLabel="F"
         centerSub="FleetArabia"
         topLabel="Connected Fleet Operations"
-        bottomLabel="Automate • Integrate • Control"
+        bottomLabel={`+${solutions.length - productNodes.length} more modules · See the platform →`}
+        bottomHref="/platform"
       />
     </div>
   );

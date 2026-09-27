@@ -3,7 +3,7 @@ import { pageOpenGraph } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
-  Briefcase,
+  BarChart3,
   Bus,
   Car,
   CarTaxiFront,
@@ -15,10 +15,13 @@ import {
   KeyRound,
   Landmark,
   MapPin,
+  MessageSquareText,
   Network,
   Plug,
   ReceiptText,
   Settings2,
+  ShoppingCart,
+  Users,
   Workflow as WorkflowIcon,
   Wrench,
 } from "lucide-react";
@@ -184,14 +187,20 @@ const integrations = [
   { label: "Cloud-Hosted", icon: Cloud },
 ];
 
+// Owner's order (2026-09-27). Left out until true: Limousine (placeholder screen) and
+// Loyalty (unmerged branch); "AI Analytics" is shown as Dashboards & Reports (no AI).
 const industries = [
   { label: "Car Rental", icon: Car, href: "/solutions/car-rental-software" },
   { label: "Leasing", icon: KeyRound, href: "/solutions/fleet-leasing" },
   { label: "Chauffeur", icon: CarTaxiFront, href: "/solutions/chauffeur-transport" },
   { label: "Bus Transport", icon: Bus, href: "/solutions/chauffeur-transport" },
-  { label: "Corporate Fleets", icon: Briefcase, href: "/solutions/fleet-management" },
-  { label: "Workshops", icon: Wrench, href: "/solutions/workshop-management" },
-  { label: "Government Mobility", icon: Landmark, href: "/solutions/fleet-management" },
+  { label: "Billing & Finance", icon: ReceiptText, href: "/solutions/billing-finance" },
+  { label: "Workshop", icon: Wrench, href: "/solutions/workshop-management" },
+  { label: "CRM", icon: Users, href: "/platform" },
+  { label: "Customer Feedback", icon: MessageSquareText, href: "/platform" },
+  { label: "Procurement", icon: ShoppingCart, href: "/platform" },
+  { label: "Dashboards & Reports", icon: BarChart3, href: "/platform" },
+  { label: "Approval Workflows", icon: WorkflowIcon, href: "/platform" },
 ];
 
 const TEAL_PATTERN =

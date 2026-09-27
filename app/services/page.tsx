@@ -88,15 +88,15 @@ export default function ServicesPage() {
 
 function AdditionalServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white md:py-12">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.32),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]" />
 
       <div className="relative mx-auto max-w-[77rem]">
-        <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
+        <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-9">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-50">
             Additional Digital Services
           </p>
-          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+          <h2 className="mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
             Extend FleetArabia with the digital services you need
           </h2>
         </Reveal>

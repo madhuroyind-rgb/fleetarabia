@@ -107,10 +107,10 @@ export default function ContactForm() {
       <div className="relative mx-auto max-w-3xl lg:grid lg:w-full lg:max-w-6xl lg:grid-cols-12 lg:items-center lg:gap-12">
         <div className="lg:col-span-5">
           <div className="mx-auto mb-10 max-w-2xl text-center lg:mx-0 lg:mb-0 lg:text-left">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-50">
               Get Started
             </p>
-            <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+            <h2 className="mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
               Book your free demo
             </h2>
             <p className="mt-5 leading-7 text-cyan-50 lg:hidden">

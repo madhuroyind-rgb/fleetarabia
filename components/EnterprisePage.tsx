@@ -136,18 +136,18 @@ function Hero({
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-6 xl:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             {eyebrow}
           </p>
 
-          <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+          <h1 className="mt-5 max-w-3xl text-[1.75rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.5rem]">
             {title}{" "}
             <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">
               {highlight}
             </span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-cyan-50">
             {description}
           </p>
 
@@ -200,23 +200,23 @@ function PageSection({ section }: { section: Section }) {
   return (
     <section
       id={section.id}
-      className={`relative scroll-mt-24 overflow-hidden px-5 py-16 text-white sm:px-6 ${
+      className={`relative scroll-mt-24 overflow-hidden px-5 py-16 text-white sm:px-6 md:py-12 ${
         variant === "dark" ? "bg-[#065f5e]" : "bg-[#087674]"
       }`}
     >
       {variant !== "dark" && <div className={TEAL_PATTERN} />}
 
       <div className="relative mx-auto max-w-[77rem]">
-        <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
+        <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-9">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-50">
             {section.eyebrow}
           </p>
 
-          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+          <h2 className="mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
             {section.title}
           </h2>
 
-          <p className="mt-5 leading-8 text-cyan-50">
+          <p className="mt-5 leading-relaxed text-cyan-50">
             {section.text}
           </p>
         </Reveal>
@@ -246,12 +246,12 @@ function PageSection({ section }: { section: Section }) {
             >
               <article
                 id={section.anchors ? slugify(item.title) : undefined}
-                className={`flex h-full scroll-mt-28 flex-col rounded-2xl border p-7 transition duration-300 hover:-translate-y-1 ${cardClass}`}
+                className={`flex h-full scroll-mt-28 flex-col rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 ${cardClass}`}
               >
                 {item.icon ? (
                   <div
                     aria-hidden="true"
-                    className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${
+                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl ${
                       onWhite ? "bg-[#087674]/10 text-[#087674] ring-1 ring-[#087674]/10" : "bg-white/15 text-white ring-1 ring-white/20"
                     }`}
                   >
@@ -278,7 +278,7 @@ function PageSection({ section }: { section: Section }) {
                     </div>
                   ))}
 
-                <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
+                <h3 className="text-[17px] font-bold leading-snug tracking-tight">{item.title}</h3>
                 {item.text && (
                   <p className={`mt-3 flex-1 text-sm leading-6 ${onWhite ? "text-slate-600" : "text-cyan-50"}`}>
                     {item.text}
@@ -307,19 +307,19 @@ function PageSection({ section }: { section: Section }) {
 
 function FinalCTA({ title, text }: { title: string; text: string }) {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 py-16 text-center text-white sm:px-6">
+    <section className="relative overflow-hidden bg-[#087674] px-5 py-16 text-center text-white sm:px-6 md:py-12">
       <div className={TEAL_PATTERN} />
 
       <Reveal className="relative mx-auto max-w-4xl">
-        <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-50">
           Start the Conversation
         </p>
 
-        <h2 className="mt-5 text-2xl font-black tracking-tight md:text-4xl">
+        <h2 className="mt-5 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
           {title}
         </h2>
 
-        <p className="mt-5 text-base leading-8 text-cyan-50">{text}</p>
+        <p className="mt-5 text-base leading-relaxed text-cyan-50">{text}</p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link href="/contact#demo-form" className={PRIMARY_BUTTON}>

@@ -206,10 +206,10 @@ const industries = [
 const TEAL_PATTERN =
   "absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]";
 
-const SECTION = "px-5 py-16 sm:px-6";
-const EYEBROW = "text-sm font-bold uppercase tracking-[0.22em] text-cyan-50";
-const H2 = "mt-4 text-3xl font-black tracking-tight md:text-[2.6rem] md:leading-[1.1]";
-const LEAD = "mt-5 text-base leading-8 text-cyan-50 md:text-lg";
+const SECTION = "px-5 py-16 sm:px-6 md:py-12";
+const EYEBROW = "text-xs font-bold uppercase tracking-[0.2em] text-cyan-50";
+const H2 = "mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl md:leading-[1.2]";
+const LEAD = "mt-5 text-base leading-relaxed text-cyan-50 md:text-[17px]";
 
 const PRIMARY_BUTTON =
   "group inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-[#087674] shadow-xl shadow-black/10 transition hover:-translate-y-0.5 hover:bg-cyan-50";
@@ -255,16 +255,16 @@ function Hero() {
             <span>Cloud ERP for UAE rental &amp; leasing</span>
           </p>
 
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
             For Rental, Leasing &amp; Fleet Operators
           </p>
 
-          <h1 className="max-w-4xl text-3xl font-black leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h1 className="max-w-4xl text-[1.75rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-[2.5rem]">
             One cloud ERP for rental, leasing and fleet operations{" "}
             <span className="whitespace-nowrap bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">in the UAE</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50 md:text-lg md:leading-8">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-cyan-50 md:text-[17px]">
             FleetArabia replaces spreadsheets and disconnected systems with one cloud ERP for rental, leasing, transport and workshop operations, with finance built in and live dashboards for the people running the business.
           </p>
 
@@ -352,7 +352,7 @@ function BuiltFor() {
 
 function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
-    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-12">
+    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-9">
       <p className={EYEBROW}>{eyebrow}</p>
       <h2 className={H2}>{title}</h2>
       {text && <p className={LEAD}>{text}</p>}
@@ -370,10 +370,10 @@ function ExecutiveOutcomes() {
           text="Owners who need visibility, operations leaders who need control, and finance teams who need clean numbers at close."
         />
 
-        <div className="grid gap-4 md:gap-6 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           {outcomes.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08}>
-              <article className={`group h-full p-6 md:p-8 ${WHITE_CARD}`}>
+              <article className={`group h-full p-6 ${WHITE_CARD}`}>
                 <div className="flex items-center justify-between">
                   <div className={ICON_TILE_ON_WHITE}>
                     <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
@@ -382,8 +382,8 @@ function ExecutiveOutcomes() {
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="mt-5 text-xl font-bold tracking-tight md:mt-7 md:text-2xl">{item.title}</h3>
-                <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+                <h3 className="mt-5 text-xl font-bold tracking-tight">{item.title}</h3>
+                <p className="mt-3 leading-relaxed text-slate-600">{item.text}</p>
               </article>
             </Reveal>
           ))}
@@ -414,12 +414,12 @@ function Solutions() {
               {/* Phones: icon beside the text and a two-line summary (the full
                   description stays in the page and on /solutions). md and up:
                   the original tall card. */}
-              <article className={`group flex h-full gap-4 p-5 md:min-h-[240px] md:flex-col md:gap-0 md:p-7 ${WHITE_CARD}`}>
-                <div className={`shrink-0 md:mb-6 ${ICON_TILE_ON_WHITE}`}>
+              <article className={`group flex h-full gap-4 p-5 md:min-h-[220px] md:flex-col md:gap-0 md:p-6 ${WHITE_CARD}`}>
+                <div className={`shrink-0 md:mb-5 ${ICON_TILE_ON_WHITE}`}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col">
-                  <h3 className="text-lg font-bold leading-snug tracking-tight">{item.title}</h3>
+                  <h3 className="text-[17px] font-bold leading-snug tracking-tight">{item.title}</h3>
                   <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-slate-600 md:mt-3 md:line-clamp-none">{item.text}</p>
                   <Link
                     href={moduleLink(item.title).href}
@@ -444,13 +444,13 @@ function Workflow() {
       <div className="mx-auto max-w-[77rem] rounded-3xl border border-white/40 bg-white p-7 shadow-2xl shadow-black/10 md:p-10">
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#087674]">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#087674]">
               Enterprise Workflow
             </p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
+            <h2 className="mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
               From booking to finance
             </h2>
-            <p className="mt-4 text-base leading-8 text-slate-600">
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
               Build a connected digital process across front office, operations,
               finance and management reporting.
             </p>
@@ -549,12 +549,12 @@ function WhyFleetArabia() {
         <div className="grid gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {reasons.map((item, index) => (
             <Reveal key={item.title} delay={Math.min(index * 0.06, 0.24)}>
-              <article className={`h-full p-6 md:p-7 ${GLASS_CARD}`}>
+              <article className={`h-full p-6 ${GLASS_CARD}`}>
                 <div className={`mb-4 md:mb-6 ${ICON_TILE_ON_GLASS}`}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
-                <h3 className="text-lg font-bold leading-snug tracking-tight text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-cyan-50">{item.text}</p>
+                <h3 className="text-[17px] font-bold leading-snug tracking-tight text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-cyan-50">{item.text}</p>
               </article>
             </Reveal>
           ))}

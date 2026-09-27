@@ -3,7 +3,7 @@ export const SITE_URL =
   "https://www.fleetarabia.com";
 
 // Official profiles. Used by the footer and by the Organization structured data.
-export const LINKEDIN_URL = "https://www.linkedin.com/in/fleetarabia-technologies-929199428/";
+export const LINKEDIN_URL = "https://www.linkedin.com/company/145205769/";
 
 export const SITE_ROUTES = [
   { path: "/", label: "Home" },

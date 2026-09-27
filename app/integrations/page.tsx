@@ -127,7 +127,7 @@ export default function IntegrationsPage() {
 
 function PageHeader() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white md:py-12">
       <TealPattern />
 
       <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 xl:grid-cols-[0.9fr_1.1fr]">
@@ -136,11 +136,11 @@ function PageHeader() {
             Integrations &amp; Data Imports
           </p>
 
-          <h1 className="mt-5 max-w-3xl text-3xl font-black leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]">
+          <h1 className="mt-5 max-w-3xl text-[1.75rem] font-extrabold leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.5rem]">
             Bring Salik, fines, parking and fuel data into your fleet ERP
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-cyan-50">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-cyan-50">
             Import Salik tolls, traffic fines, parking charges and fuel-card statements and
             match each one to the right vehicle and contract. FleetArabia can also connect to
             a Traccar GPS tracking server, and runs on REST APIs.
@@ -214,7 +214,7 @@ function IntegrationVisual() {
 
 function EcosystemSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white md:py-12">
       <TealPattern />
 
       <div className="relative mx-auto max-w-[77rem]">
@@ -250,7 +250,7 @@ function EcosystemSection() {
 
 function PlatformIntegrationsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white md:py-12">
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Platform Integrations"
@@ -295,7 +295,7 @@ function PlatformIntegrationsSection() {
 
 function UaeImportsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-white md:py-12">
       <div className="relative mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Built for the UAE"
@@ -331,7 +331,7 @@ function UaeImportsSection() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-center text-white">
+    <section className="relative overflow-hidden bg-[#087674] px-5 sm:px-6 py-16 text-center text-white md:py-12">
       <TealPattern />
 
       <Reveal className="relative mx-auto max-w-4xl">
@@ -339,11 +339,11 @@ function FinalCTA() {
           Digital Connectivity
         </p>
 
-        <h2 className="mt-5 text-2xl font-black tracking-tight md:text-4xl">
+        <h2 className="mt-5 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
           One system for your fleet and its data
         </h2>
 
-        <p className="mt-5 text-base leading-8 text-cyan-50">
+        <p className="mt-5 text-base leading-relaxed text-cyan-50">
           FleetArabia brings operations, finance, vehicles, drivers and customers into one
           cloud ERP, with outside data imported and matched instead of re-keyed.
         </p>
@@ -375,7 +375,7 @@ function SectionHeader({
   center?: boolean;
 }) {
   return (
-    <Reveal className={center ? "mx-auto mb-12 max-w-3xl text-center" : "max-w-3xl"}>
+    <Reveal className={center ? "mx-auto mb-12 max-w-3xl text-center md:mb-9" : "max-w-3xl"}>
       <p
         className={`text-xs font-bold uppercase tracking-[0.24em] ${
           light ? "text-cyan-50" : "text-blue-700"
@@ -383,11 +383,11 @@ function SectionHeader({
       >
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+      <h2 className="mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl">
         {title}
       </h2>
       <p
-        className={`mt-5 leading-8 ${
+        className={`mt-5 leading-relaxed ${
           light ? "text-cyan-50" : "text-slate-600"
         }`}
       >

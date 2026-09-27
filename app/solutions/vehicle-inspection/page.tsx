@@ -89,7 +89,7 @@ export default function VehicleInspectionPage() {
             columns: 2,
             items: [
               { icon: FileText, title: "The inspection report screen", text: "Staff open an inspection to see its photographs, signatures and the damage marked for each side of the vehicle." },
-              { icon: FileText, title: "The PDF inspection report", text: "A PDF sets the check-out and check-in readings side by side: odometer, distance travelled, fuel level and times, with the check-in checklist." },
+              { icon: FileText, title: "The PDF inspection report", text: "A PDF sets the check-out and check-in readings side by side: odometer, distance traveled, fuel level and times, with the check-in checklist." },
             ],
           },
           {
@@ -135,7 +135,7 @@ export default function VehicleInspectionPage() {
             items: [
               { title: "Can the driver complete the inspection on their own phone?", text: "Yes. The driver is sent a link that opens in the phone's browser, and completes the inspection there." },
               { title: "Are photographs kept with the agreement?", text: "Yes. Photographs and signatures are saved against the agreement or movement they were taken for, and staff can review them in the inspection report screen." },
-              { title: "What does the PDF inspection report contain?", text: "Check-out and check-in readings side by side (odometer, distance travelled, fuel and times), the check-in checklist, and how many photographs, signatures and damage marks are on file." },
+              { title: "What does the PDF inspection report contain?", text: "Check-out and check-in readings side by side (odometer, distance traveled, fuel and times), the check-in checklist, and how many photographs, signatures and damage marks are on file." },
               { title: "How does damage become an accident case?", text: "Damage marked at an inspection can be opened as an accident case, which records the repair, any insurance claim and what the customer owes." },
               { title: "Is damage detected automatically?", text: "No. People record damage by marking it on the vehicle diagram and adding a remark." },
               { title: "Does it work for replacement vehicles?", text: "Yes. A replacement vehicle has its own handover inspection, like any other handover." },

@@ -88,7 +88,7 @@ export default function BillingFinancePage() {
             text: "Once invoices are out, the same system follows them up.",
             items: [
               { icon: FileMinus, title: "Credit notes", text: "Issue credit notes against invoices." },
-              { icon: FileText, title: "Customer statements", text: "Customer statements with ageing." },
+              { icon: FileText, title: "Customer statements", text: "Customer statements with aging." },
               { icon: Mail, title: "Bulk invoice email", text: "Email invoices to customers in bulk, or download them as one archive." },
               { icon: ReceiptText, title: "Receipts", text: "Record the payments customers make against their invoices." },
             ],
@@ -156,7 +156,7 @@ export default function BillingFinancePage() {
             items: [
               { title: "How is VAT decided on each line?", text: "From the transaction first, then the charge code, the customer, the location, the region and the company. The charge code outranks the customer." },
               { title: "Can one invoice cover several vehicles?", text: "Yes. Summary invoices and lease billing group charges for a customer across vehicles." },
-              { title: "Can customers download their statements?", text: "Yes. Business customers see their invoices and statements, with ageing, in the customer portal." },
+              { title: "Can customers download their statements?", text: "Yes. Business customers see their invoices and statements, with aging, in the customer portal." },
               { title: "Is there a VAT return?", text: "Yes. The finance module includes a VAT return screen." },
               { title: "Can customers pay online?", text: "Not at the moment. Payments are recorded against invoices; the customer portal shows how to pay." },
               { title: "Can invoices be emailed in bulk?", text: "Yes. Invoices can be emailed to customers in bulk, or downloaded together as one archive." },

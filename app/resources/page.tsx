@@ -40,7 +40,7 @@ export default function ResourcesPage() {
           text: "Two guides are live below.",
           items: [
             { tag: "Guide", title: "Fleet Digital Transformation Guide", text: "Learn how to modernize rental, leasing, transportation, workshops and fleet operations using connected digital technologies.", href: "/resources/fleet-digital-transformation-guide", linkLabel: "Read Guide →" },
-            { tag: "Checklist", title: "ERP Integration Checklist", text: "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS and payment systems.", href: "/resources/erp-integration-checklist", linkLabel: "Read Checklist →" },
+            { tag: "Checklist", title: "ERP Integration Checklist", text: "A practical checklist for bringing fleet operations and finance together: process mapping, master data, what to connect, approvals and month-end testing.", href: "/resources/erp-integration-checklist", linkLabel: "Read Checklist →" },
           ],
         },
       ]}

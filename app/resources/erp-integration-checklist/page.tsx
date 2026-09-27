@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "ERP Integration Checklist | FleetArabia",
   description:
-    "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS, and payment systems.",
+    "A practical checklist for bringing fleet operations and finance together: process mapping, master data, what to connect, approvals and month-end testing.",
   alternates: { canonical: "/resources/erp-integration-checklist" },
   openGraph: pageOpenGraph("/resources/erp-integration-checklist"),
 };
@@ -17,9 +17,9 @@ const articleJsonLd = {
   "@type": "Article",
   headline: "ERP Integration Checklist",
   description:
-    "A practical checklist for planning how fleet operations should connect to your ERP, finance, GPS, and payment systems.",
+    "A practical checklist for bringing fleet operations and finance together: process mapping, master data, what to connect, approvals and month-end testing.",
   datePublished: "2026-07-09",
-  dateModified: "2026-07-09",
+  dateModified: "2026-09-27",
   image: `${SITE_URL}/opengraph-image`,
   author: { "@type": "Organization", name: "FleetArabia", url: SITE_URL },
   publisher: { "@type": "Organization", name: "FleetArabia" },
@@ -37,13 +37,15 @@ export default function ErpIntegrationChecklistPage() {
       <GuidePage
       eyebrow="Resource Guide"
       title="ERP Integration Checklist"
-      intro="A practical starting point for planning how rental, leasing and workshop operations should connect to your ERP and other enterprise systems."
+      intro="A practical starting point for bringing rental, leasing and workshop operations and finance together, whether finance moves into one system straight away or an existing accounting system runs alongside it for a while."
     >
       <p>
-        Most fleet and mobility businesses run operations in one system and finance in
-        another, with someone re-keying data between the two. Integration removes that
-        step — but only if it&apos;s planned properly. This checklist covers the areas
-        worth thinking through before any integration work starts.
+        Many fleet and mobility businesses run operations in one system and finance in
+        another, with someone re-keying data between the two. Bringing them together
+        removes that step — but only if it&apos;s planned properly. FleetArabia includes
+        the ledger itself; during a move, some businesses keep their current accounting
+        system running for a while. Either way, this checklist covers the areas worth
+        thinking through before the work starts.
       </p>
 
       <div>
@@ -51,7 +53,7 @@ export default function ErpIntegrationChecklistPage() {
         <p className="mt-2">
           Before connecting any systems, document how a transaction actually flows today
           — from booking or agreement, through to invoice, through to the entry your
-          finance team makes in the ERP. Most integration problems trace back to gaps in
+          finance team makes in the accounts. Most integration problems trace back to gaps in
           this mapping, not the technical connection itself.
         </p>
       </div>
@@ -62,18 +64,17 @@ export default function ErpIntegrationChecklistPage() {
           <li>Chart of accounts — which operational transactions map to which GL codes?</li>
           <li>Customer master — one source of truth, not separate customer lists per system.</li>
           <li>Vehicle/asset master — consistent vehicle IDs across operations and finance.</li>
-          <li>Branch and cost center mapping — how do operational branches map to ERP entities?</li>
+          <li>Branch and cost center mapping — how do operational branches map to finance entities?</li>
         </ul>
       </div>
 
       <div>
         <h2 className="text-base font-black text-slate-900">3. Decide what actually needs to integrate</h2>
         <p className="mt-2">
-          Not everything needs a real-time connection. Typical candidates: invoice and
-          billing postings, customer payments and receipts, vehicle/asset data, and GPS
-          or telematics feeds for utilization reporting. Batch/scheduled sync is often
-          good enough for reporting-only data; real-time matters most for billing and
-          payments.
+          Not everything has to move at the same moment. Typical candidates: invoice and
+          billing postings, customer receipts and vehicle/asset data. Scheduled transfers
+          are often good enough for reporting-only data; timing matters most for billing
+          and receipts.
         </p>
       </div>
 

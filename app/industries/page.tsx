@@ -64,7 +64,7 @@ export default function IndustriesPage() {
             { title: "Finance in the Same System", text: "Ledger, VAT, payables and procurement run in the same system as your fleet operations." },
             { title: "Fleet Dashboards", text: "See vehicles, drivers, contracts, workshop jobs and fuel spend on dashboards that read the same records your teams work in." },
             { title: "Business Intelligence & Analytics", text: "Transform operational data into executive insights with interactive dashboards, KPI monitoring and profitability reports." },
-            { title: "Enterprise Security & Compliance", text: "Protect your business with role-based access, audit trails, digital approvals and enterprise-grade security controls." },
+            { title: "Access Control & Audit Trail", text: "Protect your business with role-based access, multi-factor sign-in, digital approvals and a full audit trail." },
             { title: "UAE VAT and Salik", text: "UAE VAT on every invoice line, and Salik and fine charges matched to the right contract." },
           ],
         },

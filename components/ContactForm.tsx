@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const inquiryAreas = [
   "Book a Demo",
-  "Rent A Car ERP",
-  "Leasing ERP",
+  "Car Rental Software",
+  "Fleet Leasing",
   "Workshop Management",
   "Data Imports & Integration",
   "General Inquiry",

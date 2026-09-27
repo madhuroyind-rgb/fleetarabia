@@ -50,7 +50,7 @@ const outcomes = [
   {
     icon: Eye,
     title: "Management Visibility",
-    text: "Give leadership real-time insight into fleet status, utilization, revenue and performance.",
+    text: "Give leadership live dashboards of fleet status, utilization, revenue and performance.",
   },
 ];
 
@@ -89,7 +89,7 @@ const solutions = [
     icon: MODULE_ICONS["Business Intelligence & Analytics"],
     short: "Analytics",
     title: "Business Intelligence & Analytics",
-    text: "Real-time dashboards, utilization trends, revenue and fleet performance reporting across branches and business units.",
+    text: "Live dashboards, utilization trends, revenue and fleet performance reporting across branches and business units.",
   },
   {
     icon: MODULE_ICONS["Vehicle Damage & Claims (VDR)"],
@@ -99,7 +99,7 @@ const solutions = [
   },
   {
     icon: MODULE_ICONS["Billing & Revenue Management"],
-    short: "Billing & Revenue",
+    short: "Billing & Finance",
     title: "Billing & Revenue Management",
     text: "Rental and corporate invoices, customer charges, approvals and UAE VAT, generated in bulk.",
   },
@@ -304,7 +304,7 @@ function Hero() {
 
 // Twelve chips do not fit legibly on one ring in the hero column (they overlap and
 // clip their labels), so the hero shows the core eight and links to the full list.
-const HERO_MODULES = ["Car Rental", "Leasing", "Chauffeur", "Bus Transport", "Workshop", "Analytics", "Billing & Revenue", "Finance"];
+const HERO_MODULES = ["Car Rental", "Leasing", "Chauffeur", "Bus Transport", "Workshop", "Analytics", "Billing & Finance", "Finance"];
 
 function PremiumHeroVisual() {
   const productNodes = solutions

@@ -70,8 +70,7 @@ const supportedIntegrations = [
 ];
 
 const whyIntegration = [
-  "API-First Architecture",
-  "Secure Authentication & Encryption",
+  "Multi-Factor Sign-In",
   "Role-Based Access",
   "Multi-Company & Multi-Branch",
   "Exception Queues for Unmatched Charges",

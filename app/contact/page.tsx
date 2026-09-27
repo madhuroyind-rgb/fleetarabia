@@ -38,7 +38,7 @@ export default function ContactPage() {
       sections={[
         {
           eyebrow: "Contact Options",
-          title: "Let’s discuss your fleet operating model",
+          title: "Let's discuss your fleet operating model",
           text: "Tell us what's slowing your operation down, and we'll recommend the right module, implementation approach and integration path.",
           items: [
             {
@@ -74,11 +74,11 @@ export default function ContactPage() {
           variant: "dark",
           items: [
             {
-              title: "Rent A Car ERP",
+              title: "Car Rental Software",
               text: "Rental agreements, bookings, invoicing, customers, vehicles and payment recording.",
             },
             {
-              title: "Leasing ERP",
+              title: "Fleet Leasing",
               text: "Long-term leasing, contract billing, renewals, replacement vehicles, and customer account management.",
             },
             {

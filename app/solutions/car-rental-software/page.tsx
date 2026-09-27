@@ -144,7 +144,7 @@ export default function CarRentalSoftwarePage() {
             items: [
               { title: "Can one system handle daily and monthly rentals?", text: "Yes. Short rentals and monthly rental agreements are both agreements against a vehicle and a customer." },
               { title: "How is a replacement vehicle handled on an open agreement?", text: "The replacement is recorded on the same agreement, with its own handover inspection, so the contract stays open." },
-              { title: "How are Salik crossings and fines linked to the right agreement?", text: "They are imported and matched to the agreement that had the vehicle at the time of the crossing or offence. Anything that cannot be matched waits in an exception queue." },
+              { title: "How are Salik crossings and fines linked to the right agreement?", text: "They are imported and matched to the agreement that had the vehicle at the time of the crossing or offense. Anything that cannot be matched waits in an exception queue." },
               { title: "Can customers be onboarded by scanning their ID?", text: "Yes. The ID and driving license are scanned to fill in the customer's details, and a person confirms the values." },
               { title: "Does it work across several branches?", text: "Yes. Vehicles, shifts and the day book are kept per branch, within one company or several." },
               { title: "How is it hosted?", text: "FleetArabia is hosted in the cloud and used through a web browser." },

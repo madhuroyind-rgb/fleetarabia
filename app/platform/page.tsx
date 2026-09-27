@@ -116,7 +116,7 @@ export default function PlatformPage() {
             items: [
               { icon: BookOpen, title: "Ledger", text: "Chart of accounts, journals, trial balance and month-end." },
               { icon: Percent, title: "UAE VAT", text: "VAT decided for every invoice line, a VAT setup screen and a VAT return screen." },
-              { icon: ReceiptText, title: "Receivables", text: "Invoices, credit notes, customer statements with ageing and receipts." },
+              { icon: ReceiptText, title: "Receivables", text: "Invoices, credit notes, customer statements with aging and receipts." },
               { icon: Building2, title: "Payables and procurement", text: "Supplier invoices matched to what was ordered and received, and supplier payments." },
             ],
           },

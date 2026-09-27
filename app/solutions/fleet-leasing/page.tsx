@@ -100,7 +100,7 @@ export default function FleetLeasingPage() {
             columns: 2,
             items: [
               { icon: Building2, title: "Corporate accounts", text: "Customer accounts and their contacts in the same system as their leases." },
-              { icon: Users, title: "Customer portal", text: "The customer sees invoices, statements with ageing, contracts and requests, and raises service requests." },
+              { icon: Users, title: "Customer portal", text: "The customer sees invoices, statements with aging, contracts and requests, and raises service requests." },
             ],
           },
           {

@@ -103,35 +103,48 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white">
-      <div className="relative mx-auto max-w-3xl">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
-            Get Started
-          </p>
-          <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
-            Book your free demo
-          </h2>
-          <p className="mt-5 leading-7 text-cyan-50">
-            See how FleetArabia fits your operations. Fill in the form below and our team
-            will respond within 24 hours.
-          </p>
-        </div>
+    <section id="demo-form" className="relative scroll-mt-24 overflow-hidden bg-[#087674] px-5 sm:px-6 py-14 text-white lg:flex lg:min-h-[100svh] lg:scroll-mt-0 lg:items-center lg:py-12">
+      <div className="relative mx-auto max-w-3xl lg:grid lg:w-full lg:max-w-6xl lg:grid-cols-12 lg:items-center lg:gap-12">
+        <div className="lg:col-span-5">
+          <div className="mx-auto mb-10 max-w-2xl text-center lg:mx-0 lg:mb-0 lg:text-left">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
+              Get Started
+            </p>
+            <h2 className="mt-4 text-2xl font-black tracking-tight md:text-4xl">
+              Book your free demo
+            </h2>
+            <p className="mt-5 leading-7 text-cyan-50 lg:hidden">
+              See how FleetArabia fits your operations. Fill in the form below and our team
+              will respond within 24 hours.
+            </p>
+            <p className="mt-5 hidden text-lg leading-7 text-cyan-50 lg:block">
+              Tell us about your operation
+            </p>
+          </div>
 
-        <div className="mx-auto mb-8 grid max-w-xl gap-4 sm:grid-cols-3">
-          {trustPoints.map((item) => (
-            <div key={item} className="flex items-center gap-2.5">
-              <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-xs text-cyan-300">
-                ✓
-              </span>
-              <span className="text-xs font-semibold text-cyan-50">{item}</span>
-            </div>
-          ))}
+          <div className="mx-auto mb-8 grid max-w-xl gap-4 sm:grid-cols-3 lg:mx-0 lg:mb-0 lg:mt-8 lg:grid-cols-1 lg:gap-5">
+            {trustPoints.map((item) => (
+              <div key={item} className="flex items-center gap-2.5 lg:gap-3.5">
+                <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-xs text-cyan-300 lg:h-9 lg:w-9 lg:text-base">
+                  ✓
+                </span>
+                <span className="text-xs font-semibold text-cyan-50 lg:text-base">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 hidden text-sm leading-6 text-cyan-50 lg:block">
+            Prefer to email us directly? Reach us at{" "}
+            <a href="mailto:info@fleetarabia.com" className="font-bold text-white underline underline-offset-4">
+              info@fleetarabia.com
+            </a>
+            .
+          </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl border border-white/20 bg-white p-6 text-slate-950 shadow-2xl shadow-black/10 sm:p-8"
+          className="rounded-3xl border border-white/20 bg-white p-6 text-slate-950 shadow-2xl shadow-black/10 sm:p-8 lg:col-span-7"
         >
           {/* Honeypot: hidden from real users via CSS, bots often fill every field */}
           <input
@@ -145,7 +158,7 @@ export default function ContactForm() {
             className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden"
           />
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 lg:gap-4">
             <label className="block text-sm font-bold text-slate-700">
               Full Name
               <input
@@ -198,7 +211,7 @@ export default function ContactForm() {
             </label>
           </div>
 
-          <label className="mt-5 block text-sm font-bold text-slate-700">
+          <label className="mt-5 block text-sm font-bold text-slate-700 lg:mt-4">
             Inquiry Area
             <select
               value={area}
@@ -213,11 +226,11 @@ export default function ContactForm() {
             </select>
           </label>
 
-          <label className="mt-5 block text-sm font-bold text-slate-700">
+          <label className="mt-5 block text-sm font-bold text-slate-700 lg:mt-4">
             Message
             <textarea
               required
-              rows={5}
+              rows={3}
               maxLength={4000}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
@@ -228,30 +241,32 @@ export default function ContactForm() {
           {status === "error" && (
             <div
               role="alert"
-              className="mt-5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+              className="mt-5 rounded-md border border-red-200 lg:mt-4 bg-red-50 px-4 py-3 text-sm text-red-700"
             >
               {errorMessage}
             </div>
           )}
 
-          <button
-            type="submit"
-            disabled={status === "submitting"}
-            className="mt-7 inline-flex w-full justify-center rounded-md bg-[#087674] px-8 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#065e5c] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
-          >
-            {status === "submitting" ? "Sending…" : "Book a Demo →"}
-          </button>
+          <div className="lg:mt-6 lg:flex lg:items-center lg:gap-5">
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className="mt-7 inline-flex w-full shrink-0 justify-center rounded-md bg-[#087674] px-8 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-[#065e5c] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto lg:mt-0"
+            >
+              {status === "submitting" ? "Sending…" : "Book a Demo →"}
+            </button>
 
-          <p className="mt-4 text-xs leading-5 text-slate-500">
-            By submitting this form you agree that we may use these details to respond to
-            your request, as described in our{" "}
-            <Link href="/privacy" className="font-bold text-[#087674]">
-              Privacy Policy
-            </Link>
-            .
-          </p>
+            <p className="mt-4 text-xs leading-5 text-slate-500 lg:mt-0">
+              By submitting this form you agree that we may use these details to respond to
+              your request, as described in our{" "}
+              <Link href="/privacy" className="font-bold text-[#087674]">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </div>
 
-          <p className="mt-2 text-xs leading-5 text-slate-500">
+          <p className="mt-2 text-xs leading-5 text-slate-500 lg:hidden">
             Prefer to email us directly? Reach us at{" "}
             <a href="mailto:info@fleetarabia.com" className="font-bold text-[#087674]">
               info@fleetarabia.com

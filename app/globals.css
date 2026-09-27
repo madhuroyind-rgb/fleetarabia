@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+/* Headings wrap evenly, so no line ends on one lonely word. In the base layer, so a
+   heading that opts out (e.g. whitespace-nowrap) still wins. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

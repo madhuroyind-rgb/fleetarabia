@@ -134,7 +134,7 @@ function Hero({
       <div className={TEAL_PATTERN} />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-6 md:py-20 xl:min-h-[540px] xl:grid-cols-[0.88fr_1.12fr]">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-6 xl:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-50 sm:text-sm">
             {eyebrow}
@@ -200,14 +200,14 @@ function PageSection({ section }: { section: Section }) {
   return (
     <section
       id={section.id}
-      className={`relative scroll-mt-24 overflow-hidden px-5 py-16 text-white sm:px-6 md:py-24 ${
+      className={`relative scroll-mt-24 overflow-hidden px-5 py-16 text-white sm:px-6 ${
         variant === "dark" ? "bg-[#065f5e]" : "bg-[#087674]"
       }`}
     >
       {variant !== "dark" && <div className={TEAL_PATTERN} />}
 
       <div className="relative mx-auto max-w-[77rem]">
-        <Reveal className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
+        <Reveal className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-50">
             {section.eyebrow}
           </p>
@@ -307,7 +307,7 @@ function PageSection({ section }: { section: Section }) {
 
 function FinalCTA({ title, text }: { title: string; text: string }) {
   return (
-    <section className="relative overflow-hidden bg-[#087674] px-5 py-16 text-center text-white sm:px-6 md:py-24">
+    <section className="relative overflow-hidden bg-[#087674] px-5 py-16 text-center text-white sm:px-6">
       <div className={TEAL_PATTERN} />
 
       <Reveal className="relative mx-auto max-w-4xl">

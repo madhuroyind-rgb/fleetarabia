@@ -206,7 +206,7 @@ const industries = [
 const TEAL_PATTERN =
   "absolute inset-0 bg-[radial-gradient(circle_at_0_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),radial-gradient(circle_at_100%_0,transparent_23px,rgba(255,255,255,0.08)_24px,transparent_25px),linear-gradient(135deg,rgba(0,65,70,0.36),rgba(8,118,116,0.96))] bg-[size:130px_130px,130px_130px,cover]";
 
-const SECTION = "px-5 py-16 sm:px-6 md:py-24";
+const SECTION = "px-5 py-16 sm:px-6";
 const EYEBROW = "text-sm font-bold uppercase tracking-[0.22em] text-cyan-50";
 const H2 = "mt-4 text-3xl font-black tracking-tight md:text-[2.6rem] md:leading-[1.1]";
 const LEAD = "mt-5 text-base leading-8 text-cyan-50 md:text-lg";
@@ -352,7 +352,7 @@ function BuiltFor() {
 
 function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
-    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-12 md:mb-14">
+    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-12">
       <p className={EYEBROW}>{eyebrow}</p>
       <h2 className={H2}>{title}</h2>
       {text && <p className={LEAD}>{text}</p>}
@@ -441,7 +441,7 @@ function Solutions() {
 function Workflow() {
   return (
     <section className={`bg-[#087674] text-slate-950 ${SECTION}`}>
-      <div className="mx-auto max-w-[77rem] rounded-3xl border border-white/40 bg-white p-7 shadow-2xl shadow-black/10 md:p-12">
+      <div className="mx-auto max-w-[77rem] rounded-3xl border border-white/40 bg-white p-7 shadow-2xl shadow-black/10 md:p-10">
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#087674]">
@@ -572,7 +572,7 @@ function CTA() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.22),transparent_45%)]" />
 
-      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-[#043f3e]/30 px-6 py-12 shadow-2xl shadow-black/10 backdrop-blur md:px-12 md:py-16">
+      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-[#043f3e]/30 px-6 py-12 shadow-2xl shadow-black/10 backdrop-blur md:px-12">
         <p className={EYEBROW}>Start the Conversation</p>
         <h2 className={H2}>Ready to modernize your fleet operations?</h2>
         <p className={LEAD}>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "FleetArabia | Enterprise Mobility Solutions",
   description:
-    "Cloud ERP for rental, leasing, transport and workshop businesses in the UAE: vehicles, contracts, inspections, workshop, billing and finance in one system.",
+    "Cloud ERP for mobility businesses: rental, leasing, fleet, workshop and transport operations, with billing, finance and analytics in one system.",
   alternates: {
     canonical: "/",
   },
@@ -37,7 +37,7 @@ const organizationJsonLd = {
   logo: `${SITE_URL}/icon.svg`,
   image: `${SITE_URL}/opengraph-image`,
   description:
-    "FleetArabia is a cloud ERP for rental, leasing, transport and workshop businesses in the UAE.",
+    "FleetArabia is a cloud ERP platform built for mobility businesses, connecting rental, leasing, fleet, transport, workshop and business operations in one system.",
   email: "info@fleetarabia.com",
   sameAs: [LINKEDIN_URL],
   address: [

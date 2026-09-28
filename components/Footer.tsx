@@ -96,8 +96,9 @@ export default function Footer() {
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
-              FleetArabia is a cloud ERP for rental, leasing, transport and
-              workshop businesses in the UAE.
+              FleetArabia is a cloud ERP platform built for mobility businesses,
+              connecting rental, leasing, fleet, transport, workshop and business
+              operations in one system.
             </p>
 
             <a

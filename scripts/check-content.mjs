@@ -149,9 +149,14 @@ for (const [group, patterns] of Object.entries(GUARDRAILS)) {
   log("social image text follows the guardrails", imageHits.length === 0 && /cloud ERP/i.test(altText) && /UAE/.test(altText), imageText);
 }
 
-// positioning the owner approved (2026-09-25)
+// positioning the owner approved (2026-09-25; global, not UAE-only, since 2026-09-28)
 log('home page states the approved positioning ("cloud ERP")', /cloud ERP/i.test(scanOf("/")));
-log('Organization JSON-LD description names the UAE', /UAE/.test(org?.description ?? ""), org?.description ?? "");
+log('home page states the global positioning ("mobility businesses")', /Cloud ERP for Mobility Businesses/i.test(scanOf("/")));
+log('Organization JSON-LD description names mobility businesses', /mobility businesses/.test(org?.description ?? ""), org?.description ?? "");
+{
+  const home = textOf(html["/"]).replace(/Dubai, Free Zone, UAE|\+971[\d ]+\(UAE\)/g, " ");
+  log("home page visible text does not position the product as UAE-only", !/UAE/.test(home), (home.match(/.{0,40}UAE.{0,40}/) || [""])[0].trim());
+}
 
 // 7. solution pages (docs/seo/final-page-implementation-spec.md): unique metadata, self canonical,
 // indexable, and the shared JSON-LD; plus the moved Fleet Leasing URL.

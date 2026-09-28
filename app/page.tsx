@@ -45,12 +45,12 @@ const outcomes = [
   {
     icon: ReceiptText,
     title: "Finance Built In",
-    text: "Billing, approvals, customer charges and VAT live in the same system as operations.",
+    text: "Billing, approvals and customer charges live in the same system as operations, with finance connected directly to the transaction lifecycle.",
   },
   {
     icon: Eye,
     title: "Management Visibility",
-    text: "Give leadership live dashboards of fleet status, utilization, revenue and performance.",
+    text: "Give management live dashboards for fleet status, utilization, revenue and operational performance.",
   },
 ];
 
@@ -71,13 +71,13 @@ const solutions = [
     icon: MODULE_ICONS["Chauffeur & Transport"],
     short: "Chauffeur",
     title: "Chauffeur & Transport",
-    text: "Transport inquiries, quotations, bookings, dispatch board and trips, billed per trip, hour, day or kilometer.",
+    text: "Transport inquiries, quotations, bookings, dispatch and trip management, with billing by trip, hour, day or kilometer.",
   },
   {
     icon: MODULE_ICONS["Bus Transportation"],
     short: "Bus Transport",
     title: "Bus Transportation",
-    text: "Route planning, schedules, driver allocation, vehicle assignment and transport operations control.",
+    text: "Route planning, scheduling, driver allocation, vehicle assignment and transport operations control.",
   },
   {
     icon: MODULE_ICONS["Workshop Management"],
@@ -89,25 +89,25 @@ const solutions = [
     icon: MODULE_ICONS["Business Intelligence & Analytics"],
     short: "Analytics",
     title: "Business Intelligence & Analytics",
-    text: "Live dashboards, utilization trends, revenue and fleet performance reporting across branches and business units.",
+    text: "Live dashboards, utilization trends, revenue and fleet performance across branches, locations and business units.",
   },
   {
     icon: MODULE_ICONS["Vehicle Damage & Claims (VDR)"],
     short: "Damage & Claims",
     title: "Vehicle Damage & Claims (VDR)",
-    text: "Digital inspection, damage photos, condition reports, customer charges, claims and repair follow-up.",
+    text: "Digital inspection, damage photos, customer charges, claims and repair follow-up.",
   },
   {
     icon: MODULE_ICONS["Billing & Revenue Management"],
     short: "Billing & Finance",
     title: "Billing & Revenue Management",
-    text: "Rental and corporate invoices, customer charges, approvals and UAE VAT, generated in bulk.",
+    text: "Rental and corporate invoicing, customer charges, approvals, billing rules and bulk invoice generation.",
   },
   {
     icon: MODULE_ICONS["Finance & Integrations"],
     short: "Finance",
     title: "Finance & Integrations",
-    text: "Ledger, journals, trial balance and UAE VAT, plus imports for Salik, fines, parking and fuel-card statements.",
+    text: "Ledger, journals, trial balance, financial controls and integrations with operational data and external services.",
   },
   {
     icon: MODULE_ICONS["Driver Management"],
@@ -119,13 +119,13 @@ const solutions = [
     icon: MODULE_ICONS["Fuel Management"],
     short: "Fuel Management",
     title: "Fuel Management",
-    text: "Import ENOC and ADNOC fuel-card statements and review fuel spend by vehicle, card and station.",
+    text: "Import fuel-card and fuel transaction data and analyze fuel spend by vehicle, card, station and period.",
   },
   {
     icon: MODULE_ICONS["CRM & Customer Experience"],
     short: "CRM",
     title: "CRM & Customer Experience",
-    text: "Manage leads, customer profiles, quotations, contracts, communications, service requests, digital agreements and customer feedback throughout the entire lifecycle.",
+    text: "Manage leads, customer profiles, quotations, contracts, communications, service requests, digital agreements and customer feedback throughout the customer lifecycle.",
   },
 ];
 
@@ -174,17 +174,20 @@ const workflow = [
   "Agreement",
   "Vehicle Handover",
   "Billing",
-  "Finance & VAT",
+  "Finance",
   "Reporting",
 ];
 
+// Global labels: the imports themselves are Salik toll files, UAE fines and ENOC/ADNOC
+// statements, named on /integrations. GPS stays "tracking server" (connection verified,
+// vehicle data not: docs/seo/product-fact-validation.md).
 const integrations = [
-  { label: "Salik Toll Files", icon: ReceiptText },
+  { label: "Toll & Road Charges", icon: ReceiptText },
   { label: "Traffic Fines", icon: Landmark },
-  { label: "Fuel-Card Statements", icon: MODULE_ICONS["Fuel Management"] },
+  { label: "Fuel-Card Data", icon: MODULE_ICONS["Fuel Management"] },
   { label: "GPS Tracking Server", icon: MapPin },
   { label: "REST APIs", icon: Network },
-  { label: "Cloud-Hosted", icon: Cloud },
+  { label: "Cloud Hosted", icon: Cloud },
 ];
 
 // Owner's order (2026-09-27). Left out until true: Limousine (placeholder screen) and
@@ -208,7 +211,7 @@ const TEAL_PATTERN =
 
 const SECTION = "px-5 py-16 sm:px-6 md:py-12";
 const EYEBROW = "text-xs font-bold uppercase tracking-[0.2em] text-cyan-50";
-const H2 = "mt-4 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl md:leading-[1.2]";
+const H2 = "mt-5 text-[1.375rem] font-extrabold leading-[1.25] tracking-tight md:text-3xl md:leading-[1.2]";
 const LEAD = "mt-5 text-base leading-relaxed text-cyan-50 md:text-[17px]";
 
 const PRIMARY_BUTTON =
@@ -250,25 +253,24 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-12 pt-9 sm:px-6 md:pb-14 md:pt-11 xl:min-h-[540px] xl:grid-cols-2">
         {/* xl: top-aligned so the pill sits level with the diagram's top label (top-1). */}
         <Reveal className="xl:self-start xl:pt-1">
-          <p className="mb-6 inline-flex max-w-full items-center gap-2.5 rounded-2xl border border-cyan-300/25 bg-[#043f3e]/40 px-4 py-2 text-xs font-semibold text-cyan-50 shadow-xl shadow-black/10 backdrop-blur sm:rounded-full sm:text-[13px]">
+          {/* One label only: the pill names the category, the H1 names the coverage. */}
+          <p className="mb-7 inline-flex max-w-full items-center gap-2.5 rounded-2xl border border-cyan-300/25 bg-[#043f3e]/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-50 shadow-xl shadow-black/10 backdrop-blur sm:rounded-full">
             <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(103,232,249,0.9)]" />
-            <span>Cloud ERP for UAE rental &amp; leasing</span>
-          </p>
-
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-cyan-50">
-            For Rental, Leasing &amp; Fleet Operators
+            <span>Cloud ERP for Mobility Businesses</span>
           </p>
 
           <h1 className="max-w-4xl text-[1.75rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-[2.5rem]">
-            One cloud ERP for rental, leasing and fleet operations{" "}
-            <span className="whitespace-nowrap bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent">in the UAE</span>
+            {/* Deliberate break from sm up: the highlighted phrase always sits whole on its own line. */}
+            One Cloud ERP for Rental, Leasing, Fleet,{" "}
+            <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-cyan-200 to-cyan-300 bg-clip-text text-transparent sm:whitespace-nowrap">Workshop &amp; Digital Operations</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-cyan-50 md:text-[17px]">
-            FleetArabia replaces spreadsheets and disconnected systems with one cloud ERP for rental, leasing, transport and workshop operations, with finance built in and live dashboards for the people running the business.
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-cyan-50 md:text-[17px]">
+            FleetArabia connects rental, leasing, fleet, workshop, transport, finance and digital operations in one unified cloud ERP, giving businesses a connected platform to manage vehicles, customers, contracts and day-to-day operations.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Link href="/contact#demo-form" className={PRIMARY_BUTTON}>
               Book a Demo
               <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
@@ -280,8 +282,8 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-9 grid max-w-2xl gap-4 border-t border-white/10 pt-7 sm:grid-cols-3">
-            {['Rental & Leasing Operations', 'Finance Built In', 'Fleet Lifecycle Visibility'].map(
+          <div className="mt-10 grid max-w-2xl gap-4 border-t border-white/10 pt-7 sm:grid-cols-3">
+            {['Connected Rental & Leasing', 'Finance Built In', 'End-to-End Fleet Visibility'].map(
               (item) => (
                 <div key={item} className="flex items-center gap-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 text-cyan-300">
@@ -303,7 +305,7 @@ function Hero() {
 }
 
 // Twelve chips do not fit legibly on one ring in the hero column (they overlap and
-// clip their labels), so the hero shows the core eight and links to the full list.
+// clip their labels), so the hero shows the core eight; the portfolio below lists all twelve.
 const HERO_MODULES = ["Car Rental", "Leasing", "Chauffeur", "Bus Transport", "Workshop", "Analytics", "Billing & Finance", "Finance"];
 
 function PremiumHeroVisual() {
@@ -318,9 +320,7 @@ function PremiumHeroVisual() {
         size={560}
         centerLabel="F"
         centerSub="FleetArabia"
-        topLabel="Connected Fleet Operations"
-        bottomLabel={`+${solutions.length - productNodes.length} more modules · See the platform →`}
-        bottomHref="/platform"
+        topLabel="Connected Mobility Operations"
       />
     </div>
   );
@@ -352,7 +352,7 @@ function BuiltFor() {
 
 function SectionHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
-    <Reveal className="mx-auto mb-8 max-w-3xl text-center sm:mb-9">
+    <Reveal className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
       <p className={EYEBROW}>{eyebrow}</p>
       <h2 className={H2}>{title}</h2>
       {text && <p className={LEAD}>{text}</p>}
@@ -400,30 +400,31 @@ function Solutions() {
         <SectionHeader
           eyebrow="Our Product Portfolio"
           title="Twelve modules. One connected platform."
-          text="Run every module on its own, or plug in the ones you need and let them share the same data — no double entry, no reconciling spreadsheets at month end."
+          text="Deploy the modules you need and connect them through one shared data platform — reducing duplicate entry, disconnected systems and manual reconciliation."
         />
 
-        {/* Flex rather than grid so the 13th card is centred, not orphaned left. */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-5">
+        {/* md and up: each card is a four-row subgrid (icon, title, description, link), so
+            titles, descriptions and links line up across a row whatever their length. */}
+        <div className="grid gap-3 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {solutions.map((item, index) => (
             <Reveal
               key={item.title}
               delay={Math.min(index * 0.05, 0.3)}
-              className="w-full md:w-[calc(50%-10px)] xl:w-[calc(25%-15px)]"
+              className="md:row-span-4 md:grid md:grid-rows-subgrid md:gap-0"
             >
               {/* Phones: icon beside the text and a two-line summary (the full
                   description stays in the page and on /solutions). md and up:
                   the original tall card. */}
-              <article className={`group flex h-full gap-4 p-5 md:min-h-[220px] md:flex-col md:gap-0 md:p-6 ${WHITE_CARD}`}>
+              <article className={`group flex h-full gap-4 p-5 md:row-span-4 md:grid md:grid-rows-subgrid md:gap-0 md:p-6 ${WHITE_CARD}`}>
                 <div className={`shrink-0 md:mb-5 ${ICON_TILE_ON_WHITE}`}>
                   <item.icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.9} />
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col">
+                <div className="flex min-w-0 flex-1 flex-col md:contents">
                   <h3 className="text-[17px] font-bold leading-snug tracking-tight">{item.title}</h3>
                   <p className="mt-2 line-clamp-2 flex-1 text-sm leading-6 text-slate-600 md:mt-3 md:line-clamp-none">{item.text}</p>
                   <Link
                     href={moduleLink(item.title).href}
-                    className="mt-3 inline-flex items-center gap-1.5 py-1 text-sm font-bold text-[#087674] md:mt-6"
+                    className="mt-3 inline-flex items-center gap-1.5 self-start py-1 text-sm font-bold text-[#087674] md:mt-6 md:justify-self-start"
                   >
                     {moduleLink(item.title).label}
                     <ArrowRight aria-hidden="true" className="h-4 w-4 transition group-hover:translate-x-1" />
@@ -465,7 +466,7 @@ function Workflow() {
           </Link>
         </Reveal>
 
-        <ol className="relative mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:mt-12 lg:grid-cols-6">
+        <ol className="relative mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:mt-14 lg:grid-cols-6 lg:gap-x-8">
           {/* The line that joins the step markers on wide screens. */}
           <span
             aria-hidden="true"
@@ -499,11 +500,11 @@ function Integrations() {
       <div className="relative mx-auto grid max-w-[77rem] items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className={EYEBROW}>Data Imports &amp; Integrations</p>
-          <h2 className={H2}>Outside data, matched to the right record</h2>
+          <h2 className={H2}>Connect external data to the right record</h2>
           <p className={LEAD}>
-            Import Salik tolls, traffic fines, parking charges and fuel-card
-            statements and match each one to the right vehicle and contract.
-            A Traccar GPS tracking server can also be connected.
+            Connect toll, traffic-fine, parking and fuel-card data to vehicles,
+            customers and contracts through file imports and REST APIs. A GPS
+            tracking server can also be connected.
           </p>
 
           <Link href="/integrations" className={`mt-9 ${PRIMARY_BUTTON}`}>
@@ -531,19 +532,19 @@ function Integrations() {
 
 function WhyFleetArabia() {
   const reasons = [
-    { icon: Globe, title: "UAE Operations Built In", text: "Salik tolls, UAE traffic fines, UAE VAT and AED billing are part of the product, not add-ons." },
-    { icon: Plug, title: "Operations and Finance Together", text: "Invoices, charges and VAT are raised from the contract itself, so nothing is re-keyed into a separate finance system." },
-    { icon: WorkflowIcon, title: "End-to-End Fleet Lifecycle", text: "One flow from booking through agreement, dispatch, maintenance and reporting, instead of five disconnected tools." },
+    { icon: Globe, title: "Mobility Operations Built In", text: "Rental, leasing, fleet, transport and workshop workflows are built into the platform rather than added as disconnected tools." },
+    { icon: Plug, title: "Operations and Finance Together", text: "Invoices, charges and financial transactions flow from operational activity, reducing duplicate entry and keeping finance connected to the source transaction." },
+    { icon: WorkflowIcon, title: "End-to-End Fleet Lifecycle", text: "One connected flow from booking through agreement, vehicle operations, maintenance and reporting — instead of multiple disconnected systems." },
     { icon: Handshake, title: "Implementation Support", text: "Hands-on help with process mapping, data migration, integration planning, training and rollout — not just a login and a manual." },
   ];
 
   return (
-    <section className={`bg-[#065f5e] text-white ${SECTION}`}>
+    <section className="bg-[#065f5e] px-5 py-16 text-white sm:px-6 md:py-20">
       <div className="mx-auto max-w-[77rem]">
         <SectionHeader
           eyebrow="Why FleetArabia"
-          title="Built by people who know fleet operations"
-          text="Domain knowledge of how mobility businesses actually operate, finance in the same system, and hands-on support to get there."
+          title="Built by people who know mobility operations"
+          text="Domain knowledge of how mobility businesses operate, finance connected to operations, and hands-on support to get you there."
         />
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
@@ -568,18 +569,18 @@ function CTA() {
   return (
     <section
       id="contact"
-      className={`relative overflow-hidden bg-[#087674] text-center text-white ${SECTION}`}
+      className="relative overflow-hidden bg-[#087674] px-5 py-14 text-center text-white sm:px-6 md:py-10"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.22),transparent_45%)]" />
 
-      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-[#043f3e]/30 px-6 py-12 shadow-2xl shadow-black/10 backdrop-blur md:px-12">
+      <Reveal className="relative mx-auto max-w-4xl rounded-3xl border border-white/15 bg-[#043f3e]/30 px-6 py-10 shadow-2xl shadow-black/10 backdrop-blur md:px-12">
         <p className={EYEBROW}>Start the Conversation</p>
-        <h2 className={H2}>Ready to modernize your fleet operations?</h2>
+        <h2 className={H2}>Ready to modernize your mobility operations?</h2>
         <p className={LEAD}>
-          Tell us how your operation runs today, and we&apos;ll show you what it looks like connected end to end.
+          Tell us how your operation runs today, and we&apos;ll show you what a connected end-to-end platform can look like.
         </p>
 
-        <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link href="/contact#demo-form" className={PRIMARY_BUTTON}>
             Book a Demo
             <ArrowRight aria-hidden="true" className={BUTTON_ARROW} />
